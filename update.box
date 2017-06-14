@@ -1,4 +1,10 @@
 #windows updater using boxstarter.org
+#dennyhalim.com
+
+#1. download from boxstarter.org and extract
+#2. run setup.bat
+#3. boxstarter https://is.gd/boxstarter -disablereboots
+
 #Enable-UAC
 #Enable-RemoteDesktop
 #Disable-MicrosoftUpdate
