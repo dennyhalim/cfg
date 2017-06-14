@@ -1,0 +1,20 @@
+#windows updater using boxstarter.org
+#Enable-UAC
+#Enable-RemoteDesktop
+#Disable-MicrosoftUpdate
+Set-ExplorerOptions -showHiddenFilesFoldersDrives -showFileExtensions #-showProtectedOSFiles
+
+cinst TelnetClient -source windowsFeatures
+#cinst Microsoft-Windows-Subsystem-Linux -source windowsFeatures
+#choco uninstall -ry SMB1Protocol -source windowsFeatures
+#choco uninstall -ry Internet-Explorer-Optional-x86 -source windowsFeatures
+#choco uninstall -ry Internet-Explorer-Optional-amd64 -source windowsFeatures
+
+choco upgrade -ry toolsroot
+choco upgrade -ry 7zip.install captura firefoxesr notepadplusplus.install processhacker.install recuva tightvnc vlc winpcap
+#choco upgrade -ry bind-toolsonly bleachbit bulk-crap-uninstaller 
+kitty picklesui tightvnc
+#non-commercial free
+#choco upgrade -ry activepresenter 
+
+#Install-WindowsUpdate -AcceptEula
