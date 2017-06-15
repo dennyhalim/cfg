@@ -23,7 +23,7 @@ cinst TelnetClient -source windowsFeatures
 
 choco upgrade -ry chocolatey toolsroot
 choco upgrade -ry 7zip.install firefoxesr notepadplusplus.install processhacker.install recuva vlc 
-#choco upgrade -ry bginfo bind-toolsonly bleachbit bulk-crap-uninstaller captura kitty picklesui tightvnc winpcap
+#choco upgrade -ry bginfo bind-toolsonly bleachbit bulk-crap-uninstaller captura googlechrome kitty picklesui tightvnc winpcap
 #non-commercial
 #choco upgrade -ry activepresenter 
 #choco upgrade -ry all #all not installed. The package was not found with the source(s) listed.
