@@ -10,6 +10,10 @@
 #Enable-RemoteDesktop
 #Disable-MicrosoftUpdate
 Set-ExplorerOptions -showHiddenFilesFoldersDrives -showFileExtensions #-showProtectedOSFiles
+#Set-Service -Name WerSvc -StartupType Disabled #error reporting
+#Set-Service -Name WinHttpAutoProxySvc -StartupType Disabled #wpad
+#Set-Service -Name wcncsvc -StartupType Disabled #error reporting #WPS
+Set-Service -Name WSearch -StartupType Disabled #search indexer
 
 cinst TelnetClient -source windowsFeatures
 #cinst Microsoft-Windows-Subsystem-Linux -source windowsFeatures
