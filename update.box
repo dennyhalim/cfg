@@ -27,4 +27,4 @@ choco upgrade -ry 7zip.install firefoxesr notepadplusplus.install processhacker.
 #non-commercial
 #choco upgrade -ry activepresenter 
 
-#Install-WindowsUpdate -AcceptEula
+#Install-WindowsUpdate -AcceptEula -SuppressReboots
