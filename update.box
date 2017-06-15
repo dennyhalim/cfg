@@ -18,8 +18,8 @@ cinst TelnetClient -source windowsFeatures
 #choco uninstall -ry Internet-Explorer-Optional-amd64 -source windowsFeatures
 
 choco upgrade -ry toolsroot
-choco upgrade -ry 7zip.install firefoxesr notepadplusplus.install processhacker.install recuva tightvnc vlc winpcap
-#choco upgrade -ry bind-toolsonly bleachbit bulk-crap-uninstaller captura kitty picklesui tightvnc
+choco upgrade -ry 7zip.install firefoxesr notepadplusplus.install processhacker.install recuva vlc 
+#choco upgrade -ry bind-toolsonly bleachbit bulk-crap-uninstaller captura kitty picklesui tightvnc winpcap
 #non-commercial
 #choco upgrade -ry activepresenter 
 
