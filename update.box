@@ -11,7 +11,7 @@
 #Disable-MicrosoftUpdate
 #Set-Service -Name WerSvc -StartupType Disabled #error reporting
 #Set-Service -Name WinHttpAutoProxySvc -StartupType Disabled #wpad
-#Set-Service -Name wcncsvc -StartupType Disabled #error reporting #WPS
+#Set-Service -Name wcncsvc -StartupType Disabled #WPS
 Set-Service -Name WSearch -StartupType Disabled #search indexer
 Set-ExplorerOptions -showHiddenFilesFoldersDrives -showFileExtensions #-showProtectedOSFiles
 
