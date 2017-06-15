@@ -28,4 +28,4 @@ choco upgrade -ry 7zip.install firefoxesr notepadplusplus.install processhacker.
 #choco upgrade -ry activepresenter 
 #choco upgrade -ry all #all not installed. The package was not found with the source(s) listed.
 
-#Install-WindowsUpdate -AcceptEula -SuppressReboots
+#Install-WindowsUpdate -acceptEula -SuppressReboots
