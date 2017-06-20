@@ -24,6 +24,7 @@ choco uninstall -ry FS-SMB1 -source windowsFeatures
 choco uninstall -ry SMB1Protocol -source windowsFeatures
 
 #windowsFeatures
+#alternative: dism.exe /online /Enable-Feature /FeatureName:TelnetClient
 cinst TelnetClient -source windowsFeatures
 #cinst Microsoft-Windows-Subsystem-Linux -source windowsFeatures
 #choco uninstall -ry Internet-Explorer-Optional-x86 -source windowsFeatures
