@@ -14,10 +14,9 @@ Set-Service -Name WSearch -StartupType Disabled #search indexer
 Set-ExplorerOptions -showHiddenFilesFoldersDrives -showFileExtensions #-showProtectedOSFiles
 
 # https://aka.ms/StopUsingSMB1
-#sc.exe config lanmanworkstation depend= bowser/mrxsmb20/nsi #non ps
-#Set-Service -Name mrxsmb10 -StartupType Disabled 
-#Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation" -Name DependOnService -Value @("bowser","mrxsmb20","nsi") -Force
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 -Force
+#Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation" -Name DependOnService -Value @("bowser","mrxsmb20","nsi") -Force
+#Set-Service -Name mrxsmb10 -StartupType Disabled 
 #win8+
 Set-SmbServerConfiguration -EnableSMB1Protocol $false
 choco uninstall -ry FS-SMB1 -source windowsFeatures
