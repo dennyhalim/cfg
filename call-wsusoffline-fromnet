@@ -1,0 +1,14 @@
+rem updating windows using wsusoffline from networked shared folder
+rem "=================="
+rem " UPDATING WINDOWS "
+rem "=================="
+net use u: /d /y
+net use u: \\wsusoffline\updater /persistent:no
+U:
+cd /d u:\wsusoffline\cmd\
+call Doupdate.cmd /skipieinst /seconly /instpsh /instdotnet4 
+cd /d %windir%
+net use u: /d /y > %windir%\Logs\up.ace
+exit
+exit
+
