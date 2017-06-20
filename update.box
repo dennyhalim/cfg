@@ -21,11 +21,10 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 #win8+
 Set-SmbServerConfiguration -EnableSMB1Protocol $false
 choco uninstall -ry FS-SMB1 -source windowsFeatures
-choco uninstall -ry smb1protocol -source windowsFeatures
+choco uninstall -ry SMB1Protocol -source windowsFeatures
 
 cinst TelnetClient -source windowsFeatures
 #cinst Microsoft-Windows-Subsystem-Linux -source windowsFeatures
-#choco uninstall -ry SMB1Protocol -source windowsFeatures
 #choco uninstall -ry Internet-Explorer-Optional-x86 -source windowsFeatures
 #choco uninstall -ry Internet-Explorer-Optional-amd64 -source windowsFeatures
 
