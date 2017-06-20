@@ -11,7 +11,8 @@
 #Set-Service -Name WinHttpAutoProxySvc -StartupType Disabled #wpad
 #Set-Service -Name wcncsvc -StartupType Disabled #WPS
 Set-Service -Name WSearch -StartupType Disabled #search indexer
-Set-ExplorerOptions -showHiddenFilesFoldersDrives -showFileExtensions #-showProtectedOSFiles
+Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFoldersDrives # -EnableShowProtectedOSFiles
+#Set-ExplorerOptions -showHiddenFilesFoldersDrives -showFileExtensions #-showProtectedOSFiles #obsoletes
 
 # https://aka.ms/StopUsingSMB1
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 -Force
