@@ -12,7 +12,10 @@
 #Set-Service -Name wcncsvc -StartupType Disabled #WPS
 Set-Service -Name WSearch -StartupType Disabled #search indexer
 Set-ExplorerOptions -showHiddenFilesFoldersDrives -showFileExtensions #-showProtectedOSFiles
-#disable smb1
+
+# https://aka.ms/StopUsingSMB1
+sc.exe config lanmanworkstation depend= bowser/mrxsmb20/nsi
+Set-Service -Name mrxsmb10 -StartupType Disabled 
 Set-SmbServerConfiguration -EnableSMB1Protocol $false
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 -Force
 
