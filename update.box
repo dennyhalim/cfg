@@ -16,7 +16,7 @@ Set-ExplorerOptions -showHiddenFilesFoldersDrives -showFileExtensions #-showProt
 # https://aka.ms/StopUsingSMB1
 sc.exe config lanmanworkstation depend= bowser/mrxsmb20/nsi
 Set-Service -Name mrxsmb10 -StartupType Disabled 
-Set-SmbServerConfiguration -EnableSMB1Protocol $false
+Set-SmbServerConfiguration -EnableSMB1Protocol $false #win8+
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 -Force
 
 cinst TelnetClient -source windowsFeatures
