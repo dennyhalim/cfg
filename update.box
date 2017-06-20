@@ -6,14 +6,15 @@
 # setup.bat
 # boxstarter https://is.gd/boxstarter -disablereboots
 
-#Enable-UAC
 #Enable-RemoteDesktop
-#Disable-MicrosoftUpdate
 #Set-Service -Name WerSvc -StartupType Disabled #error reporting
 #Set-Service -Name WinHttpAutoProxySvc -StartupType Disabled #wpad
 #Set-Service -Name wcncsvc -StartupType Disabled #WPS
 Set-Service -Name WSearch -StartupType Disabled #search indexer
 Set-ExplorerOptions -showHiddenFilesFoldersDrives -showFileExtensions #-showProtectedOSFiles
+#disable smb1
+Set-SmbServerConfiguration -EnableSMB1Protocol $false
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 -Force
 
 cinst TelnetClient -source windowsFeatures
 #cinst Microsoft-Windows-Subsystem-Linux -source windowsFeatures
@@ -28,4 +29,6 @@ choco upgrade -ry 7zip.install firefoxesr notepadplusplus.install processhacker.
 #choco upgrade -ry activepresenter 
 #choco upgrade -ry all #all not installed. The package was not found with the source(s) listed.
 
+Enable-UAC
+#Disable-MicrosoftUpdate
 #Install-WindowsUpdate -acceptEula -SuppressReboots
