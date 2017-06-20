@@ -1,6 +1,6 @@
-#windows updater using boxstarter.org
-#dennyhalim.com
+#dennyhalim.com #windows updater using boxstarter.org
 
+#usage:
 #1. download from boxstarter.org and extract
 #2. run following as administrator:
 # setup.bat
@@ -23,11 +23,13 @@ Set-SmbServerConfiguration -EnableSMB1Protocol $false
 choco uninstall -ry FS-SMB1 -source windowsFeatures
 choco uninstall -ry SMB1Protocol -source windowsFeatures
 
+#windowsFeatures
 cinst TelnetClient -source windowsFeatures
 #cinst Microsoft-Windows-Subsystem-Linux -source windowsFeatures
 #choco uninstall -ry Internet-Explorer-Optional-x86 -source windowsFeatures
 #choco uninstall -ry Internet-Explorer-Optional-amd64 -source windowsFeatures
 
+#install apps
 choco upgrade -ry chocolatey toolsroot
 choco upgrade -ry 7zip.install firefoxesr notepadplusplus.install processhacker.install recuva vlc 
 #choco upgrade -ry bginfo bind-toolsonly bleachbit bulk-crap-uninstaller captura googlechrome kitty picklesui securepointsslvpn tightvnc winpcap
@@ -35,6 +37,7 @@ choco upgrade -ry 7zip.install firefoxesr notepadplusplus.install processhacker.
 #choco upgrade -ry activepresenter 
 #choco upgrade -ry all #all not installed. The package was not found with the source(s) listed.
 
+#finalize
 Enable-UAC
 #Disable-MicrosoftUpdate
 #Install-WindowsUpdate -acceptEula -SuppressReboots
