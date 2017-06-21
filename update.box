@@ -20,7 +20,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 #Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation" -Name DependOnService -Value @("bowser","mrxsmb20","nsi") -Force
 #Set-Service -Name mrxsmb10 -StartupType Disabled 
 #win8+
-Set-SmbServerConfiguration -EnableSMB1Protocol $false
+#Set-SmbServerConfiguration -EnableSMB1Protocol $false
 choco uninstall -ry FS-SMB1 -source windowsFeatures
 choco uninstall -ry SMB1Protocol -source windowsFeatures
 
