@@ -6,6 +6,7 @@
 # setup.bat
 # boxstarter https://is.gd/boxstarter -disablereboots
 
+Enable-ComputerRestore -drive "c:\"
 #Enable-RemoteDesktop
 #Set-Service -Name WerSvc -StartupType Disabled #error reporting
 #Set-Service -Name WinHttpAutoProxySvc -StartupType Disabled #wpad
