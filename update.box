@@ -44,3 +44,4 @@ choco upgrade -ry 7zip.install fastcopy.portable firefoxesr git.portable kitty.p
 Enable-UAC
 #Disable-MicrosoftUpdate
 #Install-WindowsUpdate -acceptEula -SuppressReboots
+Checkpoint-Computer -Description 'dennyhalim.com boxstarter finished'
