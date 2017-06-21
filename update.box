@@ -35,7 +35,7 @@ cinst TelnetClient -source windowsFeatures
 #install apps
 #portable not shown on control panel add/remove programs and start menu
 choco upgrade -ry chocolatey toolsroot
-choco upgrade -ry 7zip.install fastcopy.portable firefoxesr git.portable kitty.portable netscan.portable notepadplusplus.install processhacker.portable recuva vlc 
+choco upgrade -ry 7zip fastcopy.portable firefoxesr git.portable kitty.portable netscan.portable notepadplusplus processhacker.portable recuva vlc 
 #choco upgrade -ry bginfo bind-toolsonly bleachbit bulk-crap-uninstaller captura driverbooster googlechrome ipscan nssm picklesui poshgit securepointsslvpn snappy-driver-installer tightvnc winpcap
 #non-commercial
 #choco upgrade -ry activepresenter 
