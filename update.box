@@ -32,7 +32,7 @@ cinst TelnetClient -source windowsFeatures
 
 #install apps
 choco upgrade -ry chocolatey toolsroot
-choco upgrade -ry 7zip.install firefoxesr notepadplusplus.install processhacker.install recuva vlc 
+choco upgrade -ry 7zip.install firefoxesr git notepadplusplus.install processhacker.install recuva vlc 
 #choco upgrade -ry bginfo bind-toolsonly bleachbit bulk-crap-uninstaller captura googlechrome kitty nssm picklesui securepointsslvpn tightvnc winpcap
 #non-commercial
 #choco upgrade -ry activepresenter 
