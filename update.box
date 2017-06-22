@@ -12,7 +12,6 @@
 
 Enable-ComputerRestore -drive "c:\"
 #Enable-RemoteDesktop
-#Set-Service -Name wuauserv -StartupType Manual #windows auto update
 #Set-Service -Name TabletInputService -StartupType Disabled
 #Set-Service -Name HomeGroupProvider -StartupType Disabled
 #Set-Service -Name WMPNetworkSvc -StartupType Disabled #media player net
@@ -20,8 +19,10 @@ Enable-ComputerRestore -drive "c:\"
 #Set-Service -Name WerSvc -StartupType Disabled #error reporting
 #Set-Service -Name WinHttpAutoProxySvc -StartupType Disabled #wpad
 #Set-Service -Name wcncsvc -StartupType Disabled #WPS
+#Set-Service -Name lfsvc -StartupType Disabled #geolocation geofence
 Set-Service -Name DiagTrack -StartupType Disabled #diagnostic tracking
 Set-Service -Name WSearch -StartupType Disabled #search indexer
+Set-Service -Name wuauserv -StartupType Manual #windows auto update
 Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFoldersDrives # -EnableShowProtectedOSFiles
 #Set-ExplorerOptions -showHiddenFilesFoldersDrives -showFileExtensions #-showProtectedOSFiles #obsoletes
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" SafeModeBlockNonAdmins -Type DWORD -Value 1 -Force
