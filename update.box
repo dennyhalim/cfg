@@ -6,6 +6,8 @@
 # setup.bat
 # boxstarter https://is.gd/boxstarter -disablereboots
 
+#win
+
 Enable-ComputerRestore -drive "c:\"
 #Enable-RemoteDesktop
 #Set-Service -Name WerSvc -StartupType Disabled #error reporting
