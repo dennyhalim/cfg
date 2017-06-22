@@ -10,6 +10,7 @@
 
 Enable-ComputerRestore -drive "c:\"
 #Enable-RemoteDesktop
+#Set-Service -Name wuauserv -StartupType Manual #windows auto update
 #Set-Service -Name TabletInputService -StartupType Disabled
 #Set-Service -Name HomeGroupProvider -StartupType Disabled
 #Set-Service -Name WMPNetworkSvc -StartupType Disabled #media player net
