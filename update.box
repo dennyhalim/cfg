@@ -6,7 +6,8 @@
 # setup.bat
 # boxstarter https://is.gd/boxstarter -disablereboots
 
-#win
+#update windows before installing
+#https://support.microsoft.com/en-us/kb/913086
 
 Enable-ComputerRestore -drive "c:\"
 #Enable-RemoteDesktop
