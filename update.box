@@ -8,6 +8,7 @@
 
 #update windows before installing
 #https://support.microsoft.com/en-us/kb/913086
+#win7 roll-up https://support.microsoft.com/en-us/kb/3125574
 
 Enable-ComputerRestore -drive "c:\"
 #Enable-RemoteDesktop
