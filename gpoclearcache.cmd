@@ -1,3 +1,4 @@
+rem dennyhalim.com #fixing gpoupdate fail
 cd "%ALLUSERSPROFILE%\Microsoft\Group Policy" && rd History.old /s /q
 attrib -r -h -s History
 move /y History History.old
