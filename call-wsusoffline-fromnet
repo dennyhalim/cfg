@@ -8,7 +8,7 @@ U:
 cd /d u:\wsusoffline\cmd\
 call Doupdate.cmd /skipieinst /seconly /instpsh /instdotnet4 
 cd /d %windir%
-net use u: /d /y > %windir%\Logs\up.ace
+net use u: /d /y
 exit
 exit
 
