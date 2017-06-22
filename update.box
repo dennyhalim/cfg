@@ -34,6 +34,7 @@ cinst TelnetClient -source windowsFeatures
 #choco uninstall -ry Internet-Explorer-Optional-x86 -source windowsFeatures
 #choco uninstall -ry Internet-Explorer-Optional-amd64 -source windowsFeatures
 
+[Environment]::SetEnvironmentVariable("ChocolateyBinRoot", "\tools", "Machine")
 $env:ChocolateyBinRoot = "\tools"
 #essentials
 choco upgrade -ry autohotkey.portable chocolatey toolsroot
