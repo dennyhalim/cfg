@@ -12,11 +12,12 @@ Enable-ComputerRestore -drive "c:\"
 #Enable-RemoteDesktop
 #Set-Service -Name TabletInputService -StartupType Disabled
 #Set-Service -Name HomeGroupProvider -StartupType Disabled
-#Set-Service -Name Mcx2Svc -StartupType Disabled #media center extender
+#Set-Service -Name WMPNetworkSvc -StartupType Disabled #media player net
 #Set-Service -Name WPCSvc -StartupType Disabled #parental control
 #Set-Service -Name WerSvc -StartupType Disabled #error reporting
 #Set-Service -Name WinHttpAutoProxySvc -StartupType Disabled #wpad
 #Set-Service -Name wcncsvc -StartupType Disabled #WPS
+Set-Service -Name DiagTrack -StartupType Disabled #diagnostic tracking
 Set-Service -Name WSearch -StartupType Disabled #search indexer
 Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFoldersDrives # -EnableShowProtectedOSFiles
 #Set-ExplorerOptions -showHiddenFilesFoldersDrives -showFileExtensions #-showProtectedOSFiles #obsoletes
