@@ -35,9 +35,9 @@ cinst TelnetClient -source windowsFeatures
 #choco uninstall -ry Internet-Explorer-Optional-amd64 -source windowsFeatures
 
 #essentials
-choco upgrade -ry autohotkey.portable 7zip chocolatey toolsroot
+choco upgrade -ry autohotkey.portable chocolatey toolsroot
 #install apps
-choco upgrade -ry firefoxesr notepadplusplus vlc 
+choco upgrade -ry 7zip firefoxesr notepadplusplus vlc 
 #portable not shown on control panel add/remove programs and start menu
 choco upgrade -ry fastcopy.portable git.portable hwinfo.portable kitty.portable netscan.portable pinginfoview processhacker.portable recuva.portable spacesniffer unxutils
 #choco upgrade -ry bginfo bind-toolsonly bleachbit bulk-crap-uninstaller captura driverbooster googlechrome ipscan nssm picklesui poshgit securepointsslvpn snappy-driver-installer tightvnc winpcap
