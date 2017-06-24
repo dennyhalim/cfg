@@ -13,7 +13,7 @@ tasks:
     description: "Install chocolatey"
     runner: install-chocolatey
   -
-    description: "Install IIS, .NET framework"
+    description: "Install telnet"
     runner: windows-feature
     includeAllSubFeatures: true
     features: 
