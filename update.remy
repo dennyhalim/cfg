@@ -1,0 +1,20 @@
+#dennyhalim.com #testing using remy to install new box
+name: "dennyhalim.com newbox using remy"
+tasks:
+  -
+    description: "powershell example"
+    runner: powershell
+    commands:
+      - Set-Service -Name DiagTrack -StartupType Disabled #diagnostic tracking
+      - Set-Service -Name WSearch -StartupType Disabled #search indexer
+      - Set-Service -Name wuauserv -StartupType Manual #windows auto update
+      - Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFoldersDrives # -EnableShowProtectedOSFiles
+  -
+    description: "Install chocolatey"
+    runner: install-chocolatey
+  -
+    description: "Install IIS, .NET framework"
+    runner: windows-feature
+    includeAllSubFeatures: true
+    features: 
+      - TelnetClient
