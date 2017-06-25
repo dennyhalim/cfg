@@ -5,4 +5,4 @@ Get-ChildItem -Path "C:\Users\*\AppData\Local\Temp" -Recurse | Where-Object{$_.L
 Get-ChildItem -Path "$env:windir\Temp" -Recurse | Where-Object{$_.LastAccessTime -lt (Get-Date).AddDays(-70)} | Remove-Item -Force -Recurse
 
 #cmd:
-#forfiles.exe -p %temp% -s -m *.* -d -70 -c "cmd /c echo @path"
+#forfiles.exe -p %temp% -s -m * -d -70 -c "cmd /c echo @path"
