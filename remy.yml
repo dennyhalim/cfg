@@ -1,18 +1,11 @@
 #dennyhalim.com #testing using remy to install new box 
 #usages:
-# download and install remy https://github.com/yetanotherchris/Remy/releases/latest
+# download and install remy https://
+github.com/yetanotherchris/Remy/releases/latest
 # remy run -v -c https://is.gd/remy_yml
 
 name: "dennyhalim.com newbox using remy"
 tasks:
-  -
-    description: "powershell example"
-    runner: powershell
-    commands:
-      - Set-Service -Name DiagTrack -StartupType Disabled #diagnostic tracking
-      - Set-Service -Name WSearch -StartupType Disabled #search indexer
-      - Set-Service -Name wuauserv -StartupType Manual #windows auto update
-      - Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFoldersDrives # -EnableShowProtectedOSFiles
   -
     description: "Install chocolatey"
     runner: install-chocolatey
@@ -22,3 +15,21 @@ tasks:
     includeAllSubFeatures: false
     features: 
       - TelnetClient
+  -
+    description: "powershell example"
+    runner: powershell
+    commands:
+      - Enable-ComputerRestore -drive "c:\"
+      - Set-Service -Name DiagTrack -StartupType Disabled #diagnostic tracking
+      - Set-Service -Name WSearch -StartupType Disabled #search indexer
+      - Set-Service -Name wuauserv -StartupType Manual #windows auto update
+      - Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFoldersDrives # -EnableShowProtectedOSFiles
+      - Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" SafeModeBlockNonAdmins -Type DWORD -Value 1 -Force
+      - Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DateTime\Servers" -Name 0 -Value "0.pool.ntp.org" -Force
+      - Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 -Force
+      - choco upgrade -ry autohotkey.portable chocolatey toolsroot
+      - choco upgrade -ry 7zip firefoxesr notepadplusplus vlc 
+      - choco upgrade -ry fastcopy.portable git.portable hwinfo.portable kitty.portable netscan.portable pinginfoview processhacker.portable recuva.portable spacesniffer unxutils
+      - Enable-UAC
+      - Checkpoint-Computer -Description 'dennyhalim.com remy finished'
+
