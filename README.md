@@ -1,4 +1,5 @@
 # cfg
+## boxstarter
 utilize boxstarter.org to keep windows updated
 
 1. download from boxstarter.org and extract
@@ -7,6 +8,7 @@ utilize boxstarter.org to keep windows updated
        setup.bat
        boxstarter https://is.gd/boxstarter -disablereboots
 
+## remy
 for using remy:
 1. download and install remy https://github.com/yetanotherchris/Remy/releases/latest
 2. run following as administrator:
