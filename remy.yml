@@ -1,7 +1,7 @@
 #dennyhalim.com #testing using remy to install new box 
 #usages:
 # download and install remy https://github.com/yetanotherchris/Remy/releases/latest
-# remy run -v -c https://github.com/dennyhalim/cfg/raw/master/remy.yml
+# remy run -v -c https://is.gd/remy_yml
 
 name: "dennyhalim.com newbox using remy"
 tasks:
