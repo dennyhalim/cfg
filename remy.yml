@@ -26,8 +26,7 @@ tasks:
       - Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" SafeModeBlockNonAdmins -Type DWORD -Value 1 -Force
       - Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DateTime\Servers" -Name 0 -Value "0.pool.ntp.org" -Force
       - Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 -Force
-      - choco upgrade -ry autohotkey.portable chocolatey toolsroot
-      - choco upgrade -ry 7zip firefoxesr notepadplusplus vlc 
+      - choco upgrade -ry 7zip autohotkey.portable chocolatey firefoxesr notepadplusplus toolsroot vlc
       - choco upgrade -ry fastcopy.portable git.portable hwinfo.portable kitty.portable netscan.portable pinginfoview processhacker.portable recuva.portable spacesniffer unxutils
       - Enable-UAC
       - Checkpoint-Computer -Description 'dennyhalim.com remy finished'
