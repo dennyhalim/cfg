@@ -1,7 +1,10 @@
 # cfg
 
 ## cmd run as administrator
-[!run as administrator](https://raw.githubusercontent.com/dennyhalim/cfg/master/cmd-run-as-administrator.png)
+1. click on start menu
+2. type-in cmd
+3. right click and select run as administrator
+![run as administrator](https://raw.githubusercontent.com/dennyhalim/cfg/master/cmd-run-as-administrator.png)
 
 ## boxstarter
 utilize boxstarter.org to keep windows updated
