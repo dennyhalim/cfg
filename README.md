@@ -1,4 +1,8 @@
 # cfg
+
+## cmd run as administrator
+(https://raw.githubusercontent.com/dennyhalim/cfg/master/cmd-run-as-administrator.png)
+
 ## boxstarter
 utilize boxstarter.org to keep windows updated
 
