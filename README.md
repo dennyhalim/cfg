@@ -14,6 +14,7 @@ utilize boxstarter.org to keep windows updated
 for using remy:
 1. download https://github.com/yetanotherchris/Remy/releases/latest and extract
 2. run following from administrator cmd:
+
        remy run -v -c https://is.gd/remy_yml
 
 ## administrator cmd
