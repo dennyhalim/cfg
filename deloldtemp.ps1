@@ -1,5 +1,5 @@
-#dennyhalim.com #removing ALL files with following conditions:
-# folder name: Temp
+#dennyhalim.com #removing ALL files and folders with following conditions:
+# inside folder named: Temp
 # location: %temp% and %windir%\temp
 # files/folders older than 70 days
 # remove without warning
