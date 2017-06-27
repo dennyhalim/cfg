@@ -61,6 +61,7 @@ choco upgrade -ry fastcopy.portable git.portable hwinfo.portable kitty.portable 
 #choco upgrade -ry all #all not installed. The package was not found with the source(s) listed.
 
 #finalize
+$installer = "$env:windir\temp\kabutoinstaller.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $installer; . $installer
 Enable-UAC
 #Disable-MicrosoftUpdate
 #Install-WindowsUpdate -acceptEula -SuppressReboots
