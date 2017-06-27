@@ -5,8 +5,8 @@ $source = 'C:\Downloads'
 If (!(Test-Path -Path $source -PathType Container)) {New-Item -Path $source -ItemType Directory | Out-Null} 
 
 $packages = @( 
-@{title='7zip Extractor';url='http://downloads.sourceforge.net/sevenzip/7z920-x64.msi';Arguments=' /qn';Destination=$source}, 
-@{title='Putty 0.63';url='http://the.earth.li/~sgtatham/putty/latest/x86/putty-0.63-installer.exe';Arguments=' /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-';Destination=$source} 
+@{title='7zip Extractor';url='http://7-zip.org/a/7z1700-x64.msi';Arguments=' /qn';Destination=$source}, 
+@{title='Putty 0.63';url='https://app.kabuto.io/dl/cp/13105';Arguments=' /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-';Destination=$source} 
 @{title='Notepad++ 6.6.8';url='http://download.tuxfamily.org/notepadplus/6.6.8/npp.6.6.8.Installer.exe';Arguments=' /Q /S';Destination=$source} 
 ) 
 
