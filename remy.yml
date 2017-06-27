@@ -9,11 +9,13 @@ tasks:
     description: "Install chocolatey"
     runner: install-chocolatey
   -
-    description: "Install telnet"
+    description: "windows features"
     runner: windows-feature
     includeAllSubFeatures: false
     features: 
       - TelnetClient
+      - NetFx3
+      - NetFx4-AdvSrvs
   -
     description: "powershell example"
     runner: powershell
