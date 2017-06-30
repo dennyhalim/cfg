@@ -22,6 +22,6 @@ for using remy:
 2. type-in cmd
 3. right click and select run as administrator
 4. cd to the folder you extract
-![run as administrator](https://raw.githubusercontent.com/dennyhalim/cfg/master/cmd-run-as-administrator.png)
+![run as administrator](https://raw.githubusercontent.com/dennyhalim/cfg/master/cmd-administrator.gif)
 
 choco-upgrade-task.xml is to be imported into windows scheduled task to schedule automatic upgrade
