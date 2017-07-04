@@ -17,6 +17,13 @@ tasks:
       - NetFx3
       - NetFx4-AdvSrvs
   -
+    description: "windows features"
+    runner: windows-feature
+    includeAllSubFeatures: false
+    ShouldRemove: 
+      - FS-SMB1
+      - SMB1Protocol
+  -
     description: "powershell example"
     runner: powershell
     commands:
