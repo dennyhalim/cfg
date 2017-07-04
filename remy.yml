@@ -11,7 +11,7 @@ tasks:
     description: "Install chocolatey"
     runner: install-chocolatey
   -
-    description: "windows features"
+    description: "install windows features"
     runner: windows-feature
     includeAllSubFeatures: false
     features: 
@@ -19,9 +19,9 @@ tasks:
       - NetFx3
       - NetFx4-AdvSrvs
   -
-    description: "windows features"
+    description: "remove windows features"
     runner: windows-feature
-    includeAllSubFeatures: false
+    includeAllSubFeatures: true
     ShouldRemove: 
       - FS-SMB1
       - SMB1Protocol
