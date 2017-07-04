@@ -47,9 +47,7 @@ tasks:
       - Enable-UAC
       - $installer = "$env:windir\temp\kabutoinstaller.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $installer; . $installer
       - dism.exe /online /Enable-Feature /FeatureName:TelnetClient
-      - dism.exe /online /Enable-Feature /FeatureName:Netfx3
-      - dism.exe /online /Enable-Feature /FeatureName:NetFx4-AdvSrvs
-      - dism.exe /online /Disable-Feature /FeatureName:FS-SMB1
-      - dism.exe /online /Disable-Feature /FeatureName:SMB1Protocol
+      - dism.exe /online /Enable-Feature /FeatureName:Netfx3 /FeatureName:NetFx4-AdvSrvs
+      - dism.exe /online /Disable-Feature /FeatureName:FS-SMB1 /FeatureName:SMB1Protocol
       - Checkpoint-Computer -Description 'dennyhalim.com remy finished'
 
