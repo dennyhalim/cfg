@@ -3,6 +3,8 @@
 # download and install remy https://github.com/yetanotherchris/Remy/releases/latest
 # remy run -v -c https://is.gd/remy_yml
 
+# https://raw.githubusercontent.com/dennyhalim/cfg/master/remy.gif
+
 name: "dennyhalim.com newbox using remy"
 tasks:
   -
