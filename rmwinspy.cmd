@@ -1,5 +1,10 @@
-@rem https://fix10.isleaked.com/oldwindows.html
+@rem https://fix10.isleaked.com/
+sc delete DiagTrack
+sc delete dmwappushservice
+echo "" > C:\ProgramData\Microsoft\Diagnosis\ETLLogs\AutoLogger\AutoLogger-Diagtrack-Listener.etl
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f
 
+@rem https://fix10.isleaked.com/oldwindows.html
 @rem Delete KB2976978 (telemetry for Win8/8.1)
 start /w wusa.exe /uninstall /kb:2976978 /quiet /norestart
 @rem Delete KB3075249 (telemetry for Win7/8.1)
