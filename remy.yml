@@ -44,8 +44,8 @@ tasks:
       - Set-Service -Name wuauserv -StartupType Manual #windows auto update
       - choco upgrade -ry 7zip autohotkey.portable boxstarter chocolatey firefoxesr notepadplusplus remy toolsroot vlc
       - choco upgrade -ry fastcopy.portable git.portable hwinfo.portable kitty.portable processhacker.portable recuva.portable screentogif spacesniffer unxutils
-      - $installer = "$env:windir\temp\kabutoinstaller.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $installer; . $installer
       - Enable-UAC
+      - $installer = "$env:windir\temp\kabutoinstaller.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $installer; . $installer
       - dism.exe /online /Enable-Feature /FeatureName:TelnetClient
       - dism.exe /online /Enable-Feature /FeatureName:Netfx3
       - dism.exe /online /Enable-Feature /FeatureName:NetFx4-AdvSrvs
