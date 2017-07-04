@@ -30,18 +30,21 @@ tasks:
     runner: powershell
     commands:
       - Enable-ComputerRestore -drive "c:\"
-      - Set-Service -Name DiagTrack -StartupType Disabled #diagnostic tracking
-      - Set-Service -Name dmwappushservice -StartupType Disabled # tracking
-      - Set-Service -Name WSearch -StartupType Disabled #search indexer
-      - Set-Service -Name wuauserv -StartupType Manual #windows auto update
       - Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFoldersDrives # -EnableShowProtectedOSFiles
+#      - Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\SecurityProviders\WDigest" -Name UseLogonCredential -Value 0 -Force
       - Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" AllowTelemetry -Type DWORD -Value 0 -Force
       - Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" SafeModeBlockNonAdmins -Type DWORD -Value 1 -Force
       - Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DateTime\Servers" -Name 0 -Value "pool.ntp.org" -Force
       - Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 -Force
+#      - Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation" -Name DependOnService -Value @("bowser","mrxsmb20","nsi") -Force
+#      - Set-Service -Name mrxsmb10 -StartupType Disabled 
+      - Set-Service -Name DiagTrack -StartupType Disabled #diagnostic tracking
+      - Set-Service -Name dmwappushservice -StartupType Disabled # tracking
+      - Set-Service -Name WSearch -StartupType Disabled #search indexer
+      - Set-Service -Name wuauserv -StartupType Manual #windows auto update
       - choco upgrade -ry 7zip autohotkey.portable boxstarter chocolatey firefoxesr notepadplusplus remy toolsroot vlc
       - choco upgrade -ry fastcopy.portable git.portable hwinfo.portable kitty.portable netscan.portable pinginfoview processhacker.portable recuva.portable screentogif spacesniffer unxutils
       - $installer = "$env:windir\temp\kabutoinstaller.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $installer; . $installer
       - Enable-UAC
-      - Checkpoint-Computer -Description 'dennyhalim.com remy finished'
+#      - Checkpoint-Computer -Description 'dennyhalim.com remy finished'
 
