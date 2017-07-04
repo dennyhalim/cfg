@@ -22,6 +22,7 @@ tasks:
     commands:
       - Enable-ComputerRestore -drive "c:\"
       - Set-Service -Name DiagTrack -StartupType Disabled #diagnostic tracking
+      - Set-Service -Name dmwappushservice -StartupType Disabled # tracking
       - Set-Service -Name WSearch -StartupType Disabled #search indexer
       - Set-Service -Name wuauserv -StartupType Manual #windows auto update
       - Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFoldersDrives # -EnableShowProtectedOSFiles
