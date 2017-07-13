@@ -4,9 +4,9 @@ rem " UPDATING WINDOWS "
 rem "=================="
 net use u: /d /y
 net use u: \\wsusoffline\updater /persistent:no
-U:
-cd /d u:\wsusoffline\cmd\
-call Doupdate.cmd /skipieinst /seconly /instpsh /instdotnet4 
+rem U:
+rem cd /d u:\wsusoffline\cmd\
+call u:\wsusoffline\cmd\Doupdate.cmd /skipieinst /seconly /instpsh /instdotnet4 
 cd /d %windir%
 net use u: /d /y
 exit
