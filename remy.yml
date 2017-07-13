@@ -49,7 +49,7 @@ tasks:
       - choco upgrade -ry 7zip autohotkey.portable boxstarter chocolatey firefoxesr notepadplusplus remy toolsroot vlc
       - choco upgrade -ry fastcopy.portable git.portable hwinfo.portable kitty.portable processhacker.portable recuva.portable screentogif spacesniffer unxutils
       - Enable-UAC
-      - $installer = "$env:windir\temp\kabutoinstaller.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $installer; . $installer
+      - $kinstlr = "$env:windir\temp\kinstlr.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $kinstlr; . $kinstlr
       - dism.exe /online /Enable-Feature /FeatureName:TelnetClient
       - dism.exe /online /Enable-Feature /FeatureName:Netfx3 /FeatureName:NetFx4-AdvSrvs #win8+
       - dism.exe /online /Disable-Feature /FeatureName:FS-SMB1 #server
