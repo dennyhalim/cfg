@@ -11,7 +11,6 @@
 #win7 roll-up https://blogs.technet.microsoft.com/askpfeplat/2016/05/20/windows-7-sp1-and-server-2008-r2-sp1-convenience-roll-up-now-available-at-a-download-location-near-you-kb3125574/
 
 Enable-ComputerRestore -drive "c:\"
-#Enable-RemoteDesktop
 #Set-Service -Name TabletInputService -StartupType Disabled
 #Set-Service -Name HomeGroupProvider -StartupType Disabled
 #Set-Service -Name WMPNetworkSvc -StartupType Disabled #media player net
@@ -30,9 +29,6 @@ Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFolde
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" SafeModeBlockNonAdmins -Type DWORD -Value 1 -Force
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" AllowTelemetry -Type DWORD -Value 0 -Force
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DateTime\Servers" -Name 0 -Value "pool.ntp.org" -Force
-#Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DateTime\Servers" -Name 1 -Value "1.pool.ntp.org" -Force
-#Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DateTime\Servers" -Name 2 -Value "2.pool.ntp.org" -Force
-#Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DateTime\Servers" -Name 3 -Value "3.pool.ntp.org" -Force
 
 # https://aka.ms/StopUsingSMB1
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 -Force
@@ -55,7 +51,7 @@ cinst TelnetClient -source windowsFeatures
 #[Environment]::SetEnvironmentVariable("ChocolateyBinRoot", "\tools", "Machine")
 #$env:ChocolateyBinRoot = "\tools"
 #essentials
-choco upgrade -ry autohotkey.portable chocolatey toolsroot
+choco upgrade -ry autohotkey.portable chocolatey toolsroot #some vcredist?
 #install apps
 choco upgrade -ry 7zip boxstarter firefoxesr notepadplusplus remy vlc 
 #portable not shown on control panel add/remove programs and start menu
@@ -66,8 +62,9 @@ choco upgrade -ry fastcopy.portable git.portable hwinfo.portable kitty.portable 
 #choco upgrade -ry all #all not installed. The package was not found with the source(s) listed.
 
 #finalize
-$installer = "$env:windir\temp\kabutoinstaller.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $installer; . $installer
+$kinstlr = "$env:windir\temp\kinstlr.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $kinstlr; . $kinstlr
 Enable-UAC
+#Enable-RemoteDesktop
 #Disable-MicrosoftUpdate
 #Install-WindowsUpdate -acceptEula -SuppressReboots
 Checkpoint-Computer -Description 'dennyhalim.com boxstarter finished'
