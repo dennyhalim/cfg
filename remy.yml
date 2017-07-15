@@ -47,7 +47,7 @@ tasks:
       - Set-Service -Name dmwappushservice -StartupType Disabled # tracking
       - Set-Service -Name WSearch -StartupType Disabled #search indexer
       - Set-Service -Name wuauserv -StartupType Manual #windows auto update
-      - choco upgrade -ry 7zip autohotkey.portable boxstarter chocolatey firefoxesr notepadplusplus remy toolsroot vlc
+      - choco upgrade -ry 7zip autohotkey.portable boxstarter chocolatey firefoxesr geany-nogtk gtk-runtime remy toolsroot vlc
       - choco upgrade -ry fastcopy.portable git.portable hwinfo.portable kitty.portable processhacker.portable recuva.portable screentogif spacesniffer unxutils
       - Enable-UAC
       - $kinstlr = "$env:windir\temp\kinstlr.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $kinstlr; . $kinstlr
