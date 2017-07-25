@@ -7,8 +7,9 @@
 #WARNING!! DANGER!!! anything will be removed without warning. no question asked!
 
 Get-ChildItem -Path "$env:public\..\*\AppData\Local\Temp" -Recurse | Where-Object{$_.LastAccessTime -lt (Get-Date).AddDays(-70)} | Remove-Item -Force -Recurse -WhatIf
+Get-ChildItem -Path "$env:public\..\*\AppData\Local\Google\Chrome\User Data\Default\Cache" -Recurse | Where-Object{$_.LastAccessTime -lt (Get-Date).AddDays(-70)} | Remove-Item -Force -Recurse -WhatIf
 Get-ChildItem -Path "$env:public\..\*\AppData\Local\Microsoft\Windows\Temporary Internet Files" -Recurse | Where-Object{$_.LastAccessTime -lt (Get-Date).AddDays(-70)} | Remove-Item -Force -Recurse -WhatIf
-Get-ChildItem -Path "$env:public\..\*\AppData\Local\Mozilla\Firefox\Profiles\*.default\cache" -Recurse | Where-Object{$_.LastAccessTime -lt (Get-Date).AddDays(-70)} | Remove-Item -Force -Recurse -WhatIf
+Get-ChildItem -Path "$env:public\..\*\AppData\Local\Mozilla\Firefox\Profiles\*.default\cache2" -Recurse | Where-Object{$_.LastAccessTime -lt (Get-Date).AddDays(-70)} | Remove-Item -Force -Recurse -WhatIf
 Get-ChildItem -Path "$env:windir\Temp" -Recurse | Where-Object{$_.LastAccessTime -lt (Get-Date).AddDays(-70)} | Remove-Item -Force -Recurse -WhatIf
 
 #cmd:
