@@ -10,8 +10,9 @@
 #https://support.microsoft.com/en-us/kb/913086
 #win7 roll-up https://blogs.technet.microsoft.com/askpfeplat/2016/05/20/windows-7-sp1-and-server-2008-r2-sp1-convenience-roll-up-now-available-at-a-download-location-near-you-kb3125574/
 
-w32tm.exe /resync /nowait
+#dism.exe /online /Set-AllIntl:en-US /Set-TimeZone:"SE Asia Standard Time"
 #tzutil.exe /s "SE Asia Standard Time"
+w32tm.exe /resync /nowait
 Enable-ComputerRestore -drive "c:\"
 
 #Set-Service -Name TabletInputService -StartupType Disabled
