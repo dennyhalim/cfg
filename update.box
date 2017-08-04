@@ -45,8 +45,8 @@ choco uninstall -ry SMB1Protocol -source windowsFeatures
 
 #windowsFeatures
 #alternative: dism.exe /online /Enable-Feature /FeatureName:TelnetClient /FeatureName:NetFx3
-#pkgmgr.exe /iu:TelnetClient;NetFx3;NetFx4-AdvSrvs
-#pkgmgr.exe /uu:FS-SMB1;SMB1Protocol
+#pkgmgr.exe /iu:TelnetClient;NetFx3;NetFx4-AdvSrvs /norestart
+#pkgmgr.exe /uu:FS-SMB1;SMB1Protocol /norestart
 cinst TelnetClient -source windowsFeatures
 #cinst NetFx3 -source windowsFeatures
 #cinst NetFx4-AdvSrvs -source windowsFeatures
