@@ -72,9 +72,11 @@ choco upgrade -ry fastcopy.portable git.portable hwinfo.portable kitty.portable 
 #choco upgrade -ry activepresenter 
 #choco upgrade -ry all #all not installed. The package was not found with the source(s) listed.
 
+#remove all startup
 $StartMenuPrograms = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs"
-New-Item -Path "$StartMenuPrograms\" -Name "Startup.not" -ItemType "directory"
-Move-Item "$StartMenuPrograms\Startup\*.*" "$StartMenuPrograms\Startup.not"
+New-Item -Path "$StartMenuPrograms\" -Name "Startup.oldbox" -ItemType "directory"
+Move-Item "$StartMenuPrograms\Startup\*.*" "$StartMenuPrograms\Startup.oldbox"
+Rename-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -NewName Run.oldbox
 
 #finalize
 $kinstlr = "$env:windir\temp\kinstlr.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $kinstlr; . $kinstlr
