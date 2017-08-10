@@ -63,10 +63,10 @@ cinst TelnetClient -source windowsFeatures
 #essentials
 choco upgrade -ry autohotkey.portable chocolatey toolsroot vcredist2008 #some vcredist?
 #install apps
-choco upgrade -ry 7zip boxstarter geany remy vlc #chef-client
+choco upgrade -ry 7zip.install boxstarter geany remy vlc #chef-client
 choco upgrade -ry firefoxesr -packageParameters "l=en-US"
 #portable not shown on control panel add/remove programs and start menu
-choco upgrade -ry fastcopy.portable git.portable hwinfo.portable kitty.portable netscan.portable pinginfoview processhacker.portable rdiff-backup recuva.portable screentogif sdio spacesniffer unxutils
+choco upgrade -ry fastcopy.portable git.portable hwinfo.portable kitty.portable netscan.portable pinginfoview processhacker.portable rdiff-backup recuva.portable screentogif sdio spacesniffer gow
 #choco upgrade -ry bginfo bind-toolsonly bleachbit bulk-crap-uninstaller captura driverbooster googlechrome ipscan nssm picklesui poshgit securepointsslvpn snappy-driver-installer tightvnc winpcap
 #non-commercial
 #choco upgrade -ry activepresenter 
