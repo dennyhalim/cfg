@@ -13,7 +13,6 @@
 
 Enable-ComputerRestore -drive "c:\"
 w32tm.exe /resync /nowait
-#dism.exe /online /Set-AllIntl:en-US /Set-TimeZone:"SE Asia Standard Time"
 #tzutil.exe /s "SE Asia Standard Time"
 
 #Set-Service -Name TabletInputService -StartupType Disabled
@@ -33,7 +32,7 @@ Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFolde
 #Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\SecurityProviders\WDigest" -Name UseLogonCredential -Value 0 -Force
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" SafeModeBlockNonAdmins -Type DWORD -Value 1 -Force
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" AllowTelemetry -Type DWORD -Value 0 -Force
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DateTime\Servers" -Name 0 -Value "pool.ntp.org" -Force
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DateTime\Servers" -Name 1 -Value "pool.ntp.org" -Force
 #Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\services\Tcpip\Parameters" EnableConnectionRateLimiting -Type DWORD -Value 1 -Force
 
 # https://aka.ms/StopUsingSMB1
