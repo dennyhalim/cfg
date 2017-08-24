@@ -72,8 +72,11 @@ choco upgrade -ry fastcopy.portable git.portable hwinfo.portable kitty.portable 
 #non-commercial
 #choco upgrade -ry activepresenter 
 #choco upgrade -ry all #all not installed. The package was not found with the source(s) listed.
-
 #cmd /c "\\192.168.1.1\firefox.en-US.win32.installer.exe -ms"
+
+#add printers
+#cscript %windir%\System32\Printing_Admin_Scripts\en-US\prnport.vbs -a -r IP_myprinter08 -h 192.168.1.8
+#rundll32 printui.dll,PrintUIEntry /u /if /b "myprinter08" /f "\\192.168.1.8\printers\P62KUSAL.INF" /r "IP_myprinter08" /m "paste model name from inf"
 
 #remove all startup
 $StartMenuPrograms = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs"
