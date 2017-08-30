@@ -67,7 +67,7 @@ choco upgrade -ry autohotkey.portable chocolatey toolsroot vcredist2008 #some vc
 choco upgrade -ry 7zip.install bginfo boxstarter geany hashcheck remy vlc #chef-client
 choco upgrade -ry firefoxesr -packageParameters "l=en-US"
 #portable not shown on control panel add/remove programs and start menu
-choco upgrade -ry fastcopy.portable git.portable hwinfo.portable kitty.portable netscan.portable pinginfoview processhacker.portable rdiff-backup recuva.portable screentogif sdio spacesniffer gow
+choco upgrade -ry fastcopy.portable git.portable gow hwinfo.portable kitty.portable netscan.portable pinginfoview processhacker.portable rdiff-backup recuva.portable screentogif sdio spacesniffer stinger 
 #need AHK
 choco upgrade -ry winpcap
 #choco upgrade -ry bginfo bind-toolsonly bleachbit bulk-crap-uninstaller captura driverbooster googlechrome ipscan nssm picklesui poshgit securepointsslvpn snappy-driver-installer tightvnc winpcap
@@ -84,6 +84,7 @@ New-Item -Path "$StartMenuPrograms\" -Name "Startup.oldbox" -ItemType "directory
 Move-Item "$StartMenuPrograms\Startup\*.*" "$StartMenuPrograms\Startup.oldbox"
 Rename-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -NewName Run.oldbox
 
+choco upgrade -ry avastfreeantivirus
 #finalize
 $kinstlr = "$env:windir\temp\kinstlr.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $kinstlr; . $kinstlr
 Enable-UAC
