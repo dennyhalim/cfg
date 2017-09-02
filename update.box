@@ -79,15 +79,15 @@ choco upgrade -ry winpcap
 #rundll32 printui.dll,PrintUIEntry /u /if /b "myprinter08" /f "\\192.168.1.8\printers\P62KUSAL.INF" /r "IP_myprinter08" /m "paste model name from inf"
 
 #remove all startup
-$env:StartMenuPrograms = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs"
-New-Item -Path "$env:StartMenuPrograms\" -Name "Startup.oldbox" -ItemType "directory"
-Move-Item "$env:StartMenuPrograms\Startup\*.*" "$env:StartMenuPrograms\Startup.oldbox"
+$StartMenuPrograms = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs"
+New-Item -Path "$StartMenuPrograms\" -Name "Startup.oldbox" -ItemType "directory"
+Move-Item "$StartMenuPrograms\Startup\*.*" "$StartMenuPrograms\Startup.oldbox"
 Rename-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -NewName Run.oldbox
 
 choco upgrade -ry avastfreeantivirus
 #finalize
-$env:kinstlr = "$env:windir\chocoup.xml"; Invoke-WebRequest -Uri https://raw.githubusercontent.com/dennyhalim/cfg/master/choco-upgrade-task.xml -OutFile $env:kinstlr; schtasks.exe /Create /XML $env:kinstlr /TN chocoup
-$env:kinstlr = "$env:windir\temp\kinstlr.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $env:kinstlr; . $env:kinstlr
+$kinstlr = "$env:windir\chocoup.xml"; Invoke-WebRequest -Uri https://raw.githubusercontent.com/dennyhalim/cfg/master/choco-upgrade-task.xml -OutFile $kinstlr; schtasks.exe /Create /XML $kinstlr /TN chocoup
+$kinstlr = "$env:windir\temp\kinstlr.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $kinstlr; . $kinstlr
 Enable-UAC
 #Enable-RemoteDesktop
 #Disable-MicrosoftUpdate
