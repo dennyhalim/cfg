@@ -79,9 +79,9 @@ choco upgrade -ry winpcap
 #rundll32 printui.dll,PrintUIEntry /u /if /b "myprinter08" /f "\\192.168.1.8\printers\P62KUSAL.INF" /r "IP_myprinter08" /m "paste model name from inf"
 
 #remove all startup
-$StartMenuPrograms = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs"
-New-Item -Path "$StartMenuPrograms\" -Name "Startup.oldbox" -ItemType "directory"
-Move-Item "$StartMenuPrograms\Startup\*.*" "$StartMenuPrograms\Startup.oldbox"
+$env:StartMenuPrograms = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs"
+New-Item -Path "$env:StartMenuPrograms\" -Name "Startup.oldbox" -ItemType "directory"
+Move-Item "$env:StartMenuPrograms\Startup\*.*" "$env:StartMenuPrograms\Startup.oldbox"
 Rename-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -NewName Run.oldbox
 
 choco upgrade -ry avastfreeantivirus
