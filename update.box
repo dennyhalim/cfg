@@ -78,8 +78,8 @@ choco upgrade -ry winpcap
 #cscript $env:windir\System32\Printing_Admin_Scripts\en-US\prnport.vbs -a -r IP_myprinter08 -h 192.168.1.8
 #rundll32 printui.dll,PrintUIEntry /u /if /b "myprinter08" /f "\\192.168.1.8\printers\P62KUSAL.INF" /r "IP_myprinter08" /m "paste model name from inf"
 #mkdir $env:windir\boxcfg
-#Copy-Item \\192.168.102.65\updater\cfg $env:windir\boxcfg -Recurse
-#schtasks.exe /Create /XML $env:windir\agci\cfg\chocoup.xml /TN chocoup
+#Copy-Item \\192.168.1.1\updater\cfg $env:windir\boxstarter -Recurse
+#schtasks.exe /Create /XML $env:windir\boxstarter\cfg\chocoup.xml /TN chocoup
 #apps services
 Set-Service -Name AdobeFlashPlayerUpdateSvc -StartupType Disabled
 Set-Service -Name AdobeARMservice -StartupType Disabled
