@@ -25,6 +25,7 @@ add action=accept chain=forward comment="allow established forward" \
     connection-state=established
 add action=accept chain=forward comment="allow related" \
     connection-state=related
+### dont forget to replace the interfaces names
 add action=accept chain=input comment="allow from lan" in-interface=lan1-interface
 add action=accept chain=input comment="allow from vlan" in-interface=vlan1-interface
 add action=accept chain=input comment=capman in-interface=capman1-interface
