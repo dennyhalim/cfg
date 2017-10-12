@@ -29,8 +29,11 @@ add action=accept chain=forward comment="allow related" \
 add action=accept chain=input comment="allow from lan" in-interface=lan1-interface
 add action=accept chain=input comment="allow from vlan" in-interface=vlan1-interface
 add action=accept chain=input comment=capman in-interface=capman1-interface
+add action=accept chain=forward comment="Allow new connections through router coming in LAN interface" connection-state=new \
+   in-interface=lan1-interface
 #drop all from ip public
 add action=drop chain=input in-interface=public1-interface
 #drop everything else
 ### WARNING: THIS MIGHT BLOCK YOURSELF ###
-add action=drop chain=input
+###  enable it only if you're certain  ###
+add action=drop chain=input disabled=yes
