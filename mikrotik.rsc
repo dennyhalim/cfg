@@ -1,3 +1,11 @@
+/ip service
+set telnet disabled=yes
+set ftp disabled=yes
+set www disabled=no
+set ssh disabled=no
+set api disabled=yes
+set api-ssl disabled=yes
+
 ##FIREWALL
 /ip firewall filter
 add action=accept chain=input comment="allow remote" dst-port=\
