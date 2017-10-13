@@ -13,12 +13,11 @@
 #http://www.wsusoffline.net/docs/
 
 Start-Service W32Time
-
+#tzutil.exe /s "SE Asia Standard Time"
+net time \\0.pool.ntp.org /set /y
+w32tm.exe /resync /nowait
 Disable-MicrosoftUpdate
 Enable-ComputerRestore -drive "c:\"
-#w32tm.exe /resync /nowait
-net time \\0.pool.ntp.org /set /y
-#tzutil.exe /s "SE Asia Standard Time"
 
 Set-Service -Name wuauserv -StartupType Manual #windows auto update
 Set-Service -Name winmgmt -StartupType Manual #wmi
