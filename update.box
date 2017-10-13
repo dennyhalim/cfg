@@ -12,9 +12,12 @@
 #win7 roll-up https://blogs.technet.microsoft.com/askpfeplat/2016/05/20/windows-7-sp1-and-server-2008-r2-sp1-convenience-roll-up-now-available-at-a-download-location-near-you-kb3125574/
 #http://www.wsusoffline.net/docs/
 
+Start-Service W32Time
+
 Disable-MicrosoftUpdate
 Enable-ComputerRestore -drive "c:\"
-w32tm.exe /resync /nowait
+#w32tm.exe /resync /nowait
+net time \\0.pool.ntp.org /set /y
 #tzutil.exe /s "SE Asia Standard Time"
 
 Set-Service -Name wuauserv -StartupType Manual #windows auto update
