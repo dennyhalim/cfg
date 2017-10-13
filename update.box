@@ -17,6 +17,8 @@ Enable-ComputerRestore -drive "c:\"
 w32tm.exe /resync /nowait
 #tzutil.exe /s "SE Asia Standard Time"
 
+Set-Service -Name wuauserv -StartupType Manual #windows auto update
+Set-Service -Name winmgmt -StartupType Manual #wmi
 #Set-Service -Name TabletInputService -StartupType Disabled
 #Set-Service -Name HomeGroupProvider -StartupType Disabled
 #Set-Service -Name WMPNetworkSvc -StartupType Disabled #media player net
@@ -28,7 +30,6 @@ w32tm.exe /resync /nowait
 Set-Service -Name DiagTrack -StartupType Disabled #diagnostic tracking
 Set-Service -Name dmwappushservice -StartupType Disabled # tracking
 Set-Service -Name WSearch -StartupType Disabled #search indexer
-Set-Service -Name wuauserv -StartupType Manual #windows auto update
 Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFoldersDrives # -EnableShowProtectedOSFiles
 #Set-ExplorerOptions -showHiddenFilesFoldersDrives -showFileExtensions #-showProtectedOSFiles #obsoletes
 #Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\SecurityProviders\WDigest" -Name UseLogonCredential -Value 0 -Force
