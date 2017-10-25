@@ -18,6 +18,6 @@ ExpiresByType image/png "access plus 7 months"
 ExpiresByType image/x-icon "access plus 7 months"
 
 #alternatives
-<FilesMatch "\.(jpg|jpeg|png|gif|js|css)$"> 
-Header set Expires "access plus 1 year" 
-</FilesMatch> 
+#<FilesMatch "\.(pdf|mpg|mpeg|mp3|mp4|ogv|jpg|jpeg|png|gif|ico|js|css)$"> 
+#Header set Expires "access plus 3 weeks" 
+#</FilesMatch> 
