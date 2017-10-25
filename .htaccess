@@ -1,6 +1,5 @@
 #expires headers https://httpd.apache.org/docs/current/mod/mod_expires.html
 #simplest:
-Header merge Cache-Control "public"
 ExpiresActive On
 ExpiresDefault "access plus 3 weeks"
 ExpiresByType text/html "access plus 1 minute"
@@ -21,3 +20,5 @@ ExpiresByType image/x-icon "access plus 7 months"
 #<FilesMatch "\.(pdf|mpg|mpeg|mp3|mp4|ogv|jpg|jpeg|png|gif|ico|js|css)$"> 
 #Header set Expires "access plus 3 weeks" 
 #</FilesMatch> 
+
+Header merge Cache-Control "public"
