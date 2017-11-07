@@ -1,20 +1,17 @@
-﻿<?xml version="1.0" encoding="UTF-16"?>
+<?xml version="1.0" encoding="UTF-16"?>
 <Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
   <RegistrationInfo>
-    <Date>1974-07-08T07:07:07.0777777</Date>
+    <Date>2017-11-07T18:47:07.394662</Date>
     <Author>dennyhalim.com</Author>
+    <URI>\upgrade</URI>
   </RegistrationInfo>
   <Triggers>
     <CalendarTrigger>
-      <StartBoundary>1974-07-08T11:33:00</StartBoundary>
+      <StartBoundary>2017-11-07T11:55:55</StartBoundary>
       <Enabled>true</Enabled>
-      <RandomDelay>PT30M</RandomDelay>
-      <ScheduleByWeek>
-        <DaysOfWeek>
-          <Friday />
-        </DaysOfWeek>
-        <WeeksInterval>1</WeeksInterval>
-      </ScheduleByWeek>
+      <ScheduleByDay>
+        <DaysInterval>1</DaysInterval>
+      </ScheduleByDay>
     </CalendarTrigger>
   </Triggers>
   <Principals>
@@ -31,7 +28,7 @@
     <StartWhenAvailable>false</StartWhenAvailable>
     <RunOnlyIfNetworkAvailable>true</RunOnlyIfNetworkAvailable>
     <IdleSettings>
-      <StopOnIdleEnd>false</StopOnIdleEnd>
+      <StopOnIdleEnd>true</StopOnIdleEnd>
       <RestartOnIdle>false</RestartOnIdle>
     </IdleSettings>
     <AllowStartOnDemand>true</AllowStartOnDemand>
@@ -39,16 +36,12 @@
     <Hidden>false</Hidden>
     <RunOnlyIfIdle>false</RunOnlyIfIdle>
     <WakeToRun>false</WakeToRun>
-    <ExecutionTimeLimit>PT4H</ExecutionTimeLimit>
+    <ExecutionTimeLimit>PT72H</ExecutionTimeLimit>
     <Priority>7</Priority>
   </Settings>
   <Actions Context="Author">
     <Exec>
-      <Command>%ChocolateyInstall%\bin\choco.exe</Command>
-      <Arguments>upgrade -y chocolatey</Arguments>
-    </Exec>
-    <Exec>
-      <Command>%ChocolateyInstall%\bin\choco.exe</Command>
+      <Command>C:\ProgramData\chocolatey\bin\choco.exe</Command>
       <Arguments>upgrade -y all</Arguments>
     </Exec>
   </Actions>
