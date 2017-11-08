@@ -69,7 +69,7 @@ cinst NetFx4-AdvSrvs -source windowsFeatures
 $env:ChocolateyBinRoot = "\tools"
 [Environment]::SetEnvironmentVariable("ChocolateyBinRoot", "\tools", "Machine")
 #essentials
-choco upgrade -ry autohotkey.portable chocolatey toolsroot vcredist2008 #some vcredist?
+choco upgrade -ry autohotkey.portable chocolatey chocolatey-core.extension toolsroot vcredist2008 #some vcredist?
 #install apps
 choco upgrade -ry 7zip.install bginfo boxstarter geany hashcheck remy vlc #chef-client
 choco upgrade -ry firefoxesr -packageParameters "l=en-US"
