@@ -4,7 +4,7 @@
 #1. download from boxstarter.org and extract
 #2. run following as administrator:
 # setup.bat
-# setx.exe ChocolateyBinRoot "\tools" /M
+  setx.exe ChocolateyBinRoot "\tools" /M
 # boxstarter https://is.gd/boxstarter -disablereboots
 
 #update windows before installing
