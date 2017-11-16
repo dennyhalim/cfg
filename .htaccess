@@ -1,8 +1,6 @@
-# dennyhalim.com
-# pagespeed A
-# yslow B
-# https://raw.githubusercontent.com/dennyhalim/cfg/master/pagespeed-yslow.png
-# the f is external factor, which mean you need to purchase cdn and use better cms
+# dennyhalim.com optimize apache for better performance
+# pagespeed A # yslow B # https://raw.githubusercontent.com/dennyhalim/cfg/master/pagespeed-yslow.png
+# the f is external factor, which mean you need to purchase cdn and use better cms 
 # direct download this file: 
 # wget https://is.gd/yslow
 
