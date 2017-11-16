@@ -1,7 +1,7 @@
 # pagespeed A
 # yslow B
 # https://raw.githubusercontent.com/dennyhalim/cfg/master/pagespeed-yslow.png
-$ the f is external factor, which mean you need to purchase cdn or use better cms
+# the f is external factor, which mean you need to purchase cdn or use better cms
 
 AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml text/javascript application/javascript application/x-javascript application/x-httpd-php
 
