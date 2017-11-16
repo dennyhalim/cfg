@@ -1,3 +1,6 @@
+SetOutputFilter DEFLATE
+AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/x-javascript application/x-httpd-php
+
 #expires headers https://httpd.apache.org/docs/current/mod/mod_expires.html
 #simplest:
 ExpiresActive On
