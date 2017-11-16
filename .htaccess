@@ -1,4 +1,4 @@
-AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/x-javascript application/x-httpd-php
+AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml text/javascript application/javascript application/x-javascript application/x-httpd-php
 
 Header set Expires "access plus 3 weeks" 
 <FilesMatch "\.(pl|php|cgi|htm|html)$"> 
