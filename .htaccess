@@ -1,9 +1,10 @@
+# dennyhalim.com
 # pagespeed A
 # yslow B
 # https://raw.githubusercontent.com/dennyhalim/cfg/master/pagespeed-yslow.png
 # the f is external factor, which mean you need to purchase cdn and use better cms
-# direct download this file: https://is.gd/yslow
-# dennyhalim.com
+# direct download this file: 
+# wget https://is.gd/yslow
 
 AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml text/javascript application/javascript application/x-javascript application/x-httpd-php
 
