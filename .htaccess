@@ -1,5 +1,6 @@
-#pagespeed A
-#yslow B
+# pagespeed A
+# yslow B
+# https://raw.githubusercontent.com/dennyhalim/cfg/master/pagespeed-yslow.png
 
 AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml text/javascript application/javascript application/x-javascript application/x-httpd-php
 
