@@ -1,7 +1,7 @@
 #dennyhalim.com #windows updater using boxstarter.org
 
 #usage:
-#1. download from boxstarter.org and extract
+#1. download from boxstarter.org and extract (you might need to sync your clock before preceeding)
 #2. run following as administrator:
 # setup.bat
   setx.exe ChocolateyBinRoot "\tools" /M
