@@ -18,6 +18,8 @@ ExpiresByType text/html "access plus 10 seconds"
 ExpiresByType application/rss+xml "access plus 1 hour"
 ExpiresByType text/x-javascript "access plus 3 weeks"
 
+Options -Indexes
+
 #additionals:
 #####more control#<FilesMatch "\.(pdf|mpg|mpeg|mp3|mp4|ogv|jpg|jpeg|png|gif|ico|js|css)$"> 
 #ExpiresByType text/css "access plus 3 weeks"
