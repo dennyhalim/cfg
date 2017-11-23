@@ -90,6 +90,8 @@ choco upgrade -ry winpcap
 Set-Service -Name AdobeFlashPlayerUpdateSvc -StartupType Disabled
 Set-Service -Name AdobeARMservice -StartupType Disabled
 Set-Service -Name MozillaMaintenance -StartupType Disabled
+Set-Service -Name gupdate -StartupType Disabled
+Set-Service -Name gupdatem -StartupType Disabled
 
 #remove all startup
 $StartMenuPrograms = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs"
