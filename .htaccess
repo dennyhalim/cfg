@@ -21,7 +21,8 @@ ExpiresByType text/x-javascript "access plus 3 weeks"
 Options -Indexes
 
 #<LimitExcept GET POST>
-#Deny from all
+# Order deny,allow
+# Deny from all
 #</LimitExcept>
 
 #additionals:
