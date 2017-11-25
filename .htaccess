@@ -1,4 +1,4 @@
-# dennyhalim.com optimize apache for better performance
+# dennyhalim.com apache performance and other optimizations
 # pagespeed A # yslow B # https://raw.githubusercontent.com/dennyhalim/cfg/master/pagespeed-yslow.png
 # the f is external factor, which mean you need to purchase cdn and use better cms 
 # direct download this file: 
@@ -19,6 +19,10 @@ ExpiresByType application/rss+xml "access plus 1 hour"
 ExpiresByType text/x-javascript "access plus 3 weeks"
 
 Options -Indexes
+
+#<LimitExcept GET POST>
+#Deny from all
+#</LimitExcept>
 
 #additionals:
 #####more control#<FilesMatch "\.(pdf|mpg|mpeg|mp3|mp4|ogv|jpg|jpeg|png|gif|ico|js|css)$"> 
