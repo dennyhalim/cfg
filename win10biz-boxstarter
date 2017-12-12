@@ -5,7 +5,7 @@
 #2. run following as administrator:
 # setup.bat
   setx.exe ChocolateyBinRoot "\tools" /M
-# boxstarter https://is.gd/boxstarter -disablereboots
+# boxstarter https://github.com/dennyhalim/cfg/raw/master/win10biz-boxstarter -disablereboots
 
 #update windows before installing
 #https://support.microsoft.com/en-us/help/4009469
