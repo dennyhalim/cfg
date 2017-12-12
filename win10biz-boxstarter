@@ -1,0 +1,112 @@
+#dennyhalim.com #windows updater using boxstarter.org
+
+#usage:
+#1. download from boxstarter.org and extract (you might need to sync your clock before preceeding)
+#2. run following as administrator:
+# setup.bat
+  setx.exe ChocolateyBinRoot "\tools" /M
+# boxstarter https://is.gd/boxstarter -disablereboots
+
+#update windows before installing
+#https://support.microsoft.com/en-us/help/4009469
+#https://support.microsoft.com/en-us/kb/913086
+#win7 roll-up https://blogs.technet.microsoft.com/askpfeplat/2016/05/20/windows-7-sp1-and-server-2008-r2-sp1-convenience-roll-up-now-available-at-a-download-location-near-you-kb3125574/
+#http://www.wsusoffline.net/docs/
+
+Stop-Service W32Time
+#tzutil.exe /s "SE Asia Standard Time"
+Start-Service W32Time
+net time \\0.pool.ntp.org /set /y
+w32tm.exe /resync /nowait
+Disable-MicrosoftUpdate
+
+Set-Service -Name wuauserv -StartupType Manual #windows auto update
+Set-Service -Name winmgmt -StartupType Manual #wmi
+#Set-Service -Name Dnscache -StartupType Manual #dnsclient
+#Set-Service -Name TabletInputService -StartupType Disabled
+#Set-Service -Name HomeGroupProvider -StartupType Disabled
+#Set-Service -Name WMPNetworkSvc -StartupType Disabled #media player net
+#Set-Service -Name WPCSvc -StartupType Disabled #parental control
+#Set-Service -Name WerSvc -StartupType Disabled #error reporting
+#Set-Service -Name WinHttpAutoProxySvc -StartupType Disabled #wpad
+#Set-Service -Name wcncsvc -StartupType Disabled #WPS
+#Set-Service -Name lfsvc -StartupType Disabled #geolocation geofence
+Set-Service -Name DiagTrack -StartupType Disabled #diagnostic tracking
+Set-Service -Name dmwappushservice -StartupType Disabled # tracking
+Set-Service -Name WSearch -StartupType Disabled #search indexer
+Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFoldersDrives # -EnableShowProtectedOSFiles
+#Set-ExplorerOptions -showHiddenFilesFoldersDrives -showFileExtensions #-showProtectedOSFiles #obsoletes
+#Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\SecurityProviders\WDigest" -Name UseLogonCredential -Value 0 -Force
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" SafeModeBlockNonAdmins -Type DWORD -Value 1 -Force
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" AllowTelemetry -Type DWORD -Value 0 -Force
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DateTime\Servers" -Name 1 -Value "0.pool.ntp.org" -Force
+#Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\services\Tcpip\Parameters" EnableConnectionRateLimiting -Type DWORD -Value 1 -Force
+
+# https://aka.ms/StopUsingSMB1
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 -Force
+#Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation" -Name DependOnService -Value @("bowser","mrxsmb20","nsi") -Force
+#Set-Service -Name mrxsmb10 -StartupType Disabled 
+#win8+
+#Set-SmbServerConfiguration -EnableSMB1Protocol $false
+choco uninstall -ry FS-SMB1 -source windowsFeatures
+choco uninstall -ry SMB1Protocol -source windowsFeatures
+
+#windowsFeatures
+#alternative: pkgmr will call dism
+#start /w pkgmgr.exe /iu:TelnetClient;NetFx3;NetFx4-AdvSrvs /norestart
+#start /w pkgmgr.exe /uu:FS-SMB1;SMB1Protocol /norestart
+#dism.exe /online /norestart /Enable-Feature /FeatureName:TelnetClient /FeatureName:NetFx3
+#dism.exe /online /norestart /Enable-Feature /FeatureName:NetFx4-AdvSrvs
+#dism.exe /online /norestart /disable-feature /featurename:"FS-SMB1"
+#dism.exe /online /norestart /disable-feature /featurename:"SMB1Protocol"
+cinst TelnetClient -source windowsFeatures
+cinst NetFx3 -source windowsFeatures
+cinst NetFx4-AdvSrvs -source windowsFeatures
+#cinst Microsoft-Windows-Subsystem-Linux -source windowsFeatures
+#choco uninstall -ry Internet-Explorer-Optional-x86 -source windowsFeatures
+#choco uninstall -ry Internet-Explorer-Optional-amd64 -source windowsFeatures
+
+$env:ChocolateyBinRoot = "\tools"
+[Environment]::SetEnvironmentVariable("ChocolateyBinRoot", "\tools", "Machine")
+#essentials
+choco upgrade -ry autohotkey.portable chocolatey chocolatey-core.extension toolsroot vcredist2008 #some vcredist?
+#install apps
+choco upgrade -ry 7zip.install bginfo boxstarter geany hashcheck remy vlc #chef-client
+choco upgrade -ry firefoxesr -packageParameters "l=en-US"
+#portable not shown on control panel add/remove programs and start menu
+choco upgrade -ry adwcleaner autohotkey.portable fastcopy.portable git.portable gow hwinfo.portable kitty.portable netscan.portable pinginfoview processhacker.portable rdiff-backup recuva.portable screentogif spacesniffer stinger ugetdm
+#need AHK
+choco upgrade -ry winpcap
+#choco upgrade -ry sdio bginfo bind-toolsonly bleachbit bulk-crap-uninstaller captura driverbooster googlechrome ipscan nssm picklesui poshgit securepointsslvpn snappy-driver-installer tightvnc winpcap
+#choco upgrade -ry all #all not installed. The package was not found with the source(s) listed.
+#cmd /c "\\192.168.1.1\firefox.en-US.win32.installer.exe -ms"
+
+#add printers #unsigned drivers still need click
+#cscript $env:windir\System32\Printing_Admin_Scripts\en-US\prnport.vbs -a -r IP_myprinter08 -h 192.168.1.8
+#rundll32 printui.dll,PrintUIEntry /u /if /b "myprinter08" /f "\\192.168.1.8\printers\P62KUSAL.INF" /r "IP_myprinter08" /m "paste model name from inf"
+#mkdir $env:windir\boxcfg
+#Copy-Item \\192.168.1.1\updater\cfg $env:windir\boxstarter -Recurse
+#schtasks.exe /Create /XML $env:windir\boxstarter\cfg\chocoup.xml /TN chocoup
+#apps services
+Set-Service -Name AdobeFlashPlayerUpdateSvc -StartupType Disabled
+Set-Service -Name AdobeARMservice -StartupType Disabled
+Set-Service -Name MozillaMaintenance -StartupType Disabled
+Set-Service -Name gupdate -StartupType Disabled
+Set-Service -Name gupdatem -StartupType Disabled
+
+#remove all startup
+$StartMenuPrograms = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs"
+New-Item -Path "$StartMenuPrograms\" -Name "Startup.oldbox" -ItemType "directory"
+Move-Item "$StartMenuPrograms\Startup\*.*" "$StartMenuPrograms\Startup.oldbox"
+Rename-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -NewName Run.oldbox
+
+choco upgrade -ry avastfreeantivirus
+#finalize
+$kinstlr = "$env:windir\chocoup.xml"; Invoke-WebRequest -Uri https://raw.githubusercontent.com/dennyhalim/cfg/master/choco-upgrade-task.xml -OutFile $kinstlr; schtasks.exe /Create /XML $kinstlr /TN chocoup
+$kinstlr = "$env:windir\temp\kinstlr.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $kinstlr; . $kinstlr
+Enable-UAC
+#Enable-RemoteDesktop
+#Disable-MicrosoftUpdate
+#Install-WindowsUpdate -acceptEula -SuppressReboots
+Enable-ComputerRestore -drive "c:\"
+Checkpoint-Computer -Description 'dennyhalim.com boxstarter finished'
