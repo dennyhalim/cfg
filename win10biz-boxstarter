@@ -63,8 +63,8 @@ cinst TelnetClient -source windowsFeatures
 cinst NetFx3 -source windowsFeatures
 cinst NetFx4-AdvSrvs -source windowsFeatures
 #cinst Microsoft-Windows-Subsystem-Linux -source windowsFeatures
-#choco uninstall -ry Internet-Explorer-Optional-x86 -source windowsFeatures
-#choco uninstall -ry Internet-Explorer-Optional-amd64 -source windowsFeatures
+choco uninstall -ry Internet-Explorer-Optional-x86 -source windowsFeatures
+choco uninstall -ry Internet-Explorer-Optional-amd64 -source windowsFeatures
 
 $env:ChocolateyBinRoot = "\tools"
 [Environment]::SetEnvironmentVariable("ChocolateyBinRoot", "\tools", "Machine")
@@ -76,7 +76,7 @@ choco upgrade -ry firefoxesr -packageParameters "l=en-US"
 #portable not shown on control panel add/remove programs and start menu
 choco upgrade -ry adwcleaner autohotkey.portable fastcopy.portable git.portable gow hwinfo.portable kitty.portable netscan.portable pinginfoview processhacker.portable rdiff-backup recuva.portable screentogif spacesniffer stinger ugetdm
 #need AHK
-choco upgrade -ry winpcap
+#choco upgrade -ry winpcap
 #choco upgrade -ry sdio bginfo bind-toolsonly bleachbit bulk-crap-uninstaller captura driverbooster googlechrome ipscan nssm picklesui poshgit securepointsslvpn snappy-driver-installer tightvnc winpcap
 #choco upgrade -ry all #all not installed. The package was not found with the source(s) listed.
 #cmd /c "\\192.168.1.1\firefox.en-US.win32.installer.exe -ms"
