@@ -18,7 +18,7 @@
 #Stop-Service W32Time
 #tzutil.exe /s "SE Asia Standard Time"
 #Start-Service W32Time
-Disable-MicrosoftUpdate
+#Disable-MicrosoftUpdate
 
 Set-Service -Name wuauserv -StartupType Manual #windows auto update
 Set-Service -Name winmgmt -StartupType Manual #wmi
@@ -109,7 +109,7 @@ $kinstlr = "$env:windir\chocoup.xml"; Invoke-WebRequest -Uri https://raw.githubu
 $kinstlr = "$env:windir\temp\kabuto.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $kinstlr; . $kinstlr
 Enable-UAC
 #Enable-RemoteDesktop
-#Disable-MicrosoftUpdate
+Enable-MicrosoftUpdate
 #Install-WindowsUpdate -acceptEula -SuppressReboots
 Enable-ComputerRestore -drive "c:\"
 Checkpoint-Computer -Description 'dennyhalim.com boxstarter finished'
