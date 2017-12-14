@@ -17,7 +17,7 @@
     SetOutputFilter DEFLATE
   </IfModule>
   <IfModule mod_headers.c>
-    #Header set Cache-Control "max-age=10"
+    Header set Cache-Control "max-age=10, public"
     Header set Expires "access plus 10 seconds" 
 </IfModule>
 </FilesMatch> 
