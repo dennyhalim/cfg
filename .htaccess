@@ -9,16 +9,16 @@
 </IfModule>
 
 <IfModule mod_headers.c>
+  Header set Cache-Control "max-age=1814400, public"
   Header set Expires "access plus 3 weeks" 
-  #Header set Cache-Control "max-age=1814400, public"
 </IfModule>
 <FilesMatch "\.(pl|php|cgi|htm|html)$"> 
   <IfModule mod_deflate.c>
     SetOutputFilter DEFLATE
   </IfModule>
   <IfModule mod_headers.c>
-    Header set Expires "access plus 10 seconds" 
     #Header set Cache-Control "max-age=10"
+    Header set Expires "access plus 10 seconds" 
 </IfModule>
 </FilesMatch> 
 
