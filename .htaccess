@@ -22,6 +22,7 @@
 </IfModule>
 </FilesMatch> 
 
+#failover, if either mod_headers or mod_expires not installed, it'll still works
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault "access plus 3 weeks"
