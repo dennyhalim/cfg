@@ -5,7 +5,7 @@
 #2. run following as administrator:
 # setup.bat
   setx.exe ChocolateyBinRoot "\tools" /M
-  net time \\0.pool.ntp.org /set /y
+  net time \\2.pool.ntp.org /set /y
   w32tm.exe /resync /nowait
 # boxstarter https://github.com/dennyhalim/cfg/raw/master/win10biz-boxstarter -disablereboots
 
