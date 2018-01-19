@@ -7,7 +7,7 @@
   setx.exe ChocolateyBinRoot "\tools" /M
   net time \\2.pool.ntp.org /set /y
   w32tm.exe /resync /nowait
-# boxstarter https://github.com/dennyhalim/cfg/raw/master/win10biz-boxstarter -disablereboots
+# boxstarter https://is.gd/bizboxstarter -disablereboots
 
 #update windows before installing
 #https://support.microsoft.com/en-us/help/4009469
@@ -58,7 +58,7 @@ $env:ChocolateyBinRoot = "\tools"
 choco upgrade -ry autohotkey.portable chocolatey chocolatey-core.extension toolsroot vcredist2008 #some vcredist?
 #install apps
 choco upgrade -ry firefoxesr -packageParameters "l=en-US"
-choco upgrade -ry 7zip.install bginfo boxstarter geany googlechrome hashcheck nextcloud-client qownnotes remy vlc #chef-client
+choco upgrade -ry 7zip.install bginfo boxstarter brave geany googlechrome hashcheck nextcloud-client qownnotes remy vlc #chef-client
 #portable not shown on control panel add/remove programs and start menu
 choco upgrade -ry adwcleaner autohotkey.portable fastcopy.portable git.portable gow hwinfo.portable kitty.portable netscan.portable pinginfoview processhacker.portable rdiff-backup recuva.portable screentogif spacesniffer stinger ugetdm
 #huge downloads
