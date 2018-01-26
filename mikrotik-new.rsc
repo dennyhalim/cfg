@@ -35,13 +35,13 @@ add action=accept chain=forward comment="allow related" \
     connection-state=related
 ### dont forget to replace the interfaces names
 add action=accept chain=input comment="allow from lan" in-interface=ether1
-#add action=accept chain=input comment="allow from vlan" in-interface=vlan1-interface
-#add action=accept chain=input comment=capman in-interface=capman1-interface
+#add action=accept chain=input comment="allow from vlan" in-interface=vlan1
+#add action=accept chain=input comment=capman in-interface=capman1
 #add action=accept chain=forward comment="Allow new connections through router coming in LAN interface" connection-state=new \
-   in-interface=lan1-interface
+   in-interface=ether1
 #drop all from ip public
 add action=drop chain=input in-interface=ether2
 #drop everything else
 ### WARNING: THIS MIGHT BLOCK YOURSELF ###
 ###  enable it only if you're certain  ###
-add action=drop chain=input disabled=yes
+add action=drop chain=input
