@@ -44,4 +44,5 @@ add action=drop chain=input in-interface=ether2
 #drop everything else
 ### WARNING: THIS MIGHT BLOCK YOURSELF ###
 ###  enable it only if you're certain  ###
+### also put this rule at most bottom! ###
 add action=drop chain=input
