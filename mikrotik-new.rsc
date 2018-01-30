@@ -5,6 +5,7 @@
 
 /ip address
 add address=10.20.30.1/24 interface=ether1 network=10.20.30.0
+#remove this if your wan ip is static
 /ip dhcp-client add interface=ether2
 
 /ip pool
