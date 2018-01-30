@@ -64,3 +64,9 @@ add action=drop chain=input
 /ip dns
 set allow-remote-requests=yes servers=\
     9.9.9.9,208.67.222.123,208.67.220.123,199.85.126.20,199.85.127.20
+/ip dns static 
+#force strict safe search
+add regexp=www.google.co* address=216.239.38.120
+add regexp=www.youtube.com address=216.239.38.120
+#blocking stuffs
+add regexp=www.google-analytics.com address=127.0.0.127
