@@ -66,8 +66,8 @@ set allow-remote-requests=yes servers=\
     9.9.9.9,208.67.222.123,208.67.220.123,199.85.126.20,199.85.127.20
 /ip dns static 
 #force strict safe search
-add regexp=www.google.co* address=216.239.38.120
-add name=www.youtube.com address=216.239.38.120
-add name=www.bing.com address=204.79.197.220
+add regexp=www.google.co* address=216.239.38.120 ttl=1h
+add name=www.youtube.com address=216.239.38.120 ttl=1h
+add name=www.bing.com address=204.79.197.220 ttl=1h
 #blocking stuffs
-add name=www.google-analytics.com address=127.0.0.127
+add name=www.google-analytics.com address=127.0.0.127 ttl=1h
