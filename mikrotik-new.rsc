@@ -23,9 +23,9 @@ set api-ssl disabled=yes
 
 ##FIREWALL
 /ip firewall filter
-#first, drop bad stuffs
 add action=accept chain=input comment="allow remote" dst-port=\
-    22,80,8291 log-prefix=rmt protocol=tcp
+    22,80,8291 log-prefix=remoting protocol=tcp
+#first, drop bad stuffs
 #add action=drop chain=input src-address-type=broadcast
 #add action=drop chain=input dst-address-type=broadcast
 #add action=drop chain=input dst-address=255.255.255.255
