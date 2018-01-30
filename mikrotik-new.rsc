@@ -70,4 +70,5 @@ add regexp=www.google.co* address=216.239.38.120 ttl=1h
 add name=www.youtube.com address=216.239.38.120 ttl=1h
 add name=www.bing.com address=204.79.197.220 ttl=1h
 #blocking stuffs
-add name=www.google-analytics.com address=127.0.0.127 ttl=1h
+add address=127.0.0.127 ttl=1h name=www.google-analytics.com
+add address=127.0.0.127 ttl=1h name=www.googlesyndication.com
