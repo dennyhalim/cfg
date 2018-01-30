@@ -1,6 +1,6 @@
 # NOT TESTED
 # ONLY USE ON NEW MIKROTIK
-# ether1 LAN ip 10.20.30.1
+# ether1 LAN ip 10.20.30.1 , dhcp server
 # ether2 WAN / internet, dhcp client
 
 /ip address
