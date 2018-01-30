@@ -72,3 +72,4 @@ add name=www.bing.com address=204.79.197.220 ttl=1h
 #blocking stuffs
 add address=127.0.0.127 ttl=1h name=www.google-analytics.com
 add address=127.0.0.127 ttl=1h name=www.googlesyndication.com
+add address=127.0.0.127 ttl=1h name=www.googleadservices.com
