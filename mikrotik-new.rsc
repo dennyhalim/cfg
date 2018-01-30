@@ -1,7 +1,7 @@
 # NOT TESTED
 # ONLY USE ON NEW MIKROTIK
-# ether1 LAN ip 10.20.30.1 , dhcp server
-# ether2 WAN / internet, dhcp client
+# ether1 LAN ip 10.20.30.1 , dhcp server, accept input
+# ether2 WAN / internet, dhcp client, drop all
 
 /ip address
 add address=10.20.30.1/24 interface=ether1 network=10.20.30.0
@@ -26,10 +26,6 @@ set api-ssl disabled=yes
 add action=accept chain=input comment="allow remote" dst-port=\
     22,80,8291 log-prefix=remoting protocol=tcp
 #first, drop bad stuffs
-#add action=drop chain=input src-address-type=broadcast
-#add action=drop chain=input dst-address-type=broadcast
-#add action=drop chain=input dst-address=255.255.255.255
-#add action=drop chain=input dst-address=192.168.1.255
 add action=drop chain=input comment="Drop Invalid input" \
     connection-state=invalid
 add action=drop chain=forward comment="drop invalid forward" \
@@ -43,6 +39,10 @@ add action=accept chain=forward comment="allow established forward" \
     connection-state=established
 add action=accept chain=forward comment="allow related" \
     connection-state=related
+#add action=drop chain=input src-address-type=broadcast
+#add action=drop chain=input dst-address-type=broadcast
+#add action=drop chain=input dst-address=255.255.255.255
+#add action=drop chain=input dst-address=192.168.1.255
 ### dont forget to replace the interfaces names
 add action=accept chain=input comment="allow from lan" in-interface=ether1
 #add action=accept chain=input comment="allow from vlan" in-interface=vlan1
