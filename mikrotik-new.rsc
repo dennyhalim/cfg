@@ -13,6 +13,8 @@ add name=pool_ether1 ranges=10.20.30.101-10.20.30.200
 /ip dhcp-server
 add add-arp=yes address-pool=pool_ether1 authoritative=after-2sec-delay \
     disabled=no interface=ether1 name=dhcp_ether1
+/ip dhcp-server network
+add address=10.20.30.0/24 gateway=10.20.30.1
 
 /ip service
 set telnet disabled=yes
