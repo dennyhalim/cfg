@@ -60,6 +60,10 @@ add action=drop chain=input in-interface=ether2
 ### also put this rule at most bottom! ###
 add action=drop chain=input
 
+/ip firewall nat
+      chain=dstnat action=redirect protocol=udp src-address=!10.20.30.1/32 dst-port=53 
+      chain=srcnat action=masquerade src-address=10.20.30.0/24 
+
 #malware blocking dns
 /ip dns
 set allow-remote-requests=yes servers=\
@@ -73,8 +77,4 @@ add name=www.bing.com address=204.79.197.220 ttl=1h
 add address=127.0.0.127 ttl=1h name=www.google-analytics.com
 add address=127.0.0.127 ttl=1h name=www.googlesyndication.com
 add address=127.0.0.127 ttl=1h name=www.googleadservices.com
-
-/ip firewall nat
-      chain=dstnat action=redirect protocol=udp src-address=!10.20.30.1/32 dst-port=53 
-      chain=srcnat action=masquerade src-address=10.20.30.0/24 
 
