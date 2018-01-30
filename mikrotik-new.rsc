@@ -59,3 +59,8 @@ add action=drop chain=input in-interface=ether2
 ###  enable it only if you're certain  ###
 ### also put this rule at most bottom! ###
 add action=drop chain=input
+
+#malware blocking dns
+/ip dns
+set allow-remote-requests=yes servers=\
+    9.9.9.9,208.67.222.123,208.67.220.123,199.85.126.20,199.85.127.20
