@@ -68,5 +68,6 @@ set allow-remote-requests=yes servers=\
 #force strict safe search
 add regexp=www.google.co* address=216.239.38.120
 add regexp=www.youtube.com address=216.239.38.120
+add regexp=www.bing.com address=204.79.197.220
 #blocking stuffs
 add regexp=www.google-analytics.com address=127.0.0.127
