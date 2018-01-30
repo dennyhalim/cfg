@@ -1,7 +1,11 @@
 # NOT TESTED
 # ONLY USE ON NEW MIKROTIK
-# ether1 LAN
-# ether2 WAN / internet
+# ether1 LAN ip 10.20.30.1
+# ether2 WAN / internet, dhcp client
+
+/ip address
+add address=10.20.30.1/24 interface=ether1 network=10.20.30.0
+/ip dhcp-client add interface=ether2
 
 /ip service
 set telnet disabled=yes
