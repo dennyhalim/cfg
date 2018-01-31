@@ -51,10 +51,10 @@ add action=accept chain=forward comment="allow established forward" \
     connection-state=established
 add action=accept chain=forward comment="allow related" \
     connection-state=related
-#add action=drop chain=input src-address-type=broadcast
-#add action=drop chain=input dst-address-type=broadcast
-#add action=drop chain=input dst-address=255.255.255.255
-#add action=drop chain=input dst-address=192.168.1.255
+add action=drop chain=input src-address-type=broadcast
+add action=drop chain=input dst-address-type=broadcast
+add action=drop chain=input dst-address=255.255.255.255
+add action=drop chain=input dst-address=10.20.30.255
 ### dont forget to replace the interfaces names
 add action=accept chain=input comment="allow from lan" in-interface=ether1
 #add action=accept chain=input comment="allow from vlan" in-interface=vlan1
