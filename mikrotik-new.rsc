@@ -1,3 +1,4 @@
+# relative secured mikrotik config
 # NOT TESTED
 # only use this to completely re-configure your mikrotik
 # ether1 LAN ip 10.20.30.1 , dhcp server, accept input
@@ -33,53 +34,6 @@ set ssh disabled=no
 set api disabled=yes
 set api-ssl disabled=yes
 
-##FIREWALL
-/ip firewall filter
-add action=accept chain=input comment="allow remote" dst-port=\
-    22,80,8291 log-prefix=remoting protocol=tcp
-#first, drop bad stuffs
-add action=drop chain=input comment="Drop Invalid input" \
-    connection-state=invalid
-add action=drop chain=forward comment="drop invalid forward" \
-    connection-state=invalid
-add chain=forward protocol=tcp tcp-flags=syn connection-limit=101,32 action=drop
-#allowances
-add action=accept chain=input comment="Allow ICMP" protocol=icmp
-add action=accept chain=input comment="Allow Established input" \
-    connection-state=established
-add action=accept chain=forward comment="allow established forward" \
-    connection-state=established
-add action=accept chain=forward comment="allow related" \
-    connection-state=related
-add action=drop chain=input src-address-type=broadcast
-add action=drop chain=input dst-address-type=broadcast
-add action=drop chain=input dst-address=255.255.255.255
-add action=drop chain=input dst-address=10.20.30.255
-### dont forget to replace the interfaces names
-add action=accept chain=input comment="allow from lan" in-interface=ether1
-#add action=accept chain=input comment="allow from vlan" in-interface=vlan1
-#add action=accept chain=input comment=capman in-interface=capman1
-#add action=accept chain=forward comment="Allow new connections through router coming in LAN interface" connection-state=new \
-   in-interface=ether1
-#drop all from WAN
-add action=drop chain=input in-interface=ether2
-#drop everything else
-### WARNING: THIS MIGHT BLOCK YOURSELF ###
-###  enable it only if you're certain  ###
-### also put this rule at most bottom! ###
-add action=drop chain=input
-
-/ip firewall nat
-#ip 10.20.30.1-10.20.30.15 might access dns directly. others get redirected.
-      chain=dstnat action=redirect protocol=udp src-address=!10.20.30.0/28 dst-port=53 
-#more secured, nat only certain ports (currently only for browsing and email.)
-      chain=srcnat action=masquerade src-address=10.20.30.0/24 protocol=tcp dst-port=80,443,110,995,143,993,587,465
-#      chain=srcnat action=masquerade src-address=10.20.30.0/24 protocol=udp dst-port=
-#servers allowed all ports
-      chain=srcnat action=masquerade src-address=10.20.30.0/28
-#change to disabled=no to nat all ports
-      chain=srcnat action=masquerade src-address=10.20.30.0/24 disabled=yes
-
 #malware blocking dns
 /ip dns
 set allow-remote-requests=yes servers=\
@@ -95,6 +49,53 @@ add ttl=1h address=127.0.0.127 name=www.googleadservices.com
 add ttl=1h address=127.0.0.127 name=www.googlesyndication.com
 add ttl=1h address=127.0.0.127 name=www.google-analytics.com
 add ttl=1h address=127.0.0.127 name=www.googletagservices.com
+
+/ip firewall nat
+#ip 10.20.30.1-10.20.30.15 might access dns directly. others get redirected.
+      chain=dstnat action=redirect protocol=udp src-address=!10.20.30.0/28 dst-port=53 
+#more secured, nat only certain ports (currently only for browsing and email.)
+      chain=srcnat action=masquerade src-address=10.20.30.0/24 protocol=tcp dst-port=80,443,110,995,143,993,587,465
+#      chain=srcnat action=masquerade src-address=10.20.30.0/24 protocol=udp dst-port=
+#servers allowed all ports
+      chain=srcnat action=masquerade src-address=10.20.30.0/28
+#change to disabled=no to nat all ports
+      chain=srcnat action=masquerade src-address=10.20.30.0/24 disabled=yes
+
+##FIREWALL
+/ip firewall filter
+add action=accept chain=input comment="allow remote" dst-port=\
+    22,80,8291 log-prefix=remoting protocol=tcp
+#first, drop bad stuffs
+add action=drop chain=input comment="Drop Invalid Input" \
+    connection-state=invalid
+add action=drop chain=forward comment="Drop Invalid Forward" \
+    connection-state=invalid
+add chain=forward protocol=tcp tcp-flags=syn connection-limit=101,32 action=drop
+#allowances
+add action=accept chain=input comment="Allow ICMP" protocol=icmp
+add action=accept chain=input comment="Allow Established Input" \
+    connection-state=established
+add action=accept chain=forward comment="Allow Established Forward" \
+    connection-state=established
+add action=accept chain=forward comment="Allow Related" \
+    connection-state=related
+#add action=drop chain=input src-address-type=broadcast
+#add action=drop chain=input dst-address-type=broadcast
+add action=drop chain=input dst-address=255.255.255.255
+add action=drop chain=input dst-address=10.20.30.255
+### dont forget to replace the interfaces names
+add action=accept chain=input comment="allow from lan" in-interface=ether1
+#add action=accept chain=input comment="allow from vlan" in-interface=vlan1
+#add action=accept chain=input comment=capman in-interface=capman1
+#add action=accept chain=forward comment="Allow new connections through router coming in LAN interface" \
+#    connection-state=new in-interface=ether1
+#drop all from WAN
+add action=drop chain=input in-interface=ether2
+#drop everything else
+### WARNING: THIS MIGHT BLOCK YOURSELF ###
+###  enable it only if you're certain  ###
+### also put this rule at most bottom! ###
+add action=drop chain=input
 
 /ip cloud 
     set ddns-enabled=yes
