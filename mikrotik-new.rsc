@@ -7,7 +7,7 @@
 
 #usage:
 #1. upgrade firmware and reboot and make sure everything runs fine
-#2. reset mikrotik
+#2. reset mikrotik, reconnect using MAC address
 #3. remove configuration
 #4. copy-paste this into mikrotik terminal
 #5. change password (system menu)
