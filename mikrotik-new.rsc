@@ -61,7 +61,8 @@ add action=drop chain=input in-interface=ether2
 add action=drop chain=input
 
 /ip firewall nat
-      chain=dstnat action=redirect protocol=udp src-address=!10.20.30.1/32 dst-port=53 
+#ip 10.20.30.1-10.20.30.15 might access dns directly. others get blocked.
+      chain=dstnat action=redirect protocol=udp src-address=!10.20.30.0/28 dst-port=53 
       chain=srcnat action=masquerade src-address=10.20.30.0/24 
 
 #malware blocking dns
