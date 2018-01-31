@@ -58,7 +58,7 @@ add action=accept chain=input comment="allow from lan" in-interface=ether1
 #add action=accept chain=input comment=capman in-interface=capman1
 #add action=accept chain=forward comment="Allow new connections through router coming in LAN interface" connection-state=new \
    in-interface=ether1
-#drop all from ip public
+#drop all from WAN
 add action=drop chain=input in-interface=ether2
 #drop everything else
 ### WARNING: THIS MIGHT BLOCK YOURSELF ###
