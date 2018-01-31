@@ -1,5 +1,5 @@
 # NOT TESTED
-# ONLY USE ON NEW MIKROTIK
+# only use this to completely re-configure your mikrotik
 # ether1 LAN ip 10.20.30.1 , dhcp server, accept input
 # ether2 WAN / internet, dhcp client, drop all
 
