@@ -70,7 +70,7 @@ add action=drop chain=input comment="Drop Invalid Input" \
     connection-state=invalid
 add action=drop chain=forward comment="Drop Invalid Forward" \
     connection-state=invalid
-add chain=forward protocol=tcp tcp-flags=syn connection-limit=101,32 action=drop
+add chain=forward protocol=tcp tcp-flags=syn connection-limit=200,32 action=drop
 #allowances
 add action=accept chain=input comment="Allow ICMP" protocol=icmp
 add action=accept chain=input comment="Allow Established Input" \
