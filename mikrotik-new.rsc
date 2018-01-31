@@ -95,3 +95,8 @@ add ttl=1h address=127.0.0.127 name=www.googleadservices.com
 add ttl=1h address=127.0.0.127 name=www.googlesyndication.com
 add ttl=1h address=127.0.0.127 name=www.google-analytics.com
 add ttl=1h address=127.0.0.127 name=www.googletagservices.com
+
+/ip cloud 
+    set ddns-enabled=yes
+    get dns-name
+    
