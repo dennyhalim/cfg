@@ -10,11 +10,11 @@
 #3. remove configuration
 #4. copy-paste this into mikrotik terminal
 #5. change password (system menu)
-#6. reboot, make sure everything runs fine
+#6. test, make sure everything runs fine
 
 /ip address
 add address=10.20.30.1/24 interface=ether1 network=10.20.30.0
-#if your wan ip is static change disabled=yes and add wan ip
+#if yourwan ip is static change disabled=yes and add wan ip
 /ip dhcp-client add interface=ether2 disabled=no
 
 /ip pool
@@ -100,3 +100,4 @@ add ttl=1h address=127.0.0.127 name=www.googletagservices.com
     set ddns-enabled=yes
     get dns-name
     
+/system reboot
