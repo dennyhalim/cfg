@@ -75,10 +75,10 @@ add action=drop chain=input
 #more secured, nat only certain ports (currently only for browsing and email.)
       chain=srcnat action=masquerade src-address=10.20.30.0/24 protocol=tcp dst-port=80,443,110,995,143,993,587,465
       chain=srcnat action=masquerade src-address=10.20.30.0/24 protocol=tcp dst-port=80,443,110,995,143,993,587,465
+#servers allowed all ports
+      chain=srcnat action=masquerade src-address=10.20.30.0/28
 #change to disabled=no to nat all ports
       chain=srcnat action=masquerade src-address=10.20.30.0/24 disabled=yes
-#servers allowed all ports
-      chain=srcnat action=masquerade src-address=10.20.30.0/28 disabled=yes
 
 #malware blocking dns
 /ip dns
