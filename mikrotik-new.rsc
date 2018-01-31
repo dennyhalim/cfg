@@ -18,6 +18,8 @@ add address=10.20.30.1/24 interface=ether1 network=10.20.30.0
 #if yourwan ip is static change disabled=yes and add wan ip
 /ip dhcp-client add interface=ether2 disabled=no
 
+/ip settings set tcp-syncookies=yes
+
 /ip pool
 add name=pool_ether1 ranges=10.20.30.101-10.20.30.200
 /ip dhcp-server
