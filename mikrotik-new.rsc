@@ -16,7 +16,7 @@
 /ip address
 add address=10.20.30.1/24 interface=ether1 network=10.20.30.0
 #if yourwan ip is static change disabled=yes and add wan ip
-/ip dhcp-client add interface=ether2 disabled=no
+/ip dhcp-client add interface=ether2 use-peer-dns=no disabled=no
 
 /ip settings set tcp-syncookies=yes
 
