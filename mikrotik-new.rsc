@@ -43,7 +43,7 @@ set allow-remote-requests=yes servers=\
 add ttl=1h address=216.239.38.120 regexp=www.google.co*
 add ttl=1h address=216.239.38.120 name=www.youtube.com
 add ttl=1h address=204.79.197.220 name=www.bing.com
-#blocking stuffs
+#blocking advertising and other junks
 add ttl=1h address=127.0.0.127 regexp=*.doubleclick.net
 add ttl=1h address=127.0.0.127 name=www.googleadservices.com
 add ttl=1h address=127.0.0.127 name=www.googlesyndication.com
