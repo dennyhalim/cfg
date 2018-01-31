@@ -4,9 +4,10 @@
 # ether2 WAN / internet, dhcp client, drop all
 
 #usage:
-#1. reset mikrotik
-#2. remove configuration
-#3. copy-paste this into mikrotik terminal
+#1. upgrade firmware and reboot and make sure everything runs fine
+#2. reset mikrotik
+#3. remove configuration
+#4. copy-paste this into mikrotik terminal
 
 /ip address
 add address=10.20.30.1/24 interface=ether1 network=10.20.30.0
