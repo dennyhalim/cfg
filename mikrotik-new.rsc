@@ -8,6 +8,7 @@
 #2. reset mikrotik
 #3. remove configuration
 #4. copy-paste this into mikrotik terminal
+#5. change password (system menu)
 
 /ip address
 add address=10.20.30.1/24 interface=ether1 network=10.20.30.0
