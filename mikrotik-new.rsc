@@ -70,11 +70,11 @@ add action=drop chain=input in-interface=ether2
 add action=drop chain=input
 
 /ip firewall nat
-#ip 10.20.30.1-10.20.30.15 might access dns directly. others get blocked.
+#ip 10.20.30.1-10.20.30.15 might access dns directly. others get redirected.
       chain=dstnat action=redirect protocol=udp src-address=!10.20.30.0/28 dst-port=53 
 #more secured, nat only certain ports (currently only for browsing and email.)
       chain=srcnat action=masquerade src-address=10.20.30.0/24 protocol=tcp dst-port=80,443,110,995,143,993,587,465
-      chain=srcnat action=masquerade src-address=10.20.30.0/24 protocol=tcp dst-port=80,443,110,995,143,993,587,465
+#      chain=srcnat action=masquerade src-address=10.20.30.0/24 protocol=udp dst-port=
 #servers allowed all ports
       chain=srcnat action=masquerade src-address=10.20.30.0/28
 #change to disabled=no to nat all ports
