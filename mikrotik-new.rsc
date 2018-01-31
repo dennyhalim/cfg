@@ -2,6 +2,7 @@
 # only use this to completely re-configure your mikrotik
 # ether1 LAN ip 10.20.30.1 , dhcp server, accept input
 # ether2 WAN / internet, dhcp client, drop all
+# servers ip 10.20.30.1-10.20.30.15 ( 10.20.30.0/28 )
 
 #usage:
 #1. upgrade firmware and reboot and make sure everything runs fine
@@ -76,6 +77,8 @@ add action=drop chain=input
       chain=srcnat action=masquerade src-address=10.20.30.0/24 protocol=tcp dst-port=80,443,110,995,143,993,587,465
 #change to disabled=no to nat all ports
       chain=srcnat action=masquerade src-address=10.20.30.0/24 disabled=yes
+#servers allowed all ports
+      chain=srcnat action=masquerade src-address=10.20.30.0/28 disabled=yes
 
 #malware blocking dns
 /ip dns
