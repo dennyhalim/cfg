@@ -3,6 +3,11 @@
 # ether1 LAN ip 10.20.30.1 , dhcp server, accept input
 # ether2 WAN / internet, dhcp client, drop all
 
+#usage:
+#1. reset mikrotik
+#2. remove configuration
+#3. copy-paste this into mikrotik terminal
+
 /ip address
 add address=10.20.30.1/24 interface=ether1 network=10.20.30.0
 #remove this if your wan ip is static
