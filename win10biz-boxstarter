@@ -111,7 +111,7 @@ $kinstlr = "$env:windir\temp\avastb.exe"; Invoke-WebRequest -Uri https://bits-se
 $kinstlr = "$env:windir\chocoup.xml"; Invoke-WebRequest -Uri https://raw.githubusercontent.com/dennyhalim/cfg/master/choco-upgrade-task.xml -OutFile $kinstlr; schtasks.exe /Create /XML $kinstlr /TN chocoup
 $kinstlr = "$env:windir\temp\kabuto.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $kinstlr; . $kinstlr
 Enable-UAC
-#Set-WSManQuickConfig -UseSSL
+#Set-WSManQuickConfig #-UseSSL
 #Enable-PSRemoting -Force #-SkipNetworkProfileCheck
 #Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 #Enable-RemoteDesktop
