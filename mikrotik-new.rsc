@@ -1,4 +1,4 @@
-# relative secured mikrotik config
+# dennyhalim.com relative secured mikrotik config kickstarter
 # NOT TESTED
 # only use this to completely re-configure your mikrotik
 # ether1 LAN ip 10.20.30.1 , dhcp server, accept input
