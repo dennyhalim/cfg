@@ -112,6 +112,7 @@ $kinstlr = "$env:windir\chocoup.xml"; Invoke-WebRequest -Uri https://raw.githubu
 $kinstlr = "$env:windir\temp\kabuto.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $kinstlr; . $kinstlr
 Enable-UAC
 #Enable-PSRemoting -Force #-SkipNetworkProfileCheck
+#Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 #Enable-RemoteDesktop
 Enable-MicrosoftUpdate
 #Install-WindowsUpdate -acceptEula -SuppressReboots
