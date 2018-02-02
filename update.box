@@ -77,7 +77,9 @@ choco upgrade -ry autohotkey.portable chocolatey chocolatey-core.extension tools
 choco upgrade -ry 7zip.install bginfo boxstarter geany hashcheck qupzilla remy vlc #chef-client
 choco upgrade -ry firefoxesr -packageParameters "l=en-US"
 #portable not shown on control panel add/remove programs and start menu
-choco upgrade -ry adwcleaner autohotkey.portable combofix fastcopy.portable git.portable gow hwinfo.portable kitty.portable netscan.portable pinginfoview processhacker.portable rdiff-backup recuva.portable screentogif spacesniffer stinger ugetdm
+choco upgrade -ry adwcleaner autohotkey.portable fastcopy.portable git.portable gow hwinfo.portable kitty.portable netscan.portable pinginfoview processhacker.portable rdiff-backup recuva.portable screentogif spacesniffer stinger ugetdm
+#free for personal use only!
+choco upgrade -ry combofix
 #need AHK
 choco upgrade -ry winpcap
 #choco upgrade -ry sdio bginfo bind-toolsonly bleachbit bulk-crap-uninstaller captura driverbooster googlechrome ipscan nssm picklesui poshgit securepointsslvpn snappy-driver-installer tightvnc winpcap
