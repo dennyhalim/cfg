@@ -86,6 +86,7 @@ add ttl=1h address=127.0.0.127 name=www.googletagservices.com
 add action=accept chain=input comment="allow remote" dst-port=\
     22,80,8291 log-prefix=remoting protocol=tcp
 #first, drop bad stuffs
+add action=drop chain=forward in-interface=wlan2 out-interface=!ether1
 add action=drop chain=input comment="Drop Invalid Input" \
     connection-state=invalid
 add action=drop chain=forward comment="Drop Invalid Forward" \
