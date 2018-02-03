@@ -16,7 +16,7 @@
 /ip address
 add address=10.20.30.1/24 interface=ether2 network=10.20.30.0
 #if yourwan ip is static change disabled=yes and add wan ip
-/ip dhcp-client add interface=ether1 use-peer-dns=no disabled=no
+/ip dhcp-client add interface=ether1 use-peer-dns=no dhcp-options=hostname,clientid disabled=no
 
 /interface wireless
 set [ find default-name=wlan1 ] disabled=no mode=ap-bridge ssid=\
@@ -31,6 +31,9 @@ add authentication-types=wpa2-psk mode=dynamic-keys name=profile \
 /interface wireless
 add disabled=no mac-address=66:D1:54:F4:CE:F4 master-interface=wlan1 name=\
     wlan2 security-profile=profile ssid="Wifi Guests"
+/interface bridge filter
+add action=drop chain=forward in-interface=wlan2
+add action=drop chain=forward out-interface=wlan2
 
 
 /ip settings set tcp-syncookies=yes
@@ -71,12 +74,12 @@ add ttl=1h address=127.0.0.127 name=www.googletagservices.com
 #ip 10.20.30.1-10.20.30.15 might access dns directly. others get redirected.
       chain=dstnat action=redirect protocol=udp src-address=!10.20.30.0/28 dst-port=53 
 #more secured, nat only certain ports (currently only for browsing and email.)
-      chain=srcnat action=masquerade src-address=10.20.30.0/24 protocol=tcp dst-port=80,443,110,995,143,993,587,465
+      chain=srcnat action=masquerade src-address=10.20.30.0/24 out-interface=ether1 protocol=tcp dst-port=80,443,110,995,143,993,587,465
 #      chain=srcnat action=masquerade src-address=10.20.30.0/24 protocol=udp dst-port=
 #servers allowed all ports
-      chain=srcnat action=masquerade src-address=10.20.30.0/28
+      chain=srcnat action=masquerade src-address=10.20.30.0/28 out-interface=ether1
 #change to disabled=no to nat all ports
-      chain=srcnat action=masquerade src-address=10.20.30.0/24 disabled=yes
+      chain=srcnat action=masquerade src-address=10.20.30.0/24 out-interface=ether1 disabled=yes
 
 ##FIREWALL
 /ip firewall filter
