@@ -18,6 +18,21 @@ add address=10.20.30.1/24 interface=ether2 network=10.20.30.0
 #if yourwan ip is static change disabled=yes and add wan ip
 /ip dhcp-client add interface=ether1 use-peer-dns=no disabled=no
 
+/interface wireless
+set [ find default-name=wlan1 ] disabled=no mode=ap-bridge ssid=\
+    dennyhalim.com wireless-protocol=802.11
+/ip neighbor discovery
+set ether1 discover=no
+/interface wireless security-profiles
+set [ find default=yes ] authentication-types=wpa2-psk mode=\
+    dynamic-keys wpa2-pre-shared-key=DennyHalim
+add authentication-types=wpa2-psk mode=dynamic-keys name=profile \
+    wpa2-pre-shared-key=dennyhalim.com
+/interface wireless
+add disabled=no mac-address=66:D1:54:F4:CE:F4 master-interface=wlan1 name=\
+    wlan2 security-profile=profile ssid="Wifi Guests"
+
+
 /ip settings set tcp-syncookies=yes
 
 /ip pool
