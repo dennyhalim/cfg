@@ -34,7 +34,8 @@ add disabled=no mac-address=66:D1:54:F4:CE:F4 master-interface=wlan1 name=\
 /interface bridge filter
 add action=drop chain=forward in-interface=wlan2
 add action=drop chain=forward out-interface=wlan2
-
+/interface wireless access-list
+add ap-tx-limit=1024000 interface=wlan2
 
 /ip settings set tcp-syncookies=yes
 
