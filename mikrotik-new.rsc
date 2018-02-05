@@ -30,12 +30,11 @@ add authentication-types=wpa2-psk mode=dynamic-keys name=profile \
     wpa2-pre-shared-key=dennyhalim.com
 /interface wireless
 add disabled=no master-interface=wlan1 name=\
-    wlan2 security-profile=profile ssid="Wifi Guests" forwarding=no
+    wlan2 security-profile=profile ssid="Wifi Guests" default-forwarding=no default-ap-tx-limit=1024000
 /interface bridge filter
 add action=drop chain=forward in-interface=wlan2
 add action=drop chain=forward out-interface=wlan2
-/interface wireless access-list
-add ap-tx-limit=1024000 interface=wlan2
+
 
 /ip settings set tcp-syncookies=yes
 
