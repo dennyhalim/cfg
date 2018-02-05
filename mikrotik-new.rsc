@@ -30,10 +30,10 @@ add authentication-types=wpa2-psk mode=dynamic-keys name=profile \
     wpa2-pre-shared-key=dennyhalim.com
 /interface wireless
 add disabled=no master-interface=wlan1 name=\
-    wlan2 security-profile=profile ssid="Wifi Guests" default-forwarding=no default-ap-tx-limit=1024000
+    wlan_guest1 security-profile=profile ssid="Wifi Guests" default-forwarding=no default-ap-tx-limit=1024000
 /interface bridge filter
-add action=drop chain=forward in-interface=wlan2
-add action=drop chain=forward out-interface=wlan2
+add action=drop chain=forward in-interface=wlan_guest1
+add action=drop chain=forward out-interface=wlan_guest1
 
 
 /ip settings set tcp-syncookies=yes
@@ -86,7 +86,7 @@ add ttl=1h address=127.0.0.127 name=www.googletagservices.com
 add action=accept chain=input comment="allow remote" dst-port=\
     22,80,8291 log-prefix=remoting protocol=tcp
 #first, drop bad stuffs
-add action=drop chain=forward in-interface=wlan2 out-interface=!ether1
+add action=drop chain=forward in-interface=wlan_guest1 out-interface=!ether1
 add action=drop chain=input comment="Drop Invalid Input" \
     connection-state=invalid
 add action=drop chain=forward comment="Drop Invalid Forward" \
