@@ -7,7 +7,8 @@
 
 #usage:
 #1. upgrade firmware and reboot and make sure everything runs fine
-#2. reset mikrotik /system reset-configuration no-defaults=yes
+#2. reset mikrotik 
+#   /system reset-configuration no-defaults=yes
 #3. reconnect using MAC address
 #4. copy-paste this into mikrotik terminal
 #5. change password (system menu) and wireless wpa2-pre-shared-key / ssid
