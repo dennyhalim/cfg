@@ -17,6 +17,7 @@
 #only enable package when you need it
 /system package disable calea,gps,mpls,multicast,tr069-client,ups,user-manager 
 
+#wireless config
 /interface wireless
 set [ find default-name=wlan1 ] disabled=no mode=ap-bridge ssid=\
     dennyhalim.com wireless-protocol=802.11 default-ap-tx-limit=2M
@@ -32,10 +33,12 @@ add disabled=no master-interface=wlan1 name=\
 add action=drop chain=forward in-interface=wlan_guest1
 add action=drop chain=forward out-interface=wlan_guest1
 
+/ip hotspot profile set [find default=yes] rate-limit=128k/1024k
 #/ip settings set tcp-syncookies=yes
 /ip neighbor discovery 
 set ether1 discover=no
 set wlan_guest1 discover=no
+
 /ip service
 set telnet disabled=yes
 set ftp disabled=yes
