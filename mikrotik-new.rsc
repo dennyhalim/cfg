@@ -55,22 +55,6 @@ add add-arp=yes address-pool=pool_ether2 authoritative=after-2sec-delay \
 add address=10.20.30.0/24 gateway=10.20.30.1
 
 
-#malware blocking dns
-/ip dns
-set allow-remote-requests=yes servers=\
-    9.9.9.9,199.85.126.20,208.67.222.123,208.67.220.123,199.85.127.20
-/ip dns static 
-#force strict safe search
-add ttl=1h address=216.239.38.120 regexp=www.google.co*
-add ttl=1h address=216.239.38.120 name=www.youtube.com
-add ttl=1h address=204.79.197.220 name=www.bing.com
-#blocking advertising and other junks
-add ttl=1h address=127.0.0.127 regexp=*.doubleclick.net
-add ttl=1h address=127.0.0.127 name=www.googleadservices.com
-add ttl=1h address=127.0.0.127 name=www.googlesyndication.com
-add ttl=1h address=127.0.0.127 name=www.google-analytics.com
-add ttl=1h address=127.0.0.127 name=www.googletagservices.com
-
 /ip firewall nat
 #ip 10.20.30.1-10.20.30.15 might access dns directly. others get redirected.
       chain=dstnat action=redirect protocol=udp src-address=!10.20.30.0/28 dst-port=53 
@@ -118,6 +102,22 @@ add action=drop chain=input in-interface=ether1
 ###  enable it only if you're certain  ###
 ### also put this rule at most bottom! ###
 add action=drop chain=input
+
+#malware blocking dns
+/ip dns
+set allow-remote-requests=yes servers=\
+    9.9.9.9,199.85.126.20,208.67.222.123,208.67.220.123,199.85.127.20
+/ip dns static 
+#force strict safe search
+add ttl=1h address=216.239.38.120 regexp=www.google.co*
+add ttl=1h address=216.239.38.120 name=www.youtube.com
+add ttl=1h address=204.79.197.220 name=www.bing.com
+#blocking advertising and other junks
+add ttl=1h address=127.0.0.127 regexp=*.doubleclick.net
+add ttl=1h address=127.0.0.127 name=www.googleadservices.com
+add ttl=1h address=127.0.0.127 name=www.googlesyndication.com
+add ttl=1h address=127.0.0.127 name=www.google-analytics.com
+add ttl=1h address=127.0.0.127 name=www.googletagservices.com
 
 /ip cloud 
     set ddns-enabled=yes
