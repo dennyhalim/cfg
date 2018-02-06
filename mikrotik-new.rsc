@@ -70,6 +70,15 @@ add address=10.20.30.0/24 gateway=10.20.30.1
       chain=srcnat action=masquerade src-address=10.20.30.0/24 out-interface=ether1 disabled=yes
 
 ##FIREWALL
+/ipv6 firewall filter
+#first, drop bad stuffs
+add action=drop chain=forward in-interface=wlan_guest1 out-interface=!ether1
+add action=drop chain=input comment="Drop Invalid Input" \
+    connection-state=invalid
+add action=drop chain=forward comment="Drop Invalid Forward" \
+    connection-state=invalid
+add chain=forward protocol=tcp tcp-flags=syn connection-limit=200,32 action=drop comment="too much connections"
+
 /ip firewall filter
 add action=accept chain=input comment="allow remote" dst-port=\
     22,80,8291 log-prefix=remoting protocol=tcp
