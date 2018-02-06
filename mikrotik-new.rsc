@@ -13,16 +13,12 @@
 #5. change password (system menu)
 #6. test, make sure everything runs fine
 
-/ip address
-add address=10.20.30.1/24 interface=ether2 network=10.20.30.0
-#if yourwan ip is static change disabled=yes and add wan ip
-/ip dhcp-client add interface=ether1 use-peer-dns=no dhcp-options=hostname,clientid disabled=no
+#only enable package when you need it
+/system package disable calea,gps,mpls,multicast,tr069-client,ups,user-manager 
 
 /interface wireless
 set [ find default-name=wlan1 ] disabled=no mode=ap-bridge ssid=\
     dennyhalim.com wireless-protocol=802.11
-/ip neighbor discovery
-set ether1 discover=no
 /interface wireless security-profiles
 set [ find default=yes ] authentication-types=wpa2-psk mode=\
     dynamic-keys wpa2-pre-shared-key=DennyHalim
@@ -35,8 +31,20 @@ add disabled=no master-interface=wlan1 name=\
 add action=drop chain=forward in-interface=wlan_guest1
 add action=drop chain=forward out-interface=wlan_guest1
 
+#/ip settings set tcp-syncookies=yes
+/ip neighbor discovery set ether1 discover=no
+/ip service
+set telnet disabled=yes
+set ftp disabled=yes
+set www disabled=no
+set ssh disabled=no
+set api disabled=yes
+set api-ssl disabled=yes
 
-/ip settings set tcp-syncookies=yes
+/ip address
+add address=10.20.30.1/24 interface=ether2 network=10.20.30.0
+#if yourwan ip is static change disabled=yes and add wan ip
+/ip dhcp-client add interface=ether1 use-peer-dns=no dhcp-options=hostname,clientid disabled=no
 
 /ip pool
 add name=pool_ether2 ranges=10.20.30.101-10.20.30.200
@@ -46,13 +54,6 @@ add add-arp=yes address-pool=pool_ether2 authoritative=after-2sec-delay \
 /ip dhcp-server network
 add address=10.20.30.0/24 gateway=10.20.30.1
 
-/ip service
-set telnet disabled=yes
-set ftp disabled=yes
-set www disabled=no
-set ssh disabled=no
-set api disabled=yes
-set api-ssl disabled=yes
 
 #malware blocking dns
 /ip dns
