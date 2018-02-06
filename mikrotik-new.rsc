@@ -33,7 +33,9 @@ add action=drop chain=forward in-interface=wlan_guest1
 add action=drop chain=forward out-interface=wlan_guest1
 
 #/ip settings set tcp-syncookies=yes
-/ip neighbor discovery set ether1 discover=no
+/ip neighbor discovery 
+set ether1 discover=no
+set wlan_guest1 discover=no
 /ip service
 set telnet disabled=yes
 set ftp disabled=yes
