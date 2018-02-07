@@ -30,6 +30,7 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate"
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" -Name IncludeRecommendedUpdates -Type DWORD -Value 0 -Force
 #Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name IncludeRecommendedUpdates -Type DWORD -Value 0 -Force
 #Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\services\Tcpip\Parameters" EnableConnectionRateLimiting -Type DWORD -Value 1 -Force
+#Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" NtfsDisableLastAccessUpdate -Type DWORD -Value 1 -Force
 
 # https://aka.ms/StopUsingSMB1
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 -Force
@@ -80,18 +81,19 @@ choco upgrade -ry winpcap
 #schtasks.exe /Create /XML $env:windir\boxstarter\cfg\chocoup.xml /TN chocoup
 Set-Service -Name wuauserv -StartupType Manual #windows auto update
 Set-Service -Name winmgmt -StartupType Manual #wmi
+Set-Service -Name DiagTrack -StartupType Disabled #diagnostic tracking
+Set-Service -Name dmwappushservice -StartupType Disabled # tracking
+Set-Service -Name WSearch -StartupType Disabled #search indexer
+#Set-Service -Name SysMain -StartupType Disabled #superfetch
 #Set-Service -Name Dnscache -StartupType Manual #dnsclient
 #Set-Service -Name TabletInputService -StartupType Disabled
 #Set-Service -Name HomeGroupProvider -StartupType Disabled
-#Set-Service -Name WMPNetworkSvc -StartupType Disabled #media player net
+#Set-Service -Name WMPNetworkSvc -StartupType Disabled #media player network
 #Set-Service -Name WPCSvc -StartupType Disabled #parental control
 #Set-Service -Name WerSvc -StartupType Disabled #error reporting
 #Set-Service -Name WinHttpAutoProxySvc -StartupType Disabled #wpad
 #Set-Service -Name wcncsvc -StartupType Disabled #WPS
 #Set-Service -Name lfsvc -StartupType Disabled #geolocation geofence
-Set-Service -Name DiagTrack -StartupType Disabled #diagnostic tracking
-Set-Service -Name dmwappushservice -StartupType Disabled # tracking
-Set-Service -Name WSearch -StartupType Disabled #search indexer
 #apps services
 Set-Service -Name AdobeFlashPlayerUpdateSvc -StartupType Disabled
 Set-Service -Name AdobeARMservice -StartupType Disabled
