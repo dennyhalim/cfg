@@ -30,6 +30,7 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate"
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" -Name IncludeRecommendedUpdates -Type DWORD -Value 0 -Force
 #Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name IncludeRecommendedUpdates -Type DWORD -Value 0 -Force
 #Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\services\Tcpip\Parameters" EnableConnectionRateLimiting -Type DWORD -Value 1 -Force
+#https://technet.microsoft.com/en-us/library/cc938961.aspx
 #Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" NtfsDisableLastAccessUpdate -Type DWORD -Value 1 -Force
 #Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" NtfsMftZoneReservation -Type DWORD -Value 4 -Force #if lots of small files (dbserver)
 
