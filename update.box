@@ -41,6 +41,14 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 choco uninstall -ry FS-SMB1 -source windowsFeatures
 choco uninstall -ry SMB1Protocol -source windowsFeatures
 
+# https://blogs.technet.microsoft.com/networking/2010/12/06/disabling-network-discoverynetwork-resources/
+netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=2869 name=upnp
+netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=5357 name=wsdapievents
+netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=5358 name=wsdevents
+netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=5355 name=llmnr
+netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=3702 name=wsdpublishing
+netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=1900 name=ssdp
+
 #windowsFeatures
 #alternative: pkgmr will call dism
 #start /w pkgmgr.exe /iu:TelnetClient;NetFx3;NetFx4-AdvSrvs /norestart
