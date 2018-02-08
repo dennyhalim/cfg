@@ -21,12 +21,12 @@
 #Disable-MicrosoftUpdate
 
 # https://blogs.technet.microsoft.com/networking/2010/12/06/disabling-network-discoverynetwork-resources/
-#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=2869 name=upnp
-#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=5357 name=wsdapievents
-#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=5358 name=wsdevents
-#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=5355 name=llmnr
-#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=3702 name=wsdpublishing
-#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=1900 name=ssdp
+#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=2869 name=disc_upnp
+#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=5357 name=disc_wsdapievents
+#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=5358 name=disc_wsdevents
+#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=5355 name=disc_llmnr
+#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=3702 name=disc_wsdpublishing
+#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=1900 name=disc_ssdp
 
 Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFoldersDrives # -EnableShowProtectedOSFiles
 #Set-ExplorerOptions -showHiddenFilesFoldersDrives -showFileExtensions #-showProtectedOSFiles #obsoletes
