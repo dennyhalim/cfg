@@ -20,6 +20,14 @@ net time \\2.pool.ntp.org /set /y
 w32tm.exe /resync /nowait
 Disable-MicrosoftUpdate
 
+# https://blogs.technet.microsoft.com/networking/2010/12/06/disabling-network-discoverynetwork-resources/
+#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=2869 name=disc_upnp
+#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=5357 name=disc_wsdapievents
+#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=5358 name=disc_wsdevents
+#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=5355 name=disc_llmnr
+#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=3702 name=disc_wsdpublishing
+#netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=1900 name=disc_ssdp
+
 Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFoldersDrives # -EnableShowProtectedOSFiles
 #Set-ExplorerOptions -showHiddenFilesFoldersDrives -showFileExtensions #-showProtectedOSFiles #obsoletes
 #Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\SecurityProviders\WDigest" -Name UseLogonCredential -Value 0 -Force
@@ -40,14 +48,6 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 #Set-SmbServerConfiguration -EnableSMB1Protocol $false
 choco uninstall -ry FS-SMB1 -source windowsFeatures
 choco uninstall -ry SMB1Protocol -source windowsFeatures
-
-# https://blogs.technet.microsoft.com/networking/2010/12/06/disabling-network-discoverynetwork-resources/
-netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=2869 name=upnp
-netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=5357 name=wsdapievents
-netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=5358 name=wsdevents
-netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=5355 name=llmnr
-netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=3702 name=wsdpublishing
-netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=1900 name=ssdp
 
 #windowsFeatures
 #alternative: pkgmr will call dism
