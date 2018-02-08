@@ -20,6 +20,14 @@
 #Start-Service W32Time
 #Disable-MicrosoftUpdate
 
+# https://blogs.technet.microsoft.com/networking/2010/12/06/disabling-network-discoverynetwork-resources/
+netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=2869 name=upnp
+netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=5357 name=wsdapievents
+netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=TCP localport=5358 name=wsdevents
+netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=5355 name=llmnr
+netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=3702 name=wsdpublishing
+netsh advfirewall firewall add rule dir=in action=allow profile=domain,private,public protocol=UDP localport=1900 name=ssdp
+
 Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFoldersDrives # -EnableShowProtectedOSFiles
 #Set-ExplorerOptions -showHiddenFilesFoldersDrives -showFileExtensions #-showProtectedOSFiles #obsoletes
 #Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\SecurityProviders\WDigest" -Name UseLogonCredential -Value 0 -Force
