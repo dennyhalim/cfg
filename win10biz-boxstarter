@@ -126,7 +126,7 @@ $kinstlr = "$env:windir\temp\kabuto.exe"; Invoke-WebRequest -Uri https://app.kab
 Enable-UAC
 ##Set-WSManQuickConfig #-UseSSL
 #Enable-PSRemoting -Force #-SkipNetworkProfileCheck
-#Set-Item WSMan:\localhost\Shell\MaxMemoryPerSshellMB 1500
+#Set-Item WSMan:\localhost\Shell\MaxMemoryPerShellMB 1500
 #Set-Item WSMan:\localhost\Client\TrustedHosts -Value '<local>,172.19.*'
 #Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 #Enable-RemoteDesktop
