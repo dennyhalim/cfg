@@ -73,13 +73,15 @@ $env:ChocolateyBinRoot = "\tools"
 choco upgrade -ry autohotkey.portable chocolatey chocolatey-core.extension toolsroot vcredist2008 #some vcredist?
 #install apps
 choco upgrade -ry firefoxesr -packageParameters "l=en-US"
-choco upgrade -ry 7zip.install bginfo boxstarter geany googlechrome hashcheck nextcloud-client qownnotes qupzilla remy vlc wincdemu #chef-client
+choco upgrade -ry 7zip.install bginfo boxstarter geany googlechrome hashcheck nextcloud-client qownnotes qupzilla remy vlc #chef-client
 #portable not shown on control panel add/remove programs and start menu
 choco upgrade -ry adwcleaner autohotkey.portable fastcopy.portable git.portable gow hwinfo.portable kitty.portable netscan.portable pinginfoview processhacker.portable rdiff-backup recuva.portable screentogif spacesniffer stinger ugetdm
-#huge downloads
-choco upgrade -ry adobereader
+choco upgrade -ry wincdemu 
 #need AHK
 #choco upgrade -ry winpcap
+#huge downloads
+choco upgrade -ry adobereader
+#etc
 #choco upgrade -ry sdio bginfo bind-toolsonly bleachbit bulk-crap-uninstaller captura driverbooster googlechrome ipscan nssm picklesui poshgit securepointsslvpn snappy-driver-installer tightvnc winpcap
 #choco upgrade -ry all #all not installed. The package was not found with the source(s) listed.
 #cmd /c "\\192.168.1.1\firefox.en-US.win32.installer.exe -ms"
