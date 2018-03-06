@@ -86,6 +86,8 @@ choco upgrade -ry adobereader
 #choco upgrade -ry all #all not installed. The package was not found with the source(s) listed.
 #cmd /c "\\192.168.1.1\firefox.en-US.win32.installer.exe -ms"
 
+#add driver only
+#cscript "C:\Windows\System32\Printing_Admin_Scripts\en-US\prndrvr.vbs" -a -m "HP Universal Printing PCL 6" -i "C:\ drivers \HP Universal Print Driver\hpcu160u.inf"
 #add printers #unsigned drivers still need click
 #cscript $env:windir\System32\Printing_Admin_Scripts\en-US\prnport.vbs -a -r IP_myprinter08 -h 192.168.1.8
 #rundll32 printui.dll,PrintUIEntry /u /if /b "myprinter08" /f "\\192.168.1.8\printers\P62KUSAL.INF" /r "IP_myprinter08" /m "paste model name from inf"
