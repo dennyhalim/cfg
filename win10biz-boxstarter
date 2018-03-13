@@ -43,7 +43,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\services\Tcpip\Parameters
 #Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" NtfsDisableLastAccessUpdate -Type DWORD -Value 1 -Force
 #Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" NtfsMftZoneReservation -Type DWORD -Value 4 -Force #if lots of small files (dbserver)
 
-#Get-AppxPackage | Remove-AppxPackage
+#Get-AppxPackage -AllUsers | Remove-AppxPackage
 
 # https://aka.ms/StopUsingSMB1
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 -Force
