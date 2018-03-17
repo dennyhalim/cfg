@@ -43,6 +43,8 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\services\Tcpip\Parameters
 #Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" NtfsDisableLastAccessUpdate -Type DWORD -Value 1 -Force
 #Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" NtfsMftZoneReservation -Type DWORD -Value 4 -Force #if lots of small files (dbserver)
 
+#http://www.thewindowsclub.com/erase-default-preinstalled-modern-apps-windows-8
+#Get-AppXProvisionedPackage -online | Remove-AppxProvisionedPackage -online
 #Get-AppxPackage -AllUsers | Remove-AppxPackage
 
 # https://aka.ms/StopUsingSMB1
