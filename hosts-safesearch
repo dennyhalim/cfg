@@ -8,6 +8,9 @@
 216.239.38.120 www.google.co.*
 216.239.38.120 www.google.com.*
 
+#telkom indonesia domain hijack
+127.0.0.1 internetpositif.uzone.id
+
 #manual without acrylic dns
 216.239.38.120 www.google.com www.google.co.id www.google.com.sg www.google.com.tw www.google.com.hk www.google.co.jp
 216.239.38.120 www.google.com www.google.co.id www.google.ae www.google.com.af www.google.com.ag www.google.off.ai www.google.am 
