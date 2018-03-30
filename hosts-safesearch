@@ -2,7 +2,7 @@
 # https://support.opendns.com/hc/en-us/articles/227986807-How-to-Enforcing-Google-SafeSearch-YouTube-and-Bing #
 # Last updated: Mon, 02 Feb 18 16:58:42 +0700 #
 
-127.0.0.1 wpad wpad.*
+127.0.0.127 wpad wpad.*
 
 # acrylic dns / dnscrypt proxy can use these: #
 216.239.38.120 www.google.com www.google.com.* www.google.co.*
@@ -11,10 +11,12 @@
 216.239.38.119 www.youtube.com m.youtube.com youtubei.googleapis.com youtube.googleapis.com www.youtube-nocookie.com
 
 #telkom indonesia domain hijack
-127.0.0.1 *.uzone.id internetpositif.*
+127.0.0.127 *.uzone.id internetpositif.*
 
 #https://github.com/CHEF-KOCH/dnscrypt-proxy-blacklist-filter/blob/master/blacklist.txt
-
+127.0.0.127 *telemetry.microsoft*
+127.0.0.127 ads.* banner.* banners.* *.adbrite.* adclick.* adfarm.* adrevolver.* adserver.* advert.* atdmt.* atwola.*
+127.0.0.127 *.banner *.blogads *.burstnet *.doubleclick.*
 
 #manual without dns proxy
 216.239.38.120 www.google.com www.google.co.id www.google.com.sg www.google.com.tw www.google.com.hk www.google.co.jp
