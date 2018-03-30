@@ -16,7 +16,8 @@
 #https://github.com/CHEF-KOCH/dnscrypt-proxy-blacklist-filter/blob/master/blacklist.txt
 127.0.0.127 *telemetry.microsoft*
 127.0.0.127 ads.* banner.* banners.* *.adbrite.* adclick.* adfarm.* adrevolver.* adserver.* advert.* atdmt.* atwola.*
-127.0.0.127 *.banner *.blogads *.burstnet *.doubleclick.*
+127.0.0.127 *.banner *.blogads *.burstnet *.doubleclick.* *.googlesyndication.* *.hitbox.* intellitxt.* js.overture.*
+127.0.0.127 mediaplex.* qksrv.* rightmedia.* statcounter.* tribalfusion.* webtrends.* googletagservices.*
 
 #manual without dns proxy
 216.239.38.120 www.google.com www.google.co.id www.google.com.sg www.google.com.tw www.google.com.hk www.google.co.jp
