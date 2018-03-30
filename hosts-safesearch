@@ -2,15 +2,16 @@
 # https://support.opendns.com/hc/en-us/articles/227986807-How-to-Enforcing-Google-SafeSearch-YouTube-and-Bing #
 # Last updated: Mon, 02 Feb 18 16:58:42 +0700 #
 
-127.0.0.1 wpad localhost
+127.0.0.1 wpad wpad.*
 
 # acrylic dns proxy can use these: #
-216.239.38.120 www.google.co.*
-216.239.38.120 www.google.com.*
+216.239.38.120 www.google.com www.google.com.* www.google.co.*
+204.79.197.220 www.bing.com
+#216.239.38.120 www.youtube.com #strict
+216.239.38.119 www.youtube.com m.youtube.com youtubei.googleapis.com youtube.googleapis.com www.youtube-nocookie.com
 
 #telkom indonesia domain hijack
-127.0.0.1 internetpositif.uzone.id
-127.0.0.1 internetpositif.* *.uzone.id
+127.0.0.1 *.uzone.id internetpositif.*
 
 #manual without acrylic dns
 216.239.38.120 www.google.com www.google.co.id www.google.com.sg www.google.com.tw www.google.com.hk www.google.co.jp
@@ -34,7 +35,3 @@
 216.239.38.120 www.google.com.tj www.google.tm www.google.to www.google.tp www.google.com.tr www.google.tt www.google.com.tw 
 216.239.38.120 www.google.com.ua www.google.co.ug www.google.co.uk www.google.com.uy www.google.uz www.google.com.vc www.google.co.ve 
 216.239.38.120 www.google.vg www.google.co.vi www.google.com.vn www.google.vu www.google.ws www.google.co.za www.google.co.zm
-
-#216.239.38.120 www.youtube.com #strict
-216.239.38.119 www.youtube.com m.youtube.com youtubei.googleapis.com youtube.googleapis.com www.youtube-nocookie.com
-204.79.197.220 www.bing.com
