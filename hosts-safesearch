@@ -4,7 +4,7 @@
 
 127.0.0.1 wpad wpad.*
 
-# acrylic dns proxy can use these: #
+# acrylic dns / dnscrypt proxy can use these: #
 216.239.38.120 www.google.com www.google.com.* www.google.co.*
 204.79.197.220 www.bing.com
 #216.239.38.120 www.youtube.com #strict
@@ -13,7 +13,10 @@
 #telkom indonesia domain hijack
 127.0.0.1 *.uzone.id internetpositif.*
 
-#manual without acrylic dns
+#https://github.com/CHEF-KOCH/dnscrypt-proxy-blacklist-filter/blob/master/blacklist.txt
+
+
+#manual without dns proxy
 216.239.38.120 www.google.com www.google.co.id www.google.com.sg www.google.com.tw www.google.com.hk www.google.co.jp
 216.239.38.120 www.google.com www.google.co.id www.google.ae www.google.com.af www.google.com.ag www.google.off.ai www.google.am 
 216.239.38.120 www.google.com.ar www.google.as www.google.at www.google.com.au www.google.az www.google.ba www.google.com.bd 
