@@ -55,6 +55,8 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 #Set-SmbServerConfiguration -EnableSMB1Protocol $false
 #choco uninstall -ry FS-SMB1 -source windowsFeatures
 #choco uninstall -ry SMB1Protocol-Server -source windowsFeatures
+#
+Uninstall-WindowsFeature -Name SMB1Protocol-Server
 
 #windowsFeatures
 #alternative: pkgmr will call dism
@@ -63,7 +65,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 #dism.exe /online /norestart /Enable-Feature /FeatureName:TelnetClient /FeatureName:NetFx3
 #dism.exe /online /norestart /Enable-Feature /FeatureName:NetFx4-AdvSrvs
 #dism.exe /online /norestart /disable-feature /featurename:"FS-SMB1"
-#dism.exe /online /norestart /disable-feature /featurename:"SMB1Protocol"
+#dism.exe /online /norestart /disable-feature /featurename:"SMB1Protocol-Server"
 cinst TelnetClient -source windowsFeatures
 cinst NetFx3 -source windowsFeatures
 cinst NetFx4-AdvSrvs -source windowsFeatures
