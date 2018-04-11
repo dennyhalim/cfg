@@ -58,6 +58,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 #choco uninstall -ry SMB1Protocol-Server -source windowsFeatures
 #
 Uninstall-WindowsFeature -Name SMB1Protocol-Server
+Uninstall-WindowsFeature -Name SMB1Protocol-Deprecation
 
 #windowsFeatures
 #alternative: pkgmr will call dism
