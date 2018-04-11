@@ -8,7 +8,7 @@
   net time \\2.pool.ntp.org /set /y
   w32tm.exe /resync /nowait
 # boxstarter https://is.gd/bizboxstarter -disablereboots
-# or run manually: windir%\system32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Unrestricted -NonInteractive -NoProfile -WindowStyle Hidden win10biz-boxstarter
+# or run manually: windir%\system32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Unrestricted -NonInteractive -NoProfile -WindowStyle Hidden "& win10biz-boxstarter"
 
 #update windows before installing
 #https://support.microsoft.com/en-us/help/4009469
