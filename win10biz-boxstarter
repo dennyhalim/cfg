@@ -70,8 +70,8 @@ Uninstall-WindowsFeature -Name SMB1Protocol-Deprecation
 #dism.exe /online /norestart /disable-feature /featurename:"FS-SMB1"
 #dism.exe /online /norestart /disable-feature /featurename:"SMB1Protocol-Server"
 cinst TelnetClient -source windowsFeatures
-cinst NetFx3 -source windowsFeatures
-cinst NetFx4-AdvSrvs -source windowsFeatures
+#cinst NetFx3 -source windowsFeatures
+#cinst NetFx4-AdvSrvs -source windowsFeatures
 #cinst Microsoft-Windows-Subsystem-Linux -source windowsFeatures
 choco uninstall -ry Internet-Explorer-Optional-x86 -source windowsFeatures
 choco uninstall -ry Internet-Explorer-Optional-amd64 -source windowsFeatures
