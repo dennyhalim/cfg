@@ -7,3 +7,6 @@ quickstart:
 6. boot from flashdisk and start the installation
 
 tested using Win10_1709_English_x64.iso
+
+refs
+https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-vista/cc766228(v=ws.10)
