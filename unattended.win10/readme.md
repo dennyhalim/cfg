@@ -3,5 +3,6 @@ quickstart:
 2. recursively copy this to your just created flashdisk
 3. copy all installer to \sources\$OEM$\$$\Setup\Files
 4. edit SetupComplete.cmd accordingly
+5. boot from flashdisk and start the installation
 
 tested using Win10_1709_English_x64.iso
