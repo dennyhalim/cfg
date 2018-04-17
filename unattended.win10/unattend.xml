@@ -152,7 +152,7 @@ Modded: dennyhalim.com
 						<Name>admin</Name>
 						<Password>
 							<PlainText>false</PlainText>
-							<Value>UABvAGwAYQByAGkAcwAxADIAMwAhAFAAYQBzAHMAdwBvAHIAZAA=</Value>
+							<Value>enter-your-encrypted-password</Value>
 						</Password>
 					</LocalAccount>
 <LocalAccount wcm:action="add">
@@ -199,7 +199,7 @@ Modded: dennyhalim.com
 						<Name>admin</Name>
 						<Password>
 							<PlainText>false</PlainText>
-							<Value>UABvAGwAYQByAGkAcwAxADIAMwAhAFAAYQBzAHMAdwBvAHIAZAA=</Value>
+							<Value>enter-your-encrypted-password</Value>
 						</Password>
 					</LocalAccount>
 <LocalAccount wcm:action="add">
