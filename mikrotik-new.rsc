@@ -77,7 +77,7 @@ add address=10.20.30.0/24 gateway=10.20.30.1
 #https://wiki.mikrotik.com/wiki/DDoS_Detection_and_Blocking
 /ip settings set rp-filter=loose
 /ip firewall mangle add action=mark-routing chain=prerouting dst-address-list=ddosed new-routing-mark=ddoser-route-mark passthrough=no src-address-list=ddoser
-/ip route add distance=1 routing-mark=ddoser-route-mark type=blackhole
+/ip route add distance=254 routing-mark=ddoser-route-mark type=blackhole
 
 /ipv6 firewall filter
 add chain=forward connection-state=new action=jump jump-target=block-ddos
