@@ -74,7 +74,8 @@ add address=10.20.30.0/24 gateway=10.20.30.1
 
 ##FIREWALL
 /ipv6 firewall filter
-#first, drop bad stuffs
+#first, drop ddos and bad stuffs
+
 add action=drop chain=forward in-interface=wlan_guest1 out-interface=!ether1
 add action=drop chain=input comment="Drop Invalid Input" \
     connection-state=invalid
@@ -82,7 +83,17 @@ add action=drop chain=forward comment="Drop Invalid Forward" \
     connection-state=invalid
 add chain=forward protocol=tcp tcp-flags=syn connection-limit=200,32 action=drop comment="too much connections"
 
+#https://wiki.mikrotik.com/wiki/DDoS_Detection_and_Blocking
+/ip firewall mangle add action=mark-routing chain=prerouting dst-address-list=ddosed new-routing-mark=ddoser-route-mark passthrough=no src-address-list=ddoser
+/ip route add distance=1 routing-mark=ddoser-route-mark type=blackhole
+
 /ip firewall filter
+add chain=forward connection-state=new action=jump jump-target=block-ddos
+add chain=forward connection-state=new src-address-list=ddoser dst-address-list=ddosed action=drop
+add chain=block-ddos dst-limit=50,50,src-and-dst-addresses/10s action=return
+add chain=block-ddos action=add-dst-to-address-list address-list=ddosed address-list-timeout=10m
+add chain=block-ddos action=add-src-to-address-list address-list=ddoser address-list-timeout=10m
+
 add action=accept chain=input comment="allow remote" dst-port=\
     22,80,8291 log-prefix=remoting protocol=tcp
 #first, drop bad stuffs
