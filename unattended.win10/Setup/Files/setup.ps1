@@ -48,7 +48,7 @@ $d.Attributes='Directory,NotContentIndexed'
 	$task = New-ScheduledTask -Action $actions -Principal $principal -Trigger $trigger -Settings $settings
 Register-ScheduledTask chocoupgrade -InputObject $task
 
-Set-MpPreference -Force -SevereThreatDefaultAction Remove -HighThreatDefaultAction Quarantine -ModerateThreatDefaultAction Quarantine -RemediationScheduleDay 6 -RemediationScheduleTime 11:00 -ScanScheduleDay 0 -ScanScheduleTime 09:00 -SignatureUpdateInterval 3 -SubmitSamplesConsent Never
+Set-MpPreference -Force -SevereThreatDefaultAction Remove -HighThreatDefaultAction Quarantine -ModerateThreatDefaultAction Quarantine -LowThreatDefaultAction Clean -RemediationScheduleDay 6 -RemediationScheduleTime 11:00 -ScanScheduleDay 0 -ScanScheduleTime 09:00 -SignatureUpdateInterval 3 -SubmitSamplesConsent Never
 Enable-PSRemoting -Force -SkipNetworkProfileCheck
 
 #Enable-ComputerRestore -drive "${env:HOMEDRIVE}"
