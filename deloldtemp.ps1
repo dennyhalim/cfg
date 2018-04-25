@@ -4,7 +4,8 @@
 # files/folders older than 70 days
 # remove without warning
 # remove the option '-WhatIf' to perform real action
-#WARNING!! DANGER!!! anything will be removed without warning. no question asked!
+# WARNING!! DANGER!!! if you remomve -WhatIf option then anything will be removed without warning. no question asked!
+# if -WhatIf option remains, then nothing removed
 
 Get-ChildItem -Path "$env:windir\Temp" -Recurse | Where-Object{$_.LastAccessTime -lt (Get-Date).AddDays(-70)} | Remove-Item -Force -Recurse -WhatIf
 Get-ChildItem -Path "$env:public\..\*\AppData\Local\Temp" -Recurse | Where-Object{$_.LastAccessTime -lt (Get-Date).AddDays(-70)} | Remove-Item -Force -Recurse -WhatIf
