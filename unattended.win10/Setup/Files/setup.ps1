@@ -8,8 +8,8 @@ Disable-WindowsOptionalFeature -Online -FeatureName WindowsMediaPlayer -NoRestar
 Disable-WindowsOptionalFeature -Online -FeatureName Internet-Explorer-Optional-amd64 -NoRestart
 Disable-WindowsOptionalFeature -Online -FeatureName Internet-Explorer-Optional-x86 -NoRestart
 
-Get-AppXProvisionedPackage -Online | where-object {$_.name -notlike "*Microsoft.WindowsStore*"} | Remove-AppxProvisionedPackage -Online 
-Get-AppxPackage -AllUsers | where-object {$_.name -notlike "*Microsoft.WindowsStore*"} | Remove-AppxPackage
+Get-AppXProvisionedPackage -Online | where-object {$_.name -notlike "*Store*"} | Remove-AppxProvisionedPackage -Online 
+Get-AppxPackage -AllUsers | where-object {$_.name -notlike "*Store*"} | Remove-AppxPackage
 # Get-AppxPackage | Remove-AppxPackage
 
 #$d=get-item ${env:HOMEDRIVE}
