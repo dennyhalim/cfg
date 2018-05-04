@@ -12,13 +12,6 @@ Get-AppXProvisionedPackage -Online | where-object {$_.name -notlike "*Microsoft.
 Get-AppxPackage -AllUsers | where-object {$_.name -notlike "*Microsoft.WindowsStore*"} | Remove-AppxPackage
 # Get-AppxPackage | Remove-AppxPackage
 
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" AllowTelemetry -Type DWORD -Value 0 -Force
-Set-Service -Name wuauserv -StartupType Manual #windows auto update
-Set-Service -Name DiagTrack -StartupType Disabled #diagnostic tracking
-Set-Service -Name dmwappushservice -StartupType Disabled # tracking
-Set-Service -Name lfsvc -StartupType Disabled #geolocation
-Set-Service -Name RetailDemo -StartupType Disabled 
-
 #$d=get-item ${env:HOMEDRIVE}
 #$d.Attributes='Directory,NotContentIndexed'
 #$d=get-item ${env:ProgramData}
