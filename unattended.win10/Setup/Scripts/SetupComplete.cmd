@@ -62,5 +62,4 @@ move "%Public%\Desktop\*.*" "%Public%\Desktop.dennyhalim"
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& '%WINDIR%\Setup\Files\setup.ps1'"
 
 rem "%WINDIR%\Setup-githubbox.exe"
-rem rd /q /s "%WINDIR%\Setup\Files"
-rem del /q /f "%0"
+
