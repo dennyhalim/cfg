@@ -11,6 +11,12 @@ rem move "%windir%\SystemApps\Microsoft.Windows.Cortana_cw5n1h2txyewy" "%windir%
 rem startmenu disabled if shellex disabled
 rem move "%windir%\SystemApps\ShellExperienceHost_cw5n1h2txyewy" "%windir%\SystemApps\ShellExperienceHost_cw5n1h2txyewy.dennyhalim"
 
+sc.exe config wuauserv start= demand
+sc.exe config DiagTrack start= disabled
+sc.exe config dmwappushservice start= disabled
+sc.exe config RetailDemo start= disabled
+sc.exe config lfsvc start= disabled
+
 reg load HKLM\DEFAULT "%Public%\..\default\ntuser.dat"
 reg add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start_TrackProgs /t REG_DWORD /d 1 /f
 reg add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo" /v Enabled /t REG_DWORD /d 0 /f
