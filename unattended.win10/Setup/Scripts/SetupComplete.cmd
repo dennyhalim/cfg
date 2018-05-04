@@ -24,7 +24,7 @@ reg add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Advance
 reg add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo" /v Enabled /t REG_DWORD /d 0 /f
 reg add "HKLM\DEFAULT\Software\MicrosoftMicrosoft\Input\TIPC" /v Enabled /t REG_DWORD /d 0 /f
 reg add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications" /v GlobalUserDisabled /t REG_DWORD /d 1 /f
-reg add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\A8804298-2D5F-42E3-9531-9C8C39EB29CE" /v Value /t REG_DWORD /d 0 /f
+reg add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\A8804298-2D5F-42E3-9531-9C8C39EB29CE" /v Value /d Deny /f
 reg delete "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run" /v OneDriveSetup /F
 reg unload HKLM\DEFAULT
 
