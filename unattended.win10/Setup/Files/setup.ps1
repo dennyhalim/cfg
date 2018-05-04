@@ -17,6 +17,7 @@ Set-Service -Name wuauserv -StartupType Manual #windows auto update
 Set-Service -Name DiagTrack -StartupType Disabled #diagnostic tracking
 Set-Service -Name dmwappushservice -StartupType Disabled # tracking
 Set-Service -Name lfsvc -StartupType Disabled #geolocation
+Set-Service -Name RetailDemo -StartupType Disabled 
 
 #$d=get-item ${env:HOMEDRIVE}
 #$d.Attributes='Directory,NotContentIndexed'
