@@ -152,6 +152,7 @@ add ttl=1h address=127.0.0.127 name=www.googlesyndication.com
 add ttl=1h address=127.0.0.127 name=www.google-analytics.com
 add ttl=1h address=127.0.0.127 name=www.googletagservices.com
 #example blocking facebook, youtube
+add ttl=1h address=127.0.0.127 regexp=fbcdn disabled=yes
 add ttl=1h address=127.0.0.127 regexp=facebook disabled=yes
 add ttl=1h address=127.0.0.127 regexp=youtube disabled=yes
 
