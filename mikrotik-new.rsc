@@ -14,8 +14,16 @@
 #5. change password (system menu) and wireless wpa2-pre-shared-key / ssid
 #6. test, make sure everything runs fine
 
-#only enable package when you need it
+#only enable packages and services you need 
 /system package disable calea,gps,mpls,multicast,tr069-client,ups,user-manager 
+
+/ip service
+set telnet disabled=yes
+set ftp disabled=yes
+set www disabled=no
+set ssh disabled=no
+set api disabled=yes
+set api-ssl disabled=yes
 
 #wireless config
 /interface wireless
@@ -38,14 +46,6 @@ add action=drop chain=forward out-interface=wlan_guest1
 /ip neighbor discovery 
 set ether1 discover=no
 set wlan_guest1 discover=no
-
-/ip service
-set telnet disabled=yes
-set ftp disabled=yes
-set www disabled=no
-set ssh disabled=no
-set api disabled=yes
-set api-ssl disabled=yes
 
 /ip address
 add address=10.20.30.1/24 interface=ether2 network=10.20.30.0
@@ -146,11 +146,15 @@ add ttl=1h address=216.239.38.120 regexp=www.google.co*
 add ttl=1h address=216.239.38.120 name=www.youtube.com
 add ttl=1h address=204.79.197.220 name=www.bing.com
 #blocking advertising and other junks
-add ttl=1h address=127.0.0.127 regexp=*.doubleclick.net
+add ttl=1h address=127.0.0.127 regexp=doubleclick.net
 add ttl=1h address=127.0.0.127 name=www.googleadservices.com
 add ttl=1h address=127.0.0.127 name=www.googlesyndication.com
 add ttl=1h address=127.0.0.127 name=www.google-analytics.com
 add ttl=1h address=127.0.0.127 name=www.googletagservices.com
+#example blocking facebook, youtube
+add ttl=1h address=127.0.0.127 regexp=facebook disabled=yes
+add ttl=1h address=127.0.0.127 regexp=youtube disabled=yes
+
 
 /ip cloud 
     set ddns-enabled=yes
