@@ -143,7 +143,7 @@ set allow-remote-requests=yes servers=\
 /ip dns static 
 #force strict safe search
 add ttl=1h address=216.239.38.120 regexp=www.google.co*
-add ttl=1h address=216.239.38.120 name=www.youtube.com
+add ttl=1h address=216.239.38.119 name=www.youtube.com
 add ttl=1h address=204.79.197.220 name=www.bing.com
 #blocking advertising and other junks
 add ttl=1h address=127.0.0.127 regexp=doubleclick.net
