@@ -41,7 +41,7 @@ add disabled=no master-interface=wlan1 name=\
 add action=drop chain=forward in-interface=wlan_guest1
 add action=drop chain=forward out-interface=wlan_guest1
 
-/ip hotspot user profile set [find default=yes] rate-limit=500k/2M
+/ip hotspot user profile set [find default=yes] rate-limit=200k/1M
 #/ip settings set tcp-syncookies=yes
 /ip neighbor discovery 
 set ether1 discover=no
