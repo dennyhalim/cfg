@@ -134,7 +134,7 @@ add action=drop chain=input in-interface=ether1
 ### WARNING: THIS MIGHT BLOCK YOURSELF ###
 ###  enable it only if you're certain  ###
 ### also put this rule at most bottom! ###
-add action=drop chain=input
+add action=drop chain=input disabled=yes
 
 #malware blocking dns
 /ip dns
