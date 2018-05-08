@@ -28,7 +28,7 @@ set api-ssl disabled=yes
 #wireless config
 /interface wireless
 set [ find default-name=wlan1 ] disabled=no mode=ap-bridge ssid=\
-    dennyhalim.com wireless-protocol=802.11 default-ap-tx-limit=2M
+    dennyhalim.com wireless-protocol=802.11 default-ap-tx-limit=4M
 /interface wireless security-profiles
 set [ find default=yes ] authentication-types=wpa2-psk mode=\
     dynamic-keys wpa2-pre-shared-key=DennyHalim
@@ -36,12 +36,12 @@ add authentication-types=wpa2-psk mode=dynamic-keys name=profile \
     wpa2-pre-shared-key=dennyhalim.com
 /interface wireless
 add disabled=no master-interface=wlan1 name=\
-    wlan_guest1 security-profile=profile ssid="Wifi Guests" default-forwarding=no default-ap-tx-limit=512k
+    wlan_guest1 security-profile=profile ssid="Wifi Guests" default-forwarding=no default-ap-tx-limit=1M
 /interface bridge filter
 add action=drop chain=forward in-interface=wlan_guest1
 add action=drop chain=forward out-interface=wlan_guest1
 
-/ip hotspot profile set [find default=yes] rate-limit=128k/1024k
+/ip hotspot user profile set [find default=yes] rate-limit=500k/2M
 #/ip settings set tcp-syncookies=yes
 /ip neighbor discovery 
 set ether1 discover=no
