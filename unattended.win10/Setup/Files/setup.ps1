@@ -46,5 +46,4 @@ Set-MpPreference -Force -SevereThreatDefaultAction Remove -HighThreatDefaultActi
 Enable-PSRemoting -Force -SkipNetworkProfileCheck
 
 #Enable-ComputerRestore -drive "${env:HOMEDRIVE}"
-Register-ScheduledJob -Name checkpoint -ScriptBlock {Checkpoint-Computer -Description 'dennyhalim.com'} -Trigger @{Frequency="Weekly"; At="11:00AM"; DaysOfWeek="Monday"} -ScheduledJobOption @{RunElevated=$True}
-Checkpoint-Computer -Description 'dennyhalim.com install finished'
+Register-ScheduledJob -Name checkpoint -RunNow -ScriptBlock {Checkpoint-Computer -Description 'dennyhalim.com'} -Trigger @{Frequency="Weekly"; At="11:00AM"; DaysOfWeek="Monday"} -ScheduledJobOption @{RunElevated=$True}
