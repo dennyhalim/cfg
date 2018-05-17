@@ -43,6 +43,7 @@ cscript "%WINDIR%\System32\Printing_Admin_Scripts\en-US\prndrvr.vbs" -a -m "Cano
 cscript "%WINDIR%\System32\Printing_Admin_Scripts\en-US\prndrvr.vbs" -a -m "Canon G2000 series Printer" -i "%WINDIR%\Setup\Drivers\CanonG2000\Driver\G2000P6.inf"
 rem move "%WINDIR%\Setup\Drivers\*" "%WINDIR%\INF"
 
+schtasks /change /TN "\Microsoft\Windows\Setup\SetupCleanupTask" /DISABLE
 schtasks /change /TN "\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" /DISABLE
 schtasks /change /TN "\Microsoft\Windows\Application Experience\ProgramDataUpdater" /DISABLE
 schtasks /change /TN "\Microsoft\Windows\Customer Experience Improvement Program\Consolidator" /DISABLE
