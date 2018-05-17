@@ -54,6 +54,8 @@ schtasks /change /TN "\Microsoft\Windows\Customer Experience Improvement Program
 "%WINDIR%\Setup\Files\Firefox Setup 52.6.0esr.exe" -ms
 "%WINDIR%\Setup\Files\vlc-3.0.1-win64.exe" /L=1033 /S
 "%WINDIR%\Setup\Files\SumatraPDF-3.1.2-64-install.exe" /S
+Msiexec /q /I "%WINDIR%\Setup\Files\just-install.msi"
+Msiexec /q /I "%WINDIR%\Setup\Files\NpackdCL-1.23.2.msi"
 Msiexec /q /I "%WINDIR%\Setup\Files\7z1801-x64.msi"
 Msiexec /q /I "%WINDIR%\Setup\Files\qalculate-2.4.0a.msi"
 Msiexec /q /I "%WINDIR%\Setup\Files\GoogleChromeStandaloneEnterprise64.msi"
