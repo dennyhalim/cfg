@@ -1,4 +1,3 @@
-@echo off
 rem dennyhalim.com
 rem this will be copied after first reboot and then run after next reboot
 
