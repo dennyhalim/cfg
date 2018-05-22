@@ -5,6 +5,9 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB8
 \curl -sSL https://get.rvm.io | bash -s stable
 source .rvm/scripts/rvm
 
+# requirement: 
+# sudo yum install -y autoconf automake bison gcc-c++ libffi-devel libtool readline-devel sqlite-devel zlib-devel libyaml-devel openssl-devel
+
 rvm install 2.3
 rvm --default use 2.3
 gem install rails -v 4.2
