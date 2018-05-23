@@ -65,7 +65,11 @@ rem "%WINDIR%\Setup\Files\avira_pc_cleaner_en.exe" /s
 
 mkdir "%Public%\Desktop.dennyhalim"
 move "%Public%\Desktop\*.*" "%Public%\Desktop.dennyhalim"
-PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& '%WINDIR%\Setup\Files\setup.ps1'"
+powershell.exe -ExecutionPolicy Bypass -File "%WINDIR%\Setup\Progs\OpenSSH\install-sshd.ps1"
+PowerShell.exe -ExecutionPolicy Bypass -File "%WINDIR%\Setup\Files\setup.ps1"
+
+sc.exe config ssh-agent start= auto
+sc.exe config sshd start= auto
 
 rem "%WINDIR%\Setup-githubbox.exe"
 
