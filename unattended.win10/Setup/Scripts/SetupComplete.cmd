@@ -10,12 +10,6 @@ rem move "%windir%\SystemApps\Microsoft.Windows.Cortana_cw5n1h2txyewy" "%windir%
 rem startmenu disabled if shellex disabled
 rem move "%windir%\SystemApps\ShellExperienceHost_cw5n1h2txyewy" "%windir%\SystemApps\ShellExperienceHost_cw5n1h2txyewy.dennyhalim"
 
-sc.exe config wuauserv start= demand
-sc.exe config DiagTrack start= disabled
-sc.exe config dmwappushservice start= disabled
-sc.exe config RetailDemo start= disabled
-sc.exe config lfsvc start= disabled
-
 reg.exe load HKLM\DEFAULT "%Public%\..\default\ntuser.dat"
 reg.exe add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People /v PeopleBand /t REG_DWORD /d 0 /f
 reg.exe add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 0 /f
@@ -68,6 +62,11 @@ move "%Public%\Desktop\*.*" "%Public%\Desktop.dennyhalim"
 powershell.exe -ExecutionPolicy Bypass -File "%WINDIR%\Setup\Progs\OpenSSH\install-sshd.ps1"
 PowerShell.exe -ExecutionPolicy Bypass -File "%WINDIR%\Setup\Files\setup.ps1"
 
+sc.exe config wuauserv start= demand
+sc.exe config DiagTrack start= disabled
+sc.exe config dmwappushservice start= disabled
+sc.exe config RetailDemo start= disabled
+sc.exe config lfsvc start= disabled
 sc.exe config ssh-agent start= auto
 sc.exe config sshd start= auto
 
