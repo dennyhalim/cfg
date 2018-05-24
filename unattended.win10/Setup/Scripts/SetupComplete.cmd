@@ -42,13 +42,13 @@ schtasks.exe /change /TN "\Microsoft\Windows\Application Experience\ProgramDataU
 schtasks.exe /change /TN "\Microsoft\Windows\Customer Experience Improvement Program\Consolidator" /DISABLE
 schtasks.exe /change /TN "\Microsoft\Windows\Customer Experience Improvement Program\KernelCeipTask" /DISABLE
 schtasks.exe /change /TN "\Microsoft\Windows\Customer Experience Improvement Program\UsbCeip" /DISABLE
-dism.exe /online /norestart /Enable-Feature /FeatureName:TelnetClient
-dism.exe /online /norestart /Disable-Feature /FeatureName:MediaPlayback
-dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsMediaPlayer
-dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsGadgetPlatform 
-dism.exe /online /norestart /Disable-Feature /FeatureName:Indexing-Service-Package
-dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-x86
-dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-amd64
+dism.exe /online /norestart /Enable-Feature /FeatureName:TelnetClient /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:MediaPlayback /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsMediaPlayer /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsGadgetPlatform  /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:Indexing-Service-Package /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-x86 /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-amd64 /NoRestart
 
 "%WINDIR%\Setup\Files\chocolatey.exe" /S
 "%WINDIR%\Setup\Files\Firefox Setup 52.6.0esr.exe" -ms
