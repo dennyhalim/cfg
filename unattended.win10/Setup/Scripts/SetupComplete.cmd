@@ -56,7 +56,7 @@ dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Opti
 "%WINDIR%\Setup\Files\SumatraPDF-3.1.2-64-install.exe" /S
 msiexec.exe /q /I "%WINDIR%\Setup\Files\just-install.msi"
 msiexec.exe /q /I "%WINDIR%\Setup\Files\NpackdCL-1.23.2.msi"
-msiexec.exe /q /I "%WINDIR%\Setup\Files\7z1801-x64.msi"
+msiexec.exe /q /I "%WINDIR%\Setup\Files\7z1805-x64.msi"
 msiexec.exe /q /I "%WINDIR%\Setup\Files\qalculate-2.4.0a.msi"
 msiexec.exe /q /I "%WINDIR%\Setup\Files\GoogleChromeStandaloneEnterprise64.msi"
 msiexec.exe /q /I "%WINDIR%\Setup\Files\LibreOffice_5.4.6_Win_x64.msi"
