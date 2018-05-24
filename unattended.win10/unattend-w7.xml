@@ -226,7 +226,7 @@ Notes: dennyhalim.com
 <LocalAccounts>
 <LocalAccount wcm:action="add">
 <Password>
-<Value>123</Value>
+<Value>change-your-password</Value>
 <PlainText>true</PlainText>
 </Password>
 <Description></Description>
