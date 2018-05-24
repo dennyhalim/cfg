@@ -82,7 +82,7 @@ Notes: dennyhalim.com
 </ImageInstall>
 <UserData>
 <AcceptEula>true</AcceptEula>
-<FullName>agci</FullName>
+<FullName>user</FullName>
 <Organization></Organization>
 </UserData>
 <EnableFirewall>true</EnableFirewall>
@@ -140,7 +140,7 @@ Notes: dennyhalim.com
 </ImageInstall>
 <UserData>
 <AcceptEula>true</AcceptEula>
-<FullName>agci</FullName>
+<FullName>user</FullName>
 <Organization></Organization>
 </UserData>
 <EnableFirewall>true</EnableFirewall>
@@ -184,7 +184,7 @@ Notes: dennyhalim.com
 <UserLocale>en-US</UserLocale>
 </component>
 <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-<RegisteredOwner>agci</RegisteredOwner>
+<RegisteredOwner>user</RegisteredOwner>
 <OOBE>
 <HideEULAPage>true</HideEULAPage>
 <NetworkLocation>Work</NetworkLocation>
@@ -220,7 +220,7 @@ Notes: dennyhalim.com
 <PlainText>true</PlainText>
 </Password>
 <Enabled>true</Enabled>
-<Username>agci</Username>
+<Username>user</Username>
 </AutoLogon>
 <UserAccounts>
 <LocalAccounts>
@@ -240,15 +240,15 @@ Notes: dennyhalim.com
 <PlainText>true</PlainText>
 </Password>
 <Description></Description>
-<DisplayName>agci</DisplayName>
+<DisplayName>user</DisplayName>
 <Group>Users</Group>
-<Name>agci</Name>
+<Name>user</Name>
 </LocalAccount>
 </LocalAccounts>
 </UserAccounts>
 </component>
 <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-<RegisteredOwner>agci</RegisteredOwner>
+<RegisteredOwner>user</RegisteredOwner>
 <OOBE>
 <HideEULAPage>true</HideEULAPage>
 <NetworkLocation>Work</NetworkLocation>
