@@ -45,6 +45,7 @@ schtasks.exe /change /TN "\Microsoft\Windows\Customer Experience Improvement Pro
 dism.exe /online /norestart /Enable-Feature /FeatureName:TelnetClient
 dism.exe /online /norestart /Disable-Feature /FeatureName:MediaPlayback
 dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsMediaPlayer
+dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsGadgetPlatform 
 dism.exe /online /norestart /Disable-Feature /FeatureName:Indexing-Service-Package
 dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-x86
 dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-amd64
