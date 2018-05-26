@@ -1,12 +1,13 @@
-
-Enable-WindowsOptionalFeature -Online -FeatureName TelnetClient -NoRestart
+#dennyhalim.com
+# better options: use dism for w7 features and powershell for w10 features
+#Enable-WindowsOptionalFeature -Online -FeatureName TelnetClient -NoRestart
 Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol-Client -NoRestart
 Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol-Server -NoRestart
 Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol-Deprecation -NoRestart
-Disable-WindowsOptionalFeature -Online -FeatureName MediaPlayback -NoRestart
-Disable-WindowsOptionalFeature -Online -FeatureName WindowsMediaPlayer -NoRestart
-Disable-WindowsOptionalFeature -Online -FeatureName Internet-Explorer-Optional-amd64 -NoRestart
-Disable-WindowsOptionalFeature -Online -FeatureName Internet-Explorer-Optional-x86 -NoRestart
+#Disable-WindowsOptionalFeature -Online -FeatureName MediaPlayback -NoRestart
+#Disable-WindowsOptionalFeature -Online -FeatureName WindowsMediaPlayer -NoRestart
+#Disable-WindowsOptionalFeature -Online -FeatureName Internet-Explorer-Optional-amd64 -NoRestart
+#Disable-WindowsOptionalFeature -Online -FeatureName Internet-Explorer-Optional-x86 -NoRestart
 
 Get-AppXProvisionedPackage -Online | where-object {$_.name -notlike "*Store*"} | Remove-AppxProvisionedPackage -Online 
 Get-AppxPackage -AllUsers | where-object {$_.name -notlike "*Store*"} | Remove-AppxPackage
