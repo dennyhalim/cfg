@@ -1,13 +1,4 @@
 #dennyhalim.com
-# better options: use dism for w7 features and powershell for w10 features
-#Enable-WindowsOptionalFeature -Online -FeatureName TelnetClient -NoRestart
-Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol-Client -NoRestart
-Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol-Server -NoRestart
-Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol-Deprecation -NoRestart
-#Disable-WindowsOptionalFeature -Online -FeatureName MediaPlayback -NoRestart
-#Disable-WindowsOptionalFeature -Online -FeatureName WindowsMediaPlayer -NoRestart
-#Disable-WindowsOptionalFeature -Online -FeatureName Internet-Explorer-Optional-amd64 -NoRestart
-#Disable-WindowsOptionalFeature -Online -FeatureName Internet-Explorer-Optional-x86 -NoRestart
 
 Get-AppXProvisionedPackage -Online | where-object {$_.name -notlike "*Store*"} | Remove-AppxProvisionedPackage -Online 
 Get-AppxPackage -AllUsers | where-object {$_.name -notlike "*Store*"} | Remove-AppxPackage
@@ -45,6 +36,16 @@ Register-ScheduledTask chocoupgrade -InputObject $task
 
 Set-MpPreference -Force -SevereThreatDefaultAction Remove -HighThreatDefaultAction Quarantine -ModerateThreatDefaultAction Quarantine -LowThreatDefaultAction Clean -RemediationScheduleDay 6 -RemediationScheduleTime 11:00 -ScanScheduleDay 0 -ScanScheduleTime 09:00 -SignatureUpdateInterval 3 -SubmitSamplesConsent Never
 Enable-PSRemoting -Force -SkipNetworkProfileCheck
+
+# better options: use dism for features also available on w7 and powershell for w10 only features
+#Enable-WindowsOptionalFeature -Online -FeatureName TelnetClient -NoRestart
+Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol-Client -NoRestart
+Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol-Server -NoRestart
+Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol-Deprecation -NoRestart
+#Disable-WindowsOptionalFeature -Online -FeatureName MediaPlayback -NoRestart
+#Disable-WindowsOptionalFeature -Online -FeatureName WindowsMediaPlayer -NoRestart
+#Disable-WindowsOptionalFeature -Online -FeatureName Internet-Explorer-Optional-amd64 -NoRestart
+#Disable-WindowsOptionalFeature -Online -FeatureName Internet-Explorer-Optional-x86 -NoRestart
 
 #Enable-ComputerRestore -drive "${env:HOMEDRIVE}"
 Register-ScheduledJob -Name checkpoint -RunNow -ScriptBlock {Checkpoint-Computer -Description 'dennyhalim.com'} -Trigger @{Frequency="Weekly"; At="11:00AM"; DaysOfWeek="Monday"} -ScheduledJobOption @{RunElevated=$True}
