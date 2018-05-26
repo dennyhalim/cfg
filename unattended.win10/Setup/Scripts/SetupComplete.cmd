@@ -42,13 +42,6 @@ schtasks.exe /change /TN "\Microsoft\Windows\Application Experience\ProgramDataU
 schtasks.exe /change /TN "\Microsoft\Windows\Customer Experience Improvement Program\Consolidator" /DISABLE
 schtasks.exe /change /TN "\Microsoft\Windows\Customer Experience Improvement Program\KernelCeipTask" /DISABLE
 schtasks.exe /change /TN "\Microsoft\Windows\Customer Experience Improvement Program\UsbCeip" /DISABLE
-dism.exe /online /norestart /Enable-Feature /FeatureName:TelnetClient /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:MediaPlayback /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsMediaPlayer /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsGadgetPlatform  /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:Indexing-Service-Package /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-x86 /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-amd64 /NoRestart
 
 "%WINDIR%\Setup\Files\chocolatey.exe" /S
 "%WINDIR%\Setup\Files\Firefox Setup 52.6.0esr.exe" -ms
@@ -63,6 +56,13 @@ msiexec.exe /q /I "%WINDIR%\Setup\Files\LibreOffice_5.4.6_Win_x64.msi"
 rem "%WINDIR%\Setup\Files\avira_pc_cleaner_en.exe" /s
 "%WINDIR%\Setup\Files\mb3-setup-consumer-3.4.5.2467-1.0.342-1.0.4664.exe" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-
 "%WINDIR%\Setup\Files\avast_business_antivirus_managed_setup_offline_silent.exe"
+dism.exe /online /norestart /Enable-Feature /FeatureName:TelnetClient /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:MediaPlayback /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsMediaPlayer /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsGadgetPlatform  /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:Indexing-Service-Package /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-x86 /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-amd64 /NoRestart
 
 mkdir "%Public%\Desktop.dennyhalim"
 move "%Public%\Desktop\*.*" "%Public%\Desktop.dennyhalim"
