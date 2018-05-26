@@ -56,13 +56,6 @@ msiexec.exe /q /I "%WINDIR%\Setup\Files\LibreOffice_5.4.6_Win_x64.msi"
 rem "%WINDIR%\Setup\Files\avira_pc_cleaner_en.exe" /s
 "%WINDIR%\Setup\Files\mb3-setup-consumer-3.4.5.2467-1.0.342-1.0.4664.exe" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-
 "%WINDIR%\Setup\Files\avast_business_antivirus_managed_setup_offline_silent.exe"
-dism.exe /online /norestart /Enable-Feature /FeatureName:TelnetClient /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:MediaPlayback /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsMediaPlayer /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsGadgetPlatform  /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:Indexing-Service-Package /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-x86 /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-amd64 /NoRestart
 
 mkdir "%Public%\Desktop.dennyhalim"
 move "%Public%\Desktop\*.*" "%Public%\Desktop.dennyhalim"
@@ -76,6 +69,14 @@ sc.exe config RetailDemo start= disabled
 sc.exe config lfsvc start= disabled
 sc.exe config ssh-agent start= auto
 sc.exe config sshd start= auto
+
+dism.exe /online /norestart /Enable-Feature /FeatureName:TelnetClient /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:MediaPlayback /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsMediaPlayer /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsGadgetPlatform  /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:Indexing-Service-Package /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-x86 /NoRestart
+dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-amd64 /NoRestart
 
 rem "%WINDIR%\Setup-githubbox.exe"
 
