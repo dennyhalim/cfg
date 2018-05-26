@@ -70,6 +70,7 @@ sc.exe config lfsvc start= disabled
 sc.exe config ssh-agent start= auto
 sc.exe config sshd start= auto
 
+rem use powershell for w10 only features
 dism.exe /online /norestart /Enable-Feature /FeatureName:TelnetClient /NoRestart
 dism.exe /online /norestart /Disable-Feature /FeatureName:MediaPlayback /NoRestart
 dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsMediaPlayer /NoRestart
