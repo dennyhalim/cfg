@@ -39,6 +39,7 @@ Enable-PSRemoting -Force -SkipNetworkProfileCheck
 
 # better options: use dism for features also available on w7 and powershell for w10 only features
 #Enable-WindowsOptionalFeature -Online -FeatureName TelnetClient -NoRestart
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
 Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol-Client -NoRestart
 Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol-Server -NoRestart
 Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol-Deprecation -NoRestart
