@@ -71,13 +71,13 @@ sc.exe config ssh-agent start= auto
 sc.exe config sshd start= auto
 
 rem use powershell for w10 only features
-dism.exe /online /norestart /Enable-Feature /FeatureName:TelnetClient /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:MediaPlayback /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsMediaPlayer /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsGadgetPlatform  /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:Indexing-Service-Package /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-x86 /NoRestart
-dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-amd64 /NoRestart
+dism.exe /online /norestart /Enable-Feature /FeatureName:TelnetClient
+dism.exe /online /norestart /Disable-Feature /FeatureName:MediaPlayback
+dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsMediaPlayer
+dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsGadgetPlatform 
+dism.exe /online /norestart /Disable-Feature /FeatureName:Indexing-Service-Package
+dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-x86
+dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-amd64
 
 rem "%WINDIR%\Setup-githubbox.exe"
 
