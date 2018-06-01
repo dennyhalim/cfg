@@ -27,36 +27,43 @@ set api-ssl disabled=yes
 
 #wireless config
 /interface wireless
-set [ find default-name=wlan1 ] disabled=no mode=ap-bridge ssid=\
-    dennyhalim.com wireless-protocol=802.11 default-ap-tx-limit=4M
+set [ find default-name=wlan1 ] disabled=no mode=ap-bridge wps-mode=disabled \
+    ssid=dennyhalim.com wireless-protocol=802.11 default-ap-tx-limit=4M
+
 /interface wireless security-profiles
 set [ find default=yes ] authentication-types=wpa2-psk mode=\
     dynamic-keys wpa2-pre-shared-key=DennyHalim
 add authentication-types=wpa2-psk mode=dynamic-keys name=profile \
     wpa2-pre-shared-key=dennyhalim.com
+
 /interface wireless
 add disabled=no master-interface=wlan1 name=\
     wlan_guest1 security-profile=profile ssid="Wifi Guests" default-forwarding=no default-ap-tx-limit=1M
+
 /interface bridge filter
 add action=drop chain=forward in-interface=wlan_guest1
 add action=drop chain=forward out-interface=wlan_guest1
 
-/ip hotspot user profile set [find default=yes] rate-limit=200k/1M
 #/ip settings set tcp-syncookies=yes
 /ip neighbor discovery 
 set ether1 discover=no
 set wlan_guest1 discover=no
 
+/ip hotspot user profile set [find default=yes] rate-limit=200k/1M
+
 /ip address
 add address=10.20.30.1/24 interface=ether2 network=10.20.30.0
 #if yourwan ip is static change disabled=yes and add wan ip
+
 /ip dhcp-client add interface=ether1 use-peer-dns=no dhcp-options=hostname,clientid disabled=no
 
 /ip pool
 add name=pool_ether2 ranges=10.20.30.101-10.20.30.200
+
 /ip dhcp-server
 add add-arp=yes address-pool=pool_ether2 authoritative=after-2sec-delay \
     disabled=no interface=ether2 name=dhcp_ether2
+
 /ip dhcp-server network
 add address=10.20.30.0/24 gateway=10.20.30.1
 
