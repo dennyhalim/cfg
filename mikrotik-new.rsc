@@ -4,6 +4,8 @@
 # ether1 WAN / internet, dhcp client, drop all
 # ether2 LAN ip 10.20.30.1 , dhcp server, accept input
 # servers ip 10.20.30.1-10.20.30.15 ( 10.20.30.0/28 )
+# wlan1 10.20.31.1
+# wlan_guest1 10.200.31.1
 
 #usage:
 #1. upgrade firmware and reboot and make sure everything runs fine
@@ -33,12 +35,12 @@ set [ find default-name=wlan1 ] disabled=no mode=ap-bridge wps-mode=disabled \
 /interface wireless security-profiles
 set [ find default=yes ] authentication-types=wpa2-psk mode=\
     dynamic-keys wpa2-pre-shared-key=DennyHalim
-add authentication-types=wpa2-psk mode=dynamic-keys name=profile \
+add authentication-types=wpa2-psk mode=dynamic-keys name=wlan_guest1 \
     wpa2-pre-shared-key=dennyhalim.com
 
 /interface wireless
 add disabled=no master-interface=wlan1 name=\
-    wlan_guest1 security-profile=profile ssid="Wifi Guests" default-forwarding=no default-ap-tx-limit=1M
+    wlan_guest1 security-profile=wlan_guest1 ssid="Wifi Guests" default-forwarding=no default-ap-tx-limit=1M
 
 /interface bridge filter
 add action=drop chain=forward in-interface=wlan_guest1
@@ -53,19 +55,25 @@ set wlan_guest1 discover=no
 
 /ip address
 add address=10.20.30.1/24 interface=ether2 network=10.20.30.0
+add address=10.20.31.1/24 interface=wlan1 network=10.20.31.0
+add address=10.200.31.1/24 interface=wlan_guest1 network=10.200.31.0
 #if yourwan ip is static change disabled=yes and add wan ip
 
 /ip dhcp-client add interface=ether1 use-peer-dns=no dhcp-options=hostname,clientid disabled=no
 
 /ip pool
 add name=pool_ether2 ranges=10.20.30.101-10.20.30.200
+add name=wlan1 ranges=10.20.31.101-10.20.31.200
+add name=wlan1_guest1 ranges=10.200.31.101-10.200.31.200
 
 /ip dhcp-server
 add add-arp=yes address-pool=pool_ether2 authoritative=after-2sec-delay \
     disabled=no interface=ether2 name=dhcp_ether2
+add address-pool=wlan1 disabled=no interface=wlan1 name=wlan1
+add address-pool=wlan_guest1 disabled=no interface=wlan_guest1 name=wlan_guest1
 
-/ip dhcp-server network
-add address=10.20.30.0/24 gateway=10.20.30.1
+#/ip dhcp-server network
+#add address=10.20.30.0/24 gateway=10.20.30.1
 
 
 /ip firewall nat
