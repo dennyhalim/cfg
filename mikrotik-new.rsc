@@ -177,4 +177,7 @@ add ttl=1h address=127.0.0.127 regexp=youtube disabled=yes
     set ddns-enabled=yes
     get dns-name
     
+/system scheduler
+add interval=3h name=ipcloud on-event="/ip cloud force-update\r\n"
+    
 /system reboot
