@@ -202,7 +202,6 @@ add name=autobackup source=\
 add interval=3h name=ipcloud on-event="/ip cloud force-update\r\n"
 add interval=10d name=autobackup on-event=autobackup
 
-/export file=[/system identity get name]
 /system script run autobackup
 
 /system reboot
