@@ -10,8 +10,8 @@ rem move "%windir%\SystemApps\Microsoft.Windows.Cortana_cw5n1h2txyewy" "%windir%
 rem startmenu disabled if shellex disabled
 rem move "%windir%\SystemApps\ShellExperienceHost_cw5n1h2txyewy" "%windir%\SystemApps\ShellExperienceHost_cw5n1h2txyewy.dennyhalim"
 
-wmic USERACCOUNT WHERE "Name='admin'" set PasswordExpires=FALSE
-wmic USERACCOUNT WHERE "Name='user'" set PasswordExpires=FALSE
+wmic.exe USERACCOUNT WHERE "Name='admin'" set PasswordExpires=FALSE
+wmic.exe USERACCOUNT WHERE "Name='user'" set PasswordExpires=FALSE
 
 reg.exe load HKLM\DEFAULT "%Public%\..\default\ntuser.dat"
 reg.exe add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People /v PeopleBand /t REG_DWORD /d 0 /f
