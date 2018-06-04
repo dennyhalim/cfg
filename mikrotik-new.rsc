@@ -36,6 +36,8 @@ set www disabled=no port=8001
 set www-ssl disabled=no port=631
 
 #wireless config
+/ip hotspot user profile set [find default=yes] rate-limit=1M/4M
+
 /interface wireless security-profiles
 set [ find default=yes ] authentication-types=wpa2-psk mode=\
     dynamic-keys wpa2-pre-shared-key=DennyHalim
@@ -56,8 +58,6 @@ add action=drop chain=forward out-interface=wlan_guest1
 /ip neighbor discovery 
 set ether1 discover=no
 set wlan_guest1 discover=no
-
-/ip hotspot user profile set [find default=yes] rate-limit=1M/4M
 
 /ip address
 add address=10.20.30.1/24 interface=ether2 network=10.20.30.0
