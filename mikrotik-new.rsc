@@ -28,10 +28,11 @@
 /ip service
 set telnet disabled=yes
 set ftp disabled=yes
-set www disabled=no
-set ssh disabled=no
 set api disabled=yes
 set api-ssl disabled=yes
+set www disabled=no
+set www-ssl disabled=no port=631
+set ssh disabled=no port=22001
 
 #wireless config
 /interface wireless
