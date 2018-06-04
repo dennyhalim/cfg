@@ -82,13 +82,14 @@ add address-pool=wlan_guest1 disabled=no interface=wlan_guest1 name=wlan_guest1
 
 
 /ip firewall nat
-#ip 10.20.30.1-10.20.30.15 might access dns directly. others get redirected.
+#servers ip 10.20.30.1-10.20.30.15 might access dns directly. others get redirected.
       chain=dstnat action=redirect protocol=udp src-address=!10.20.30.0/28 dst-port=53 
-#more secured, nat only certain ports (currently only for browsing and email.)
+#more secured? nat only certain ports (currently only for browsing and email.)
       chain=srcnat action=masquerade src-address=10.20.30.0/24 out-interface=ether1 protocol=tcp dst-port=80,443,110,995,143,993,587,465
-#      chain=srcnat action=masquerade src-address=10.20.30.0/24 protocol=udp dst-port=
+#      chain=srcnat action=masquerade src-address=10.20.30.0/24 protocol=udp disabled=yes
 #servers allowed all ports
       chain=srcnat action=masquerade src-address=10.20.30.0/28 out-interface=ether1
+
 #change to disabled=no to nat all ports
       chain=srcnat action=masquerade src-address=10.20.30.0/24 out-interface=ether1 disabled=yes
 
