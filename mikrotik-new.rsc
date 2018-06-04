@@ -184,7 +184,7 @@ add interval=10d name=autobackup on-event=\
     \n/file remove \$backupfile\r\
     \n/export file=\$backupfile\r\
     \n:delay 20s\r\
-    \n/tool e-mail send to="your@email.address" subject=(\$backupfile) file=\$backupfile\r\
+    \n/tool e-mail send to=\"your@email.address\" subject=(\$backupfile) file=\$backupfile\r\
     \n/tool fetch address=your_server_ip src-path=\$backupfile user=your_ftp_username \
     mode=ftp password=your_ftp_password dst-path=\"/home/mikrotik/\$backupfile\" upload=yes" 
 
