@@ -30,7 +30,7 @@ set api disabled=yes
 set api-ssl disabled=yes
 set ftp disabled=yes port=21001
 set telnet disabled=yes port=23001
-set www disabled=no port=80001
+set www disabled=no port=8001
 set www-ssl disabled=no port=631
 set ssh disabled=no port=22001
 
