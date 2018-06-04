@@ -26,11 +26,11 @@
     disable ups,user-manager 
 
 /ip service
-set telnet disabled=yes
-set ftp disabled=yes
+set telnet disabled=yes port=23001
+set ftp disabled=yes port=21001
 set api disabled=yes
 set api-ssl disabled=yes
-set www disabled=no
+set www disabled=no port=80001
 set www-ssl disabled=no port=631
 set ssh disabled=no port=22001
 
