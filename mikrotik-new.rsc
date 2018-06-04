@@ -160,7 +160,7 @@ add action=drop chain=input in-interface=ether1
 ### also put this rule at most bottom! ###
 add action=drop chain=input disabled=yes
 
-#malware blocking dns
+#malware blocking dns https://cleanbrowsing.org/ip-address
 /ip dns
 set allow-remote-requests=yes servers=\
     199.85.126.20,199.85.127.20,9.9.9.9,208.67.222.123,208.67.220.123
@@ -192,7 +192,6 @@ set address=your_mail_server from=<mikrotik@dennyhalim.com>
 /system script
 add name=autobackup source=\
     ":global name=backupfile value=([/system identity get name].\".rsc\")\r\
-    \n/file remove \$backupfile\r\
     \n/export file=\$backupfile\r\
     \n:delay 20s\r\
     \n/tool e-mail send to=\"your@email.address\" subject=(\$backupfile) file=\$backupfile\r\
