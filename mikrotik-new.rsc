@@ -30,9 +30,10 @@ set api disabled=yes
 set api-ssl disabled=yes
 set ftp disabled=yes port=21001
 set telnet disabled=yes port=23001
+
+set ssh disabled=no port=22001
 set www disabled=no port=8001
 set www-ssl disabled=no port=631
-set ssh disabled=no port=22001
 
 #wireless config
 /interface wireless security-profiles
@@ -56,7 +57,7 @@ add action=drop chain=forward out-interface=wlan_guest1
 set ether1 discover=no
 set wlan_guest1 discover=no
 
-/ip hotspot user profile set [find default=yes] rate-limit=200k/1M
+/ip hotspot user profile set [find default=yes] rate-limit=1M/4M
 
 /ip address
 add address=10.20.30.1/24 interface=ether2 network=10.20.30.0
