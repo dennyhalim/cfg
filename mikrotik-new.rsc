@@ -17,7 +17,13 @@
 #6. test, make sure everything runs fine
 
 #only enable packages and services you need 
-/system package disable calea,gps,mpls,multicast,tr069-client,ups,user-manager 
+/system package 
+    disable calea
+    disable gps
+#    disable mpls
+    disable multicast
+    disable tr069-client
+    disable ups,user-manager 
 
 /ip service
 set telnet disabled=yes
