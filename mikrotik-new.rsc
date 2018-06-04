@@ -196,7 +196,7 @@ add name=autobackup source=\
     \n:delay 20s\r\
     \n/tool e-mail send to=\"your@email.address\" subject=(\$backupfile) file=\$backupfile\r\
     \n/tool fetch address=your_ftp_server_ip src-path=\$backupfile user=your_ftp_username \
-    mode=ftp password=your_ftp_password dst-path=\"/home/your_ftp_username/\$backupfile\" upload=yes;\r\n"
+    mode=ftp password=your_ftp_password dst-path=\"/home/your_ftp_username/\$backupfile\" upload=yes\r\n"
 
 /system scheduler
 add interval=3h name=ipcloud on-event="/ip cloud force-update\r\n"
