@@ -181,7 +181,7 @@ add ttl=1h address=127.0.0.127 regexp=youtube disabled=yes
 set address=your_mail_server from=<mikrotik@dennyhalim.com>
 
 /system script
-add name=autobackup owner=admin source=\
+add name=autobackup source=\
     ":global name=backupfile value=([/system identity get name].\".rsc\")\r\
     \n/file remove \$backupfile\r\
     \n/export file=\$backupfile\r\
