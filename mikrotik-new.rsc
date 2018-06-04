@@ -35,10 +35,6 @@ set www-ssl disabled=no port=631
 set ssh disabled=no port=22001
 
 #wireless config
-/interface wireless
-set [ find default-name=wlan1 ] disabled=no mode=ap-bridge wps-mode=disabled \
-    ssid=dennyhalim.com wireless-protocol=802.11 default-ap-tx-limit=4M
-
 /interface wireless security-profiles
 set [ find default=yes ] authentication-types=wpa2-psk mode=\
     dynamic-keys wpa2-pre-shared-key=DennyHalim
@@ -46,6 +42,8 @@ add authentication-types=wpa2-psk mode=dynamic-keys name=wlan_guest1 \
     wpa2-pre-shared-key=dennyhalim.com
 
 /interface wireless
+set [ find default-name=wlan1 ] disabled=no mode=ap-bridge wps-mode=disabled \
+    ssid=dennyhalim.com wireless-protocol=802.11 default-ap-tx-limit=4M
 add disabled=no master-interface=wlan1 name=\
     wlan_guest1 security-profile=wlan_guest1 ssid="Wifi Guests" default-forwarding=no default-ap-tx-limit=1M
 
