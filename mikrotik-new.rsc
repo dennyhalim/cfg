@@ -20,6 +20,7 @@
 /system package 
     disable calea
     disable gps
+#    disable ipv6
 #    disable mpls
     disable multicast
     disable tr069-client
