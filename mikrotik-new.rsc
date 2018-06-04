@@ -180,15 +180,20 @@ add ttl=1h address=127.0.0.127 regexp=youtube disabled=yes
 /tool e-mail
 set address=your_mail_server from=<mikrotik@dennyhalim.com>
 
-/system scheduler
-add interval=3h name=ipcloud on-event="/ip cloud force-update\r\n"
-add interval=10d name=autobackup on-event=\
+/system script
+add name=autobackup owner=admin source=\
     ":global name=backupfile value=([/system identity get name].\".rsc\")\r\
     \n/file remove \$backupfile\r\
     \n/export file=\$backupfile\r\
     \n:delay 20s\r\
     \n/tool e-mail send to=\"your@email.address\" subject=(\$backupfile) file=\$backupfile\r\
-    \n/tool fetch address=your_server_ip src-path=\$backupfile user=your_ftp_username \
-    mode=ftp password=your_ftp_password dst-path=\"/home/mikrotik/\$backupfile\" upload=yes" 
+    \n/tool fetch address=your_ftp_server_ip src-path=\$backupfile user=your_ftp_username \
+    mode=ftp password=your_ftp_password dst-path=\"/home/your_ftp_username/\$backupfile\" upload=yes;\r\n"
+
+/system scheduler
+add interval=3h name=ipcloud on-event="/ip cloud force-update\r\n"
+add interval=10d name=autobackup on-event=autobackup
+
+/system script run autobackup
 
 /system reboot
