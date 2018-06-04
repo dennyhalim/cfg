@@ -1,5 +1,5 @@
 # dennyhalim.com relative secured mikrotik config kickstarter
-# NOT TESTED
+# only partial tested
 # only use this to completely re-configure your mikrotik
 # ether1 WAN / internet, dhcp client, drop all
 # ether2 LAN ip 10.20.30.1 , dhcp server, accept input
