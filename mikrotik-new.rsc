@@ -9,9 +9,10 @@
 
 # WARNING: this will reset your router config!
 # automatic setup, run these commands:
-# /tool fetch url=https://raw.githubusercontent.com/dennyhalim/cfg/master/mikrotik-new.rsc
-# /export file=[/system identity get name]
-# /system backup save
+/tool fetch url=https://raw.githubusercontent.com/dennyhalim/cfg/master/mikrotik-new.rsc
+/export file=[/system identity get name]
+/system backup save
+# manually run these, it will also reboot your router
 # /system package update install
 # /system reset-configuration run-after-reset=mikrotik-new.rsc
 
