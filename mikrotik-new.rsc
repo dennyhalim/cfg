@@ -14,9 +14,9 @@
 /system backup save
 # manually run these, it will also reboot your router
 # /system package update install
-# /system reset-configuration run-after-reset=mikrotik-new.rsc
+# /system reset-configuration no-defaults=yes #run-after-reset=mikrotik-new.rsc
 
-# or manually copy-paste into mikrotik terminal
+# then, manually copy-paste into mikrotik terminal
 # after configured, change all passwords, keys, email, server_ip etc.
 # test everything works.
 
