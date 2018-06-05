@@ -8,7 +8,8 @@
 # wlan_guest1 10.200.31.1
 
 # WARNING: this will reset your router config!
-# automatic setup, run this two lines:
+# automatic setup, run these commands:
+# /system package update install
 # /tool fetch url=https://raw.githubusercontent.com/dennyhalim/cfg/master/mikrotik-new.rsc
 # /system reset-configuration run-after-reset=mikrotik-new.rsc
 
