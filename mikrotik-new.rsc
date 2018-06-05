@@ -9,8 +9,8 @@
 
 # WARNING: this will reset your router config!
 # automatic setup, run these commands:
-# /system package update install
 # /tool fetch url=https://raw.githubusercontent.com/dennyhalim/cfg/master/mikrotik-new.rsc
+# /system package update install
 # /system reset-configuration run-after-reset=mikrotik-new.rsc
 
 #alternative:
