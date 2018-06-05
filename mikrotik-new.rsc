@@ -210,6 +210,7 @@ add name=autobackup source=\
 add interval=3h name=ipcloud on-event="/ip cloud force-update\r\n"
 add interval=10d name=autobackup on-event=autobackup
 
+/system ntp client set primary-ntp=87.124.126.49 secondary-ntp=204.9.54.119 enabled=yes
 /system script run autobackup
 
 /system reboot
