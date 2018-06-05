@@ -122,6 +122,10 @@ add action=drop chain=forward comment="Drop Invalid Forward" \
     connection-state=invalid
 #add chain=forward protocol=tcp tcp-flags=syn connection-limit=200,32 action=drop comment="too much connections"
 
+add action=drop chain=input in-interface=wlan_guest1
+#drop all from WAN
+add action=drop chain=input in-interface=ether1
+add action=drop chain=input
 
 /ip firewall filter
 add chain=forward connection-state=new action=jump jump-target=block-ddos
@@ -157,6 +161,7 @@ add action=accept chain=input comment="allow from lan" in-interface=ether2
 #add action=accept chain=input comment=capman in-interface=capman1
 #add action=accept chain=forward comment="Allow new connections through router coming in LAN interface" \
 #    connection-state=new in-interface=ether2
+add action=drop chain=input in-interface=wlan_guest1
 #drop all from WAN
 add action=drop chain=input in-interface=ether1
 #drop everything else
