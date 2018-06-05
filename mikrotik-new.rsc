@@ -11,6 +11,7 @@
 # automatic setup, run these commands:
 # /tool fetch url=https://raw.githubusercontent.com/dennyhalim/cfg/master/mikrotik-new.rsc
 # /export file=[/system identity get name]
+# /system backup save
 # /system package update install
 # /system reset-configuration run-after-reset=mikrotik-new.rsc
 
