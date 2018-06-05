@@ -7,7 +7,12 @@
 # wlan1 10.20.31.1
 # wlan_guest1 10.200.31.1
 
-#usage:
+# WARNING: this will reset your router config!
+# automatic setup, run this two lines:
+# /tool fetch url=https://raw.githubusercontent.com/dennyhalim/cfg/master/mikrotik-new.rsc
+# /system reset-configuration run-after-reset=mikrotik-new.rsc
+
+#alternative:
 #1. upgrade firmware and reboot and make sure everything runs fine
 #2. reset mikrotik 
 #   /system reset-configuration no-defaults=yes
