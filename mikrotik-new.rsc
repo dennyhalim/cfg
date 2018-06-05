@@ -17,6 +17,8 @@
 # /system reset-configuration run-after-reset=mikrotik-new.rsc
 
 # or manually copy-paste into mikrotik terminal
+# after configured, change all passwords, keys, email, server_ip etc.
+# test everything works.
 
 #only enable packages and services you need 
 /system package 
