@@ -22,13 +22,14 @@
 
 #only enable packages and services you need 
 /system package 
-    disable calea
-    disable gps
-#    disable ipv6
-#    disable mpls
-    disable multicast
-    disable tr069-client
-    disable ups,user-manager 
+disable calea
+disable gps
+#disable ipv6
+#disable mpls
+disable multicast
+disable tr069-client
+disable ups
+disable user-manager 
 
 /ip service
 set api disabled=yes
