@@ -16,14 +16,7 @@
 # /system package update install
 # /system reset-configuration run-after-reset=mikrotik-new.rsc
 
-#alternative:
-#1. upgrade firmware and reboot and make sure everything runs fine
-#2. reset mikrotik 
-#   /system reset-configuration no-defaults=yes
-#3. reconnect using MAC address
-#4. copy-paste this into mikrotik terminal
-#5. change password (system menu) and wireless wpa2-pre-shared-key / ssid
-#6. test, make sure everything runs fine
+# or manually copy-paste into mikrotik terminal
 
 #only enable packages and services you need 
 /system package 
