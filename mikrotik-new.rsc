@@ -23,6 +23,7 @@
 # test everything works.
 
 #only enable packages and services you need 
+/tool bandwidth-server set enabled=no
 /system package 
 disable calea
 disable gps
