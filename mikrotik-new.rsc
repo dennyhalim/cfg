@@ -11,6 +11,7 @@
 # automatic setup, run these commands:
 /tool fetch url=https://raw.githubusercontent.com/dennyhalim/cfg/master/mikrotik-new.rsc
 /export file=[/system identity get name]
+/system package update set channel=bugfix
 # /system backup save #there will be auto-before-reset.backup
 # manually run these, it will also reboot your router
 # /system package update install
