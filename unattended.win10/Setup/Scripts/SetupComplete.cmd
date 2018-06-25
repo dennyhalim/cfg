@@ -60,6 +60,9 @@ rem "%WINDIR%\Setup\Files\avira_pc_cleaner_en.exe" /s
 "%WINDIR%\Setup\Files\mb3-setup-consumer-3.4.5.2467-1.0.342-1.0.4664.exe" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-
 "%WINDIR%\Setup\Files\avast_business_antivirus_managed_setup_offline_silent.exe"
 
+powershell.exe -ExecutionPolicy Bypass -File "%WINDIR%\Setup\Progs\OpenSSH\install-sshd.ps1"
+PowerShell.exe -ExecutionPolicy Bypass -File "%WINDIR%\Setup\Files\setup.ps1"
+
 sc.exe config wuauserv start= demand
 sc.exe config DiagTrack start= disabled
 sc.exe config dmwappushservice start= disabled
@@ -68,10 +71,10 @@ sc.exe config lfsvc start= disabled
 sc.exe config ssh-agent start= auto
 sc.exe config sshd start= auto
 
+netsh advfirewall firewall add rule dir=in action=allow profile=any protocol=TCP localport=2222 name="sshd"
+
 mkdir "%Public%\Desktop.dennyhalim"
 move "%Public%\Desktop\*.*" "%Public%\Desktop.dennyhalim"
-powershell.exe -ExecutionPolicy Bypass -File "%WINDIR%\Setup\Progs\OpenSSH\install-sshd.ps1"
-PowerShell.exe -ExecutionPolicy Bypass -File "%WINDIR%\Setup\Files\setup.ps1"
 
 rem use powershell for w10 only features
 dism.exe /online /norestart /Enable-Feature /FeatureName:TelnetClient
