@@ -50,12 +50,12 @@ schtasks.exe /change /TN "\Microsoft\Windows\Customer Experience Improvement Pro
 "%WINDIR%\Setup\Files\Firefox Setup 52.6.0esr.exe" -ms
 "%WINDIR%\Setup\Files\vlc-3.0.1-win64.exe" /L=1033 /S
 "%WINDIR%\Setup\Files\SumatraPDF-3.1.2-64-install.exe" /S
-msiexec.exe /q /I "%WINDIR%\Setup\Files\just-install.msi"
-msiexec.exe /q /I "%WINDIR%\Setup\Files\NpackdCL-1.23.2.msi"
-msiexec.exe /q /I "%WINDIR%\Setup\Files\7z1805-x64.msi"
-msiexec.exe /q /I "%WINDIR%\Setup\Files\qalculate-2.4.0a.msi"
-msiexec.exe /q /I "%WINDIR%\Setup\Files\GoogleChromeStandaloneEnterprise64.msi"
-msiexec.exe /q /I "%WINDIR%\Setup\Files\LibreOffice_5.4.6_Win_x64.msi"
+msiexec.exe /qb /I "%WINDIR%\Setup\Files\just-install.msi"
+msiexec.exe /qb /I "%WINDIR%\Setup\Files\NpackdCL-1.23.2.msi"
+msiexec.exe /qb /I "%WINDIR%\Setup\Files\7z1805-x64.msi"
+msiexec.exe /qb /I "%WINDIR%\Setup\Files\qalculate-2.4.0a.msi"
+msiexec.exe /qb /I "%WINDIR%\Setup\Files\GoogleChromeStandaloneEnterprise64.msi"
+msiexec.exe /qb /I "%WINDIR%\Setup\Files\LibreOffice_5.4.6_Win_x64.msi"
 rem "%WINDIR%\Setup\Files\avira_pc_cleaner_en.exe" /s
 "%WINDIR%\Setup\Files\mb3-setup-consumer-3.4.5.2467-1.0.342-1.0.4664.exe" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-
 "%WINDIR%\Setup\Files\avast_business_antivirus_managed_setup_offline_silent.exe"
