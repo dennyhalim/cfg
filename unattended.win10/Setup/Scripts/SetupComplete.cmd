@@ -86,4 +86,4 @@ dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Opti
 dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-amd64
 
 rem "%WINDIR%\Setup-githubbox.exe"
-
+rem shutdown /r /f /t 0
