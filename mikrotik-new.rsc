@@ -95,8 +95,8 @@ add address-pool=wlan1_guest1 disabled=no interface=wlan_guest1 name=wlan_guest1
 /ip firewall nat
 #servers ip 10.20.30.1-10.20.30.15 might access dns directly. others get redirected.
      add chain=dstnat action=redirect protocol=udp src-address=!10.20.30.0/28 dst-port=53 disabled=yes comment=redirect_to_local
-     add chain=dstnat action=redirect protocol=udp src-address=!10.20.30.0/28 dst-port=53 to-addresses=185.228.168.10 to-port=5353 disabled=no comment=redirect_to_cleanbrowsing
-     add chain=dstnat action=redirect protocol=udp src-address=!10.20.30.0/28 dst-port=53 to-addresses=208.67.222.123 to-port=443 disabled=yes comment=redirect_to_opendns
+     add chain=dstnat action=dst-nat protocol=udp src-address=!10.20.30.0/28 dst-port=53 to-addresses=185.228.168.10 to-port=5353 disabled=no comment=redirect_to_cleanbrowsing
+     add chain=dstnat action=dst-nat protocol=udp src-address=!10.20.30.0/28 dst-port=53 to-addresses=208.67.222.123 to-port=443 disabled=yes comment=redirect_to_opendns
 #more secured? nat only certain ports (currently only for browsing and email.)
      add chain=srcnat action=masquerade src-address=10.20.30.0/24 out-interface=ether1 protocol=tcp dst-port=80,443,110,995,143,993,587,465
 #enter dest-port to allow connections to certain udp ports
