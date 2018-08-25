@@ -8,9 +8,10 @@
 # wlan_guest1 10.200.31.1
 
 # WARNING: this will reset your router config!
+# do backup your important configs
 # automatic setup, run these commands:
-/tool fetch url=https://raw.githubusercontent.com/dennyhalim/cfg/master/mikrotik-new.rsc
-/export file=[/system identity get name]
+# /tool fetch url=https://raw.githubusercontent.com/dennyhalim/cfg/master/mikrotik-new.rsc
+# /export file=[/system identity get name]
 /system package update set channel=bugfix
 # /system backup save #there will be auto-before-reset.backup
 # manually run these, it will also reboot your router
@@ -93,15 +94,15 @@ add address-pool=wlan_guest1 disabled=no interface=wlan_guest1 name=wlan_guest1
 
 /ip firewall nat
 #servers ip 10.20.30.1-10.20.30.15 might access dns directly. others get redirected.
-      chain=dstnat action=redirect protocol=udp src-address=!10.20.30.0/28 dst-port=53 disabled=yes comment=redirect_to_local
-      chain=dstnat action=redirect protocol=udp src-address=!10.20.30.0/28 dst-port=53 to-addresses=185.228.168.10 to-port=5353 disabled=no comment=redirect_to_cleanbrowsing
-      chain=dstnat action=redirect protocol=udp src-address=!10.20.30.0/28 dst-port=53 to-addresses=208.67.222.123 to-port=443 disabled=yes comment=redirect_to_opendns
+     add chain=dstnat action=redirect protocol=udp src-address=!10.20.30.0/28 dst-port=53 disabled=yes comment=redirect_to_local
+     add chain=dstnat action=redirect protocol=udp src-address=!10.20.30.0/28 dst-port=53 to-addresses=185.228.168.10 to-port=5353 disabled=no comment=redirect_to_cleanbrowsing
+     add chain=dstnat action=redirect protocol=udp src-address=!10.20.30.0/28 dst-port=53 to-addresses=208.67.222.123 to-port=443 disabled=yes comment=redirect_to_opendns
 #more secured? nat only certain ports (currently only for browsing and email.)
-      chain=srcnat action=masquerade src-address=10.20.30.0/24 out-interface=ether1 protocol=tcp dst-port=80,443,110,995,143,993,587,465
+     add chain=srcnat action=masquerade src-address=10.20.30.0/24 out-interface=ether1 protocol=tcp dst-port=80,443,110,995,143,993,587,465
 #enter dest-port to allow connections to certain udp ports
-#      chain=srcnat action=masquerade src-address=10.20.30.0/24 protocol=udp dst-port=
+#     add chain=srcnat action=masquerade src-address=10.20.30.0/24 protocol=udp dst-port=
 #servers allowed all ports
-      chain=srcnat action=masquerade src-address=10.20.30.0/28 out-interface=ether1
+     add chain=srcnat action=masquerade src-address=10.20.30.0/28 out-interface=ether1
 
 #change to disabled=no to nat all ports
       chain=srcnat action=masquerade src-address=10.20.30.0/24 out-interface=ether1 disabled=yes
