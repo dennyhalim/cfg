@@ -8,7 +8,7 @@
 # wlan_guest1 10.200.31.1
 
 # WARNING: this will reset your router config!
-# do backup your important configs
+# do backup before proceed!
 # automatic setup, run these commands:
 # /tool fetch url=https://raw.githubusercontent.com/dennyhalim/cfg/master/mikrotik-new.rsc
 # /export file=[/system identity get name]
@@ -25,15 +25,15 @@
 
 #only enable packages and services you need 
 /tool bandwidth-server set enabled=no
-/system package 
-disable calea
-disable gps
+#/system package 
+#disable calea
+#disable gps
 #disable ipv6
 #disable mpls
-disable multicast
-disable tr069-client
-disable ups
-disable user-manager 
+#disable multicast
+#disable tr069-client
+#disable ups
+#disable user-manager 
 
 /ip service
 set api disabled=yes
@@ -86,7 +86,7 @@ add name=wlan1_guest1 ranges=10.200.31.101-10.200.31.200
 add add-arp=yes address-pool=pool_ether2 authoritative=after-2sec-delay \
     disabled=no interface=ether2 name=dhcp_ether2
 add address-pool=wlan1 disabled=no interface=wlan1 name=wlan1
-add address-pool=wlan_guest1 disabled=no interface=wlan_guest1 name=wlan_guest1
+add address-pool=wlan1_guest1 disabled=no interface=wlan_guest1 name=wlan_guest1
 
 #/ip dhcp-server network
 #add address=10.20.30.0/24 gateway=10.20.30.1
@@ -105,7 +105,7 @@ add address-pool=wlan_guest1 disabled=no interface=wlan_guest1 name=wlan_guest1
      add chain=srcnat action=masquerade src-address=10.20.30.0/28 out-interface=ether1
 
 #change to disabled=no to nat all ports
-      chain=srcnat action=masquerade src-address=10.20.30.0/24 out-interface=ether1 disabled=yes
+     add chain=srcnat action=masquerade src-address=10.20.30.0/24 out-interface=ether1 disabled=yes
 
 ##FIREWALL
 #first, drop ddos and bad stuffs
@@ -222,6 +222,6 @@ add interval=10d name=autobackup on-event=autobackup
 
 /system ntp client set primary-ntp=87.124.126.49 secondary-ntp=204.9.54.119 enabled=yes \
     server-dns-names=0.pool.ntp.org,1.pool.ntp.org,2.pool.ntp.org,3.pool.ntp.org
-/system script run autobackup
+#/system script run autobackup
 
 /system reboot
