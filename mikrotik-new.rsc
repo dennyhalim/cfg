@@ -7,11 +7,6 @@
 # wlan1 10.20.31.1
 # wlan_guest1 10.200.31.1
 
-#log system and accounts
-/system logging
-    add action=disk topics=account
-    add action=disk topics=system
-
 # WARNING: this will reset your router config!
 # do backup before proceed!
 # automatic setup, run these commands:
@@ -27,6 +22,11 @@
 # or, manually copy-paste into mikrotik terminal
 # after configured, change all passwords, keys, email, server_ip etc.
 # test everything works.
+
+#log system and accounts
+/system logging
+    add action=disk topics=account
+    add action=disk topics=system
 
 #only enable packages and services you need 
 /tool bandwidth-server set enabled=no
