@@ -8,8 +8,9 @@
 # wlan_guest1 10.200.31.1
 
 #log system and accounts
-/system logging add action=disk topics=account
-/system logging add action=disk topics=system
+/system logging
+    add action=disk topics=account
+    add action=disk topics=system
 
 # WARNING: this will reset your router config!
 # do backup before proceed!
