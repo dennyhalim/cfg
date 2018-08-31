@@ -7,6 +7,10 @@
 # wlan1 10.20.31.1
 # wlan_guest1 10.200.31.1
 
+#log system and accounts
+/system logging add action=disk topics=account
+/system logging add action=disk topics=system
+
 # WARNING: this will reset your router config!
 # do backup before proceed!
 # automatic setup, run these commands:
