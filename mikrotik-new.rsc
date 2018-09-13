@@ -139,6 +139,9 @@ add action=drop chain=input in-interface=ether1
 add action=drop chain=input
 
 /ip firewall filter
+#block most attacked ports
+add action=drop chain=forward protocol=tcp dst-port=23,25
+
 add chain=forward connection-state=new action=jump jump-target=block-ddos
 add chain=forward connection-state=new src-address-list=ddoser dst-address-list=ddosed action=drop
 add chain=block-ddos dst-limit=50,50,src-and-dst-addresses/10s action=return
