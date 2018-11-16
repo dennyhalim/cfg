@@ -119,7 +119,7 @@ Rename-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -NewName
 
 choco upgrade -ry avastfreeantivirus
 #finalize
-$kinstlr = "$env:windir\temp\onekeyfree.exe"; Invoke-WebRequest -Uri http://www.aomeisoftware.com/download/ok/OneKeyFree.exe -OutFile $kinstlr; . $kinstlr
+#$kinstlr = "$env:windir\temp\onekeyfree.exe"; Invoke-WebRequest -Uri http://www.aomeisoftware.com/download/ok/OneKeyFree.exe -OutFile $kinstlr; . $kinstlr
 $kinstlr = "$env:windir\chocoup.xml"; Invoke-WebRequest -Uri https://raw.githubusercontent.com/dennyhalim/cfg/master/choco-upgrade-task.xml -OutFile $kinstlr; schtasks.exe /Create /XML $kinstlr /TN chocoup
 $kinstlr = "$env:windir\temp\kabuto.exe"; Invoke-WebRequest -Uri https://app.kabuto.io/dl/c/w1gowhcgaw-zmu0 -OutFile $kinstlr; . $kinstlr
 Enable-UAC
