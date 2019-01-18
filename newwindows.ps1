@@ -92,6 +92,16 @@ netsh advfirewall firewall add rule dir=in action=block profile=any protocol=UDP
 
 
 
+
+#this works in old powershell. use powershell for w10 only features
+dism.exe /online /norestart /Enable-Feature /FeatureName:TelnetClient
+dism.exe /online /norestart /Disable-Feature /FeatureName:MediaPlayback
+dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsMediaPlayer
+dism.exe /online /norestart /Disable-Feature /FeatureName:WindowsGadgetPlatform 
+dism.exe /online /norestart /Disable-Feature /FeatureName:Indexing-Service-Package
+dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-x86
+dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-amd64
+
 # better options: use dism for features also available on w7 and powershell for w10 only features
 #Enable-WindowsOptionalFeature -Online -FeatureName TelnetClient -NoRestart
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
