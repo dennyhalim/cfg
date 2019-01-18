@@ -1,18 +1,17 @@
 #dennyhalim.com
 
+#apply also to w7 old powershell
+#sc.exe config winmgmt start= disabled
 sc.exe config wuauserv start= demand
+sc.exe config WSearch start= demand
 sc.exe config DiagTrack start= disabled
 sc.exe config dmwappushservice start= disabled
 sc.exe config RetailDemo start= disabled
 sc.exe config lfsvc start= disabled
-sc.exe config ssh-agent start= auto
-sc.exe config sshd start= auto
+#sc.exe config ssh-agent start= auto
+#sc.exe config sshd start= auto
 
-Set-Service -Name wuauserv -StartupType Manual #windows auto update
-Set-Service -Name winmgmt -StartupType Manual #wmi
-Set-Service -Name DiagTrack -StartupType Disabled #diagnostic tracking
-Set-Service -Name dmwappushservice -StartupType Disabled # tracking
-Set-Service -Name WSearch -StartupType Disabled #search indexer
+#new powershell
 #Set-Service -Name SysMain -StartupType Disabled #superfetch
 #Set-Service -Name Dnscache -StartupType Manual #dnsclient
 #Set-Service -Name TabletInputService -StartupType Disabled
@@ -70,8 +69,8 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsU
 #Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" NtfsDisableLastAccessUpdate -Type DWORD -Value 1 -Force
 
 
-cscript.exe "%WINDIR%\System32\Printing_Admin_Scripts\en-US\prndrvr.vbs" -a -m "Canon LBP2900" -i "%WINDIR%\Setup\Drivers\CanonLBP2900\CNAB4STD.inf"
-cscript.exe "%WINDIR%\System32\Printing_Admin_Scripts\en-US\prndrvr.vbs" -a -m "Canon G2000 series Printer" -i "%WINDIR%\Setup\Drivers\CanonG2000\Driver\G2000P6.inf"
+#cscript.exe "%WINDIR%\System32\Printing_Admin_Scripts\en-US\prndrvr.vbs" -a -m "Canon LBP2900" -i "%WINDIR%\Setup\Drivers\CanonLBP2900\CNAB4STD.inf"
+#cscript.exe "%WINDIR%\System32\Printing_Admin_Scripts\en-US\prndrvr.vbs" -a -m "Canon G2000 series Printer" -i "%WINDIR%\Setup\Drivers\CanonG2000\Driver\G2000P6.inf"
 rem move "%WINDIR%\Setup\Drivers\*" "%WINDIR%\INF"
 
 schtasks.exe /change /TN "\Microsoft\Windows\Setup\SetupCleanupTask" /DISABLE
