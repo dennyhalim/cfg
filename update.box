@@ -71,7 +71,7 @@ $env:ChocolateyBinRoot = "\tools"
 #essentials
 choco upgrade -ry autohotkey.portable chocolatey chocolatey-core.extension toolsroot vcredist2008 #some vcredist?
 #install apps
-choco upgrade -ry 7zip.install bginfo boxstarter geany hashcheck  npackd-cli.portable remy vlc #chef-client
+choco upgrade -ry 7zip.install bginfo boxstarter geany hashcheck npackd-cli.portable openssh remy vlc #chef-client
 choco upgrade -ry firefoxesr -packageParameters "l=en-US"
 #portable not shown on control panel add/remove programs and start menu
 choco upgrade -ry adwcleaner autohotkey.portable falkon fastcopy.portable git.portable gow hwinfo.portable kitty.portable netscan.portable npackd-cli.portable pinginfoview processhacker.portable rdiff-backup recuva.portable screentogif shadowexplorer.portable spacesniffer stinger ugetdm
