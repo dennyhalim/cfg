@@ -113,8 +113,8 @@ Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol-Deprecation -No
 #Disable-WindowsOptionalFeature -Online -FeatureName Internet-Explorer-Optional-amd64 -NoRestart
 #Disable-WindowsOptionalFeature -Online -FeatureName Internet-Explorer-Optional-x86 -NoRestart
 
-# https://aka.ms/StopUsingSMB1
-Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 -Force
+# https://aka.ms/StopUsingSMB1 for old w7
+#Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 -Force
 #Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation" -Name DependOnService -Value @("bowser","mrxsmb20","nsi") -Force
 #Set-Service -Name mrxsmb10 -StartupType Disabled 
 #win8+
