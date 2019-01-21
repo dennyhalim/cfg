@@ -121,6 +121,10 @@ Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol-Deprecation -No
 #win8+
 #Set-SmbServerConfiguration -EnableSMB1Protocol $false
 
+#install choco
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+c:\ProgramData\chocolatey\choco.exe upgrade -ry boxstarter
+
 Register-ScheduledJob -Name checkpoint -RunNow -ScriptBlock {Checkpoint-Computer -Description 'dennyhalim.com'} -Trigger @{Frequency="Weekly"; At="11:00AM"; DaysOfWeek="Monday"} -ScheduledJobOption @{RunElevated=$True}
 REAGENTC.EXE /enable
 rem shutdown /r /f /t 0
