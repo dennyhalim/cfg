@@ -1,4 +1,5 @@
 #dennyhalim.com
+#PowerShell.exe -ExecutionPolicy Bypass -File "newwindows.ps1"
 
 #apply also to w7 old powershell
 #sc.exe config winmgmt start= disabled
