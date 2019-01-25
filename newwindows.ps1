@@ -1,4 +1,5 @@
 #dennyhalim.com
+#wget https://github.com/dennyhalim/cfg/raw/master/newwindows.ps1
 #PowerShell.exe -ExecutionPolicy Bypass -File "newwindows.ps1"
 
 #apply also to w7 old powershell
