@@ -2,6 +2,8 @@
 #wget https://github.com/dennyhalim/cfg/raw/master/newwindows.ps1
 #PowerShell.exe -ExecutionPolicy Bypass -File "newwindows.ps1"
 
+#Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://github.com/dennyhalim/cfg/raw/master/newwindows.ps1'))
+
 #apply also to w7 old powershell
 #sc.exe config winmgmt start= disabled
 sc.exe config wuauserv start= demand
