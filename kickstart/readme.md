@@ -1,6 +1,7 @@
-try enter this as boot options:
+try enter one of these as boot options:
 
     lang=en_US ks=https://is.gd/centos7ks
+    lang=en_US ks=http://dennyhalim.github.io/cfg/kickstart/install_c6vm_basic.cfg
 
 
 ref:
