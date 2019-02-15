@@ -1,6 +1,6 @@
 try enter this as boot options:
 
-        lang=en_US ks=https://is.gd/centos7ks
+    lang=en_US ks=https://is.gd/centos7ks
 
 
 ref:
