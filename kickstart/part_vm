@@ -1,0 +1,15 @@
+bootloader --location=mbr
+# Partition clearing information
+zerombr
+clearpart --all --initlabel
+# Disk partitioning information
+part /boot --fstype="ext4" --size=512
+part pv.1  --grow --size=1
+volgroup vg_0 pv.1
+logvol  /var --fstype="ext4" --name=lv_var --vgname=vg_0 --size=20000
+#logvol  swap --fstype="swap" --vgname=vg_0 --name="swap" --size=8000
+logvol  swap --recommended
+logvol  /  --fstype="ext4" --name=lv_root --vgname=vg_0 --size=10000
+#logvol  /home  --fstype="ext4" --name=lv_home --vgname=vg_0 --size=20000
+#logvol  /opt  --fstype="ext4" --name=lv_opt --vgname=vg_0 --size=20000
+#logvol  /usr/share/  --fstype="ext4" --name=lv_proj --vgname=vg_0 --size=10000
