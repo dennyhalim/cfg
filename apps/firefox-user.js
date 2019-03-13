@@ -27,3 +27,5 @@ user_pref("toolkit.telemetry.unified", false);
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("network.trr.mode", 2);
 user_pref("network.trr.uri", "https://doh.cleanbrowsing.org/doh/adult-filter/");  //https://cleanbrowsing.org/dnsoverhttps
+user_pref("dom.netinfo.enabled", false);
+user_pref("media.video_stats.enabled", false);
