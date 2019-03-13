@@ -2,6 +2,7 @@
 //dennyhalim.com
 //http://kb.mozillazine.org/User.js_file
 //http://kb.mozillazine.org/Locking_preferences
+//https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/A_brief_guide_to_Mozilla_preferences
 pref("app.update.channel", "esr");
 user_pref("devtools.memory.enabled", false);
 user_pref("browser.cache.memory.enable", false);
