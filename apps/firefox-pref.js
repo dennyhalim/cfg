@@ -1,5 +1,6 @@
 // Mozilla User Preferences
 //dennyhalim.com
+//http://kb.mozillazine.org/User.js_file
 pref("app.update.channel", "esr");
 user_pref("devtools.memory.enabled", false);
 user_pref("browser.cache.memory.enable", false);
