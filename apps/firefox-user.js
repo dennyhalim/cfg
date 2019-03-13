@@ -4,6 +4,7 @@
 //http://kb.mozillazine.org/Locking_preferences
 //https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/A_brief_guide_to_Mozilla_preferences
 pref("app.update.channel", "esr");
+user_pref("browser.sessionhistory.max_entries", 10);
 user_pref("devtools.memory.enabled", false);
 user_pref("browser.cache.memory.enable", false);
 user_pref("network.cookie.cookieBehavior", 3);
