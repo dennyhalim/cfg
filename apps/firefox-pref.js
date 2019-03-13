@@ -9,6 +9,8 @@ user_pref("network.cookie.cookieBehavior", 3);
 user_pref("network.cookie.lifetimePolicy", 2);
 user_pref("privacy.clearOnShutdown.offlineApps", true);
 user_pref("privacy.clearOnShutdown.siteSettings", true);
+user_pref("privacy.sanitize.pending", "[{\"id\":\"shutdown\",\"itemsToClear\":[\"cache\",\"offlineApps\",\"siteSettings\"],\"options\":{}}]");
+//user_pref("privacy.sanitize.pending", "[{\"id\":\"shutdown\",\"itemsToClear\":[\"cache\",\"cookies\",\"offlineApps\",\"formdata\",\"sessions\",\"siteSettings\"],\"options\":{}}]");
 user_pref("privacy.sanitize.sanitizeOnShutdown", true);
 user_pref("privacy.donottrackheader.enabled", true);
 user_pref("privacy.trackingprotection.enabled", true);
