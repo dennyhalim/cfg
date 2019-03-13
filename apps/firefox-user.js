@@ -3,6 +3,7 @@
 //http://kb.mozillazine.org/User.js_file
 //http://kb.mozillazine.org/Locking_preferences
 //https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/A_brief_guide_to_Mozilla_preferences
+//https://github.com/pyllyukko/user.js
 pref("app.update.channel", "esr");
 user_pref("beacon.enabled", false);
 user_pref("browser.cache.compression_level", 1);
