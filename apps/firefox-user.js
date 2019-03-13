@@ -6,8 +6,8 @@
 pref("app.update.channel", "esr");
 user_pref("browser.cache.compression_level", 1);
 user_pref("browser.sessionhistory.max_entries", 10);
-user_pref("devtools.memory.enabled", false);
-user_pref("browser.cache.memory.enable", false);
+//user_pref("devtools.memory.enabled", false);
+user_pref("browser.cache.memory.enable", false); //very usefull if you have < 4GB RAM
 user_pref("network.cookie.cookieBehavior", 3);
 user_pref("network.cookie.lifetimePolicy", 2);
 user_pref("privacy.clearOnShutdown.cache", true);
