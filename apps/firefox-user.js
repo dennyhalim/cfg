@@ -31,3 +31,9 @@ user_pref("network.trr.uri", "https://doh.cleanbrowsing.org/doh/adult-filter/");
 user_pref("dom.netinfo.enabled", false);
 user_pref("media.video_stats.enabled", false);
 //user_pref("dom.maxHardwareConcurrency", 1); //faster on slow devices
+user_pref("dom.battery.enabled", false);
+user_pref("dom.telephony.enabled", false);
+user_pref("beacon.enabled", false);
+user_pref("device.sensors.enabled", false);
+user_pref("dom.vibrator.enabled", false);
+user_pref("dom.enable_resource_timing", false);
