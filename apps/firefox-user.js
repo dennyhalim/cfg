@@ -17,3 +17,6 @@ user_pref("privacy.donottrackheader.enabled", true);
 user_pref("privacy.trackingprotection.enabled", true);
 user_pref("dom.webnotifications.enabled", false);
 user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
+user_pref("geo.provider.ms-windows-location", false);
+user_pref("geo.provider.use_corelocation", false);
+user_pref("geo.provider.use_gpsd", false);
