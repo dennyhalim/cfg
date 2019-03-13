@@ -5,6 +5,7 @@
 //https://support.mozilla.org/en-US/kb/customizing-firefox-using-autoconfig
 //https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/A_brief_guide_to_Mozilla_preferences
 //https://github.com/pyllyukko/user.js
+//lockPref("autoadmin.global_config_url","https://github.com/dennyhalim/cfg/raw/master/apps/firefox-user.js");
 pref("app.update.channel", "esr");
 user_pref("beacon.enabled", false);
 user_pref("browser.cache.compression_level", 1);
