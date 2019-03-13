@@ -20,3 +20,5 @@ user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
 user_pref("geo.provider.ms-windows-location", false);
 user_pref("geo.provider.use_corelocation", false);
 user_pref("geo.provider.use_gpsd", false);
+user_pref("toolkit.telemetry.unified", false);
+user_pref("toolkit.telemetry.enabled", false);
