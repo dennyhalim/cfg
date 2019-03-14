@@ -18,6 +18,7 @@ user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
 user_pref("device.sensors.enabled", false);
 //user_pref("dom.maxHardwareConcurrency", 1); //faster on slow devices
 user_pref("dom.battery.enabled", false);
+user_pref("dom.event.highrestimestamp.enabled", false);
 user_pref("dom.telephony.enabled", false);
 user_pref("dom.netinfo.enabled", false);
 user_pref("dom.webnotifications.enabled", false);
