@@ -31,6 +31,7 @@ user_pref("geo.provider.use_gpsd", false);
 user_pref("media.video_stats.enabled", false);
 user_pref("network.cookie.cookieBehavior", 3);
 user_pref("network.cookie.lifetimePolicy", 2);
+user_pref("network.cookie.thirdparty.sessionOnly", true);
 user_pref("network.trr.mode", 2);
 user_pref("network.trr.uri", "https://doh.cleanbrowsing.org/doh/adult-filter/");  //https://cleanbrowsing.org/dnsoverhttps
 user_pref("privacy.clearOnShutdown.cache", true);
