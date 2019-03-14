@@ -10,6 +10,7 @@ pref("app.update.channel", "esr");
 user_pref("beacon.enabled", false);
 user_pref("browser.cache.compression_level", 1);
 user_pref("browser.cache.memory.enable", false); //very usefull if you have < 4GB RAM
+user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 user_pref("browser.sessionhistory.max_entries", 10);
 user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
 user_pref("device.sensors.enabled", false);
