@@ -35,6 +35,7 @@ user_pref("network.cookie.lifetimePolicy", 2);
 user_pref("network.cookie.thirdparty.sessionOnly", true);
 user_pref("network.trr.mode", 2);
 user_pref("network.trr.uri", "https://doh.cleanbrowsing.org/doh/adult-filter/");  //https://cleanbrowsing.org/dnsoverhttps
+//user_pref("privacy.firstparty.isolate", true);
 user_pref("privacy.clearOnShutdown.cache", true);
 //user_pref("privacy.clearOnShutdown.cookies", true);
 //user_pref("privacy.clearOnShutdown.downloads", true);
