@@ -8,7 +8,7 @@
 //lockPref("autoadmin.global_config_url","https://github.com/dennyhalim/cfg/raw/master/apps/firefox-user.js");
 pref("app.update.channel", "esr");
 user_pref("beacon.enabled", false);
-//user_pref("browser.cache.disk.enable", false); //very usefull if you have < 4GB RAM
+user_pref("browser.cache.disk.enable", false); //very usefull if you have < 4GB RAM
 user_pref("browser.cache.compression_level", 1);
 user_pref("browser.cache.memory.enable", false); //very usefull if you have < 4GB RAM
 user_pref("browser.helperApps.deleteTempFileOnExit", true);
