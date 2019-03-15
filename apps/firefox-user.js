@@ -14,6 +14,7 @@ user_pref("browser.cache.memory.enable", false); //very usefull if you have < 4G
 user_pref("browser.helperApps.deleteTempFileOnExit", true);
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 user_pref("browser.sessionhistory.max_entries", 10);
+//user_pref("browser.shell.checkDefaultBrowser", false);
 user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
 user_pref("device.sensors.enabled", false);
 //user_pref("dom.maxHardwareConcurrency", 1); //faster on slow devices
