@@ -28,7 +28,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>net.tcp.port[localhost,5432]</key>
+                    <key>net.tcp.port[,5432]</key>
                     <delay>90s</delay>
                     <history>90d</history>
                     <trends>365d</trends>
