@@ -31,7 +31,7 @@ user_pref("geo.enabled", false);
 user_pref("geo.provider.ms-windows-location", false);
 user_pref("geo.provider.use_corelocation", false);
 user_pref("geo.provider.use_gpsd", false);
-user_pref("javascript.options.mem.max", 64000);
+user_pref("javascript.options.mem.max", 128000);
 user_pref("javascript.options.mem.high_water_mark", 32000);
 user_pref("media.video_stats.enabled", false);
 user_pref("network.cookie.cookieBehavior", 3);
