@@ -4,8 +4,14 @@
       {
         "Folder": "dennyhalim",
         "Placement": "menu",
-        "Title": "dennyhalim.com",
-        "URL": "http://dennyhalim.com"
+        "Title": "dennyhalim blog",
+        "URL": "http://it.dennyhalim.com"
+      },
+      {
+        "Folder": "dennyhalim",
+        "Placement": "menu",
+        "Title": "wiki.dennyhalim.com",
+        "URL": "http://wiki.dennyhalim.com"
       }
     ],
     "DisableFirefoxStudies": true,
@@ -22,8 +28,8 @@
       }
     },
     "Proxy": {
-      "Mode": "autoDetect",
-      "UseProxyForDNS": true
+      "Mode": "none",
+      "UseProxyForDNS": false
     }
   }
 }
