@@ -1,6 +1,11 @@
 {
   "policies": {
-    "Bookmarks": [
+    "DNSOverHTTPS": {
+      "Enabled": true,
+      "Locked": true,
+      "ProviderURL": "https://doh.cleanbrowsing.org/doh/adult-filter/"
+    },
+      "Bookmarks": [
       {
         "Folder": "dennyhalim",
         "Placement": "menu",
