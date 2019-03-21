@@ -1,0 +1,29 @@
+{
+  "policies": {
+    "Bookmarks": [
+      {
+        "Folder": "dennyhalim",
+        "Placement": "menu",
+        "Title": "dennyhalim.com",
+        "URL": "http://dennyhalim.com"
+      }
+    ],
+    "DisableFirefoxStudies": true,
+    "DisableTelemetry": true,
+    "EnableTrackingProtection": {
+      "Value": true
+    },
+    "Permissions": {
+      "Location": {
+        "BlockNewRequests": true
+      },
+      "Notifications": {
+        "BlockNewRequests": true
+      }
+    },
+    "Proxy": {
+      "Mode": "autoDetect",
+      "UseProxyForDNS": true
+    }
+  }
+}
