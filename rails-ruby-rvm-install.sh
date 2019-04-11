@@ -12,8 +12,8 @@ source .rvm/scripts/rvm
 
 rvm install 2.3
 rvm --default use 2.3
-gem install rails -v 4.2
 gem install bundler -v 1.17
+gem install rails -v 4.2
 
 #now you can install ruby/rails -based applications
 #tar zxvf redmine-3.3.5.tar.gz
