@@ -1,6 +1,7 @@
 #dennyhalim.com
 # if dependencies is not installed, the user will need sudo yum privilege
 # sudo yum install -y autoconf automake bison gcc-c++ libtool sqlite-devel readline-devel sqlite-devel zlib-devel openssl-devel
+# these might need epel repo:
 # sudo yum install -y libffi-devel libyaml-devel ImageMagick-devel 
 # http://rvm.io/rvm/install
 # fix curl returned status '35': yum -y update nss*
