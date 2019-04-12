@@ -197,14 +197,15 @@ set allow-remote-requests=yes servers=\
 #add ttl=1h address=your.wpad.server regexp=^wpad.*
 #force strict safe search
 add ttl=1h address=216.239.38.120 regexp=^www.google.co*
-add ttl=1h address=216.239.38.119 name=www.youtube.com
 add ttl=1h address=204.79.197.220 name=www.bing.com
+216.239.38.119 www.youtube.com m.youtube.com youtubei.googleapis.com youtube.googleapis.com youtube-nocookie.com
 #blocking advertising and other junks
 add ttl=1h address=127.0.0.127 regexp=doubleclick.net
 add ttl=1h address=127.0.0.127 name=www.googleadservices.com
 add ttl=1h address=127.0.0.127 name=www.googlesyndication.com
 add ttl=1h address=127.0.0.127 name=www.google-analytics.com
 add ttl=1h address=127.0.0.127 name=www.googletagservices.com
+add ttl=1h address=127.0.0.127 name=www.googletagmanager.com
 #example blocking facebook, youtube
 add ttl=1h address=127.0.0.127 regexp=pr0n disabled=yes
 add ttl=1h address=127.0.0.127 regexp=fbcdn disabled=yes
