@@ -13,7 +13,8 @@
 216.239.38.119 www.youtube.com m.youtube.com youtubei.googleapis.com youtube.googleapis.com www.youtube-nocookie.com
 
 #telkom indonesia ads inject & domain hijack
-0.0.0.0 uzone.id v3.mercusuar.uzone.id mercusuar.uzone.id
+0.0.0.0 *.uzone.id *.internet-positif.org *.u-ad.info *.uadexchange.com
+0.0.0.0 uzone.id v3.mercusuar.uzone.id mercusuar.uzone.id internetpositif.uzone.id internet-positif.org
 0.0.0.0 u-ad.info csf.u-ad.info cfs.uzone.id cfs2.uzone.id cfs2.uadexchange.com
 
 #https://github.com/CHEF-KOCH/dnscrypt-proxy-blacklist-filter/blob/master/blacklist.txt
