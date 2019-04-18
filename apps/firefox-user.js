@@ -65,3 +65,4 @@ user_pref("privacy.trackingprotection.pbmode.enabled", true);
 user_pref("toolkit.telemetry.unified", false);
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.telemetry.archive.enabled", false);
+user_pref("webgl.disabled, true);
