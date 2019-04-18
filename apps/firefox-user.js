@@ -68,6 +68,7 @@ user_pref("privacy.clearOnShutdown.cache", true);
 user_pref("privacy.clearOnShutdown.offlineApps", true);
 //user_pref("privacy.clearOnShutdown.sessions", true);
 //user_pref("privacy.clearOnShutdown.openWindows", true);
+user_pref("privacy.cpd.cache", true);
 user_pref("privacy.resistFingerprinting", true);
 user_pref("privacy.sanitize.pending", "[{\"id\":\"shutdown\",\"itemsToClear\":[\"cache\",\"offlineApps\"],\"options\":{}}]");
 //user_pref("privacy.sanitize.pending", "[{\"id\":\"shutdown\",\"itemsToClear\":[\"cache\",\"cookies\",\"offlineApps\",\"formdata\",\"sessions\",\"siteSettings\"],\"options\":{}}]");
