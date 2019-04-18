@@ -46,6 +46,9 @@ user_pref("network.trr.mode", 2); // change to 3 to enforce dns over https
 // https://mozilla.cloudflare-dns.com/dns-query
 // https://cloudflare-dns.com/dns-query
 user_pref("network.trr.uri", "https://doh.cleanbrowsing.org/doh/adult-filter/");  //https://cleanbrowsing.org/dnsoverhttps
+user_pref("browser.newtab.preload", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includePocket", false);
+user_pref("browser.newtabpage.enhanced", false);
 //user_pref("privacy.firstparty.isolate", true);
 user_pref("privacy.clearOnShutdown.cache", true);
 //user_pref("privacy.clearOnShutdown.cookies", true);
