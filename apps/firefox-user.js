@@ -19,6 +19,13 @@ user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
 user_pref("device.sensors.enabled", false);
 //user_pref("dom.maxHardwareConcurrency", 1); //faster on slow devices
 user_pref("dom.battery.enabled", false);
+user_pref("dom.event.clipboardevents.enabled", false);
+user_pref("dom.indexedDB.enabled", false);
+user_pref("dom.webaudio.enabled", false);
+user_pref("experiments.activeExperiment", false);
+user_pref("experiments.enabled", false);
+user_pref("experiments.manifest.uri", "");
+user_pref("experiments.supported", false);
 user_pref("dom.event.highrestimestamp.enabled", false);
 user_pref("dom.telephony.enabled", false);
 user_pref("dom.netinfo.enabled", false);
