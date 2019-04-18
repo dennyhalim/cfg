@@ -38,6 +38,7 @@ user_pref("network.cookie.cookieBehavior", 1);
 user_pref("network.cookie.lifetimePolicy", 2);
 user_pref("network.cookie.thirdparty.sessionOnly", true);
 //user_pref("network.proxy.type", 0);
+user_pref("network.prefetch-next", false);
 user_pref("network.trr.mode", 2); // change to 3 to enforce dns over https
 //other network.trr.uri to try:
 // https://dns9.quad9.net/dns-query
