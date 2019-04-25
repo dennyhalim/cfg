@@ -13,8 +13,8 @@ rem move "%windir%\SystemApps\ShellExperienceHost_cw5n1h2txyewy" "%windir%\Syste
 wmic.exe USERACCOUNT WHERE "Name='admin'" set PasswordExpires=FALSE
 wmic.exe USERACCOUNT WHERE "Name='user'" set PasswordExpires=FALSE
 
-reg.exe load HKLM\DEFAULT "%Public%\..\default\ntuser.dat"
-reg.exe add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People /v PeopleBand /t REG_DWORD /d 0 /f
+reg.exe load "HKLM\DEFAULT" "%Public%\..\default\ntuser.dat"
+reg.exe add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" /v PeopleBand /t REG_DWORD /d 0 /f
 reg.exe add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 0 /f
 reg.exe add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start_TrackProgs /t REG_DWORD /d 1 /f
 reg.exe add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo" /v Enabled /t REG_DWORD /d 0 /f
@@ -22,7 +22,7 @@ reg.exe add "HKLM\DEFAULT\Software\Microsoft\Input\TIPC" /v Enabled /t REG_DWORD
 reg.exe add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications" /v GlobalUserDisabled /t REG_DWORD /d 1 /f
 reg.exe add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{A8804298-2D5F-42E3-9531-9C8C39EB29CE}" /v Value /d Deny /f
 reg.exe delete "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run" /v OneDriveSetup /F
-reg.exe unload HKLM\DEFAULT
+reg.exe unload "HKLM\DEFAULT"
 
 reg.exe add "HKLM\Software\Policies\Microsoft\Windows\CloudContent" /v DisableWindowsConsumerFeatures /t REG_DWORD /d 1 /f
 reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /v LetAppsRunInBackground /t REG_DWORD /d 0 /f
