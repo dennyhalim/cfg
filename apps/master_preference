@@ -3,6 +3,7 @@
  "homepage_is_newtabpage" : true,
  "distribution": {
     "do_not_create_desktop_shortcut": true,
+    "do_not_create_taskbar_shortcut": true,
     "do_not_create_quick_launch_shortcut": true,
     "do_not_launch_chrome": true,
     "do_not_register_for_update_launch": true,
