@@ -40,11 +40,11 @@ reg.exe add "HKLM\SYSTEM\CurrentControlSet\services\sppsvc" /v Start /t REG_DWOR
 reg.exe add "HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 1 /f
 reg.exe add "HKLM\Software\Google\Chrome\Extensions\cjpalhdlnbpafiamejdnhcphjbkeiagm" /v update_url /t REG_SZ /D "https://clients2.google.com/service/update2/crx" /F 
 reg.exe add "HKLM\Software\Wow6432Node\Google\Chrome\Extensions\cjpalhdlnbpafiamejdnhcphjbkeiagm" /v update_url /t REG_SZ /D "https://clients2.google.com/service/update2/crx" /F 
+reg.exe add "HKLM\Software\Policies\Google\Chrome" /v BackgroundModeEnabled /f /t REG_DWORD /d 0
 reg.exe add "HKLM\Software\Policies\Google\Chrome\Recommended" /v DefaultCookiesSetting /f /t REG_DWORD /d 4
 reg.exe add "HKLM\Software\Policies\Google\Chrome\Recommended" /v DefaultNotificationsSetting /f /t REG_DWORD /d 2
-reg.exe add "HKLM\Software\Policies\Google\Chrome\Recommended" /v DefaultGeolocationSetting /f /t REG_DWORD /d 2
+rem reg.exe add "HKLM\Software\Policies\Google\Chrome\Recommended" /v DefaultGeolocationSetting /f /t REG_DWORD /d 2
 reg.exe add "HKLM\Software\Policies\Google\Chrome\Recommended" /v HomepageLocation /f /t REG_SZ /d "http://dennyhalim.com"
-reg.exe add "HKLM\Software\Policies\Google\Chrome" /v BackgroundModeEnabled /f /t REG_DWORD /d 0
 reg.exe add "HKLM\Software\Policies\Google\Chrome\Recommended" /v BlockThirdPartyCookies /f /t REG_DWORD /d 1
 reg.exe add "HKLM\Software\Policies\Google\Chrome\Recommended" /v BuiltInDnsClientEnabled /f /t REG_DWORD /d 1
 reg.exe add "HKLM\Software\Policies\Google\Chrome\Recommended" /v DiskCacheSize /f /t REG_DWORD /d 1
