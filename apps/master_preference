@@ -1,6 +1,9 @@
 {
- "homepage" : "http://dennyhalim.com",
+ "homepage" : "https://www.startpage.com",
  "homepage_is_newtabpage" : true,
+ "first_run_tabs": [
+  "http://dennyhalim.com"
+ ],
  "extensions": {
     "settings": {
        "apflmjolhbonpkbkooiamcnenbmbjcbf": {
