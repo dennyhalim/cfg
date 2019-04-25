@@ -1,6 +1,15 @@
 {
  "homepage" : "https://www.startpage.com",
  "homepage_is_newtabpage" : true,
+ "distribution": {
+    "do_not_create_desktop_shortcut": true,
+    "do_not_create_quick_launch_shortcut": true,
+    "do_not_launch_chrome": true,
+    "do_not_register_for_update_launch": true,
+    "make_chrome_default": false,
+    "make_chrome_default_for_user": false,
+    "suppress_first_run_default_browser_prompt": true,
+ },
  "first_run_tabs": [
   "http://dennyhalim.com"
  ],
