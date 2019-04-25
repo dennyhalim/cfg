@@ -40,7 +40,16 @@ reg.exe add "HKLM\SYSTEM\CurrentControlSet\services\sppsvc" /v Start /t REG_DWOR
 reg.exe add "HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 1 /f
 reg.exe add "HKLM\Software\Google\Chrome\Extensions\cjpalhdlnbpafiamejdnhcphjbkeiagm" /v update_url /t REG_SZ /D "https://clients2.google.com/service/update2/crx" /F 
 reg.exe add "HKLM\Software\Wow6432Node\Google\Chrome\Extensions\cjpalhdlnbpafiamejdnhcphjbkeiagm" /v update_url /t REG_SZ /D "https://clients2.google.com/service/update2/crx" /F 
-
+reg.exe add "HKLM\Software\Policies\Google\Chrome\DefaultCookiesSetting" /f /t REG_DWORD /d 4
+reg.exe add "HKLM\Software\Policies\Google\Chrome\DefaultNotificationsSetting" /f /t REG_DWORD /d 2
+reg.exe add "HKLM\Software\Policies\Google\Chrome\DefaultGeolocationSetting" /f /t REG_DWORD /d 2
+reg.exe add "HKLM\Software\Policies\Google\Chrome\HomepageLocation" /f /t REG_SZ /d "http://dennyhalim.com"
+reg.exe add "HKLM\Software\Policies\Google\Chrome\BackgroundModeEnabled" /f /t REG_DWORD /d 0
+reg.exe add "HKLM\Software\Policies\Google\Chrome\BlockThirdPartyCookies" /f /t REG_DWORD /d 1
+reg.exe add "HKLM\Software\Policies\Google\Chrome\BuiltInDnsClientEnabled" /f /t REG_DWORD /d 1
+reg.exe add "HKLM\Software\Policies\Google\Chrome\DiskCacheSize" /f /t REG_DWORD /d 1
+reg.exe add "HKLM\Software\Policies\Google\Chrome\ForceGoogleSafeSearch" /f /t REG_DWORD /d 1
+reg.exe add "HKLM\Software\Policies\Google\Chrome\ForceYouTubeRestrict" /f /t REG_DWORD /d 1
 
 cscript.exe "%WINDIR%\System32\Printing_Admin_Scripts\en-US\prndrvr.vbs" -a -m "Canon LBP2900" -i "%WINDIR%\Setup\Drivers\CanonLBP2900\CNAB4STD.inf"
 cscript.exe "%WINDIR%\System32\Printing_Admin_Scripts\en-US\prndrvr.vbs" -a -m "Canon G2000 series Printer" -i "%WINDIR%\Setup\Drivers\CanonG2000\Driver\G2000P6.inf"
