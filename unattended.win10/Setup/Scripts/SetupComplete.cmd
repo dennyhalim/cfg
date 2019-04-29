@@ -103,7 +103,7 @@ dism.exe /online /norestart /Disable-Feature /FeatureName:Indexing-Service-Packa
 dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-x86
 dism.exe /online /norestart /Disable-Feature /FeatureName:Internet-Explorer-Optional-amd64
 
-#rem powercfg -hibernate on
+rem powercfg -hibernate on
 REAGENTC.EXE /enable
 rem "%WINDIR%\Setup-githubbox.exe"
 rem shutdown /r /f /t 0
