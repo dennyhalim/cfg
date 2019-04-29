@@ -9,4 +9,4 @@ reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessAppl
 reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{A8804298-2D5F-42E3-9531-9C8C39EB29CE}" /v Value /d Deny /f
 reg.exe delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v OneDriveSetup /F
 
-PowerShell.exe -ExecutionPolicy Bypass -File "%WINDIR%\Setup\Scripts\unpin-all.ps1"
+PowerShell.exe -ExecutionPolicy Bypass -File "%WINDIR%\Setup\Scripts\startup.ps1"
