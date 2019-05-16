@@ -1,8 +1,10 @@
 #dennyhalim.com
 
-Get-AppXProvisionedPackage -Online | where-object {$_.name -notlike "*Store*"} | Remove-AppxProvisionedPackage -Online 
-Get-AppxPackage -AllUsers | where-object {$_.name -notlike "*Store*"} | Remove-AppxPackage
 # Get-AppxPackage | Remove-AppxPackage
+#Get-AppXProvisionedPackage -Online | where-object {$_.packagename -like "*Xbox*"} | Remove-AppxProvisionedPackage -Online 
+#Get-AppxPackage -AllUsers | where-object {$_.name -like "*Xbox*"} | Remove-AppxPackage
+Get-AppXProvisionedPackage -Online | where-object {$_.packagename -notlike "*Microsoft*"} | Remove-AppxProvisionedPackage -Online 
+Get-AppxPackage -AllUsers | where-object {$_.name -notlike "*Microsoft*"} | Remove-AppxPackage
 
 #$d=get-item ${env:HOMEDRIVE}
 #$d.Attributes='Directory,NotContentIndexed'
