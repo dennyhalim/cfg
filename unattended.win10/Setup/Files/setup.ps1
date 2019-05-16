@@ -19,6 +19,7 @@ $d.Attributes='Directory,NotContentIndexed'
 $d=get-item d:\
 $d.Attributes='Directory,NotContentIndexed'
 
+
 #unpin apps (must be run per user)
 (New-Object -Com Shell.Application).
     NameSpace('shell:::{4234d49b-0245-4df3-b780-3893943456e1}').
@@ -26,6 +27,7 @@ $d.Attributes='Directory,NotContentIndexed'
   %{ $_.Verbs() } |
   ?{$_.Name -match 'Un.*pin from Start'} |
   %{$_.DoIt()}
+
 
 
 #task
