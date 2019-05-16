@@ -1,10 +1,10 @@
 #dennyhalim.com
 
 # Get-AppxPackage | Remove-AppxPackage
-#Get-AppXProvisionedPackage -Online | where-object {$_.packagename -like "*Xbox*"} | Remove-AppxProvisionedPackage -Online 
-#Get-AppxPackage -AllUsers | where-object {$_.name -like "*Xbox*"} | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | where-object {$_.packagename -notlike "*Microsoft*"} | Remove-AppxProvisionedPackage -Online 
-Get-AppxPackage -AllUsers | where-object {$_.name -notlike "*Microsoft*"} | Remove-AppxPackage
+#Get-AppXProvisionedPackage -Online | where-object {$_.packagename -like "*Xbox*" -or $_.packagename -like "*zune*"} | Remove-AppxProvisionedPackage -Online 
+#Get-AppxPackage -AllUsers | where-object {$_.name -like "*Xbox*" -or $_.packagename -like "*zune*"} | Remove-AppxPackage
+Get-AppXProvisionedPackage -Online | where-object {$_.packagename -notlike "*Microsoft*" -and $_.packagename -notlike "*acer*"} | Remove-AppxProvisionedPackage -Online 
+Get-AppxPackage -AllUsers | where-object {$_.name -notlike "*Microsoft*" -and $_.name -notlike "*acer*"} | Remove-AppxPackage
 
 #$d=get-item ${env:HOMEDRIVE}
 #$d.Attributes='Directory,NotContentIndexed'
