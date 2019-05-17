@@ -33,8 +33,8 @@ reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v DeferQua
 reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v ExcludeWUDriversInQualityUpdate /d 1 /t REG_DWORD /f
 reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v DeferUpgrade /t REG_DWORD /d 1 /f
 reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\CloudContent" /v DisableWindowsConsumerFeatures /t REG_DWORD /d 1 /f
-reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsStore\WindowsUpdate\AutoDownload" /v NoConnectedUser /t REG_DWORD /d 2 /f
-reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v NoConnectedUser /t REG_DWORD /d 3 /f
+reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsStore" /v AutoDownload /t REG_DWORD /d 2 /f
+reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v NoConnectedUser /t REG_DWORD /d 1 /f
 rem reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\default\Settings" /v AllowYourAccount /t REG_DWORD /d 0 /f
 reg.exe add "HKLM\Software\Policies\Microsoft\Windows\CloudContent" /v DisableWindowsConsumerFeatures /t REG_DWORD /d 1 /f
 reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /v LetAppsRunInBackground /t REG_DWORD /d 0 /f
@@ -45,8 +45,8 @@ reg.exe add "HKLM\SOFTWARE\Microsoft\WcmSvc\wifinetworkmanager\features" /v WiFi
 reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DateTime\Servers" /v 1 /t REG_SZ /d pool.ntp.org /f
 rem reg.exe add "HKLM\SYSTEM\CurrentControlSet\services\sppsvc" /v Start /t REG_DWORD /d 3 /f
 reg.exe add "HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 1 /f
-reg.exe add "HKLM\Software\Google\Chrome\Extensions\cjpalhdlnbpafiamejdnhcphjbkeiagm" /v update_url /t REG_SZ /D "https://clients2.google.com/service/update2/crx" /F 
 reg.exe add "HKLM\Software\Wow6432Node\Google\Chrome\Extensions\cjpalhdlnbpafiamejdnhcphjbkeiagm" /v update_url /t REG_SZ /D "https://clients2.google.com/service/update2/crx" /F 
+reg.exe add "HKLM\Software\Google\Chrome\Extensions\cjpalhdlnbpafiamejdnhcphjbkeiagm" /v update_url /t REG_SZ /D "https://clients2.google.com/service/update2/crx" /F 
 reg.exe add "HKLM\Software\Policies\Google\Chrome" /v BackgroundModeEnabled /f /t REG_DWORD /d 0
 reg.exe add "HKLM\Software\Policies\Google\Chrome\Recommended" /v DefaultCookiesSetting /f /t REG_DWORD /d 4
 reg.exe add "HKLM\Software\Policies\Google\Chrome\Recommended" /v DefaultNotificationsSetting /f /t REG_DWORD /d 2
