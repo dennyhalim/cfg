@@ -1,3 +1,4 @@
+<?php header("Location: http://it.dennyhalim.com/?utm_source=old.dennyhalim.com"); ?>
 <html><head>
 <!-- dennyhalim.com html redirects -->
 <!-- use meta refresh -->
@@ -9,5 +10,4 @@
 <!-- use iframe -->
 <iframe src ="http://it.dennyhalim.com/?utm_source=old.dennyhalim.com" style="width:100%; height:100%; border:0" scrolling="yes" ></iframe>
 </body>
-
-<?php header("Location: http://it.dennyhalim.com/?utm_source=old.dennyhalim.com");
+</html>
