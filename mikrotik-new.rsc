@@ -141,6 +141,10 @@ add action=drop chain=input in-interface=ether1
 add action=drop chain=input
 
 /ip firewall filter
+
+#https://paper.bobylive.com/Network/Mikrotik_Denial_of_Service_Attack.pdf
+#add chain=prerouting action=accept protocol=tcp dst-limit=25/1s,25,dst-address/10s
+
 #block most attacked ports
 add action=drop chain=forward protocol=tcp dst-port=23,25
 
