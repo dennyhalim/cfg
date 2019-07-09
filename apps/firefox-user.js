@@ -44,6 +44,7 @@ user_pref("javascript.options.mem.high_water_mark", 32);
 user_pref("media.autoplay.default", 1);
 user_pref("media.autoplay.enabled", false);
 user_pref("media.video_stats.enabled", false);
+user_pref("network.cookie.lifetime.days", 1);
 user_pref("network.cookie.cookieBehavior", 1);
 user_pref("network.cookie.lifetimePolicy", 2);
 user_pref("network.cookie.thirdparty.sessionOnly", true);
