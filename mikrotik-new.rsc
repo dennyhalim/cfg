@@ -227,6 +227,8 @@ set address=your_mail_server from=<mikrotik@dennyhalim.com>
 /system script
 add name=autobackup source=\
     ":global name=backupfile value=([/system identity get name].\".rsc\")\r\
+    \n/system backup cloud remove-file number=0\r\
+    \n/system backup cloud upload-file action=create-and-upload password=replacethispassword12345!@#$%\r\
     \n/export file=\$backupfile\r\
     \n:delay 20s\r\
     \n/tool e-mail send to=\"your@email.address\" subject=(\$backupfile) file=\$backupfile\r\
