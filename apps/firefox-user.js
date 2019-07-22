@@ -10,6 +10,7 @@
 pref("app.update.channel", "esr");
 user_pref("beacon.enabled", false);
 user_pref("browser.cache.disk.enable", false); //might be usefull if you have < 4GB RAM and/or slow disk
+user_pref("browser.cache.disk_cache_ssl", false); //might be usefull if you have < 4GB RAM and/or slow disk
 user_pref("browser.cache.compression_level", 1);
 //user_pref("browser.cache.memory.enable", false); //might be usefull if you have < 4GB RAM
 user_pref("browser.helperApps.deleteTempFileOnExit", true);
