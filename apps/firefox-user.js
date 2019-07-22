@@ -15,7 +15,8 @@ user_pref("browser.cache.memory.enable", false); //very usefull if you have < 4G
 user_pref("browser.helperApps.deleteTempFileOnExit", true);
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 user_pref("browser.sessionhistory.max_entries", 10);
-user_pref("browser.sessionstore.interval", 600000);
+user_pref("browser.sessionstore.interval", 600000); //less writes to ssd
+//user_pref("browser.sessionstore.resume_from_crash", false);
 //user_pref("browser.shell.checkDefaultBrowser", false);
 user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
 user_pref("device.sensors.enabled", false);
