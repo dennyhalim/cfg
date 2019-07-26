@@ -86,6 +86,7 @@ rem "%WINDIR%\Setup\Files\avira_pc_cleaner_en.exe" /s
 powershell.exe -ExecutionPolicy Bypass -File "%WINDIR%\Setup\Progs\OpenSSH\install-sshd.ps1"
 PowerShell.exe -ExecutionPolicy Bypass -File "%WINDIR%\Setup\Files\setup.ps1"
 
+sc.exe config WSearch start= demand
 sc.exe config wuauserv start= demand
 sc.exe config DiagTrack start= disabled
 sc.exe config dmwappushservice start= disabled
