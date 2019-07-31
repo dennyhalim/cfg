@@ -54,6 +54,7 @@ user_pref("network.cookie.thirdparty.sessionOnly", true);
 //user_pref("network.proxy.type", 0);
 user_pref("network.prefetch-next", false);
 user_pref("network.trr.mode", 2); // change to 3 to enforce dns over https
+user_pref("network.trr.request-timeout", 3000); //less likely to failover 
 //other network.trr.uri to try:
 // https://dns9.quad9.net/dns-query
 // https://doh.cleanbrowsing.org/doh/adult-filter/
