@@ -12,6 +12,7 @@ user_pref("beacon.enabled", false);
 user_pref("browser.cache.disk.enable", false); //might be usefull if you have < 4GB RAM and/or slow disk
 user_pref("browser.cache.disk_cache_ssl", false); //might be usefull if you have < 4GB RAM and/or slow disk
 user_pref("browser.cache.compression_level", 1);
+user_pref("browser.contentblocking.category", "strict");
 //user_pref("browser.cache.memory.enable", false); //might be usefull if you have < 4GB RAM
 user_pref("browser.helperApps.deleteTempFileOnExit", true);
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
