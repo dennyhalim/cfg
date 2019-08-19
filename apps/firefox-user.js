@@ -25,6 +25,7 @@ user_pref("device.sensors.enabled", false);
 //user_pref("dom.maxHardwareConcurrency", 1); //faster on slow devices
 user_pref("dom.battery.enabled", false);
 user_pref("dom.event.clipboardevents.enabled", false);
+user_pref("dom.event.contextmenu.enabled",		false);
 user_pref("dom.indexedDB.enabled", false);
 user_pref("dom.webaudio.enabled", false);
 user_pref("experiments.activeExperiment", false);
