@@ -66,6 +66,8 @@ user_pref("network.trr.uri", "https://doh.cleanbrowsing.org/doh/adult-filter/");
 user_pref("browser.newtab.preload", false);
 user_pref("browser.newtabpage.activity-stream.section.highlights.includePocket", false);
 user_pref("browser.newtabpage.enhanced", false);
+user_pref("permissions.default.desktop-notification", 2);
+user_pref("permissions.default.geo", 2);
 //user_pref("privacy.firstparty.isolate", true);
 user_pref("privacy.clearOnShutdown.cache", true);
 //user_pref("privacy.clearOnShutdown.cookies", true);
