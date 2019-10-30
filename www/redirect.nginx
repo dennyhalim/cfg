@@ -1,0 +1,2 @@
+    rewrite ^/(.*)$ http://www.domain2.com/$1 redirect; #temporer
+    rewrite ^/(.*)$ http://www.domain2.com/$1 permanent;
