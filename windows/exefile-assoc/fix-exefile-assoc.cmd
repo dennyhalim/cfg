@@ -13,3 +13,4 @@ assoc.URL=InternetShortcut
 assoc.vbs=VBSFile
 assoc.zip=CompressedFolder
 
+ftype exefile="%1" %*
