@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 # rmtree1 - remove whole directory trees like rm -r
-# https://www.oreilly.com/library/view/perl-cookbook/1565922433/ch09s09.html
+# https://www.arl.wustl.edu/projects/fpx/references/perl/cookbook/ch09_09.htm
 # not working????
 use File::Find qw(finddepth);
 die "usage: $0 dir ..\n" unless @ARGV;
