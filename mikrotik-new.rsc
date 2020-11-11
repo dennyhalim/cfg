@@ -163,7 +163,11 @@ add action=drop chain=input comment="Drop Invalid Input" \
 add action=drop chain=forward comment="Drop Invalid Forward" \
     connection-state=invalid
 #add chain=forward protocol=tcp tcp-flags=syn connection-limit=200,32 action=drop comment="too much connections"
+
 #allowances
+add chain=forward action=fasttrack-connection connection-state=established,related
+add chain=forward action=accept connection-state=established,related
+
 add action=accept chain=input comment="Allow ICMP" protocol=icmp
 add action=accept chain=input comment="Allow Established Input" \
     connection-state=established
