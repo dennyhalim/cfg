@@ -2,7 +2,7 @@
 # Inspired by Joshaven Potter
 # http://joshaven.com/resources/tricks/mikrotik-automatically-updated-address-list/
 # dennyhalim.com
-# add this to cron
+# add this line to 'sudo crontab -e' :
 # 0 5 * * * /bin/bash /opt/bin/firehol.sh
 
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
