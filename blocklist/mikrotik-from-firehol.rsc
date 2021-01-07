@@ -9,6 +9,8 @@ add interval=1d name=blacklist on-event="/system script run firehol" start-time=
 
 /ip firewall filter
 #you might want to move these rules to the top
+add action=drop chain=input comment=blacklist in-interface-list=WAN log=yes \
+    log-prefix=blacklist src-address-list=blacklist
 add action=drop chain=forward comment=blacklist in-interface-list=WAN log=yes \
     log-prefix=blacklist src-address-list=blacklist
 add action=drop chain=forward comment=blacklist dst-address-list=blacklist log=yes \
