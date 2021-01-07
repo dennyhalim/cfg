@@ -1,5 +1,10 @@
 /system script
-add name=firehol sol fetch url=\"http://myserver/bl/firehol.rsc\" mode=http;\
+add name=firehol source="/tool fetch url=\"http://192.168.102.210/bl/firehol.rsc\" mode=http;\r\
+    \n/import file-name=spamhaus.rsc;\r\
+    \n:log info \"SPAMHAUS update\";\r\
+    \n"
+
+add name=firehol source="/tool fetch url=\"http://myserver/bl/firehol.rsc\" mode=http;\
     \n/import file-name=spamhaus.rsc;\r\
     \n:log info \"SPAMHAUS update\";\r\
     \n"
