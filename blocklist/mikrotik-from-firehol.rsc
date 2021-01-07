@@ -5,7 +5,7 @@ add name=firehol source="/tool fetch url=\"http://myserver/bl/firehol.rsc\" mode
     \n"
 
 /system scheduler
-add interval=1d name=blacklist on-event="/system script run firehol"
+add interval=1d name=blacklist on-event="/system script run firehol" start-time=05:20:00
 
 /ip firewall filter
 #you might want to move these rules to the top
