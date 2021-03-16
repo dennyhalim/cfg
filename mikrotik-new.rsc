@@ -210,6 +210,7 @@ add ttl=1h address=204.79.197.220 name=www.bing.com
 #blocking advertising and other junks
 add ttl=1h address=127.0.0.127 regexp=doubleclick.net
 add ttl=1h address=127.0.0.127 regexp=data.microsoft.com
+add ttl=1h address=127.0.0.127 regexp=atdmt.com
 add ttl=1h address=127.0.0.127 regexp=connect.facebook
 add ttl=1h address=127.0.0.127 regexp=pixel.facebook.com
 add ttl=1h address=127.0.0.127 regexp=ads.twitter.com
