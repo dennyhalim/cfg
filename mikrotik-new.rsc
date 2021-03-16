@@ -206,9 +206,14 @@ set allow-remote-requests=yes servers=\
 #force strict safe search
 add ttl=1h address=216.239.38.120 regexp=^www.google.co*
 add ttl=1h address=204.79.197.220 name=www.bing.com
-216.239.38.119 www.youtube.com m.youtube.com youtubei.googleapis.com youtube.googleapis.com youtube-nocookie.com
+#216.239.38.119 www.youtube.com m.youtube.com youtubei.googleapis.com youtube.googleapis.com youtube-nocookie.com
 #blocking advertising and other junks
 add ttl=1h address=127.0.0.127 regexp=doubleclick.net
+add ttl=1h address=127.0.0.127 regexp=data.microsoft.com
+add ttl=1h address=127.0.0.127 regexp=connect.facebook
+add ttl=1h address=127.0.0.127 regexp=pixel.facebook.com
+add ttl=1h address=127.0.0.127 regexp=ads.twitter.com
+add ttl=1h address=127.0.0.127 regexp=platform.twitter.com
 add ttl=1h address=127.0.0.127 name=www.googleadservices.com
 add ttl=1h address=127.0.0.127 name=www.googlesyndication.com
 add ttl=1h address=127.0.0.127 name=www.google-analytics.com
