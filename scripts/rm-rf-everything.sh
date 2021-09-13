@@ -2,7 +2,7 @@
 #ALL AND EVERYTHING WILL BE REMOVED WITHOUT PROMPT!!!
 #recommend to run it manually after extreme care look at the path you want to remove!!
 
-if [ -n "$1" ]; then exit; fi
+if [ -z "$1" ]; then exit; fi
 cd $1 || exit #avoid mistakenly run script
 
 mkdir /tmp/emptydir
