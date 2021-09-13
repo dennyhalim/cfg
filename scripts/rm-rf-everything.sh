@@ -12,7 +12,8 @@ cd $1 || exit #avoid mistakenly run script
 rm -rf $1/*   &
 ionice -c 3 rm -rf $1   &
 
-find $1/ -print0 | xargs -0 rm -rf   &
+#find $1/ -print0 | xargs -0 rm -rf   &
+find $1 -exec rm {} +   &
 find $1 -delete   &
 
 
