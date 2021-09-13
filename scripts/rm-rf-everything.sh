@@ -2,6 +2,7 @@
 #ALL AND EVERYTHING WILL BE REMOVED WITHOUT PROMPT AND UNSTOPPABLE !!!
 #recommend to run it manually after extreme care look at the path you want to remove!!
 #https://yonglhuang.com/rm-file/
+#https://www.slashroot.in/which-is-the-fastest-method-to-delete-files-in-linux
 
 if [ -z "$1" ]; then exit; fi
 echo destroying $1 in 10 second !! ctrl+c to cancel now !!
