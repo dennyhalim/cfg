@@ -211,6 +211,7 @@ add ttl=1h address=204.79.197.220 name=www.bing.com
 add ttl=1h address=127.0.0.127 regexp=doubleclick.net
 add ttl=1h address=127.0.0.127 regexp=data.microsoft.com
 add ttl=1h address=127.0.0.127 regexp=atdmt.com
+add ttl=1h address=127.0.0.127 regexp=facebook.net disabled=yes
 add ttl=1h address=127.0.0.127 regexp=connect.facebook
 add ttl=1h address=127.0.0.127 regexp=pixel.facebook.com
 add ttl=1h address=127.0.0.127 regexp=ads.twitter.com
@@ -220,7 +221,20 @@ add ttl=1h address=127.0.0.127 name=www.googlesyndication.com
 add ttl=1h address=127.0.0.127 name=www.google-analytics.com
 add ttl=1h address=127.0.0.127 name=www.googletagservices.com
 add ttl=1h address=127.0.0.127 name=www.googletagmanager.com
-#example blocking facebook, youtube
+#block streaming / video
+add ttl=1h address=127.0.0.127 regexp=tv
+add ttl=1h address=127.0.0.127 regexp=\.fm
+add ttl=1h address=127.0.0.127 regexp=live
+add ttl=1h address=127.0.0.127 regexp=radio
+add ttl=1h address=127.0.0.127 regexp=video
+add ttl=1h address=127.0.0.127 regexp=^player
+add ttl=1h address=127.0.0.127 regexp=akamaihd.net
+add ttl=1h address=127.0.0.127 regexp=akamaistream.net
+#example blocking facebook, youtube, etc
+add ttl=1h address=127.0.0.127 regexp=xxx
+add ttl=1h address=127.0.0.127 regexp=coin
+add ttl=1h address=127.0.0.127 regexp=play disabled=yes
+add ttl=1h address=127.0.0.127 regexp=games disabled=yes
 add ttl=1h address=127.0.0.127 regexp=pr0n disabled=yes
 add ttl=1h address=127.0.0.127 regexp=fbcdn disabled=yes
 add ttl=1h address=127.0.0.127 regexp=facebook disabled=yes
