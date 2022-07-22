@@ -222,14 +222,15 @@ add ttl=1h address=127.0.0.127 name=www.google-analytics.com
 add ttl=1h address=127.0.0.127 name=www.googletagservices.com
 add ttl=1h address=127.0.0.127 name=www.googletagmanager.com
 #block streaming / video
-add ttl=1h address=127.0.0.127 regexp=tv
-add ttl=1h address=127.0.0.127 regexp=\.fm
-add ttl=1h address=127.0.0.127 regexp=live
-add ttl=1h address=127.0.0.127 regexp=radio
-add ttl=1h address=127.0.0.127 regexp=video
-add ttl=1h address=127.0.0.127 regexp=^player
-add ttl=1h address=127.0.0.127 regexp=akamaihd.net
-add ttl=1h address=127.0.0.127 regexp=akamaistream.net
+add ttl=1h address=127.0.0.127 regexp=tv disabled=yes
+add ttl=1h address=127.0.0.127 regexp=\.fm disabled=yes
+add ttl=1h address=127.0.0.127 regexp=live disabled=yes
+add ttl=1h address=127.0.0.127 regexp=radio disabled=yes
+add ttl=1h address=127.0.0.127 regexp=video disabled=yes
+add ttl=1h address=127.0.0.127 regexp=stream disabled=yes
+add ttl=1h address=127.0.0.127 regexp=^player disabled=yes
+add ttl=1h address=127.0.0.127 regexp=akamaihd.net disabled=yes
+add ttl=1h address=127.0.0.127 regexp=akamaistream.net disabled=yes
 #example blocking facebook, youtube, etc
 add ttl=1h address=127.0.0.127 regexp=xxx
 add ttl=1h address=127.0.0.127 regexp=coin
