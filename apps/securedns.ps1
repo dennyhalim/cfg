@@ -15,5 +15,5 @@ reg add "HKLM\Software\Policies\Microsoft\Edge" /v "DnsOverHttpsTemplates" /f /t
 reg add "HKLM\Software\Policies\Mozilla\Firefox\DNSOverHTTPS" /v "ProviderURL" /f /t REG_SZ /d "$secdns"
 
 #windows
-#netsh dns add encryption server=174.138.21.128 dohtemplate=$secdns autoupgrade=yes udpfallback=no
+#netsh dns add encryption server=174.138.21.128 dohtemplate=$secdns autoupgrade=yes udpfallback=yes
 Add-DnsClientDohServerAddress -ServerAddress 174.138.21.128 -DohTemplate $secdns -AllowFallbackToUdp $True -AutoUpgrade $True 
