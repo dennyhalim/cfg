@@ -1,5 +1,6 @@
 # list doh server https://adguard-dns.io/kb/general/dns-providers/
-# set secdns=https://doh-ch.blahdns.com/dns-query
+#$secdns="https://security.cloudflare-dns.com/dns-query"
+#$secdns="https://doh-ch.blahdns.com/dns-query"
 $secdns="https://doh.tiarap.org/dns-query"
 # chrome settings
 #reg.exe add "HKLM\Software\Policies\Google\Chrome" /v "DnsOverHttpsMode" /f /t REG_SZ /d "automatic"
