@@ -1,4 +1,5 @@
-set secdns=https://doh-ch.blahdns.com/dns-query
+rem set secdns=https://doh-ch.blahdns.com/dns-query
+set secdns=https://doh.tiarap.org/dns-query
 reg.exe add "HKLM\Software\Policies\Google\Chrome" /v "DnsOverHttpsMode" /f /t REG_SZ /d "automatic"
 reg.exe add "HKLM\Software\Policies\Google\Chrome" /v "DnsOverHttpsTemplates" /f /t REG_SZ /d "%secdns%"
 
