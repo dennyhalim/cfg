@@ -13,3 +13,6 @@ reg add "HKLM\Software\Policies\Microsoft\Edge" /v "DnsOverHttpsTemplates" /f /t
 # reg add "HKLM\Software\Policies\Mozilla\Firefox\DNSOverHTTPS" /v "Locked" /f /t REG_DWORD /d "1"
 # reg add "HKLM\Software\Policies\Mozilla\Firefox\DNSOverHTTPS" /v "ExcludedDomains" /f /t REG_SZ /d "example.com"
 reg add "HKLM\Software\Policies\Mozilla\Firefox\DNSOverHTTPS" /v "ProviderURL" /f /t REG_SZ /d "$secdns"
+
+#windows
+Add-DnsClientDohServerAddress -ServerAddress 174.138.21.128 -DohTemplate https://doh.tiarap.org/dns-query -AllowFallbackToUdp $True -AutoUpgrade $True 
