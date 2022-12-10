@@ -12,7 +12,7 @@
 # automatic setup, run these commands:
 # /tool fetch url=https://raw.githubusercontent.com/dennyhalim/cfg/master/mikrotik-new.rsc
 # /export file=[/system identity get name]
-/system package update set channel=bugfix
+/system package update set channel=long-term
 # /system backup save #there will be auto-before-reset.backup
 # manually run these, it will also reboot your router
 # /system package update install
@@ -69,7 +69,10 @@ add disabled=no master-interface=wlan1 name=\
 add action=drop chain=forward in-interface=wlan_guest1
 add action=drop chain=forward out-interface=wlan_guest1
 
-#/ip settings set tcp-syncookies=yes
+/ip settings 
+set icmp-rate-limit=1
+#set tcp-syncookies=yes
+
 /ip neighbor discovery 
 set ether1 discover=no
 set wlan_guest1 discover=no
@@ -121,7 +124,12 @@ add address-pool=wlan1_guest1 disabled=no interface=wlan_guest1 name=wlan_guest1
 /ip firewall mangle add action=mark-routing chain=prerouting dst-address-list=ddosed new-routing-mark=ddoser-route-mark passthrough=no src-address-list=ddoser
 /ip route add distance=254 routing-mark=ddoser-route-mark type=blackhole
 
+#/ip firewall address-list
+#add address=yourip list=allowremote #only allow remote from listed ip
+
 /ipv6 firewall filter
+add action=accept chain=input src-address-list=allowremote
+
 add chain=forward connection-state=new action=jump jump-target=block-ddos
 add chain=forward connection-state=new src-address-list=ddoser dst-address-list=ddosed action=drop
 add chain=block-ddos dst-limit=50,50,src-and-dst-addresses/10s action=return
@@ -138,7 +146,7 @@ add action=drop chain=forward comment="Drop Invalid Forward" \
 add action=drop chain=input in-interface=wlan_guest1
 #drop all from WAN
 add action=drop chain=input in-interface=ether1
-add action=drop chain=input
+add action=drop chain=input #protocol=!icmp
 
 /ip firewall filter
 
@@ -169,12 +177,9 @@ add chain=forward action=fasttrack-connection connection-state=established,relat
 add chain=forward action=accept connection-state=established,related
 
 add action=accept chain=input comment="Allow ICMP" protocol=icmp
-add action=accept chain=input comment="Allow Established Input" \
-    connection-state=established
-add action=accept chain=forward comment="Allow Established Forward" \
-    connection-state=established
-add action=accept chain=forward comment="Allow Related" \
-    connection-state=related
+add action=accept chain=input connection-state=established,related
+add action=accept chain=forward connection-state=established,related
+
 #add action=drop chain=input src-address-type=broadcast
 #add action=drop chain=input dst-address-type=broadcast
 add action=drop chain=input dst-address=255.255.255.255
@@ -190,13 +195,12 @@ add action=drop chain=input in-interface=wlan_guest1
 add action=drop chain=input in-interface=ether1
 #drop everything else
 ### WARNING: THIS MIGHT BLOCK YOURSELF ###
+###    !! move it to most bottom !!    ###
 ###  enable it only if you're certain  ###
-### also put this rule at most bottom! ###
 add action=drop chain=input disabled=yes
 
 #malware blocking dns 
-# https://cleanbrowsing.org/ip-address
-# https://dns.norton.com/faq.html
+# https://adguard-dns.io/kb/general/dns-providers/
 /ip dns
 set allow-remote-requests=yes servers=\
     199.85.126.20,199.85.127.20,9.9.9.9,208.67.222.123,208.67.220.123,199.85.126.20,199.85.127.20
@@ -210,6 +214,7 @@ add ttl=1h address=204.79.197.220 name=www.bing.com
 #blocking advertising and other junks
 add ttl=1h address=127.0.0.127 regexp=doubleclick.net
 add ttl=1h address=127.0.0.127 regexp=data.microsoft.com
+add ttl=1h address=127.0.0.127 regexp=telemetry.microsoft.com
 add ttl=1h address=127.0.0.127 regexp=atdmt.com
 add ttl=1h address=127.0.0.127 regexp=facebook.net disabled=yes
 add ttl=1h address=127.0.0.127 regexp=connect.facebook
@@ -222,6 +227,9 @@ add ttl=1h address=127.0.0.127 name=www.google-analytics.com
 add ttl=1h address=127.0.0.127 name=www.googletagservices.com
 add ttl=1h address=127.0.0.127 name=www.googletagmanager.com
 #block streaming / video
+add ttl=1h address=127.0.0.127 regexp=tiktok
+add ttl=1h address=127.0.0.127 regexp=youtube disabled=yes
+add ttl=1h address=127.0.0.127 regexp=spotify disabled=yes
 add ttl=1h address=127.0.0.127 regexp=tv disabled=yes
 add ttl=1h address=127.0.0.127 regexp=\.fm disabled=yes
 add ttl=1h address=127.0.0.127 regexp=live disabled=yes
