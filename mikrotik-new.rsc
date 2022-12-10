@@ -11,9 +11,9 @@
 # do backup before proceed!
 # automatic setup, run these commands:
 # /tool fetch url=https://raw.githubusercontent.com/dennyhalim/cfg/master/mikrotik-new.rsc
-# /export file=[/system identity get name]
+/system backup save #there will be auto-before-reset.backup
+/export file=[/system identity get name]
 /system package update set channel=long-term
-# /system backup save #there will be auto-before-reset.backup
 # manually run these, it will also reboot your router
 # /system package update install
 # /system reset-configuration no-defaults=yes #run-after-reset=mikrotik-new.rsc
