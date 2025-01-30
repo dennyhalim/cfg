@@ -1,5 +1,6 @@
 <?php header("Location: http://it.dennyhalim.com/?utm_source=old.dennyhalim.com"); ?>
 <html><head>
+<base target="_top">
 <!-- dennyhalim.com html redirects -->
 <!-- use meta refresh -->
 <meta http-equiv="refresh" content="1;url= http://it.dennyhalim.com/?utm_source=old.dennyhalim.com">
