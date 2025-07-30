@@ -3,7 +3,9 @@
 #rhel: yum install GeoIP
 #ubuntu: apt-get install geoip-bin geoip-database 
 #chmod +x /usr/local/bin/ipfilter.sh 
-#make sure you have physical access to server in case you lock yourself, then add to /etc/hosts.deny
+#make sure you have physical access to server, in case you lock yourself
+#add your local ip and blocking rule to /etc/hosts.deny
+#sshd: 192.168.0.1: ALLOW
 #sshd: ALL: aclexec /usr/local/bin/ipfilter.sh %a
 #sshd: ALL: DENY
 
