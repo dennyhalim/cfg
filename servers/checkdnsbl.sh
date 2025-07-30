@@ -45,7 +45,7 @@ DNSBL[0]="dnsbl.dronebl.org"
 DNSBL[1]="rbl.efnetrbl.org"
 DNSBL[2]="dnsbl.swiftbl.net"
 DNSBL[3]="combined.abuse.ch"
-DNSBL[4]="bogons.cymru.com"
+#DNSBL[4]="bogons.cymru.com" #this will block local network
 
 
 # Number of minutes to cache queries
