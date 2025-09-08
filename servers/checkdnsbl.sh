@@ -20,7 +20,7 @@
 #
 # sshd : 10.0.0.0/24, 127.0.0.1 : allow
 # ALL : 192.168.0.0/32 : deny
-# ALL EXCEPT httpd : ALL : aclexec /usr/local/sbin/checkdnsbl %a
+# ALL EXCEPT httpd : ALL : aclexec /usr/local/sbin/checkdnsbl.sh %a
 #
 ## This will deny connections from DNSBL-flagged hosts, and assume the rest are
 ## safe.  MAKE SURE THAT THIS SCRIPT IS RUN AFTER ALL EXPLICITLY DEFINED
