@@ -24,4 +24,4 @@ wget -q -O - https://iplists.firehol.org/files/firehol_level2.netset | awk --pos
 
 #untested
 #do { /ip firewall address-list add address=111.251.111.129 list=blackmail timeout=3h } on-error={}
-#wget -q -O - https://iplists.firehol.org/files/firehol_level2.netset | awk --posix '/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\// { print "do { /ip firewall address-list add address=111.251.111.129 list=blackmail timeout=23:59:59 } on-error={}";}' >> $saveTo
+#wget -q -O - https://iplists.firehol.org/files/firehol_level2.netset | awk --posix '/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\// { print "do { /ip firewall address-list add address=" $1 " list=blackmail timeout=23:59:59 } on-error={}";}' >> $saveTo
