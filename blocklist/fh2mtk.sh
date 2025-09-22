@@ -7,3 +7,5 @@ wget -q -O - https://raw.githubusercontent.com/firehol/blocklist-ipsets/refs/hea
 wget -q -O - https://raw.githubusercontent.com/firehol/blocklist-ipsets/refs/heads/master/stopforumspam_toxic.netset | awk --posix '/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\// { print "do { /ip firewall address-list add address=" $1 " list=daftarblokir timeout=23:59:59 comment=toxic.bl.dennyhalim.com } on-error={}";}' >> $saveTo/toxic.rsc
 #iblocklist hijacked
 #wget -q -O - "http://list.iblocklist.com/?list=usrcshglbiilevmyfhse&fileformat=cidr&archiveformat=gz" | zcat | awk --posix '/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\// { print "do { /ip firewall address-list add address=" $1 " list=daftarblokir timeout=23:59:59 comment=hijack.bl.dennyhalim.com } on-error={}";}' >> $saveTo/iblocklist-hijacked.rsc
+
+wc -l $saveTo/*
