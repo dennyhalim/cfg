@@ -47,7 +47,7 @@ DNSBL[2]="dnsbl.swiftbl.net"
 DNSBL[3]="combined.abuse.ch"
 DNSBL[4]="all.s5h.net"
 DNSBL[5]="dnsbl-2.uceprotect.net"
-DNSBL[6]="zen.spamhaus.org"
+DNSBL[6]="bl.blocklist.de"
 #DNSBL[4]="bogons.cymru.com" #this will block local network
 
 
