@@ -40,6 +40,10 @@
 ## Connection closed by remote host."  And so will other blacklisted clients.
 #################################################################################
 
+#check geoip first
+#deny all oonnection except from ID
+geoiplookup $1 | grep 'not found\|ID' || exit 0
+
 # DNSBL[x] -- array of DNSBL hosts to query
 DNSBL[0]="dnsbl.dronebl.org"
 DNSBL[1]="rbl.efnetrbl.org"
