@@ -1,6 +1,13 @@
 rem dennyhalim.com
 rem this will be copied after first reboot and then run after next reboot
 
+rem compacting folders
+compact.exe /f /c C:\ProgramData\Microsoft\ c:\Users "C:\Program Files (x86)" C:\Windows\Temp C:\Windows\assembly C:\Windows\ServiceProfiles\LocalService\AppData\Local\Temp\ C:\Windows\Installer
+compact.exe /f /c C:\ProgramData\Microsoft\* c:\Users\*
+compact.exe /f /c C:\Windows\WinSxS\
+compact.exe /f /c C:\Windows\System32\DriverStore\FileRepository\
+compact.exe /f /c "C:\Program Files\WindowsApps"
+
 rem replace defaultlayouts before it gets created
 move "%Public%\..\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml" "%Public%\..\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.dennyhalim" 
 copy /y "%WINDIR%\Setup\Files\DefaultLayouts.xml" "%Public%\..\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml"
