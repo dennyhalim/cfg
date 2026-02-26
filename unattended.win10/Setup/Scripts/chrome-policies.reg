@@ -7,7 +7,7 @@ Windows Registry Editor Version 5.00
 "RemoteAccessHostFirewallTraversal"=dword:00000000
 "DefaultPopupsSetting"=dword:00000002
 "DefaultGeolocationSetting"=dword:00000002
-"DefaultSearchProviderName"="DuckDuckGo"
+"DefaultSearchProviderName"="DuckDuckGo Html"
 "DefaultSearchProviderEnabled"=dword:00000001
 "PasswordManagerEnabled"=dword:00000000
 "SyncDisabled"=dword:00000001
@@ -30,7 +30,7 @@ Windows Registry Editor Version 5.00
 "BrowserGuestModeEnabled"=dword:00000000
 "ImportAutofillFormData"=dword:00000000
 "SafeBrowsingProtectionLevel"=dword:00000001
-"DefaultSearchProviderSearchURL"="https://duckduckgo.com/?q={searchTerms}"
+"DefaultSearchProviderSearchURL"="https://html.duckduckgo.com/html?q={searchTerms}"
 "DownloadRestrictions"=dword:00000001
 "DefaultWebBluetoothGuardSetting"=dword:00000002
 "QuicAllowed"=dword:00000000
