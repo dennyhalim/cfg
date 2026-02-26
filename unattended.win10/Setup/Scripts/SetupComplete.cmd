@@ -9,8 +9,8 @@ compact.exe /f /c C:\Windows\System32\DriverStore\FileRepository\
 compact.exe /f /c "C:\Program Files\WindowsApps"
 
 rem replace defaultlayouts before it gets created
-move "%Public%\..\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml" "%Public%\..\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.dennyhalim" 
-copy /y "%WINDIR%\Setup\Files\DefaultLayouts.xml" "%Public%\..\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml"
+rem move "%Public%\..\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml" "%Public%\..\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.dennyhalim" 
+rem copy /y "%WINDIR%\Setup\Files\DefaultLayouts.xml" "%Public%\..\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml"
 move "%SystemRoot%\SysWOW64\OneDriveSetup.exe" "%SystemRoot%\SysWOW64\OneDriveSetup.dennyhalim"
 move "%SystemRoot%\System32\OneDriveSetup.exe" "%SystemRoot%\System32\OneDriveSetup.dennyhalim"
 rem move "%windir%\SystemApps\Microsoft.Windows.Cortana_cw5n1h2txyewy" "%windir%\SystemApps\Microsoft.Windows.Cortana_cw5n1h2txyewy.dennyhalim"
@@ -18,7 +18,7 @@ rem startmenu disabled if shellex disabled
 rem move "%windir%\SystemApps\ShellExperienceHost_cw5n1h2txyewy" "%windir%\SystemApps\ShellExperienceHost_cw5n1h2txyewy.dennyhalim"
 
 wmic.exe USERACCOUNT WHERE "Name='admin'" set PasswordExpires=FALSE
-wmic.exe USERACCOUNT WHERE "Name='user'" set PasswordExpires=FALSE
+rem wmic.exe USERACCOUNT WHERE "Name='user'" set PasswordExpires=FALSE
 
 reg.exe load "HKLM\DEFAULT" "%Public%\..\default\ntuser.dat"
 reg.exe add "HKLM\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" /v PeopleBand /t REG_DWORD /d 0 /f
