@@ -1,13 +1,15 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
+"DnsOverHttpsMode"="secure"
+"DnsOverHttpsTemplates"="https://all.dns.mullvad.net/dns-query"
+"BackgroundModeEnabled"=dword:00000000
 "RemoteAccessHostFirewallTraversal"=dword:00000000
 "DefaultPopupsSetting"=dword:00000002
 "DefaultGeolocationSetting"=dword:00000002
 "DefaultSearchProviderName"="Google Encrypted"
 "DefaultSearchProviderEnabled"=dword:00000001
 "PasswordManagerEnabled"=dword:00000000
-"BackgroundModeEnabled"=dword:00000000
 "SyncDisabled"=dword:00000001
 "CloudPrintProxyEnabled"=dword:00000000
 "MetricsReportingEnabled"=dword:00000000
@@ -15,9 +17,7 @@ Windows Registry Editor Version 5.00
 "ImportSavedPasswords"=dword:00000000
 "IncognitoModeAvailability"=dword:00000001
 "SavingBrowserHistoryDisabled"=dword:00000000
-"AllowDeletingBrowserHistory"=dword:00000000
 "PromptForDownloadLocation"=dword:00000001
-"AutoplayAllowed"=dword:00000000
 "SafeBrowsingExtendedReportingEnabled"=dword:00000000
 "DefaultWebUsbGuardSetting"=dword:00000002
 "ChromeCleanupEnabled"=dword:00000000
@@ -28,8 +28,6 @@ Windows Registry Editor Version 5.00
 "NetworkPredictionOptions"=dword:00000002
 "DeveloperToolsAvailability"=dword:00000002
 "BrowserGuestModeEnabled"=dword:00000000
-"AutofillCreditCardEnabled"=dword:00000000
-"AutofillAddressEnabled"=dword:00000000
 "ImportAutofillFormData"=dword:00000000
 "SafeBrowsingProtectionLevel"=dword:00000001
 "DefaultSearchProviderSearchURL"="https://www.google.com/search?q={searchTerms}"
@@ -38,9 +36,6 @@ Windows Registry Editor Version 5.00
 "QuicAllowed"=dword:00000000
 "EnableOnlineRevocationChecks"=dword:00000001
 "SSLVersionMin"="tls1.2"
-"AbusiveExperienceInterventionEnforce"=dword:00000001
-"AdsSettingForIntrusiveAdsSites"=dword:00000002
-"AdvancedProtectionAllowed"=dword:00000001
 "BlockThirdPartyCookies"=dword:00000001
 "BookmarkBarEnabled"=dword:00000001
 "BrowserNetworkTimeQueriesEnabled"=dword:00000000
@@ -64,24 +59,34 @@ Windows Registry Editor Version 5.00
 "PasswordLeakDetectionEnabled"=dword:00000000
 "NativeMessagingUserLevelHosts"=dword:00000000
 "ShowCastIconInToolbar"=dword:00000000
+"AllowDeletingBrowserHistory"=dword:00000000
+"AutoplayAllowed"=dword:00000000
+"AutofillCreditCardEnabled"=dword:00000000
+"AutofillAddressEnabled"=dword:00000000
+"AbusiveExperienceInterventionEnforce"=dword:00000001
+"AdsSettingForIntrusiveAdsSites"=dword:00000002
+"AdvancedProtectionAllowed"=dword:00000001
 "AutoFillEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoplayAllowlist]
 "1"="[*.]mil"
 "2"="[*.]gov"
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ClearBrowsingDataOnExitList]
+"1"="cached_images_and_files"
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallAllowlist]
-"1"="oiigbmnaadbkfbmpbfijlflahbdbdgdf"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallBlocklist]
 "1"="*"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallForcelist]
-"1"="mlomiejdfkolichcflejclcbmpeaniij;https://clients2.google.com/service/update2/crx"
+"1"="mlomiejdfkolichcflejclcbmpeaniij"
+"2"="oboonakemofpalcgghocfoadofidjkkk"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionSettings]
+"*"="{\"blocked_permissions\":[\"debugger\",\"history\",\"tabs\",\"sessions\",\"privacy\",\"management\",\"downloads\",\"serial\",\"vpnProvider\",\"proxy\",\"experimental\"]}"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist]
 "1"="javascript://*"
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Update]
-"AutoUpdateCheckPeriodMinutes"=dword:00002760
 
