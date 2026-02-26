@@ -1,8 +1,8 @@
 Windows Registry Editor Version 5.00
 # !!! WARNING NOT TESTED !!! #
+# https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#branchreadinesslevel #
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
-# https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#branchreadinesslevel #
 "TargetReleaseVersionInfo"="24H2"
 "ProductVersion"="Windows 11"
 "TargetReleaseVersion"=dword:00000001
@@ -14,3 +14,9 @@ Windows Registry Editor Version 5.00
 "DeferUpgrade"=dword:00000001
 "DeferUpgradePeriod"=dword:0000016d
 "DeferUpdatePeriod"=dword:00000002
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy]
+"LetAppsRunInBackground"=dword:00000002
+
+[HKEY_LOCAL_MACHINE\DEFAULT\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
+"GlobalUserDisabled"=dword:00000001
