@@ -28,7 +28,7 @@ add address=127.0.10.1 regexp=xxx type=A
 add address=127.0.10.1 regexp=sex type=A
 add address=127.0.10.1 regexp=porn type=A
 add address=127.0.10.1 regexp=playboy type=A
-add address=127.0.10.1 regexp=\\.bid type=A
+add address=127.0.10.1 regexp="\\.bid" type=A
 add address=127.0.10.1 regexp=casino type=A
 add address=127.0.10.1 regexp=kasino type=A
 add address=127.0.10.1 regexp=gambl type=A
