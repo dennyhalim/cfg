@@ -70,7 +70,7 @@ add address=127.0.10.1 regexp=nflx type=A
 add address=127.0.10.1 regexp=coin type=A
 add address=127.0.10.1 regexp=koin type=A
 #add address=127.0.10.1 regexp=convert type=A
-add address=172.0.10.1 regexp=steam type=A
+add address=127.0.10.1 regexp=steam type=A
 #phishing
 add address=127.0.10.1 regexp=bca-fash type=A
 add address=127.0.10.1 regexp=bcaflash type=A
