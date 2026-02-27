@@ -10,14 +10,19 @@ add cname=strict.bing.com name=www.bing.com type=CNAME
 add address=216.239.38.119 regexp=www.google.co type=A
 
 #super blokcer ads & tracking
-add address=127.0.10.1 regexp=banner type=A disabled=yes
-add address=127.0.10.1 regexp=banners type=A
+add address=127.0.10.1 regexp=adserv type=A
+add address=127.0.10.1 regexp=advert type=A
+add address=127.0.10.1 regexp=analytic type=A
+add address=127.0.10.1 regexp=telemetry type=A
+add address=127.0.10.1 regexp=beacons type=A
+add address=127.0.10.1 regexp=tracking type=A
+add address=127.0.10.1 regexp=dit.whatsapp type=A
 add address=127.0.10.1 regexp=googletag type=A
 add address=127.0.10.1 regexp=googlead type=A
 add address=127.0.10.1 regexp=googlesyndication type=A
 add address=127.0.10.1 regexp=doubleclick type=A
-add address=127.0.10.1 regexp=adserv type=A
-add address=127.0.10.1 regexp=advert type=A
+add address=127.0.10.1 regexp=nexusrules type=A
+add address=127.0.10.1 regexp=trafficmanager type=A
 add address=127.0.10.1 regexp=admob type=A
 add address=127.0.10.1 regexp=adnxs type=A
 add address=127.0.10.1 regexp=adzerk type=A
@@ -25,13 +30,8 @@ add address=127.0.10.1 regexp=moatads type=A
 add address=127.0.10.1 regexp=fastclick type=A
 add address=127.0.10.1 regexp=smaato type=A
 add address=127.0.10.1 regexp=2mdn type=A
-add address=127.0.10.1 regexp=analytic type=A
-add address=127.0.10.1 regexp=telemetry type=A
-add address=127.0.10.1 regexp=nexusrules type=A
-add address=127.0.10.1 regexp=beacons type=A
-add address=127.0.10.1 regexp=tracking type=A
-add address=127.0.10.1 regexp=trafficmanager type=A
-add address=127.0.10.1 regexp=dit.whatsapp type=A
+add address=127.0.10.1 regexp=banners type=A
+add address=127.0.10.1 regexp=banner type=A disabled=yes
 add address=127.0.10.1 regexp=fluxads type=A
 add address=127.0.10.1 regexp=inmatads type=A
 add address=127.0.10.1 regexp=adamoads type=A
