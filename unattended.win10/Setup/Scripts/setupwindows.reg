@@ -3,8 +3,8 @@ Windows Registry Editor Version 5.00
 ; https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#branchreadinesslevel #
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
-"TargetReleaseVersionInfo"="24H2"
 "ProductVersion"="Windows 11"
+"TargetReleaseVersionInfo"="24H2"
 "TargetReleaseVersion"=dword:00000001
 "BranchReadinessLevel"=dword:00000020
 "DeferFeatureUpdates"=dword:00000001
@@ -16,7 +16,7 @@ Windows Registry Editor Version 5.00
 "DeferUpdatePeriod"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
-"ScheduledInstallDay"=dword:00000001
+"ScheduledInstallDay"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate]
 "TargetChannel"="ExtendedStable"
