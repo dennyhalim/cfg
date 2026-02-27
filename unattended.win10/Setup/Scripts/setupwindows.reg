@@ -1,6 +1,6 @@
 Windows Registry Editor Version 5.00
-# !!! WARNING NOT TESTED !!! #
-# https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#branchreadinesslevel #
+; !!! WARNING NOT TESTED !!! ;
+; https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#branchreadinesslevel #
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
 "TargetReleaseVersionInfo"="24H2"
