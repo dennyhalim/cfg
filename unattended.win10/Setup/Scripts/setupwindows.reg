@@ -50,6 +50,7 @@ Windows Registry Editor Version 5.00
 "RejectUnencryptedAccess"=dword:00000001
 "Hidden"=dword:00000001
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters]
+;"BlockNTLM"=dword:00000001
 "EnablePlainTextPassword"=dword:00000000
 "EnableSecuritySignature"=dword:00000001
 "ServiceDllUnloadOnStop"=dword:00000001
