@@ -2,6 +2,7 @@ Windows Registry Editor Version 5.00
 ; !!! WARNING NOT TESTED !!! ;
 ; https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#branchreadinesslevel #
 
+;windows update
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
 "ProductVersion"="Windows 11"
 "TargetReleaseVersionInfo"="24H2"
@@ -14,20 +15,47 @@ Windows Registry Editor Version 5.00
 "DeferFeatureUpdates"=dword:00000001
 "DeferFeatureUpdatesPeriodInDays"=dword:0000016d
 "DeferUpdatePeriod"=dword:00000002
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
 "ScheduledInstallDay"=dword:00000002
 
+;edge
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate]
 "TargetChannel"="ExtendedStable"
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
 "QuicAllowed"=dword:00000000
 "ClearCachedImagesAndFilesOnExit"=dword:00000001
 
+;background
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy]
 "LetAppsRunInBackground"=dword:00000002
-
 [HKEY_LOCAL_MACHINE\DEFAULT\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
 "GlobalUserDisabled"=dword:00000001
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
 "GlobalUserDisabled"=dword:00000001
+
+;SAMBA
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
+"EnableAuthenticateUserSharing"=dword:00000000
+"ServiceDllUnloadOnStop"=dword:00000001
+"EnableForcedLogoff"=dword:00000001
+"EnableSecuritySignature"=dword:00000001
+"RequireSecuritySignature"=dword:00000001
+"RestrictNullSessAccess"=dword:00000001
+"SMB1"=dword:00000000
+"AuditSmb1Access"=dword:00000001
+"AuditClientCertificateAccess"=dword:00000001
+"AuditClientDoesNotSupportEncryption"=dword:00000001
+"AuditClientDoesNotSupportSigning"=dword:00000001
+"AuditInsecureGuestLogon"=dword:00000001
+"RejectUnencryptedAccess"=dword:00000001
+"Hidden"=dword:00000001
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters]
+"EnablePlainTextPassword"=dword:00000000
+"EnableSecuritySignature"=dword:00000001
+"ServiceDllUnloadOnStop"=dword:00000001
+"RequireSecuritySignature"=dword:00000000
+"AuditServerDoesNotSupportEncryption"=dword:00000001
+"AuditServerDoesNotSupportSigning"=dword:00000001
+"AuditInsecureGuestLogon"=dword:00000001
+"AllowInsecureGuestAuth"=dword:00000000
+"RequireEncryption"=dword:00000001
