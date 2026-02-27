@@ -10,6 +10,8 @@ add cname=strict.bing.com name=www.bing.com type=CNAME
 add address=216.239.38.119 regexp=www.google.co type=A
 
 #super blokcer ads & tracking
+add address=127.0.10.1 regexp=banner type=A disabled=yes
+add address=127.0.10.1 regexp=banners type=A
 add address=127.0.10.1 regexp=googletag type=A
 add address=127.0.10.1 regexp=googlead type=A
 add address=127.0.10.1 regexp=googlesyndication type=A
@@ -30,12 +32,27 @@ add address=127.0.10.1 regexp=beacons type=A
 add address=127.0.10.1 regexp=tracking type=A
 add address=127.0.10.1 regexp=trafficmanager type=A
 add address=127.0.10.1 regexp=dit.whatsapp type=A
+add address=127.0.10.1 regexp=fluxads type=A
+add address=127.0.10.1 regexp=inmatads type=A
+add address=127.0.10.1 regexp=adamoads type=A
+add address=127.0.10.1 regexp=adloads type=A
+add address=127.0.10.1 regexp=adcolony type=A
+add address=127.0.10.1 regexp=adcloud type=A
+add address=127.0.10.1 regexp=adcorp type=A
+add address=127.0.10.1 regexp=adtube type=A
+add address=127.0.10.1 regexp=adsmin type=A
+add address=127.0.10.1 regexp=adsports type=A
+add address=127.0.10.1 regexp=adsnet type=A
+add address=127.0.10.1 regexp=adstat type=A
+add address=127.0.10.1 regexp=popads type=A
 
 #adult,gambling
+add address=127.0.10.1 regexp=adult type=A
 add address=127.0.10.1 regexp=xxx type=A
 add address=127.0.10.1 regexp=sex type=A
 add address=127.0.10.1 regexp=porn type=A
 add address=127.0.10.1 regexp=playboy type=A
+add address=127.0.10.1 regexp=friendfinder type=A
 add address=127.0.10.1 regexp="\\.bid" type=A
 add address=127.0.10.1 regexp=casino type=A
 add address=127.0.10.1 regexp=kasino type=A
