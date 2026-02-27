@@ -15,6 +15,9 @@ Windows Registry Editor Version 5.00
 "DeferUpgradePeriod"=dword:0000016d
 "DeferUpdatePeriod"=dword:00000002
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"ScheduledInstallDay"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate]
 "TargetChannel"="ExtendedStable"
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
