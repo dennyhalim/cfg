@@ -16,6 +16,8 @@ add address=127.0.10.1 regexp=doubleclick type=A
 add address=127.0.10.1 regexp=adserv type=A
 add address=127.0.10.1 regexp=advert type=A
 add address=127.0.10.1 regexp=admob type=A
+add address=127.0.10.1 regexp=adnxs type=A
+add address=127.0.10.1 regexp=smaato type=A
 add address=127.0.10.1 regexp=analytic type=A
 add address=127.0.10.1 regexp=telemetry type=A
 add address=127.0.10.1 regexp=nexusrules type=A
