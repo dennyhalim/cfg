@@ -35,6 +35,7 @@ Modded: dennyhalim.com
 <Compact>Enable</Compact>
 <ImageInstall>
 <OSImage>
+<Compact>true</Compact>
 <InstallTo>
 <DiskID>0</DiskID>
 <PartitionID>2</PartitionID>
@@ -55,6 +56,7 @@ Modded: dennyhalim.com
 <Compact>Enable</Compact>
 <ImageInstall>
 <OSImage>
+<Compact>true</Compact>
 <InstallTo>
 <DiskID>0</DiskID>
 <PartitionID>2</PartitionID>
