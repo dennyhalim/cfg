@@ -49,6 +49,7 @@ Windows Registry Editor Version 5.00
 "AuditInsecureGuestLogon"=dword:00000001
 "RejectUnencryptedAccess"=dword:00000001
 "Hidden"=dword:00000001
+"InvalidAuthenticationDelayTimeInMs"=dword:00000fa0
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters]
 ;"BlockNTLM"=dword:00000001
 "EnablePlainTextPassword"=dword:00000000
