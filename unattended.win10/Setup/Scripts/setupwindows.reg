@@ -53,7 +53,7 @@ Windows Registry Editor Version 5.00
 "EnablePlainTextPassword"=dword:00000000
 "EnableSecuritySignature"=dword:00000001
 "ServiceDllUnloadOnStop"=dword:00000001
-"RequireSecuritySignature"=dword:00000000
+"RequireSecuritySignature"=dword:00000001
 "AuditServerDoesNotSupportEncryption"=dword:00000001
 "AuditServerDoesNotSupportSigning"=dword:00000001
 "AuditInsecureGuestLogon"=dword:00000001
