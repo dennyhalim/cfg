@@ -58,7 +58,6 @@ add address=127.0.10.1 regexp=casino type=A
 add address=127.0.10.1 regexp=kasino type=A
 add address=127.0.10.1 regexp=gambl type=A
 add address=127.0.10.1 regexp=poker type=A
-add address=127.0.10.1 regexp=judi type=A
 add address=127.0.10.1 regexp=judol type=A
 add address=127.0.10.1 regexp=xbet type=A
 add address=127.0.10.1 regexp=xslot type=A
@@ -66,6 +65,23 @@ add address=127.0.10.1 regexp=jackpot type=A
 add address=127.0.10.1 regexp=bett type=A
 add address=127.0.10.1 regexp=bet type=A disabled=yes
 add address=127.0.10.1 regexp=slot type=A disabled=yes
+add address=127.0.10.1 regexp=judi type=A disabled=yes
+
+#resources suckers
+add address=127.0.10.1 regexp=byteoversea type=A
+add address=127.0.10.1 regexp=ttdns type=A
+add address=127.0.10.1 regexp=tiktokv type=A
+add address=127.0.10.1 regexp=tiktokcdn type=A
+add address=127.0.10.1 regexp=ttwstatic type=A
+add address=127.0.10.1 regexp=flix type=A
+add address=127.0.10.1 regexp=nflx type=A
+add address=127.0.10.1 regexp=coin type=A
+add address=127.0.10.1 regexp=koin type=A
+#add address=127.0.10.1 regexp=convert type=A
+add address=127.0.10.1 regexp=steam type=A
+#phishing
+add address=127.0.10.1 regexp=bca-fash type=A
+add address=127.0.10.1 regexp=bcaflash type=A
 
 #windows telemetry
 add address=127.0.10.1 regexp=applicationinsights type=A
@@ -83,22 +99,6 @@ add address=127.0.10.1 regexp=activity.windows type=A
 add address=127.0.10.1 regexp=zmetrics type=A
 add address=127.0.10.1 regexp=diagnostics-eudb type=A
 add address=127.0.10.1 regexp=blob.core.windows type=A
-
-#resources suckers
-add address=127.0.10.1 regexp=byteoversea type=A
-add address=127.0.10.1 regexp=ttdns type=A
-add address=127.0.10.1 regexp=tiktokv type=A
-add address=127.0.10.1 regexp=tiktokcdn type=A
-add address=127.0.10.1 regexp=ttwstatic type=A
-add address=127.0.10.1 regexp=flix type=A
-add address=127.0.10.1 regexp=nflx type=A
-add address=127.0.10.1 regexp=coin type=A
-add address=127.0.10.1 regexp=koin type=A
-#add address=127.0.10.1 regexp=convert type=A
-add address=127.0.10.1 regexp=steam type=A
-#phishing
-add address=127.0.10.1 regexp=bca-fash type=A
-add address=127.0.10.1 regexp=bcaflash type=A
 
 #extreme blocking
 add address=127.0.10.1 disabled=yes regexp=game type=A comment=allgame
