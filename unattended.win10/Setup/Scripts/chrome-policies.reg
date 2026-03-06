@@ -1,5 +1,9 @@
 Windows Registry Editor Version 5.00
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Update]
+"RollbackToTargetVersion"=dword:00000001
+"targetChannel"="extended"
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
 "DnsOverHttpsMode"="secure"
 "DnsOverHttpsTemplates"="https://all.dns.mullvad.net/dns-query"
