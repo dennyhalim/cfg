@@ -6,6 +6,9 @@ compact.exe /f /i /c C:\ProgramData\Microsoft\ c:\Users "C:\Program Files (x86)"
 compact.exe /f /i /c C:\ProgramData\Microsoft\* c:\Users\*
 compact.exe /f /i /c C:\Windows\WinSxS\ C:\Windows\System32\DriverStore\FileRepository\ "C:\Program Files\WindowsApps"
 
+w32tm.exe /config /manualpeerlist:"time.nist.gov id.pool.ntp.org" /syncfromflags:all
+w32tm.exe /resync /rediscover /nowait
+
 rem replace defaultlayouts before it gets created
 rem move "%Public%\..\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml" "%Public%\..\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.dennyhalim" 
 rem copy /y "%WINDIR%\Setup\Files\DefaultLayouts.xml" "%Public%\..\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml"
@@ -100,6 +103,7 @@ sc.exe config RetailDemo start= disabled
 sc.exe config lfsvc start= disabled
 sc.exe config ssh-agent start= auto
 sc.exe config sshd start= auto
+sc.exe triggerinfo w32time start/networkon stop/networkoff
 
 netsh advfirewall firewall add rule dir=in action=allow profile=any protocol=TCP localport=2222 name="sshd"
 
