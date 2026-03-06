@@ -1,6 +1,7 @@
 Windows Registry Editor Version 5.00
 ;open command prompt as administrator
 ;curl -O https://raw.githubusercontent.com/dennyhalim/cfg/master/unattended.win10/Setup/Scripts/chrome-policies.reg
+;edit to suite your need
 ;reg.exe import chrome-policies.reg
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Update]
