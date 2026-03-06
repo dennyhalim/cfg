@@ -1,4 +1,6 @@
 Windows Registry Editor Version 5.00
+;curl -O https://raw.githubusercontent.com/dennyhalim/cfg/master/unattended.win10/Setup/Scripts/chrome-policies.reg
+;reg.exe import chrome-policies.reg
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Update]
 "RollbackToTargetVersion"=dword:00000001
