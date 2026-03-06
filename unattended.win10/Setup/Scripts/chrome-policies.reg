@@ -71,24 +71,24 @@ Windows Registry Editor Version 5.00
 "BatterySaverModeAvailability"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoplayAllowlist]
-"1"="[*.]mil"
-"2"="[*.]gov"
+"901"="[*.]mil"
+"902"="[*.]gov"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ClearBrowsingDataOnExitList]
-"1"="cached_images_and_files"
+"901"="cached_images_and_files"
 
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallAllowlist]
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallBlocklist]
-"1"="*"
+"901"="*"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallForcelist]
-"1"="mlomiejdfkolichcflejclcbmpeaniij"
-"2"="oboonakemofpalcgghocfoadofidjkkk"
+"901"="mlomiejdfkolichcflejclcbmpeaniij"
+"902"="oboonakemofpalcgghocfoadofidjkkk"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionSettings]
 "*"="{\"blocked_permissions\":[\"debugger\",\"history\",\"tabs\",\"sessions\",\"privacy\",\"management\",\"downloads\",\"serial\",\"vpnProvider\",\"proxy\",\"experimental\"]}"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist]
-"1"="javascript://*"
+"901"="javascript://*"
 
