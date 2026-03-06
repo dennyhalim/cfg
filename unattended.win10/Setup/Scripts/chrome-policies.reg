@@ -67,8 +67,9 @@ Windows Registry Editor Version 5.00
 "AdsSettingForIntrusiveAdsSites"=dword:00000002
 "AdvancedProtectionAllowed"=dword:00000001
 "AutoFillEnabled"=dword:00000000
-"MemorySaverModeSavings"=dword:00000002
 "BatterySaverModeAvailability"=dword:00000002
+"HighEfficiencyModeEnabled"=dword:00000001
+;"MemorySaverModeSavings"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoplayAllowlist]
 "901"="[*.]mil"
