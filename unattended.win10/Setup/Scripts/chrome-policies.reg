@@ -1,4 +1,5 @@
 Windows Registry Editor Version 5.00
+;follow some DoD STIG plus some preferences
 ;open command prompt as administrator
 ;curl -O https://raw.githubusercontent.com/dennyhalim/cfg/master/unattended.win10/Setup/Scripts/chrome-policies.reg
 ;edit to suite your need
