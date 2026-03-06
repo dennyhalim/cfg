@@ -1,6 +1,9 @@
 Windows Registry Editor Version 5.00
-; !!! WARNING NOT TESTED !!! ;
-; https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#branchreadinesslevel #
+; !!! TEST BEFORE USED ON PRODUCTION !!! ;
+; https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#branchreadinesslevel 
+;open command prompt as administrator
+;curl -O https://raw.githubusercontent.com/dennyhalim/cfg/master/unattended.win10/Setup/Scripts/setupwindows.reg
+;reg.exe import setupwindows.reg
 
 ;windows update
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
