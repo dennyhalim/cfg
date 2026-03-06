@@ -1,4 +1,5 @@
 Windows Registry Editor Version 5.00
+;open command prompt as administrator
 ;curl -O https://raw.githubusercontent.com/dennyhalim/cfg/master/unattended.win10/Setup/Scripts/chrome-policies.reg
 ;reg.exe import chrome-policies.reg
 
