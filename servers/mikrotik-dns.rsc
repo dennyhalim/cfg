@@ -26,9 +26,7 @@ add address=127.0.10.1 type=A regexp=pagead
 add address=127.0.10.1 type=A regexp=imageads
 add address=127.0.10.1 type=A regexp=doubleclick
 add address=127.0.10.1 type=A regexp=2mdn
-add address=127.0.10.1 type=A regexp="\\.msn\\.com"
 add address=127.0.10.1 type=A regexp=bingads
-add address=127.0.10.1 type=A regexp="events\\.data"
 add address=127.0.10.1 type=A regexp=ad-instantpage
 add address=127.0.10.1 type=A regexp=nexusrules
 add address=127.0.10.1 type=A regexp=trafficmanager
@@ -104,6 +102,8 @@ add address=127.0.10.1 regexp=bca-fash type=A
 add address=127.0.10.1 regexp=bcaflash type=A
 
 #windows telemetry
+add address=127.0.10.1 regexp=.msn.com type=A
+add address=127.0.10.1 regexp=events.data type=A
 add address=127.0.10.1 regexp=applicationinsights type=A
 add address=127.0.10.1 regexp=collector.azure type=A
 add address=127.0.10.1 regexp=data.msn type=A
