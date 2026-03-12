@@ -16,7 +16,7 @@ add address=127.0.10.1 type=A regexp=analytic
 add address=127.0.10.1 type=A regexp=telemetry
 add address=127.0.10.1 type=A regexp=beacon
 add address=127.0.10.1 type=A regexp=tracking
-add address=127.0.10.1 type=A regexp=pixel disabled=yes
+add address=127.0.10.1 type=A regexp="pixel\\."
 add address=127.0.10.1 type=A regexp=googletag
 add address=127.0.10.1 type=A regexp=googlead
 add address=127.0.10.1 type=A regexp=googlesyndication
@@ -38,8 +38,7 @@ add address=127.0.10.1 type=A regexp=adzerk
 add address=127.0.10.1 type=A regexp=moatads
 add address=127.0.10.1 type=A regexp=fastclick
 add address=127.0.10.1 type=A regexp=smaato
-add address=127.0.10.1 type=A regexp=banners
-add address=127.0.10.1 type=A regexp="^banner([0-9]+\\.)"
+add address=127.0.10.1 type=A regexp="^banner([s0-9]+\\.)"
 add address=127.0.10.1 type=A regexp=fluxads
 add address=127.0.10.1 type=A regexp=inmatads
 add address=127.0.10.1 type=A regexp=adamoads
@@ -60,9 +59,9 @@ add address=127.0.10.1 type=A regexp=amazon-adsystem
 add address=127.0.10.1 type=A regexp=overture
 add address=127.0.10.1 type=A regexp=quantserve
 add address=127.0.10.1 type=A regexp=inmobi
-add address=127.0.10.1 type=A regexp=1.yimg
-add address=127.0.10.1 type=A regexp=dit.whatsapp
-add address=127.0.10.1 type=A regexp=static.ak.fbcdn.net
+add address=127.0.10.1 type=A regexp="1\\.yimg"
+add address=127.0.10.1 type=A regexp="dit\\.whatsapp"
+add address=127.0.10.1 type=A regexp="static\\.ak\\.fbcdn\\.net"
 
 #adult,gambling
 add address=127.0.10.1 regexp=adult type=A
