@@ -56,7 +56,7 @@ add address=127.0.10.1 type=A regexp=adpooh
 add address=127.0.10.1 type=A regexp=booru
 add address=127.0.10.1 type=A regexp="[0-9]chan"
 add address=127.0.10.1 type=A regexp=amazon-adsystem
-add address=127.0.10.1 type=A regexp=overture
+#add address=127.0.10.1 type=A regexp=overture
 add address=127.0.10.1 type=A regexp=quantserve
 add address=127.0.10.1 type=A regexp=inmobi
 add address=127.0.10.1 type=A regexp="1\\.yimg"
