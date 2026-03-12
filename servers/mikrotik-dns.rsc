@@ -76,12 +76,11 @@ add address=127.0.10.1 regexp=poker type=A
 add address=127.0.10.1 regexp=judol type=A
 add address=127.0.10.1 regexp=xbet type=A
 add address=127.0.10.1 regexp=xslot type=A
+add address=127.0.10.1 regexp=xslut type=A
 add address=127.0.10.1 regexp=jackpot type=A
 add address=127.0.10.1 regexp=blackjack type=A
 add address=127.0.10.1 regexp=bett type=A
 add address=127.0.10.1 regexp="bet[st0-9]" type=A disabled=yes
-add address=127.0.10.1 regexp=slut type=A disabled=yes
-add address=127.0.10.1 regexp=slot type=A disabled=yes
 add address=127.0.10.1 regexp=bingo type=A disabled=yes
 add address=127.0.10.1 regexp=judi type=A disabled=yes
 
