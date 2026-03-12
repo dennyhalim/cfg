@@ -10,41 +10,42 @@ add cname=strict.bing.com name=www.bing.com type=CNAME
 add address=216.239.38.119 regexp=www.google.co type=A
 
 #super blokcer ads & tracking
-add address=127.0.10.1 regexp=adserv type=A
-add address=127.0.10.1 regexp=advert type=A
-add address=127.0.10.1 regexp=analytic type=A
-add address=127.0.10.1 regexp=telemetry type=A
-add address=127.0.10.1 regexp=beacons type=A
-add address=127.0.10.1 regexp=tracking type=A
-add address=127.0.10.1 regexp=dit.whatsapp type=A
-add address=127.0.10.1 regexp=googletag type=A
-add address=127.0.10.1 regexp=googlead type=A
-add address=127.0.10.1 regexp=googlesyndication type=A
-add address=127.0.10.1 regexp=doubleclick type=A
-add address=127.0.10.1 regexp=nexusrules type=A
-add address=127.0.10.1 regexp=trafficmanager type=A
-add address=127.0.10.1 regexp=admob type=A
-add address=127.0.10.1 regexp=adnxs type=A
-add address=127.0.10.1 regexp=adzerk type=A
-add address=127.0.10.1 regexp=moatads type=A
-add address=127.0.10.1 regexp=fastclick type=A
-add address=127.0.10.1 regexp=smaato type=A
-add address=127.0.10.1 regexp=2mdn type=A
-add address=127.0.10.1 regexp=banners type=A
-add address=127.0.10.1 regexp=banner type=A disabled=yes
-add address=127.0.10.1 regexp=fluxads type=A
-add address=127.0.10.1 regexp=inmatads type=A
-add address=127.0.10.1 regexp=adamoads type=A
-add address=127.0.10.1 regexp=adloads type=A
-add address=127.0.10.1 regexp=adcolony type=A
-add address=127.0.10.1 regexp=adcloud type=A
-add address=127.0.10.1 regexp=adcorp type=A
-add address=127.0.10.1 regexp=adtube type=A
-add address=127.0.10.1 regexp=adsmin type=A
-add address=127.0.10.1 regexp=adsports type=A
-add address=127.0.10.1 regexp=adsnet type=A
-add address=127.0.10.1 regexp=adstat type=A
-add address=127.0.10.1 regexp=popads type=A
+add address=127.0.10.1 type=A regexp=adserv
+add address=127.0.10.1 type=A regexp=advert
+add address=127.0.10.1 type=A regexp=analytic
+add address=127.0.10.1 type=A regexp=telemetry
+add address=127.0.10.1 type=A regexp=beacons
+add address=127.0.10.1 type=A regexp=tracking
+add address=127.0.10.1 type=A regexp=dit.whatsapp
+add address=127.0.10.1 type=A regexp=googletag
+add address=127.0.10.1 type=A regexp=googlead
+add address=127.0.10.1 type=A regexp=googlesyndication
+add address=127.0.10.1 type=A regexp=doubleclick
+add address=127.0.10.1 type=A regexp=nexusrules
+add address=127.0.10.1 type=A regexp=trafficmanager
+add address=127.0.10.1 type=A regexp=admob
+add address=127.0.10.1 type=A regexp=adnxs
+add address=127.0.10.1 type=A regexp=adzerk
+add address=127.0.10.1 type=A regexp=moatads
+add address=127.0.10.1 type=A regexp=fastclick
+add address=127.0.10.1 type=A regexp=smaato
+add address=127.0.10.1 type=A regexp=2mdn
+add address=127.0.10.1 type=A regexp=banners
+add address=127.0.10.1 type=A regexp=banner disabled=yes
+add address=127.0.10.1 type=A regexp=fluxads
+add address=127.0.10.1 type=A regexp=inmatads
+add address=127.0.10.1 type=A regexp=adamoads
+add address=127.0.10.1 type=A regexp=adloads
+add address=127.0.10.1 type=A regexp=adcolony
+add address=127.0.10.1 type=A regexp=adcloud
+add address=127.0.10.1 type=A regexp=adcorp
+add address=127.0.10.1 type=A regexp=adtube
+add address=127.0.10.1 type=A regexp=adsmin
+add address=127.0.10.1 type=A regexp=adsports
+add address=127.0.10.1 type=A regexp=adsnet
+add address=127.0.10.1 type=A regexp=adstat
+add address=127.0.10.1 type=A regexp=popads
+add address=127.0.10.1 type=A regexp=1.yimg
 
 #adult,gambling
 add address=127.0.10.1 regexp=adult type=A
