@@ -32,7 +32,6 @@ add address=127.0.10.1 type=A regexp=adzerk
 add address=127.0.10.1 type=A regexp=moatads
 add address=127.0.10.1 type=A regexp=fastclick
 add address=127.0.10.1 type=A regexp=smaato
-add address=127.0.10.1 type=A regexp=2mdn
 add address=127.0.10.1 type=A regexp=banners
 add address=127.0.10.1 type=A regexp="banner[0-9]"
 add address=127.0.10.1 type=A regexp=fluxads
