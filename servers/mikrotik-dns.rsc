@@ -14,7 +14,7 @@ add address=127.0.10.1 type=A regexp=adserv
 add address=127.0.10.1 type=A regexp=advert
 add address=127.0.10.1 type=A regexp=analytic
 add address=127.0.10.1 type=A regexp=telemetry
-add address=127.0.10.1 type=A regexp=beacons
+add address=127.0.10.1 type=A regexp=beacon
 add address=127.0.10.1 type=A regexp=tracking
 add address=127.0.10.1 type=A regexp=pixel disabled=yes
 add address=127.0.10.1 type=A regexp=googletag
