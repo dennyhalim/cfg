@@ -24,6 +24,7 @@ add address=127.0.10.1 type=A regexp=pagead
 add address=127.0.10.1 type=A regexp="imageads[0-9]"
 add address=127.0.10.1 type=A regexp=doubleclick
 add address=127.0.10.1 type=A regexp=2mdn
+add address=127.0.10.1 type=A regexp=ad-instantpage
 add address=127.0.10.1 type=A regexp=nexusrules
 add address=127.0.10.1 type=A regexp=trafficmanager
 add address=127.0.10.1 type=A regexp=admob
@@ -33,7 +34,7 @@ add address=127.0.10.1 type=A regexp=moatads
 add address=127.0.10.1 type=A regexp=fastclick
 add address=127.0.10.1 type=A regexp=smaato
 add address=127.0.10.1 type=A regexp=banners
-add address=127.0.10.1 type=A regexp="banner[0-9,\\.]"
+add address=127.0.10.1 type=A regexp="^banner([0-9]+\\.)"
 add address=127.0.10.1 type=A regexp=fluxads
 add address=127.0.10.1 type=A regexp=inmatads
 add address=127.0.10.1 type=A regexp=adamoads
