@@ -48,6 +48,7 @@ add address=127.0.10.1 type=A regexp=adsnet
 add address=127.0.10.1 type=A regexp=adstat
 add address=127.0.10.1 type=A regexp=popads
 add address=127.0.10.1 type=A regexp=adpooh
+add address=127.0.10.1 type=A regexp=booru
 add address=127.0.10.1 type=A regexp=amazon-adsystem
 add address=127.0.10.1 type=A regexp=overture
 add address=127.0.10.1 type=A regexp=quantserve
