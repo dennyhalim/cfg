@@ -20,8 +20,10 @@ add address=127.0.10.1 type=A regexp=pixel disabled=yes
 add address=127.0.10.1 type=A regexp=googletag
 add address=127.0.10.1 type=A regexp=googlead
 add address=127.0.10.1 type=A regexp=googlesyndication
+add address=127.0.10.1 type=A regexp=mail-ads
+add address=127.0.10.1 type=A regexp=searchads
 add address=127.0.10.1 type=A regexp=pagead
-add address=127.0.10.1 type=A regexp="imageads[0-9]"
+add address=127.0.10.1 type=A regexp=imageads
 add address=127.0.10.1 type=A regexp=doubleclick
 add address=127.0.10.1 type=A regexp=2mdn
 add address=127.0.10.1 type=A regexp=ad-instantpage
