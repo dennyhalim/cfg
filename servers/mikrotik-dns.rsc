@@ -53,21 +53,8 @@ add address=127.0.10.1 type=A regexp="(events.data|collector.azure|.msn.com)"
 
 #extreme blocking
 add address=127.0.10.1 disabled=yes type=A comment=allgame regexp="(play|gamer|games|gaming|arcad|arkad)"
+add address=127.0.10.1 disabled=yes type=A regexp="(stream|audio|video|radio|tube|akamaihd)"
+add address=127.0.10.1 disabled=yes type=A regexp="(bola|sports|goal)"
+add address=127.0.10.1 disabled=yes type=A regexp="(meta|fbcdn|fbjs|fbsbx|tfbnw|connect.facebook|cdninstagram)"
 #add address=127.0.10.1 disabled=yes regexp=ads type=A comment=allads
-add address=127.0.10.1 disabled=yes regexp=adv type=A comment=alladv
-dd address=127.0.10.1 disabled=yes regexp=tube type=A comment=alltube
-add address=127.0.10.1 disabled=yes regexp=cdninstagram type=A comment=ig
-add address=127.0.10.1 disabled=yes regexp=connect.facebook type=A comment=fb
-add address=127.0.10.1 disabled=yes regexp=fbcdn type=A comment=fb
-add address=127.0.10.1 disabled=yes regexp=meta type=A comment=fb
-add address=127.0.10.1 disabled=yes regexp=fbjs type=A comment=fb
-add address=127.0.10.1 disabled=yes regexp=fbsbx type=A comment=fb
-add address=127.0.10.1 disabled=yes regexp=tfbnw type=A comment=fb
-add address=127.0.10.1 disabled=yes regexp=msn type=A comment=ms
-add address=127.0.10.1 disabled=yes regexp=bola type=A comment=allsport
-add address=127.0.10.1 disabled=yes regexp=sport type=A comment=allsport
-add address=127.0.10.1 disabled=yes regexp=video type=A comment=allvideo
-add address=127.0.10.1 disabled=yes regexp=audio type=A comment=allaudio
-add address=127.0.10.1 disabled=yes regexp=radio type=A comment=allradio
-add address=127.0.10.1 disabled=yes regexp=stream type=A comment=allstreaming
-add address=127.0.10.1 disabled=yes regexp=akamaihd type=A comment=extreme
+#add address=127.0.10.1 disabled=yes regexp=adv type=A comment=alladv
