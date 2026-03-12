@@ -10,11 +10,11 @@ add cname=strict.bing.com name=www.bing.com type=CNAME
 add address=216.239.38.119 regexp=www.google.co type=A
 
 #super blokcer ads & tracking
-add address=127.0.10.1 type=A regexp="(analytic|telemetry|beacon|tracking|trafficmanager|nexusrules|pagead)"
+add address=127.0.10.1 type=A regexp="(analytic|telemetry|beacon|tracking|trafficmanager|nexusrules)"
 add address=127.0.10.1 type=A regexp="ad(serv|vert|mob|zerk|nxs|colony|cloud|corp|tube|smin|sports|snet|stat|pooh|system|-instantpage)"
 add address=127.0.10.1 type=A regexp="(bing|mail-|search|image|moat|flux|inmat|adamo|adlo|pop)ads"
 add address=127.0.10.1 type=A regexp="google(ad|tag|syndication|-analytic)"
-add address=127.0.10.1 type=A regexp="(doubleclick|2mdn)"
+add address=127.0.10.1 type=A regexp="(doubleclick|2mdn|pagead)"
 add address=127.0.10.1 type=A regexp="^pixel\\."
 add address=127.0.10.1 type=A regexp="(fastclick|smaato|quantserver|inmobi|booru|byteoversea)"
 add address=127.0.10.1 type=A regexp="^(ad|banner)([sv0-9]+\\.)"
