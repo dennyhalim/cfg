@@ -10,27 +10,16 @@ add cname=strict.bing.com name=www.bing.com type=CNAME
 add address=216.239.38.119 regexp=www.google.co type=A
 
 #super blokcer ads & tracking
-add address=127.0.10.1 type=A regexp="(analytic|telemetry|beacon|tracking)"
-add address=127.0.10.1 type=A regexp="ad(serv|vert|mob|zerk|nxs|colony|cloud|corp|tube|smin|sports|snet|stat|pooh)"
-add address=127.0.10.1 type=A regexp="(mail-|search|image|moat|flux|inmat|adamo|adlo|pop)ads"
+add address=127.0.10.1 type=A regexp="(analytic|telemetry|beacon|tracking|trafficmanager|nexusrules|pagead)"
+add address=127.0.10.1 type=A regexp="ad(serv|vert|mob|zerk|nxs|colony|cloud|corp|tube|smin|sports|snet|stat|pooh|system|-instantpage)"
+add address=127.0.10.1 type=A regexp="(bing|mail-|search|image|moat|flux|inmat|adamo|adlo|pop)ads"
 add address=127.0.10.1 type=A regexp="google(ad|tag|syndication|-analytic)"
+add address=127.0.10.1 type=A regexp="(doubleclick|2mdn)"
 add address=127.0.10.1 type=A regexp="pixel\\."
-add address=127.0.10.1 type=A regexp=pagead
-add address=127.0.10.1 type=A regexp=doubleclick
-add address=127.0.10.1 type=A regexp=2mdn
-add address=127.0.10.1 type=A regexp=bingads
-add address=127.0.10.1 type=A regexp=ad-instantpage
-add address=127.0.10.1 type=A regexp=nexusrules
-add address=127.0.10.1 type=A regexp=trafficmanager
-add address=127.0.10.1 type=A regexp=fastclick
-add address=127.0.10.1 type=A regexp=smaato
+add address=127.0.10.1 type=A regexp="(fastclick|smaato|quantserver|inmobi|booru)"
 add address=127.0.10.1 type=A regexp="^banner([s0-9]+\\.)"
-add address=127.0.10.1 type=A regexp=booru
 add address=127.0.10.1 type=A regexp="[0-9]chan"
-add address=127.0.10.1 type=A regexp=amazon-adsystem
 #add address=127.0.10.1 type=A regexp=overture
-add address=127.0.10.1 type=A regexp=quantserve
-add address=127.0.10.1 type=A regexp=inmobi
 add address=127.0.10.1 type=A regexp="1\\.yimg"
 add address=127.0.10.1 type=A regexp="dit\\.whatsapp"
 add address=127.0.10.1 type=A regexp="static\\.ak\\.fbcdn\\.net"
