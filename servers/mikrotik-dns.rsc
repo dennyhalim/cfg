@@ -26,6 +26,9 @@ add address=127.0.10.1 type=A regexp=pagead
 add address=127.0.10.1 type=A regexp=imageads
 add address=127.0.10.1 type=A regexp=doubleclick
 add address=127.0.10.1 type=A regexp=2mdn
+add address=127.0.10.1 type=A regexp="\\.msn\\.com"
+add address=127.0.10.1 type=A regexp=bingads
+add address=127.0.10.1 type=A regexp="events\\.data"
 add address=127.0.10.1 type=A regexp=ad-instantpage
 add address=127.0.10.1 type=A regexp=nexusrules
 add address=127.0.10.1 type=A regexp=trafficmanager
