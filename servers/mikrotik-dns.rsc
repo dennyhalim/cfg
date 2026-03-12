@@ -18,6 +18,7 @@ add address=127.0.10.1 type=A regexp="(doubleclick|2mdn)"
 add address=127.0.10.1 type=A regexp="pixel\\."
 add address=127.0.10.1 type=A regexp="(fastclick|smaato|quantserver|inmobi|booru|byteoversea)"
 add address=127.0.10.1 type=A regexp="^banner([s0-9]+\\.)"
+add address=127.0.10.1 type=A regexp="^ad([s0-9]+\\.)"
 add address=127.0.10.1 type=A regexp="[0-9]chan"
 #add address=127.0.10.1 type=A regexp=overture
 add address=127.0.10.1 type=A regexp="1\\.yimg"
