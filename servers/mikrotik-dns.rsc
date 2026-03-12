@@ -35,7 +35,7 @@ add address=127.0.10.1 type=A regexp="(casino|kasino|poker|judol|xtube|xflix|xbe
 #add address=127.0.10.1 regexp=judi type=A disabled=yes
 
 #resources suckers
-add address=127.0.10.1 type=A regexp="(tiktokv|tiktokcdn|ttwstatic|ttdns)"
+add address=127.0.10.1 type=A regexp="(tiktokv|tiktokw|tiktokcdn|ttwstatic|ttdns)"
 add address=127.0.10.1 type=A regexp="(scdn|spotifycdn|spotify-com|spotify.map)"
 add address=127.0.10.1 type=A regexp="(flix|nflx)"
 add address=127.0.10.1 type=A regexp="(coin|koin)"
