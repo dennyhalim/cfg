@@ -80,6 +80,7 @@ add address=127.0.10.1 regexp=judol type=A
 add address=127.0.10.1 regexp=xbet type=A
 add address=127.0.10.1 regexp=xslot type=A
 add address=127.0.10.1 regexp=jackpot type=A
+add address=127.0.10.1 regexp=blackjack type=A
 add address=127.0.10.1 regexp=bett type=A
 add address=127.0.10.1 regexp="bet[st0-9]" type=A disabled=yes
 add address=127.0.10.1 regexp=slut type=A disabled=yes
@@ -121,7 +122,9 @@ add address=127.0.10.1 regexp=diagnostics-eudb type=A
 add address=127.0.10.1 regexp=blob.core.windows type=A
 
 #extreme blocking
-add address=127.0.10.1 disabled=yes regexp=game type=A comment=allgame
+add address=127.0.10.1 disabled=yes regexp=play type=A comment=allgame
+add address=127.0.10.1 disabled=yes regexp=gamer type=A comment=allgame
+add address=127.0.10.1 disabled=yes regexp=games type=A comment=allgame
 add address=127.0.10.1 disabled=yes regexp=gaming type=A comment=allgame
 add address=127.0.10.1 disabled=yes regexp=arcad type=A comment=allgame
 add address=127.0.10.1 disabled=yes regexp=arkad type=A comment=allgame
