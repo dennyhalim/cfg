@@ -30,6 +30,8 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
 "QuicAllowed"=dword:00000000
 "ClearCachedImagesAndFilesOnExit"=dword:00000001
+[HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\MicrosoftEdge\\Main]
+"FormSuggest Passwords"="no"
 
 ;background
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy]
@@ -81,3 +83,12 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\CloudContent]
 "DisableWindowsConsumerFeatures"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Tcpip6\\Parameters]
+"DisableIPSourceRouting"=dword:00000002
+
+[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa]
+"restrictanonymous"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\Windows\\CredentialsDelegation]
+"AllowProtectedCreds"=dword:00000001
