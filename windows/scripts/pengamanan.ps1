@@ -11,4 +11,5 @@ sc.exe config dmwappushservice start= disabled
 sc.exe config WinHttpAutoProxySvc start= disabled
 sc.exe triggerinfo w32time start/networkon stop/networkoff
 sc.exe config TapiSrv start= disabled
+sc.exe config WinRM start= disabled
 
