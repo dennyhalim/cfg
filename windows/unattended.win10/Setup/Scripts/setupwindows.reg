@@ -2,7 +2,7 @@ Windows Registry Editor Version 5.00
 ; !!! TEST BEFORE USED ON PRODUCTION !!! ;
 ; https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#branchreadinesslevel 
 ;open command prompt as administrator
-;curl.exe -O https://raw.githubusercontent.com/dennyhalim/cfg/master/unattended.win10/Setup/Scripts/setupwindows.reg
+;curl.exe -O https://github.com/dennyhalim/cfg/raw/refs/heads/master/windows/unattended.win10/Setup/Scripts/setupwindows.reg
 ;edit to suite your need
 ;reg.exe import setupwindows.reg
 
