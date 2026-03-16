@@ -38,6 +38,11 @@ Windows Registry Editor Version 5.00
 "LetAppsRunInBackground"=dword:00000002
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
 "GlobalUserDisabled"=dword:00000001
+[HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
+"GlobalUserDisabled"=dword:00000000
+
+[HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"HideFileExt"=dword:00000000
 
 ;SAMBA
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
@@ -69,9 +74,6 @@ Windows Registry Editor Version 5.00
 "AllowInsecureGuestAuth"=dword:00000000
 "RequireEncryption"=dword:00000001
 "MinSmb2Dialect"=dword:00000311
-
-[HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"HideFileExt"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SearchIndexer.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
