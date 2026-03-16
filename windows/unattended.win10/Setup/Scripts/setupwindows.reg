@@ -97,3 +97,5 @@ Windows Registry Editor Version 5.00
 [-HKEY_CLASSES_ROOT\search-ms]
 [HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\Windows\\WinRM\\Client]
 "AllowDigest"=dword:00000000
+[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer]
+"NoDriveTypeAutoRun"=dword:000000ff
