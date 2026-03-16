@@ -88,7 +88,5 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\Windows\\CredentialsDelegation]
 "AllowProtectedCreds"=dword:00000001
 [-HKEY_CLASSES_ROOT\search-ms]
-[HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\MicrosoftEdge\\Main]
-"FormSuggest Passwords"="no"
 [HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\Windows\\WinRM\\Client]
 "AllowDigest"=dword:00000000
