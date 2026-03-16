@@ -77,13 +77,10 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging]
 "EnableScriptBlockLogging"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\App and Browser protection]
 "DisallowExploitProtectionOverride"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\CloudContent]
 "DisableWindowsConsumerFeatures"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Tcpip6\\Parameters]
 "DisableIPSourceRouting"=dword:00000002
 [HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa]
@@ -93,3 +90,5 @@ Windows Registry Editor Version 5.00
 [-HKEY_CLASSES_ROOT\search-ms]
 [HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\MicrosoftEdge\\Main]
 "FormSuggest Passwords"="no"
+[HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\Windows\\WinRM\\Client]
+"AllowDigest"=dword:00000000
