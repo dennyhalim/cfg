@@ -25,8 +25,8 @@ add address=127.0.10.1 type=A regexp="dit\\.whatsapp"
 add address=127.0.10.1 type=A regexp="static\\.ak\\.fbcdn\\.net"
 
 #adult,gambling
-add address=127.0.10.1 type=A regexp="(adult|xxx|sex|porn|playboy|friendfinder|eroti)"
-add address=127.0.10.1 type=A regexp="\\.(bid|bet)"
+add address=127.0.10.1 type=A regexp="(adult|xxx|sex|porn|lgbt|playboy|friendfinder|eroti)"
+add address=127.0.10.1 type=A regexp="\\.(bid|bet|gay|lgbt)"
 add address=127.0.10.1 type=A regexp="(casino|kasino|poker|judol|xtube|xflix|xbet|xslot|xslut|jackpot|blackjack|gambl)"
 #add address=127.0.10.1 regexp=bett type=A disabled=yes
 #add address=127.0.10.1 regexp="bet[st0-9]" type=A disabled=yes
