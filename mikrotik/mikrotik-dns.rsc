@@ -52,8 +52,8 @@ add address=127.0.10.1 type=A regexp="(spiritual|newage|lectio|divina|halloween|
 add address=127.0.10.1 type=A regexp="(occult|magics|newage)"
 
 #resources suckers
-add address=127.0.10.1 type=A regexp="(tiktokv|tiktokw|tiktokcdn|ttwstatic|ttdns|bytedns|bytedance)"
-add address=127.0.10.1 type=A regexp="(musical.ly|toutiau|pstatp)"
+add address=127.0.10.1 type=A regexp="(tiktokv|tiktokw|tiktokcdn|ttwstatic|ttdns|bytedns)"
+add address=127.0.10.1 type=A regexp="(musical.ly|bytedance|toutiau|pstatp)"
 add address=127.0.10.1 type=A regexp="(flix|nflx|scdn|spotifycdn|spotify-com|spotify.map)"
 add address=127.0.10.1 type=A regexp="(coin|koin|crypto|kripto)"
 #add address=127.0.10.1 regexp=convert type=A
