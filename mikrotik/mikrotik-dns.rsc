@@ -36,13 +36,13 @@ add address=127.0.10.1 type=A regexp="(yoga|taichi|qigong|reiki|buddh|rosar|exor
 
 #resources suckers
 add address=127.0.10.1 type=A regexp="(tiktokv|tiktokw|tiktokcdn|ttwstatic|ttdns|bytedns|musical.ly|toutiau|bytedance|pstatp)"
-add address=127.0.10.1 type=A regexp="(scdn|spotifycdn|spotify-com|spotify.map)"
-add address=127.0.10.1 type=A regexp="(flix|nflx)"
-add address=127.0.10.1 type=A regexp="(coin|koin)"
+add address=127.0.10.1 type=A regexp="(flix|nflx|scdn|spotifycdn|spotify-com|spotify.map)"
+add address=127.0.10.1 type=A regexp="(coin|koin|crypto|kripto)"
 #add address=127.0.10.1 regexp=convert type=A
-add address=127.0.10.1 regexp=steam type=A
 #phishing bca
 add address=127.0.10.1 type=A regexp="(bca-fash|bcaflash)"
+#games
+add address=127.0.10.1 disabled=yes type=A comment=allgame regexp="(gamer|games|gaming|arcad|arkad|steam)"
 
 #windows telemetry
 add address=127.0.10.1 type=A regexp="data.(msn|microsoft)"
@@ -55,7 +55,6 @@ add address=127.0.10.1 type=A regexp="(events.data|collector.azure|.msn.com)"
 #extreme blocking WILL certainly cause lots of false positives
 add address=127.0.10.1 disabled=yes type=A regexp="(click|cheap|free|deal|bargain|profit|rich|stock|trade|option)"
 add address=127.0.10.1 disabled=yes type=A regexp="(drug|pharm|tablet|diet|meds|medic|rx|xx)"
-add address=127.0.10.1 disabled=yes type=A comment=allgame regexp="(play|gamer|games|gaming|arcad|arkad|steam)"
 add address=127.0.10.1 disabled=yes type=A regexp="(stream|audio|video|radio|tube|akamaihd)"
 add address=127.0.10.1 disabled=yes type=A regexp="(bola|skor|sport|goal)"
 add address=127.0.10.1 disabled=yes type=A regexp="(meta|fbcdn|fbjs|fbsbx|tfbnw|connect.facebook|cdninstagram)"
