@@ -14,7 +14,7 @@ add address=216.239.38.119 regexp=www.google.co type=A
 add address=127.0.10.1 type=A regexp="google(ad|tag|syndication|-analytic)"
 add address=127.0.10.1 type=A regexp="ad(serv|vert|mob|zerk|nxs|system|tube)"
 add address=127.0.10.1 type=A regexp="(bing|mail-|search|image|video|samsung|tv)ads"
-add address=127.0.10.1 type=A regexp="(doubleclick|2mdn|pagead|quantserver|booru|byteoversea|heytapmobi)"
+add address=127.0.10.1 type=A regexp="(doubleclick|2mdn|pagead|quantserve|booru|byteoversea|heytapmobi)"
 add address=127.0.10.1 type=A regexp="(analyti|telemetry|beacon|tracking|trafficmanager|nexusrules|piwik)"
 
 add address=127.0.10.1 type=A regexp="ads(flame|keeper|ports|2live|tat|min|co)"
