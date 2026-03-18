@@ -36,17 +36,24 @@ add address=127.0.10.1 type=A regexp="[0-9]chan"
 #add address=127.0.10.1 type=A regexp=overture
 
 #adult,gambling,drugs
-add address=127.0.10.1 type=A regexp="(adult|lgbt|xxx|porn|sex|sexy|webcam|xcam|xnxx|sadis|playboy|dewasa|bokep|hentai|friendfinder|naked|nude|erect|escort|eroti)"
-add address=127.0.10.1 type=A regexp="\\.(bid|bet|casino|poker|bingo|slots|games|gambling|adult|lgbt|xxx|porn|sex|sexy|webcam|cam|gay|tube)"
-add address=127.0.10.1 type=A regexp="(casino|kasino|poker|judol|xtube|xflix|xbet|xslot|xslut|jackpot|blackjack|gambl|lotter)"
-add address=127.0.10.1 type=A regexp="(addict|vape|vapor|vaping|weightloss|cialis|viagra|pill|clickbank)"
+add address=127.0.10.1 type=A regexp="(adult|lgbt|xxx|porn|sex|sexy|webcam|xcam)"
+add address=127.0.10.1 type=A regexp="(xnxx|sadis|playboy|dewasa|bokep|hentai|friendfinder)"
+add address=127.0.10.1 type=A regexp="(naked|nude|erect|escort|eroti)"
+add address=127.0.10.1 type=A regexp="\\.(bid|bet|casino|poker|bingo|slots|games|gambling)"
+add address=127.0.10.1 type=A regexp="\\.(adult|lgbt|xxx|porn|sex|sexy|webcam|cam|gay|tube)"
+add address=127.0.10.1 type=A regexp="(casino|kasino|poker|judol|xtube|xflix|xbet)"
+add address=127.0.10.1 type=A regexp="(xslot|xslut|jackpot|blackjack|gambl|lotter)"
+add address=127.0.10.1 type=A regexp="(addict|vape|vapor|vaping|weightloss|cialis|viagra|pill)"
 #add address=127.0.10.1 regexp="bet[st0-9]" type=A disabled=yes
 #add address=127.0.10.1 type=A disabled=yes regexp="(bingo|judi|bett)"
 #pagan
-add address=127.0.10.1 type=A regexp="(yoga|taichi|qigong|reiki|buddh|rosar|exorcis|spiritual|newage|lectio|divina|halloween|mindfulness|occult|magics|newage)"
+add address=127.0.10.1 type=A regexp="(yoga|taichi|qigong|reiki|buddh|rosar|exorcis)"
+add address=127.0.10.1 type=A regexp="(spiritual|newage|lectio|divina|halloween|mindfulness)"
+add address=127.0.10.1 type=A regexp="(occult|magics|newage)"
 
 #resources suckers
-add address=127.0.10.1 type=A regexp="(tiktokv|tiktokw|tiktokcdn|ttwstatic|ttdns|bytedns|musical.ly|toutiau|bytedance|pstatp)"
+add address=127.0.10.1 type=A regexp="(tiktokv|tiktokw|tiktokcdn|ttwstatic|ttdns|bytedns|bytedance)"
+add address=127.0.10.1 type=A regexp="(musical.ly|toutiau|pstatp)"
 add address=127.0.10.1 type=A regexp="(flix|nflx|scdn|spotifycdn|spotify-com|spotify.map)"
 add address=127.0.10.1 type=A regexp="(coin|koin|crypto|kripto)"
 #add address=127.0.10.1 regexp=convert type=A
@@ -57,11 +64,11 @@ add address=127.0.10.1 disabled=yes type=A comment=allgame regexp="(gamer|games|
 
 #windows telemetry
 add address=127.0.10.1 type=A regexp="data.(msn|microsoft)"
-add address=127.0.10.1 type=A regexp="(measure|diagnostics).office"
 add address=127.0.10.1 type=A regexp="(data|track.mp).microsoft"
 add address=127.0.10.1 type=A regexp="(activity|blob.core).windows"
-add address=127.0.10.1 type=A regexp="(applicationinsights|inference-app-gateway|azurewatson|zmetrics|diagnostics-eudb)"
+add address=127.0.10.1 type=A regexp="(measure|diagnostics).office"
 add address=127.0.10.1 type=A regexp="(events.data|collector.azure|.msn.com)"
+add address=127.0.10.1 type=A regexp="(applicationinsights|inference-app-gateway|azurewatson|zmetrics|diagnostics-eudb)"
 
 #extreme blocking WILL certainly cause lots of false positives
 add address=127.0.10.1 disabled=yes type=A regexp="(click|cheap|free|deal|bargain|profit|rich|stock|trade|option)"
