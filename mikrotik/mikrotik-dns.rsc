@@ -41,8 +41,8 @@ add address=127.0.10.1 type=A regexp="(xnxx|sadis|playboy|dewasa|bokep|hentai|fr
 add address=127.0.10.1 type=A regexp="(naked|nude|erect|escort|eroti)"
 add address=127.0.10.1 type=A regexp="\\.(bid|bet|casino|poker|bingo|slots|games|gambling)"
 add address=127.0.10.1 type=A regexp="\\.(adult|lgbt|xxx|porn|sex|sexy|webcam|cam|gay|tube)"
-add address=127.0.10.1 type=A regexp="(casino|kasino|poker|judol|xtube|xflix|xbet)"
-add address=127.0.10.1 type=A regexp="(xslot|xslut|jackpot|blackjack|gambl|lotter)"
+add address=127.0.10.1 type=A regexp="(casino|kasino|poker|lotter|gambl|xtube|xflix|xbet)"
+add address=127.0.10.1 type=A regexp="(xslot|xslut|jackpot|blackjack|judol|taruhan|togel)"
 add address=127.0.10.1 type=A regexp="(addict|vape|vapor|vaping|weightloss|cialis|viagra|pill)"
 #add address=127.0.10.1 regexp="bet[st0-9]" type=A disabled=yes
 #add address=127.0.10.1 type=A disabled=yes regexp="(bingo|judi|bett)"
