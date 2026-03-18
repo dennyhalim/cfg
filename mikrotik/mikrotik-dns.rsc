@@ -11,9 +11,9 @@ add address=216.239.38.119 regexp=www.google.co type=A
 
 #super blocker ads & tracking
 add address=127.0.10.1 type=A regexp="google(ad|tag|syndication|-analytic)"
-add address=127.0.10.1 type=A regexp="ad(serv|vert|mob|zerk|nxs|colony|cloud|corp|tube|smin|sports|snet|stat|pooh|system|-instantpage)"
-add address=127.0.10.1 type=A regexp="(bing|mail-|search|image|moat|flux|inmat|adamo|adlo|pop|euro)ads"
-add address=127.0.10.1 type=A regexp="(doubleclick|2mdn|pagead|fastclick|smaato|quantserver|inmobi|booru|byteoversea)"
+add address=127.0.10.1 type=A regexp="ad(serv|vert|mob|zerk|nxs|colony|cloud|corp|tube|nami|nz|yboh|viad|verge|fstat|fox|sco|skeeper|smin|sports|snet|stat|pooh|system|-instantpage|-connect)"
+add address=127.0.10.1 type=A regexp="(bing|mail-|search|image|video|moat|flux|inmat|adamo|adlo|insur|maticoo|revenu|pimp|purple|pop|euro|begin|game|samsung)ads"
+add address=127.0.10.1 type=A regexp="(doubleclick|2mdn|pagead|fastclick|smaato|quantserver|inmobi|booru|byteoversea|heytapmobi)"
 add address=127.0.10.1 type=A regexp="(analyti|telemetry|beacon|tracker|tracking|trafficmanager|nexusrules|comscore|scorecardresearch|piwik)"
 add address=127.0.10.1 type=A regexp="(appdynamic|appnexus|ekomi|grapeshot|nanovisor|metric|counter|openx)"
 add address=127.0.10.1 type=A regexp="^pixel\\."
