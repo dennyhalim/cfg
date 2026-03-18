@@ -12,14 +12,15 @@ add address=216.239.38.119 regexp=www.google.co type=A
 #super blocker ads & tracking
 #mikrotik do not support too long regexp
 add address=127.0.10.1 type=A regexp="google(ad|tag|syndication|-analytic)"
-add address=127.0.10.1 type=A regexp="ad(serv|vert|mob|zerk|nxs|system|-instantpage)"
+add address=127.0.10.1 type=A regexp="ad(serv|vert|mob|zerk|nxs|system|tube)"
 add address=127.0.10.1 type=A regexp="(bing|mail-|search|image|video|samsung|tv)ads"
 add address=127.0.10.1 type=A regexp="(doubleclick|2mdn|pagead|quantserver|booru|byteoversea|heytapmobi)"
 add address=127.0.10.1 type=A regexp="(analyti|telemetry|beacon|tracking|trafficmanager|nexusrules|piwik)"
 
-add address=127.0.10.1 type=A regexp="ad(colony|cloud|corp|tube|nami|nz|yboh)"
-add address=127.0.10.1 type=A regexp="ad(viad|verge|incube|just|recover|tekmedia|s2live|pooh)"
-add address=127.0.10.1 type=A regexp="ad(sflame|sco|skeeper|smin|sports|snet|stat|-connect)"
+add address=127.0.10.1 type=A regexp="ads(flame|keeper|ports|2live|tat|min|co)"
+add address=127.0.10.1 type=A regexp="ad-(instantpage|connect)"
+add address=127.0.10.1 type=A regexp="ad(snet|colony|cloud|corp|nami|nz|yboh)"
+add address=127.0.10.1 type=A regexp="ad(viad|verge|incube|just|recover|tekmedia|pooh)"
 add address=127.0.10.1 type=A regexp="(game|moat|flux|inmat|adamo|adlo|insur)ads"
 add address=127.0.10.1 type=A regexp="(maticoo|revenu|pimp|purple|pop|euro|begin)ads"
 add address=127.0.10.1 type=A regexp="(fastclick|smaato|inmobi)"
