@@ -10,12 +10,21 @@ add cname=strict.bing.com name=www.bing.com type=CNAME
 add address=216.239.38.119 regexp=www.google.co type=A
 
 #super blocker ads & tracking
+#mikrotik do not support too long regexp
 add address=127.0.10.1 type=A regexp="google(ad|tag|syndication|-analytic)"
-add address=127.0.10.1 type=A regexp="ad(serv|vert|mob|zerk|nxs|colony|cloud|corp|tube|nami|nz|yboh|viad|verge|incube|just|recover|tekmedia|s2live|sflame|sco|skeeper|smin|sports|snet|stat|pooh|system|-instantpage|-connect)"
-add address=127.0.10.1 type=A regexp="(bing|mail-|search|image|video|moat|flux|inmat|adamo|adlo|insur|maticoo|revenu|pimp|purple|pop|euro|begin|game|samsung|tv)ads"
-add address=127.0.10.1 type=A regexp="(doubleclick|2mdn|pagead|fastclick|smaato|quantserver|inmobi|booru|byteoversea|heytapmobi)"
-add address=127.0.10.1 type=A regexp="(analyti|telemetry|beacon|tracker|tracking|trafficmanager|nexusrules|comscore|scorecardresearch|piwik)"
-add address=127.0.10.1 type=A regexp="(appdynamic|appnexus|ekomi|grapeshot|nanovisor|metric|counter|openx)"
+add address=127.0.10.1 type=A regexp="ad(serv|vert|mob|zerk|nxs|system|-instantpage)"
+add address=127.0.10.1 type=A regexp="(bing|mail-|search|image|video|samsung|tv)ads"
+add address=127.0.10.1 type=A regexp="(doubleclick|2mdn|pagead|quantserver|booru|byteoversea|heytapmobi)"
+add address=127.0.10.1 type=A regexp="(analyti|telemetry|beacon|tracking|trafficmanager|nexusrules|piwik)"
+
+add address=127.0.10.1 type=A regexp="ad(colony|cloud|corp|tube|nami|nz|yboh)"
+add address=127.0.10.1 type=A regexp="ad(viad|verge|incube|just|recover|tekmedia|s2live|pooh)"
+add address=127.0.10.1 type=A regexp="ad(sflame|sco|skeeper|smin|sports|snet|stat|-connect)"
+add address=127.0.10.1 type=A regexp="(game|moat|flux|inmat|adamo|adlo|insur)ads"
+add address=127.0.10.1 type=A regexp="(maticoo|revenu|pimp|purple|pop|euro|begin)ads"
+add address=127.0.10.1 type=A regexp="(fastclick|smaato|inmobi)"
+add address=127.0.10.1 type=A regexp="(tracker|comscore|scorecardresearch|metric|counter|openx)"
+add address=127.0.10.1 type=A regexp="(appdynamic|appnexus|ekomi|grapeshot|nanovisor)"
 add address=127.0.10.1 type=A regexp="^pixel\\."
 add address=127.0.10.1 type=A regexp="1\\.yimg"
 add address=127.0.10.1 type=A regexp="dit\\.whatsapp"
