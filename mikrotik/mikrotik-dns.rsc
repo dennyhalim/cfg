@@ -24,16 +24,17 @@ add address=127.0.10.1 type=A regexp="dit\\.whatsapp"
 add address=127.0.10.1 type=A regexp="static\\.ak\\.fbcdn\\.net"
 
 #adult,gambling
-add address=127.0.10.1 type=A regexp="(adult|xxx|sex|porn|lgbt|playboy|friendfinder|eroti)"
-add address=127.0.10.1 type=A regexp="\\.(bid|bet|gay|lgbt|xxx|webcam|cam|tube|sex|sexy|porn|adult)"
-add address=127.0.10.1 type=A regexp="(casino|kasino|poker|judol|xtube|xflix|xbet|xslot|xslut|jackpot|blackjack|gambl)"
-#add address=127.0.10.1 regexp=bett type=A disabled=yes
+add address=127.0.10.1 type=A regexp="(adult|lgbt|xxx|porn|sex|sexy|porn|playboy|friendfinder|erect|eroti)"
+add address=127.0.10.1 type=A regexp="\\.(bid|bet|adult|lgbt|xxx|porn|sex|sexy|porn|gay|webcam|cam|tube)"
+add address=127.0.10.1 type=A regexp="(casino|kasino|poker|judol|xtube|xflix|xbet|xslot|xslut|jackpot|blackjack|gambl|lotter)"
+add address=127.0.10.1 type=A regexp="(weightloss|cialis|viagra|pill|clickbank)"
 #add address=127.0.10.1 regexp="bet[st0-9]" type=A disabled=yes
-#add address=127.0.10.1 regexp=bingo type=A disabled=yes
-#add address=127.0.10.1 regexp=judi type=A disabled=yes
+#add address=127.0.10.1 type=A disabled=yes regexp="(bingo|judi|bett)"
+#pagan
+add address=127.0.10.1 type=A regexp="(yoga|taichi|qigong|reiki|buddh|rosar|exorcis|spiritual|newage|lectio|divina|halloween|mindfulness|occult|magic|newage)"
 
 #resources suckers
-add address=127.0.10.1 type=A regexp="(tiktokv|tiktokw|tiktokcdn|ttwstatic|ttdns)"
+add address=127.0.10.1 type=A regexp="(tiktokv|tiktokw|tiktokcdn|ttwstatic|ttdns|bytedns|musical.ly|toutiau|bytedance|pstatp)"
 add address=127.0.10.1 type=A regexp="(scdn|spotifycdn|spotify-com|spotify.map)"
 add address=127.0.10.1 type=A regexp="(flix|nflx)"
 add address=127.0.10.1 type=A regexp="(coin|koin)"
@@ -51,6 +52,8 @@ add address=127.0.10.1 type=A regexp="(applicationinsights|inference-app-gateway
 add address=127.0.10.1 type=A regexp="(events.data|collector.azure|.msn.com)"
 
 #extreme blocking
+add address=127.0.10.1 disabled=yes type=A regexp="(click|cheap|free|deal|bargain|profit|rich|stock|trade|option)"
+add address=127.0.10.1 disabled=yes type=A regexp="(drug|pharm|tablet|diet|meds|medic|rx|xx)"
 add address=127.0.10.1 disabled=yes type=A comment=allgame regexp="(play|gamer|games|gaming|arcad|arkad)"
 add address=127.0.10.1 disabled=yes type=A regexp="(stream|audio|video|radio|tube|akamaihd)"
 add address=127.0.10.1 disabled=yes type=A regexp="(bola|sports|goal)"
