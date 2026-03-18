@@ -58,7 +58,7 @@ add address=127.0.10.1 type=A regexp="(flix|nflx|scdn|spotifycdn|spotify-com|spo
 add address=127.0.10.1 type=A regexp="(coin|koin|crypto|kripto)"
 #add address=127.0.10.1 regexp=convert type=A
 #phishing bca
-add address=127.0.10.1 type=A regexp="(bca-fash|bcaflash)"
+add address=127.0.10.1 type=A regexp="bca(-fash|flash)"
 #games
 add address=127.0.10.1 disabled=yes type=A comment=allgame regexp="(gamer|games|gaming|arcad|arkad|steam)"
 
