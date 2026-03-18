@@ -25,8 +25,8 @@ add address=127.0.10.1 type=A regexp="[0-9]chan"
 #add address=127.0.10.1 type=A regexp=overture
 
 #adult,gambling,drugs
-add address=127.0.10.1 type=A regexp="(adult|lgbt|xxx|porn|sex|sexy|porn|playboy|friendfinder|erect|eroti)"
-add address=127.0.10.1 type=A regexp="\\.(bid|bet|adult|lgbt|xxx|porn|sex|sexy|porn|gay|webcam|cam|tube)"
+add address=127.0.10.1 type=A regexp="(adult|lgbt|xxx|porn|sex|sexy|porn|webcam|playboy|friendfinder|erect|eroti)"
+add address=127.0.10.1 type=A regexp="\\.(bid|bet|adult|lgbt|xxx|porn|sex|sexy|porn|webcam|cam|gay|tube)"
 add address=127.0.10.1 type=A regexp="(casino|kasino|poker|judol|xtube|xflix|xbet|xslot|xslut|jackpot|blackjack|gambl|lotter)"
 add address=127.0.10.1 type=A regexp="(vape|vapor|vaping|weightloss|cialis|viagra|pill|clickbank)"
 #add address=127.0.10.1 regexp="bet[st0-9]" type=A disabled=yes
