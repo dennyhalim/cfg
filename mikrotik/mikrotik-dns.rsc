@@ -21,7 +21,7 @@ add address=127.0.10.1 type=A regexp="1\\.yimg"
 add address=127.0.10.1 type=A regexp="dit\\.whatsapp"
 add address=127.0.10.1 type=A regexp="static\\.ak\\.fbcdn\\.net"
 #down here might cause more false positives for ads
-add address=127.0.10.1 type=A regexp="^(ad|ads|adv|banner|banners|track|count|mkt)([0-9]+\\.)"
+add address=127.0.10.1 type=A regexp="^(ad|ads|adv|banner|banners|track|count|mkt)([0-9]+[-\\.])"
 add address=127.0.10.1 type=A regexp="[0-9]chan"
 #add address=127.0.10.1 type=A regexp=overture
 
