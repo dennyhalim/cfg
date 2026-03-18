@@ -12,15 +12,16 @@ add address=216.239.38.119 regexp=www.google.co type=A
 #super blocker ads & tracking
 add address=127.0.10.1 type=A regexp="google(ad|tag|syndication|-analytic)"
 add address=127.0.10.1 type=A regexp="ad(serv|vert|mob|zerk|nxs|colony|cloud|corp|tube|smin|sports|snet|stat|pooh|system|-instantpage)"
-add address=127.0.10.1 type=A regexp="(bing|mail-|search|image|moat|flux|inmat|adamo|adlo|pop)ads"
+add address=127.0.10.1 type=A regexp="(bing|mail-|search|image|moat|flux|inmat|adamo|adlo|pop|euro)ads"
 add address=127.0.10.1 type=A regexp="(doubleclick|2mdn|pagead|fastclick|smaato|quantserver|inmobi|booru|byteoversea)"
-add address=127.0.10.1 type=A regexp="(analytic|telemetry|beacon|tracking|trafficmanager|nexusrules|comscore)"
+add address=127.0.10.1 type=A regexp="(analyti|telemetry|beacon|tracker|tracking|trafficmanager|nexusrules|comscore|scorecardresearch|piwik)"
+add address=127.0.10.1 type=A regexp="(appdynamic|appnexus|ekomi|grapeshot|nanovisor|metric|counter|openx)"
 add address=127.0.10.1 type=A regexp="^pixel\\."
 add address=127.0.10.1 type=A regexp="1\\.yimg"
 add address=127.0.10.1 type=A regexp="dit\\.whatsapp"
 add address=127.0.10.1 type=A regexp="static\\.ak\\.fbcdn\\.net"
 #down here might cause more false positives for ads
-add address=127.0.10.1 type=A regexp="^(ad|banner)([sv0-9]+\\.)"
+add address=127.0.10.1 type=A regexp="^(ad|ads|adv|banner|banners|track|count|mkt)([0-9]+\\.)"
 add address=127.0.10.1 type=A regexp="[0-9]chan"
 #add address=127.0.10.1 type=A regexp=overture
 
@@ -58,6 +59,6 @@ add address=127.0.10.1 disabled=yes type=A regexp="(drug|pharm|tablet|diet|meds|
 add address=127.0.10.1 disabled=yes type=A regexp="(stream|audio|video|radio|tube|akamaihd)"
 add address=127.0.10.1 disabled=yes type=A regexp="(bola|skor|sport|goal)"
 add address=127.0.10.1 disabled=yes type=A regexp="(meta|fbcdn|fbjs|fbsbx|tfbnw|connect.facebook|cdninstagram)"
-#add address=127.0.10.1 disabled=yes type=A comment=allads regexp=(banner|adv|ads|ad[0-9])
+#add address=127.0.10.1 disabled=yes type=A comment=allads regexp=(track|stat|count|banner|adv|ads|ad[0-9])
 add address=127.0.10.1 disabled=yes type=A comment=CDNcrazyblocker regexp="(cdn|akamai|akadns|fastly|edgesuite|cloudflare|cloudfront|edgecast)"
 
