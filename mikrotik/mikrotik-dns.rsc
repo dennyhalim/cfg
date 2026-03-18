@@ -71,7 +71,7 @@ add address=127.0.10.1 type=A regexp="(events.data|collector.azure|.msn.com)"
 add address=127.0.10.1 type=A regexp="(applicationinsights|inference-app-gateway|azurewatson|zmetrics|diagnostics-eudb)"
 
 #extreme blocking WILL certainly cause lots of false positives
-add address=127.0.10.1 disabled=yes type=A regexp="(click|cheap|free|deal|bargain|profit|rich|stock|trade|option)"
+add address=127.0.10.1 disabled=yes type=A regexp="(click|cheap|free|deal|bargain|profit|rich)"
 add address=127.0.10.1 disabled=yes type=A regexp="(drug|pharm|tablet|diet|meds|medic|rx|xx)"
 add address=127.0.10.1 disabled=yes type=A regexp="(stream|audio|video|radio|tube|akamaihd)"
 add address=127.0.10.1 disabled=yes type=A regexp="(bola|skor|sport|goal)"
