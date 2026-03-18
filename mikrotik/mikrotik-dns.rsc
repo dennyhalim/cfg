@@ -47,9 +47,9 @@ add address=127.0.10.1 type=A regexp="(addict|vape|vapor|vaping|weightloss|ciali
 #add address=127.0.10.1 regexp="bet[st0-9]" type=A disabled=yes
 #add address=127.0.10.1 type=A disabled=yes regexp="(bingo|judi|bett)"
 #pagan
-add address=127.0.10.1 type=A regexp="(yoga|taichi|qigong|reiki|buddh|rosar|exorcis)"
+add address=127.0.10.1 type=A regexp="(yoga|taichi|qigong|reiki|buddh|rosar|ruqyah)"
 add address=127.0.10.1 type=A regexp="(spiritual|newage|lectio|divina|halloween|mindfulness)"
-add address=127.0.10.1 type=A regexp="(occult|magics|newage)"
+add address=127.0.10.1 type=A regexp="(exorcis|occult|magics|newage)"
 
 #resources suckers
 add address=127.0.10.1 type=A regexp="(tiktokv|tiktokw|tiktokcdn|ttwstatic|ttdns|bytedns)"
