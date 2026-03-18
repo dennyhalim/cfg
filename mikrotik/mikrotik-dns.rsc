@@ -14,9 +14,8 @@ add address=127.0.10.1 type=A regexp="(analytic|telemetry|beacon|tracking|traffi
 add address=127.0.10.1 type=A regexp="ad(serv|vert|mob|zerk|nxs|colony|cloud|corp|tube|smin|sports|snet|stat|pooh|system|-instantpage)"
 add address=127.0.10.1 type=A regexp="(bing|mail-|search|image|moat|flux|inmat|adamo|adlo|pop)ads"
 add address=127.0.10.1 type=A regexp="google(ad|tag|syndication|-analytic)"
-add address=127.0.10.1 type=A regexp="(doubleclick|2mdn|pagead)"
+add address=127.0.10.1 type=A regexp="(doubleclick|2mdn|pagead|fastclick|smaato|quantserver|inmobi|booru|byteoversea)"
 add address=127.0.10.1 type=A regexp="^pixel\\."
-add address=127.0.10.1 type=A regexp="(fastclick|smaato|quantserver|inmobi|booru|byteoversea)"
 add address=127.0.10.1 type=A regexp="^(ad|banner)([sv0-9]+\\.)"
 add address=127.0.10.1 type=A regexp="[0-9]chan"
 #add address=127.0.10.1 type=A regexp=overture
@@ -26,7 +25,7 @@ add address=127.0.10.1 type=A regexp="static\\.ak\\.fbcdn\\.net"
 
 #adult,gambling
 add address=127.0.10.1 type=A regexp="(adult|xxx|sex|porn|lgbt|playboy|friendfinder|eroti)"
-add address=127.0.10.1 type=A regexp="\\.(bid|bet|gay|lgbt)"
+add address=127.0.10.1 type=A regexp="\\.(bid|bet|gay|lgbt|xxx|webcam|cam|tube|sex|sexy|porn|adult)"
 add address=127.0.10.1 type=A regexp="(casino|kasino|poker|judol|xtube|xflix|xbet|xslot|xslut|jackpot|blackjack|gambl)"
 #add address=127.0.10.1 regexp=bett type=A disabled=yes
 #add address=127.0.10.1 regexp="bet[st0-9]" type=A disabled=yes
