@@ -1,0 +1,9 @@
+# block comment spam by denying access to no-referrer requests
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} POST
+RewriteCond %{REQUEST_URI} .admin* [OR]
+RewriteCond %{REQUEST_URI} .login\.php* [OR]
+RewriteCond %{REQUEST_URI} .wp-comments-post\.php*
+RewriteCond %{HTTP_USER_AGENT} ^$ [OR]
+RewriteCond %{HTTP_HOST}@@%{HTTP_REFERER} !^([^@]*)@@https?://\1/.*
+RewriteRule ^(.*)$ https://truelyfanatic.wordpress.com/?utm_source=%{HTTP_HOST} [R=301,L]
