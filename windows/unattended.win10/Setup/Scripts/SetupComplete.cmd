@@ -72,7 +72,7 @@ cscript.exe "%WINDIR%\System32\Printing_Admin_Scripts\en-US\prndrvr.vbs" -a -m "
 rem move "%WINDIR%\Setup\Drivers\*" "%WINDIR%\INF"
 
 schtasks.exe /change /TN "\Microsoft\Windows\Setup\SetupCleanupTask" /DISABLE
-schtasks.exe /change /TN "\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" /DISABLE
+schtasks.exe /change /TN "\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser Exp" /DISABLE
 schtasks.exe /change /TN "\Microsoft\Windows\Application Experience\ProgramDataUpdater" /DISABLE
 schtasks.exe /change /TN "\Microsoft\Windows\Customer Experience Improvement Program\Consolidator" /DISABLE
 schtasks.exe /change /TN "\Microsoft\Windows\Customer Experience Improvement Program\KernelCeipTask" /DISABLE
