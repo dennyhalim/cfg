@@ -15,3 +15,7 @@ RewriteCond %{HTTP_USER_AGENT} (HeadlessChrome|PhantomJS|Puppeteer|Playwright) [
 RewriteCond %{HTTP_USER_AGENT} (python-requests|python-urllib|curl|wget|libwww-perl) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (Go-http-client|Java|okhttp) [NC]
 RewriteRule ^ - [F,L]
+
+#block all chrome-based browsers
+RewriteCond %{HTTP:Sec-CH-UA} !^$
+RewriteRule ^ - [F,L]
