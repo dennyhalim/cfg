@@ -6,16 +6,16 @@
   <body>
     <outline text="Tech" title="Alkitabiah">
       <outline type="rss" text="Yesus Tuhan" htmlUrl="https://yesustuhan.wordpress.com" xmlUrl="https://yesustuhan.wordpress.com/feed/" />
-      <outline type="rss" text="alkitabiah.org" htmlUrl="https://alkitabiah.org" xmlUrl="http://alkitabiah.org/index.php/feed" isDown="1"/>
+      <outline type="rss" text="alkitabiah.org" htmlUrl="https://alkitabiah.org" xmlUrl="http://alkitabiah.org/index.php/feed" />
       <outline type="rss" text="carilah dahulu Kerajaan Allah dan kebenarannya Mat 6:33" htmlUrl="http://surgabenar.blogspot.com/" xmlUrl="http://surgabenar.blogspot.com/feeds/posts/default" />
       <outline type="rss" text="Theopneustos" htmlUrl="https://kristenfundamentalis.wordpress.com/" xmlUrl="https://kristenfundamentalis.wordpress.com/feed" />
       <outline type="rss" text="Kupas Tuntas Gerakan EKUMENE" htmlUrl="https://ekumenikal.wordpress.com" xmlUrl="https://ekumenikal.wordpress.com/feed/" />
       <outline type="rss" text="Ajaran Alkitabiah" htmlUrl="http://alkitabiah.wordpress.com" xmlUrl="http://alkitabiah.wordpress.com/feed/" />
-      <outline type="rss" text="Slideshows by User: alkitabiah" htmlUrl="http://www.slideshare.net/alkitabiah/documents" xmlUrl="http://www.slideshare.net/rss/user/alkitabiah" isDown="1"/>
+      <outline type="rss" text="Slideshows by User: alkitabiah" htmlUrl="http://www.slideshare.net/alkitabiah/documents" xmlUrl="http://www.slideshare.net/rss/user/alkitabiah" />
       <outline type="rss" text="imankekristenan" htmlUrl="http://imankekristenan.wordpress.com" xmlUrl="https://imankekristenan.wordpress.com/feed/" />
       <outline type="rss" text="DANCE SUAT BIBLE CLASS" htmlUrl="http://dancesuatbibleclass.wordpress.com" xmlUrl="https://dancesuatbibleclass.wordpress.com/feed/" />
       <outline type="rss" text="GEREJA BAPTIS INDEPENDEN ALKITABIAH" htmlUrl="http://gbiapontianak.blogspot.com/" xmlUrl="http://gbiapontianak.blogspot.com/feeds/posts/default" />
-      <outline type="rss" text="GBIA Semarang" htmlUrl="http://gbiasemarang.blogspot.com/" xmlUrl="http://gbiasemarang.blogspot.com/feeds/posts/default" isDown="1"/>
+      <outline type="rss" text="GBIA Semarang" htmlUrl="http://gbiasemarang.blogspot.com/" xmlUrl="http://gbiasemarang.blogspot.com/feeds/posts/default" />
       <outline type="rss" text="KONTRADIKSI ALKITAB" htmlUrl="http://jawab-kontradiksi-alkitab.blogspot.com/" xmlUrl="http://jawab-kontradiksi-alkitab.blogspot.com/feeds/posts/default" />
       <outline type="rss" text="INILAH KABAR BAIK ITU" htmlUrl="http://kabar-sukacita.blogspot.com/" xmlUrl="http://kabar-sukacita.blogspot.com/feeds/posts/default" />
       <outline type="rss" text="graphe-ministry.org" htmlUrl="http://graphe-ministry.org/articles" xmlUrl="http://graphe-ministry.org/articles/feed/" />
