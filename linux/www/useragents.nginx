@@ -10,4 +10,9 @@ server {
     return 403;
   }
 
+#block all chrome-based browsers
+  if ($http_sec_ch_ua ~* ".+") {
+    return 403;
+  }
+
 }
