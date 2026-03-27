@@ -1,5 +1,10 @@
 server {
 
+#block all chrome-based browsers
+  if ($http_sec_ch_ua ~* ".+") {
+    return 403;
+  }
+
 #whitelist firefox
   if ($http_user_agent !~* "(Firefox|FxiOS)") {
     return 403;
@@ -7,11 +12,6 @@ server {
 
 #blacklist badbot
   if ($http_user_agent ~* "bot|crawl|spider|slurp|scraper|opr|opios|browser") {
-    return 403;
-  }
-
-#block all chrome-based browsers
-  if ($http_sec_ch_ua ~* ".+") {
     return 403;
   }
 
