@@ -6,7 +6,7 @@ server {
   }
 
 #blacklist badbot
-  if ($http_user_agent ~* "bot|crawl|spider|slurp|scraper|opr|opios") {
+  if ($http_user_agent ~* "bot|crawl|spider|slurp|scraper|opr|opios|browser") {
     return 403;
   }
 
