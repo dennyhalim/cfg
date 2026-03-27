@@ -7,7 +7,7 @@
  */
 
 // --- Configuration ---
-$allowedIPs = ['192.168.13.200', '120.89.94.114'];
+$allowedIPs = ['192.168.13.200', '1.1.1.2'];
 
 // --- 1. IP Check ---
 $clientIP = $_SERVER['REMOTE_ADDR'] ?? '';
