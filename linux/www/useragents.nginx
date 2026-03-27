@@ -1,13 +1,13 @@
 server {
 
 #whitelist firefox
-    if ($http_user_agent !~* "(Firefox|FxiOS)") {
-        return 403;
-    }
+  if ($http_user_agent !~* "(Firefox|FxiOS)") {
+    return 403;
+  }
 
 #blacklist badbot
-    if ($http_user_agent ~* "bot|crawl|spider|slurp|scraper|opr|opios") {
-        return 403;
-    }
+  if ($http_user_agent ~* "bot|crawl|spider|slurp|scraper|opr|opios") {
+    return 403;
+  }
 
 }
