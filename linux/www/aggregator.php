@@ -15,7 +15,7 @@ define('OPML_FILE',   'feeds.opml');   // path to your OPML file
 define('CACHE_DIR',   'cache/');       // cache directory (must be writable)
 define('CACHE_TTL',   1800);           // cache lifetime in seconds (30 min)
 define('MAX_ITEMS',   10);             // max items fetched per feed
-define('FEED_TITLE',  'My Aggregator');
+define('FEED_TITLE_DEFAULT', 'My Aggregator'); // fallback if OPML has no title
 define('FEED_LINK',   'http://' . ($_SERVER['HTTP_HOST'] ?? 'localhost') . $_SERVER['REQUEST_URI']);
 define('FEED_DESC',   'Aggregated RSS feed');
 // ─────────────────────────────────────────────────────────────────────────────
@@ -25,7 +25,8 @@ define('FEED_DESC',   'Aggregated RSS feed');
 function read_opml(string $file): array {
     if (!file_exists($file)) die("OPML file not found: $file");
     $xml   = simplexml_load_file($file);
-    $feeds = [];
+    $title = trim((string)($xml->head->title ?? ''));
+    if ($title) define('FEED_TITLE', $title);    $feeds = [];
     foreach ($xml->xpath('//outline[@type="rss"]') as $o) {
         $feeds[] = [
             'title'   => (string)($o['title'] ?? $o['text'] ?? 'Untitled'),
@@ -226,6 +227,7 @@ document.querySelectorAll('.card').forEach(card => {
 // ── Main ─────────────────────────────────────────────────────────────────────
 
 $feeds = read_opml(OPML_FILE);
+if (!defined('FEED_TITLE')) define('FEED_TITLE', FEED_TITLE_DEFAULT);
 $items = collect_all($feeds);
 
 if (($_GET['output'] ?? '') === 'rss') {
