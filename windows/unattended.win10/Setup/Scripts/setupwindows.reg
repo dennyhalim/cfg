@@ -35,7 +35,7 @@ Windows Registry Editor Version 5.00
 "QuicAllowed"=dword:00000000
 "ClearCachedImagesAndFilesOnExit"=dword:00000001
 "HubsSidebarEnabled"=dword:00000000
-[HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\MicrosoftEdge\\Main]
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\MicrosoftEdge\Main]
 "FormSuggest Passwords"="no"
 #copilot
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
@@ -97,14 +97,14 @@ Windows Registry Editor Version 5.00
 "DisallowExploitProtectionOverride"=dword:00000001
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\CloudContent]
 "DisableWindowsConsumerFeatures"=dword:00000001
-[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Tcpip6\\Parameters]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters]
 "DisableIPSourceRouting"=dword:00000002
-[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa]
 "restrictanonymous"=dword:00000000
-[HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\Windows\\CredentialsDelegation]
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\CredentialsDelegation]
 "AllowProtectedCreds"=dword:00000001
 [-HKEY_CLASSES_ROOT\search-ms]
-[HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\Windows\\WinRM\\Client]
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WinRM\Client]
 "AllowDigest"=dword:00000000
-[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 "NoDriveTypeAutoRun"=dword:000000ff
