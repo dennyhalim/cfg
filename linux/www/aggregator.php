@@ -1,6 +1,6 @@
 <?php
 /**
- * Simple RSS Aggregator
+ * Simple RSS Aggregator — Security-hardened
  * - Reads an OPML file
  * - Displays all feed content
  * - Outputs an aggregated RSS feed
@@ -8,66 +8,157 @@
  * Usage:
  *   Browser view : aggregator.php
  *   RSS output   : aggregator.php?output=rss
+ *
+ * Requires: PHP 7.4+, allow_url_fopen = On
+ * Optional: composer require ezyang/htmlpurifier  (richer body sanitization)
  */
 
 // ─── CONFIG ──────────────────────────────────────────────────────────────────
-define('OPML_FILE',   'feeds.opml');   // path to your OPML file
-define('CACHE_DIR',   'cache/');       // cache directory (must be writable)
-define('CACHE_TTL',   1800);           // cache lifetime in seconds (30 min)
-define('MAX_ITEMS',   10);             // max items fetched per feed
-define('FEED_TITLE_DEFAULT', 'My Aggregator'); // fallback if OPML has no title
-define('FEED_LINK',   'http://' . ($_SERVER['HTTP_HOST'] ?? 'localhost') . $_SERVER['REQUEST_URI']);
-define('FEED_DESC',   'Aggregated RSS feed');
+define('OPML_FILE',          'feeds.opml');
+define('CACHE_DIR',          '../cache/');          // outside web root
+define('CACHE_TTL',          1800);                 // seconds (30 min)
+define('MAX_ITEMS',          10);                   // max items per feed
+define('MAX_FEEDS',          50);                   // DoS guard: max feeds in OPML
+define('FEED_TITLE_DEFAULT', 'My Aggregator');
+define('SITE_URL',           'https://example.com/aggregator.php'); // *** hardcode your URL ***
+define('FEED_DESC',          'Aggregated RSS feed');
+define('ERROR_LOG',          '../cache/aggregator-errors.log');
 // ─────────────────────────────────────────────────────────────────────────────
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+// ── [Fix #7] Security headers — sent on every response ───────────────────────
+header('X-Frame-Options: SAMEORIGIN');
+header('X-Content-Type-Options: nosniff');
+header('Referrer-Policy: no-referrer');
+header("Content-Security-Policy: default-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src * data:; frame-src 'none'");
 
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+// [Fix #9] Proper error logging — replaces @ suppression
+function log_error(string $msg): void {
+    error_log(date('Y-m-d H:i:s') . ' ' . $msg . PHP_EOL, 3, ERROR_LOG);
+}
+
+// [Fix #3] Validate URL is a public http/https address — blocks SSRF
+function is_safe_url(string $url): bool {
+    if (!preg_match('#^https?://#i', $url)) return false;
+    $host = parse_url($url, PHP_URL_HOST);
+    if (!$host) return false;
+    $ip = gethostbyname($host);
+    // Block private/loopback/reserved IP ranges
+    return filter_var($ip, FILTER_VALIDATE_IP,
+        FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) !== false;
+}
+
+// [Fix #4] Return URL only if http/https — blocks javascript: hrefs
+function safe_url(string $url): string {
+    return preg_match('#^https?://#i', $url) ? $url : '#';
+}
+
+// [Fix #1] Sanitize feed HTML — strip dangerous tags/attributes
+// Automatically uses HTMLPurifier if installed via Composer; falls back to strip_tags
+function sanitize_html(string $html): string {
+    if (class_exists('HTMLPurifier')) {
+        static $purifier = null;
+        if (!$purifier) {
+            $config = HTMLPurifier_Config::createDefault();
+            $config->set('HTML.Allowed',
+                'p,br,b,strong,i,em,u,a[href|title],ul,ol,li,blockquote,pre,code,h2,h3,h4,img[src|alt|width|height]');
+            $config->set('URI.AllowedSchemes', ['http' => true, 'https' => true]);
+            $config->set('HTML.TargetBlank', true);
+            $purifier = new HTMLPurifier($config);
+        }
+        return $purifier->purify($html);
+    }
+    // Fallback: allowlist of safe tags only
+    return strip_tags($html,
+        '<p><br><b><strong><i><em><u><a><ul><ol><li><blockquote><pre><code><h2><h3><h4><img>');
+}
+
+// [Fix #2] Load XML with XXE and external network access disabled
+function safe_simplexml(string $path): ?SimpleXMLElement {
+    if (PHP_VERSION_ID < 80000) {
+        libxml_disable_entity_loader(true); // PHP 7.x
+    }
+    libxml_use_internal_errors(true);
+    $xml = simplexml_load_file($path, 'SimpleXMLElement',
+        LIBXML_NONET | LIBXML_NOERROR | LIBXML_NOWARNING);
+    libxml_clear_errors();
+    return $xml ?: null;
+}
+
+// [Fix #5, #8] Read OPML — caps feed count, validates URLs
 function read_opml(string $file): array {
-    if (!file_exists($file)) die("OPML file not found: $file");
-    $xml   = simplexml_load_file($file);
+    if (!file_exists($file)) die('OPML file not found.');  // no path disclosure
+    $xml = safe_simplexml($file);
+    if (!$xml) die('Failed to parse OPML file.');
+
     $title = trim((string)($xml->head->title ?? ''));
-    if ($title) define('FEED_TITLE', $title);    $feeds = [];
+    if ($title) define('FEED_TITLE', $title);
+
+    $feeds = [];
     foreach ($xml->xpath('//outline[@type="rss"]') as $o) {
+        if (count($feeds) >= MAX_FEEDS) break; // [Fix #8] DoS guard
+
+        $url     = (string)($o['xmlUrl']  ?? '');
+        $htmlUrl = (string)($o['htmlUrl'] ?? '');
+
+        if (!is_safe_url($url)) {           // [Fix #3] skip unsafe URLs
+            log_error("Skipped unsafe feed URL: $url");
+            continue;
+        }
+
         $feeds[] = [
             'title'   => (string)($o['title'] ?? $o['text'] ?? 'Untitled'),
-            'url'     => (string) $o['xmlUrl'],
-            'htmlUrl' => (string)($o['htmlUrl'] ?? ''),
+            'url'     => $url,
+            'htmlUrl' => is_safe_url($htmlUrl) ? $htmlUrl : '',
         ];
     }
     return $feeds;
 }
 
+// [Fix #6] Protect cache directory — writes .htaccess denial
+function ensure_cache_dir(): void {
+    if (!is_dir(CACHE_DIR)) mkdir(CACHE_DIR, 0750, true);
+    $htaccess = CACHE_DIR . '.htaccess';
+    if (!file_exists($htaccess)) {
+        file_put_contents($htaccess, "Require all denied\nDeny from all\n");
+    }
+}
+
 function fetch_feed(string $url): ?SimpleXMLElement {
-    if (!is_dir(CACHE_DIR)) mkdir(CACHE_DIR, 0755, true);
-    $key  = CACHE_DIR . md5($url) . '.xml';
+    ensure_cache_dir();
+    $key   = CACHE_DIR . md5($url) . '.xml';
     $fresh = file_exists($key) && (time() - filemtime($key) < CACHE_TTL);
 
     if (!$fresh) {
         $ctx = stream_context_create(['http' => [
             'timeout'          => 8,
             'follow_location'  => true,
+            'max_redirects'    => 3,         // limit redirect chain
             'user_agent'       => 'SimpleAggregator/1.0',
+            'protocol_version' => '1.1',
         ]]);
-        $raw = @file_get_contents($url, false, $ctx);
-        if ($raw === false) return null;
+        // [Fix #9] Explicit error handling — no @ suppression
+        $raw = file_get_contents($url, false, $ctx);
+        if ($raw === false) {
+            log_error("Failed to fetch feed: $url");
+            return null;
+        }
         file_put_contents($key, $raw);
     }
 
-    libxml_use_internal_errors(true);
-    return simplexml_load_file($key) ?: null;
+    return safe_simplexml($key); // [Fix #2]
 }
 
 function parse_items(SimpleXMLElement $xml, string $source): array {
     $items = [];
-    $nodes = $xml->channel->item ?? $xml->entry ?? [];   // RSS 2.0 + Atom
+    $nodes = $xml->channel->item ?? $xml->entry ?? [];  // RSS 2.0 + Atom
 
     foreach ($nodes as $node) {
-        // Atom uses <link href="…"/>, RSS uses <link>text</link>
         $link = isset($node->link['href'])
             ? (string)$node->link['href']
             : (string)$node->link;
 
-        // Prefer <content:encoded> over <description> / <summary>
         $ns   = $node->children('content', true);
         $body = (string)($ns->encoded ?? $node->description ?? $node->summary ?? '');
 
@@ -75,8 +166,8 @@ function parse_items(SimpleXMLElement $xml, string $source): array {
 
         $items[] = [
             'title'  => html_entity_decode(strip_tags((string)$node->title), ENT_QUOTES, 'UTF-8'),
-            'link'   => $link,
-            'body'   => $body,
+            'link'   => safe_url($link),         // [Fix #4] block javascript: hrefs
+            'body'   => sanitize_html($body),    // [Fix #1] sanitize body HTML
             'date'   => $date ? strtotime($date) : 0,
             'source' => $source,
         ];
@@ -101,18 +192,18 @@ function output_rss(array $items): void {
     header('Content-Type: application/rss+xml; charset=utf-8');
     echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     echo '<rss version="2.0"><channel>';
-    echo '<title>' . htmlspecialchars(FEED_TITLE) . '</title>';
-    echo '<link>'  . htmlspecialchars(FEED_LINK)  . '</link>';
-    echo '<description>' . htmlspecialchars(FEED_DESC) . '</description>';
+    echo '<title>'       . htmlspecialchars(FEED_TITLE) . '</title>';
+    echo '<link>'        . htmlspecialchars(SITE_URL)   . '</link>'; // [Fix #5]
+    echo '<description>' . htmlspecialchars(FEED_DESC)  . '</description>';
 
     foreach ($items as $item) {
         $pub = $item['date'] ? date(DATE_RSS, $item['date']) : date(DATE_RSS);
         echo '<item>';
-        echo '<title>'       . htmlspecialchars($item['title'])  . '</title>';
-        echo '<link>'        . htmlspecialchars($item['link'])   . '</link>';
+        echo '<title>'       . htmlspecialchars($item['title'])            . '</title>';
+        echo '<link>'        . htmlspecialchars($item['link'])             . '</link>';
         echo '<description>' . htmlspecialchars(strip_tags($item['body'])) . '</description>';
-        echo '<category>'    . htmlspecialchars($item['source']) . '</category>';
-        echo '<pubDate>'     . $pub . '</pubDate>';
+        echo '<category>'    . htmlspecialchars($item['source'])           . '</category>';
+        echo '<pubDate>'     . $pub                                        . '</pubDate>';
         echo '<guid isPermaLink="true">' . htmlspecialchars($item['link']) . '</guid>';
         echo '</item>';
     }
@@ -120,14 +211,14 @@ function output_rss(array $items): void {
 }
 
 function output_html(array $items, array $feeds): void {
-    $rss_url = htmlspecialchars(strtok(FEED_LINK, '?') . '?output=rss');
+    $rss_url = htmlspecialchars(SITE_URL . '?output=rss'); // [Fix #5]
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?= FEED_TITLE ?></title>
-<link rel="alternate" type="application/rss+xml" title="<?= FEED_TITLE ?>" href="<?= $rss_url ?>">
+<title><?= htmlspecialchars(FEED_TITLE) ?></title>
+<link rel="alternate" type="application/rss+xml" title="<?= htmlspecialchars(FEED_TITLE) ?>" href="<?= $rss_url ?>">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body   { font-family: system-ui, sans-serif; background: #f5f5f5; color: #222; line-height: 1.6; }
@@ -154,9 +245,7 @@ function output_html(array $items, array $feeds): void {
                -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
                         mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
                transition: max-height .3s ease; }
-  .body.expanded { max-height: none;
-               -webkit-mask-image: none;
-                        mask-image: none; }
+  .body.expanded { max-height: none; -webkit-mask-image: none; mask-image: none; }
   .body img  { max-width: 100%; height: auto; display: block; }
   .body *    { max-width: 100%; }
   .toggle-btn { margin-top: .5rem; background: none; border: none; cursor: pointer;
@@ -178,7 +267,9 @@ function output_html(array $items, array $feeds): void {
     <?php foreach ($feeds as $f): ?>
       <li>
         <?php if ($f['htmlUrl']): ?>
-          <a href="<?= htmlspecialchars($f['htmlUrl']) ?>" target="_blank" rel="noopener"><?= htmlspecialchars($f['title']) ?></a>
+          <a href="<?= htmlspecialchars($f['htmlUrl']) ?>" target="_blank" rel="noopener noreferrer">
+            <?= htmlspecialchars($f['title']) ?>
+          </a>
         <?php else: ?>
           <?= htmlspecialchars($f['title']) ?>
         <?php endif; ?>
@@ -193,7 +284,7 @@ function output_html(array $items, array $feeds): void {
   <?php endif; ?>
   <?php foreach ($items as $item): ?>
     <article class="card">
-      <h2><a href="<?= htmlspecialchars($item['link']) ?>" target="_blank" rel="noopener">
+      <h2><a href="<?= htmlspecialchars($item['link']) ?>" target="_blank" rel="noopener noreferrer">
         <?= htmlspecialchars($item['title']) ?>
       </a></h2>
       <div class="meta">
@@ -210,7 +301,6 @@ function toggleBody(btn) {
   const expanded = body.classList.toggle('expanded');
   btn.textContent = expanded ? '▲ Show less' : '▼ Read more';
 }
-// Hide toggle button for short articles that don't need it
 document.querySelectorAll('.card').forEach(card => {
   const body = card.querySelector('.body');
   const btn  = card.querySelector('.toggle-btn');
@@ -221,7 +311,6 @@ document.querySelectorAll('.card').forEach(card => {
 </div>
 </body>
 </html>
-dennyhalim.com
 <?php
 }
 
