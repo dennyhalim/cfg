@@ -20,9 +20,15 @@ define('CACHE_TTL',          1800);                 // seconds (30 min)
 define('MAX_ITEMS',          10);                   // max items per feed
 define('MAX_FEEDS',          50);                   // DoS guard: max feeds in OPML
 define('FEED_TITLE_DEFAULT', 'My Aggregator');
-define('SITE_URL',           'https://example.com/aggregator.php'); // *** hardcode your URL ***
 define('FEED_DESC',          'Aggregated RSS feed');
 define('ERROR_LOG',          '../cache/aggregator-errors.log');
+
+// Build SITE_URL from server config — SERVER_NAME is set by Apache/Nginx, not the client
+$_scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$_host   = $_SERVER['SERVER_NAME'] ?? 'localhost';
+$_path   = strtok($_SERVER['REQUEST_URI'] ?? '/', '?');
+define('SITE_URL', $_scheme . '://' . $_host . $_path);
+unset($_scheme, $_host, $_path);
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ── [Fix #7] Security headers — sent on every response ───────────────────────
@@ -56,10 +62,14 @@ function safe_url(string $url): string {
 
 // [Fix #1] Sanitize feed HTML — strip dangerous tags/attributes
 // Automatically uses HTMLPurifier if installed via Composer; falls back to strip_tags
+/**
+ * @psalm-suppress UndefinedClass -- HTMLPurifier is an optional dependency
+ */
 function sanitize_html(string $html): string {
     if (class_exists('HTMLPurifier')) {
+        /** @var \HTMLPurifier|null $purifier */
         static $purifier = null;
-        if (!$purifier) {
+        if ($purifier === null) {
             $config = HTMLPurifier_Config::createDefault();
             $config->set('HTML.Allowed',
                 'p,br,b,strong,i,em,u,a[href|title],ul,ol,li,blockquote,pre,code,h2,h3,h4,img[src|alt|width|height]');
@@ -90,7 +100,7 @@ function safe_simplexml(string $path): ?SimpleXMLElement {
 function read_opml(string $file): array {
     if (!file_exists($file)) die('OPML file not found.');  // no path disclosure
     $xml = safe_simplexml($file);
-    if (!$xml) die('Failed to parse OPML file.');
+    if (!$xml instanceof SimpleXMLElement) die('Failed to parse OPML file.');
 
     $title = trim((string)($xml->head->title ?? ''));
     if ($title) define('FEED_TITLE', $title);
@@ -134,7 +144,7 @@ function fetch_feed(string $url): ?SimpleXMLElement {
         $ctx = stream_context_create(['http' => [
             'timeout'          => 8,
             'follow_location'  => true,
-            'max_redirects'    => 3,         // limit redirect chain
+            'max_redirects'    => 3,
             'user_agent'       => 'SimpleAggregator/1.0',
             'protocol_version' => '1.1',
         ]]);
@@ -193,7 +203,7 @@ function output_rss(array $items): void {
     echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     echo '<rss version="2.0"><channel>';
     echo '<title>'       . htmlspecialchars(FEED_TITLE) . '</title>';
-    echo '<link>'        . htmlspecialchars(SITE_URL)   . '</link>'; // [Fix #5]
+    echo '<link>'        . htmlspecialchars(SITE_URL)   . '</link>';
     echo '<description>' . htmlspecialchars(FEED_DESC)  . '</description>';
 
     foreach ($items as $item) {
@@ -211,7 +221,7 @@ function output_rss(array $items): void {
 }
 
 function output_html(array $items, array $feeds): void {
-    $rss_url = htmlspecialchars(SITE_URL . '?output=rss'); // [Fix #5]
+    $rss_url = htmlspecialchars(SITE_URL . '?output=rss');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
