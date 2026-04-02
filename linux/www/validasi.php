@@ -86,3 +86,4 @@ $referer    = $_SERVER['HTTP_REFERER'] ?? '';
 if ($requestUri !== '/index.php' && empty($referer)) {
     http_response_code(403);
     exit('Access denied.');
+}
