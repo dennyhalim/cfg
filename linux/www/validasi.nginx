@@ -2,22 +2,22 @@ server {
 
 #block all chrome-based browsers
   if ($http_sec_ch_ua ~* ".+") {
-    return 403;
+    return 444;
   }
 
 #whitelist firefox
   if ($http_user_agent !~* "(Firefox|FxiOS)") {
-    return 403;
+    return 444;
   }
 
 #blacklist badbot
   if ($http_user_agent ~* "bot|crawl|spider|slurp|scraper|opr|opios|browser") {
-    return 403;
+    return 444;
   }
 
 #check hostname
   if ($host !~* "(^|\.)(dennyhalim\.com|matikemana\.com)$") {
-    return 400;
+    return 444;
   }
 
 }
