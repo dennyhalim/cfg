@@ -3,7 +3,6 @@
 // Headers commonly set by proxies, VPNs, and anonymizers
 $proxyHeaders = [
     'HTTP_VIA',
-    'HTTP_X_FORWARDED_FOR',
     'HTTP_X_FORWARDED',
     'HTTP_FORWARDED',
     'HTTP_CLIENT_IP',
@@ -18,6 +17,7 @@ $proxyHeaders = [
 //    'HTTP_CF_CONNECTING_IP',   // Cloudflare
 //    'HTTP_TRUE_CLIENT_IP',     // Akamai / Cloudflare Enterprise
 //    'HTTP_FORWARDED_FOR',
+//    'HTTP_X_FORWARDED_FOR',
 //    'HTTP_X_REAL_IP',
 ];
 
