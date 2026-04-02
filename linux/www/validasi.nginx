@@ -20,4 +20,10 @@ server {
     return 444;
   }
 
+
+error_page 400 = @block;
+location @block {
+    return 444;
+}
+
 }
