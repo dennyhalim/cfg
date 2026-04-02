@@ -15,4 +15,9 @@ server {
     return 403;
   }
 
+#check hostname
+  if ($host !~* "(^|\.)(dennyhalim\.com|matikemana\.com)$") {
+    return 400;
+  }
+
 }
