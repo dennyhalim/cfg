@@ -165,9 +165,25 @@ function parse_items(SimpleXMLElement $xml, string $source): array {
     $nodes = $xml->channel->item ?? $xml->entry ?? [];  // RSS 2.0 + Atom
 
     foreach ($nodes as $node) {
-        $link = isset($node->link['href'])
-            ? (string)$node->link['href']
-            : (string)$node->link;
+        // Atom feeds (e.g. Blogger) have multiple <link> elements with different rel attributes.
+        // We want rel="alternate" (the HTML post URL), not rel="self", "replies", or "edit".
+        $link = '';
+        if (isset($node->link)) {
+            foreach ($node->link as $l) {
+                $rel  = (string)($l['rel']  ?? 'alternate');
+                $href = (string)($l['href'] ?? '');
+                if ($rel === 'alternate' && $href !== '') {
+                    $link = $href;
+                    break;
+                }
+            }
+            // Fallback: first link with any href (RSS 2.0 style)
+            if ($link === '') {
+                $link = isset($node->link['href'])
+                    ? (string)$node->link['href']
+                    : (string)$node->link;
+            }
+        }
 
         $ns   = $node->children('content', true);
         $body = (string)($ns->encoded ?? $node->description ?? $node->summary ?? '');
