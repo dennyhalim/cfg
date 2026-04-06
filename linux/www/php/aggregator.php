@@ -34,7 +34,7 @@ unset($_scheme, $_host, $_path);
 // ── [Fix #7] Security headers — sent on every response ───────────────────────
 header('X-Frame-Options: SAMEORIGIN');
 header('X-Content-Type-Options: nosniff');
-header('Referrer-Policy: no-referrer');
+header('Referrer-Policy: no-referrer-when-downgrade');
 header("Content-Security-Policy: default-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src * data:; frame-src 'none'");
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
