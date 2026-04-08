@@ -38,8 +38,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ClearBrowsingDataOnExitList]
 "901"="cached_images_and_files"
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallForcelist]
-"901"="mlomiejdfkolichcflejclcbmpeaniij"
-"902"="oboonakemofpalcgghocfoadofidjkkk"
+"901"="lgblnfidahcdcjddiepkckcfdhpknnjh"
+"902"="hielpjjagjimpgppnopiibaefhfpbpfn"
+"903"="oboonakemofpalcgghocfoadofidjkkk"
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallAllowlist]
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionSettings]
 "*"="{\"blocked_permissions\":[\"debugger\",\"clipboardRead\",\"sessions\",\"management\",\"vpnProvider\",\"proxy\",\"experimental\"]}"
