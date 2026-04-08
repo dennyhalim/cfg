@@ -9,7 +9,7 @@ RewriteCond %{HTTP_USER_AGENT} !Firefox [NC]
 RewriteCond %{HTTP_USER_AGENT} !FxiOS   [NC]
 RewriteRule ^ - [F]
 
-RewriteCond %{HTTP_USER_AGENT} (bot|crawl|spider|slurp|scraper) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} (bot|crawl|spider|slurp|scrap) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (AhrefsBot|SemrushBot|DotBot|MJ12bot|BLEXBot) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (PetalBot|DataForSeoBot|serpstatbot|Bytespider) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (ClaudeBot|GPTBot|CCBot) [NC,OR]
