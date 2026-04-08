@@ -30,6 +30,10 @@ $uaBlockKeywords = [
     'opios',
     'browser',
     'bot',
+    'crawl',
+    'spider',
+    'slurp',
+    'scrap',
 ];
 
 $uaRequireStart = 'Mozilla/5.0';
