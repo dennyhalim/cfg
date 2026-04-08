@@ -95,4 +95,4 @@ if ($requestUri !== '/index.php' && empty($referer)) {
 header('X-Frame-Options: SAMEORIGIN');
 header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: origin-when-cross-origin');
-header("Content-Security-Policy: default-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src * data:; frame-src 'none'");
+//header("Content-Security-Policy: default-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src * data:; frame-src 'none'");
