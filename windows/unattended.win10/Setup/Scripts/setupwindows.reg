@@ -27,6 +27,23 @@ Windows Registry Editor Version 5.00
 "AllowRecallEnablement"=dword:00000000
 "DisableAIDataAnalysis"=dword:00000000
 
+;chrome
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Update]
+"RollbackToTargetVersion"=dword:00000001
+"targetChannel"="extended"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
+"DnsOverHttpsMode"="secure"
+"DnsOverHttpsTemplates"="https://all.dns.mullvad.net/dns-query"
+"BackgroundModeEnabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ClearBrowsingDataOnExitList]
+"901"="cached_images_and_files"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallForcelist]
+"901"="mlomiejdfkolichcflejclcbmpeaniij"
+"902"="oboonakemofpalcgghocfoadofidjkkk"
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallAllowlist]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionSettings]
+"*"="{\"blocked_permissions\":[\"debugger\",\"clipboardRead\",\"sessions\",\"management\",\"vpnProvider\",\"proxy\",\"experimental\"]}"
+
 ;edge
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate]
 "TargetChannel"="ExtendedStable"
