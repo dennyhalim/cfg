@@ -11,7 +11,7 @@ server {
   }
 
 #blacklist badbot
-  if ($http_user_agent ~* "bot|crawl|spider|slurp|scraper|opr|opios|browser") {
+  if ($http_user_agent ~* "bot|crawl|spider|slurp|scrap|opr|opios|browser") {
     return 444;
   }
 
