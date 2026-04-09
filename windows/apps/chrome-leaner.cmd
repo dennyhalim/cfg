@@ -5,6 +5,9 @@ cd "%appdata%\google\chrome\application"
 cd "%programfiles%\google\chrome\application"
 cd "%programfiles(x86)%\google\chrome\application"
 chrome.exe --process-per-site --renderer-process-limit=1 --TotalMemoryLimitMb=1024 --disk-cache-size=123456789 
+rem chrome as app
+rem chrome.exe --start-maximized --app=https://denny.wordpress.com 
+rem chrome.exe --kiosk https://denny.wordpress.com
 
 rem #enable dns-over-https
 rem #enable this in chrome/opera/edge browser: chrome://flags/#dns-over-https
