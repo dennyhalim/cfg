@@ -45,7 +45,7 @@ Windows Registry Editor Version 5.00
 "903"="oboonakemofpalcgghocfoadofidjkkk"
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallAllowlist]
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionSettings]
-"*"="{\"blocked_permissions\":[\"debugger\",\"clipboardRead\",\"sessions\",\"management\",\"vpnProvider\",\"proxy\",\"experimental\"]}"
+"*"="{\"blocked_permissions\":[\"debugger\",\"clipboardRead\",\"background\",\"sessions\",\"management\",\"vpnProvider\",\"proxy\",\"experimental\"]}"
 
 ;edge
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate]
@@ -60,6 +60,8 @@ Windows Registry Editor Version 5.00
 #copilot
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
 "EnableDynamicContentInWSB"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings]
+"*"="{\"blocked_permissions\":[\"debugger\",\"clipboardRead\",\"background\",\"sessions\",\"management\",\"vpnProvider\",\"proxy\",\"experimental\"]}"
 ;[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist]
 ;"901"="pdffhmdngciaglkoonimfcmckehcpafo"
 ;"902"="jlpdpddffjddlfdbllimedpemaodbjgn"
