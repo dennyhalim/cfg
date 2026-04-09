@@ -36,6 +36,7 @@ Windows Registry Editor Version 5.00
 "DnsOverHttpsTemplates"="https://all.dns.mullvad.net/dns-query"
 "BackgroundModeEnabled"=dword:00000000
 "QuicAllowed"=dword:00000000
+"PasswordManagerEnabled"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ClearBrowsingDataOnExitList]
 "901"="cached_images_and_files"
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallForcelist]
