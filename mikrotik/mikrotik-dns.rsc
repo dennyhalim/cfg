@@ -57,8 +57,10 @@ add address=127.0.10.1 type=A regexp="(musical.ly|bytedance|toutiau|pstatp|capcu
 add address=127.0.10.1 type=A regexp="(flix|nflx|scdn|spotifycdn|spotify-com|spotify.map)"
 add address=127.0.10.1 type=A regexp="(coin|koin|crypto|kripto)"
 #add address=127.0.10.1 regexp=convert type=A
-#phishing bca
+#phishing 
 add address=127.0.10.1 type=A regexp="bca(-fash|flash)"
+add address=127.0.10.1 type=A regexp="(login|clone)*\\.(vercel|netlify|blogspot|webflow|webly)"
+add address=127.0.10.1 type=A regexp="(facebook|instagram|netflix|amazon)*\\.(vercel|netlify|blogspot|webflow|webly)"
 #games
 add address=127.0.10.1 disabled=yes type=A comment=allgame regexp="(gamer|games|gaming|arcad|arkad|steam)"
 
