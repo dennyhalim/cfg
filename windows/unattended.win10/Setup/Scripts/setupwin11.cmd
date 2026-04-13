@@ -146,6 +146,9 @@ Windows Registry Editor Version 5.00
 "RequireEncryption"=dword:00000001
 "MinSmb2Dialect"=dword:00000311
 
+[Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config]
+"MinPollInterval"=dword:00000008
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SearchIndexer.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SearchProtocolHost.exe\PerfOptions]
