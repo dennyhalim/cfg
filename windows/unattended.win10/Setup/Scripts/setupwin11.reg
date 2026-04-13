@@ -120,6 +120,12 @@ Windows Registry Editor Version 5.00
 "AllowInsecureGuestAuth"=dword:00000000
 "RequireEncryption"=dword:00000001
 "MinSmb2Dialect"=dword:00000311
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\LanmanWorkstation]
+"AuditServerDoesNotSupportEncryption"=dword:00000001
+"AuditServerDoesNotSupportSigning"=dword:00000001
+"AuditInsecureGuestLogon"=dword:00000001
+"AllowInsecureGuestAuth"=dword:00000000
+"RequireEncryption"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SearchIndexer.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
