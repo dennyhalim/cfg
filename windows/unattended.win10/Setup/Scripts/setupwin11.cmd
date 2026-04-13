@@ -6,13 +6,20 @@ Windows Registry Editor Version 5.00
 ;sc.exe config DiagTrack start= disabled
 ;sc.exe config dmwappushservice start= disabled
 ;sc.exe config WinHttpAutoProxySvc start= disabled
+;netsh.exe advfirewall firewall set rule name"File and Printer Sharing (Restrictive) (LLMNR-UDP-In)" new enable=no
+;netsh.exe advfirewall firewall set rule group="Dropbox promotion" new enable=no
+;netsh.exe advfirewall firewall set rule group="Feedback Hub" new enable=no
+;netsh.exe advfirewall firewall set rule group="Network Discovery" new enable=no
+;netsh.exe advfirewall firewall set rule group="Remote Assistance" new enable=no
+;netsh.exe advfirewall firewall set rule group="File and Printer Sharing" new enable=no
+;netsh.exe advfirewall firewall set rule group="Windows Feature Experience Pack" new enable=no
 ;exit
 ;
 ; !!! TEST BEFORE USED ON PRODUCTION !!! ;
 ; https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#branchreadinesslevel 
 ;open command prompt as administrator
 ;del setupwindows.reg
-;curl.exe -O https://raw.githubusercontent.com/dennyhalim/cfg/refs/heads/master/windows/unattended.win10/Setup/Scripts/setupwin11.reg
+;curl.exe -O https://raw.githubusercontent.com/dennyhalim/cfg/refs/heads/master/windows/unattended.win10/Setup/Scripts/setupwin11.cmd
 ;#edit to suite your need
 ;reg.exe import setupwindows.reg
 
