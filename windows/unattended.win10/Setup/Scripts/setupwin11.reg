@@ -89,6 +89,8 @@ Windows Registry Editor Version 5.00
 "HideFileExt"=dword:00000000
 
 ;SAMBA
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer]
+"Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
 "EnableAuthenticateUserSharing"=dword:00000000
 "ServiceDllUnloadOnStop"=dword:00000001
