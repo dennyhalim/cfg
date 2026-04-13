@@ -3,14 +3,18 @@ Windows Registry Editor Version 5.00
 ;REG.EXE import "%~f0"
 ;sc.exe config tapisrv start= demand
 ;sc.exe config winrm start= demand
-;sc.exe config upnphost start= disabled
-;sc.exe config ssdpsrv start= disabled
 ;sc.exe config netbt start= disabled
 ;sc.exe config termservice start= disabled
 ;sc.exe config lanmanserver start= disabled
 ;sc.exe config DiagTrack start= disabled
 ;sc.exe config dmwappushservice start= disabled
 ;sc.exe config WinHttpAutoProxySvc start= disabled
+;rem cis1
+;sc.exe config upnphost start= disabled
+;sc.exe config ssdpsrv start= disabled
+;sc.exe config SharedAccess start= disabled
+;sc.exe config icssvc start= disabled
+;sc.exe config IISADMIN start= disabled
 ;netsh.exe advfirewall firewall set rule name"File and Printer Sharing (Restrictive) (LLMNR-UDP-In)" new enable=no
 ;netsh.exe advfirewall firewall set rule group="Dropbox promotion" new enable=no
 ;netsh.exe advfirewall firewall set rule group="Feedback Hub" new enable=no
