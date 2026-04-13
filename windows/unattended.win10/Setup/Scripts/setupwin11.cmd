@@ -17,6 +17,7 @@ Windows Registry Editor Version 5.00
 ;exit
 ;
 ; !!! TEST BEFORE USED ON PRODUCTION !!! ;
+; !!! I WILL NOT BE RESPONSIBLE IF YOUR COMPUTER CRASH OR EXPLODE !!! ;
 ; https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#branchreadinesslevel 
 ;open command prompt as administrator
 ;del setupwin11.cmd
