@@ -40,7 +40,7 @@ Windows Registry Editor Version 5.00
 "TargetReleaseVersion"=dword:00000001
 "BranchReadinessLevel"=dword:00000020
 "DeferQualityUpdates"=dword:00000001
-"DeferQualityUpdatesPeriodInDays"=dword:00000006
+"DeferQualityUpdatesPeriodInDays"=dword:0000000b
 "DeferUpgrade"=dword:00000001
 "DeferUpgradePeriod"=dword:00000008
 "DeferFeatureUpdates"=dword:00000001
