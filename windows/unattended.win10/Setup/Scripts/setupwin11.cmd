@@ -174,3 +174,5 @@ Windows Registry Editor Version 5.00
 "AllowDigest"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 "NoDriveTypeAutoRun"=dword:000000ff
+[HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\Windows\\CurrentVersion\\Internet Settings]
+"SecureProtocols"=dword:00000a00
