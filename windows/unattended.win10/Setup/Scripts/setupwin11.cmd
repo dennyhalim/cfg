@@ -18,10 +18,10 @@ Windows Registry Editor Version 5.00
 ; !!! TEST BEFORE USED ON PRODUCTION !!! ;
 ; https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#branchreadinesslevel 
 ;open command prompt as administrator
-;del setupwindows.reg
+;del setupwin11.cmd
 ;curl.exe -O https://raw.githubusercontent.com/dennyhalim/cfg/refs/heads/master/windows/unattended.win10/Setup/Scripts/setupwin11.cmd
-;#edit to suite your need
-;reg.exe import setupwindows.reg
+;#edit to suite your need and run
+;reg.exe import setupwin11.cmd
 
 ;windows update
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
