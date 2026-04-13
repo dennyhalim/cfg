@@ -154,14 +154,16 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SearchProtocolHost.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]
+"DisableIPSourceRouting"=dword:00000002
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters]
+"DisableIPSourceRouting"=dword:00000002
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging]
 "EnableScriptBlockLogging"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\App and Browser protection]
 "DisallowExploitProtectionOverride"=dword:00000001
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\CloudContent]
 "DisableWindowsConsumerFeatures"=dword:00000001
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters]
-"DisableIPSourceRouting"=dword:00000002
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa]
 "restrictanonymous"=dword:00000000
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\CredentialsDelegation]
