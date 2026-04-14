@@ -79,3 +79,12 @@ header("Content-Security-Policy: default-src 'self'");
 header('X-Content-Type-Options: nosniff');
 header('X-Frame-Options: DENY');
 header('Referrer-Policy: same-origin, origin-when-cross-origin');
+
+session_set_cookie_params([
+    'lifetime' => 3600,
+    'path' => '/',
+    'domain' => $_SERVER['SERVER_NAME'],
+    'secure' => true,
+    'httponly' => true,
+    'samesite' => 'Strict' // Options: 'Lax', 'Strict', or 'None'
+]);
