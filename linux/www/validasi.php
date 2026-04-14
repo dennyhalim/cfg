@@ -18,7 +18,7 @@ function hasProxyHeaders(array $keywords): bool
 }
 
 if (hasProxyHeaders($proxyKeywords)) {
-    http_response_code(403);
+    http_response_code(400);
     exit('Access denied.');
 }
 
@@ -70,7 +70,7 @@ function isFirefox(string $ua): bool
 $ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
 
 if (!isFirefox($ua)) {
-    http_response_code(403);
+    http_response_code(400);
     exit('Access denied.');
 }
 
