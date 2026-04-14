@@ -16,8 +16,8 @@ define('CACHE_DIR',          '../cache/');
 define('CACHE_TTL',          1800);         // seconds (30 min)
 define('MAX_ITEMS',          10);           // max items per feed
 define('MAX_FEEDS',          50);           // DoS guard
-define('FEED_TITLE_DEFAULT', 'denny.wordpress.com');
-define('FEED_DESC',          'Aggregated RSS feed');
+define('FEED_TITLE_DEFAULT', 'RSS feed aggregator');
+define('FEED_DESC',          'denny.wordpress.com');
 define('ERROR_LOG',          '../cache/aggregator-errors.log');
 
 $_scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
