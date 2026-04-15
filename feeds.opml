@@ -4,6 +4,28 @@
     <title>News i read</title>
   </head>
   <body>
+    <outline title="security" text="security">
+      <outline text="darkreading" title="darkreading" type="rss" 
+            xmlUrl="https://www.darkreading.com/rss.xml" htmlUrl="https://www.darkreading.com"/>
+      <outline text="cybersecurity-insiders.com" title="cybersecurity-insiders.com" type="rss" 
+            xmlUrl="https://www.cybersecurity-insiders.com/feed/" htmlUrl="https://www.cybersecurity-insiders.com/"/>
+      <outline text="ASEAN | CSO Online" title="csoonline.com" type="rss" 
+            xmlUrl="https://www.csoonline.com/asean/feed/" htmlUrl="https://www.csoonline.com"/>
+      <outline text="msspalert.com" title="msspalert.com" type="rss" 
+            xmlUrl="https://www.msspalert.com/feed/topic/latest" htmlUrl="https://www.msspalert.com/topic/latest"/>
+      <outline text="eSecurity Planet" title="eSecurity Planet" type="rss" 
+            xmlUrl="https://www.esecurityplanet.com/feed/" htmlUrl="https://www.esecurityplanet.com/"/>
+      <outline text="The Hacker News" title="The Hacker News" type="rss" 
+            xmlUrl="https://thehackernews.com/feeds/posts/default" htmlUrl="https://thehackernews.com"/>
+      <outline text="SecurityWeek" title="SecurityWeek" type="rss" 
+            xmlUrl="https://www.securityweek.com/feed/" htmlUrl="https://www.securityweek.com/"/>
+      <outline text="Malwarebytes" title="Malwarebytes" type="rss" 
+            xmlUrl="https://www.malwarebytes.com/blog/feed/index.xml" htmlUrl="https://www.malwarebytes.com/"/>
+      <outline text="RestorePrivacy" title="RestorePrivacy" type="rss" 
+            xmlUrl="https://restoreprivacy.com/feed/" htmlUrl="https://restoreprivacy.com/"/>
+      <outline text="Krebs on Security" title="Krebs on Security" type="rss" 
+            xmlUrl="https://krebsonsecurity.com/feed/" htmlUrl="https://krebsonsecurity.com"/>
+    </outline>
     <outline text="Alkitabsaja" title="Alkitabiah">
       <outline type="rss" text="Yesus Tuhan" htmlUrl="https://yesustuhan.wordpress.com" xmlUrl="https://yesustuhan.wordpress.com/feed/" />
       <outline type="rss" text="alkitabiah.org" htmlUrl="https://alkitabiah.org" xmlUrl="http://alkitabiah.org/feed" />
