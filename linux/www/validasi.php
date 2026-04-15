@@ -3,7 +3,7 @@
 * browsers validations
 *
 */
-$proxyKeywords = ['HTTP_SEC_CH_UA', 'PROXY', 'CLIENT_IP'];
+$proxyKeywords = ['HTTP_SEC_CH_UA', 'PROXY', 'CLIENT_IP', 'FORWARD'];
 
 function hasProxyHeaders(array $keywords): bool
 {
