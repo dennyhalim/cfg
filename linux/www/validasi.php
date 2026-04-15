@@ -80,6 +80,7 @@ header('X-Content-Type-Options: nosniff');
 header('X-Frame-Options: DENY');
 header('Referrer-Policy: same-origin, origin-when-cross-origin');
 
+ini_set('session.use_only_cookies', 1); // Disallows passing session IDs via URLs
 session_set_cookie_params([
     'lifetime' => 3600,
     'path' => '/',
