@@ -15,11 +15,11 @@
     <outline title="security" text="security">
       <outline text="darkreading" title="darkreading" type="rss" 
             xmlUrl="https://www.darkreading.com/rss.xml" htmlUrl="https://www.darkreading.com"/>
-      <outline text="cybersecurity-insiders.com" title="cybersecurity-insiders.com" type="rss" 
+      <outline text="cybersecurity-insiders" title="cybersecurity-insiders" type="rss" 
             xmlUrl="https://www.cybersecurity-insiders.com/feed/" htmlUrl="https://www.cybersecurity-insiders.com/"/>
-      <outline text="ASEAN | CSO Online" title="csoonline.com" type="rss" 
+      <outline text="ASEAN | CSO Online" title="csoonline" type="rss" 
             xmlUrl="https://www.csoonline.com/asean/feed/" htmlUrl="https://www.csoonline.com"/>
-      <outline text="msspalert.com" title="msspalert.com" type="rss" 
+      <outline text="msspalert" title="msspalert" type="rss" 
             xmlUrl="https://www.msspalert.com/feed/topic/latest" htmlUrl="https://www.msspalert.com/"/>
       <outline text="eSecurity Planet" title="eSecurity Planet" type="rss" 
             xmlUrl="https://www.esecurityplanet.com/feed/" htmlUrl="https://www.esecurityplanet.com/"/>
