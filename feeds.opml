@@ -48,17 +48,14 @@
       <outline type="rss" text="graphe-ministry" htmlUrl="https://graphe-ministry.org/articles" xmlUrl="https://graphe-ministry.org/articles/feed/" />
     </outline>
     <outline text="denny.wordpress.com" title="Biblical">
-      <outline type="rss" text="Now The End Begins" htmlUrl="https://www.nowtheendbegins.com/blog" xmlUrl="https://www.nowtheendbegins.com/blog/?feed=rss2" />
+      <outline type="rss" text="Fan of Truth" htmlUrl="https://truelyfanatic.wordpress.com/" xmlUrl="https://truelyfanatic.wordpress.com/feed/" />
       <outline type="rss" text="wayoflife.org" htmlUrl="https://wayoflife.org/" xmlUrl="https://www.wayoflife.org/index_files/Way%20of%20Life%20Rss.xml" />
       <outline type="rss" text="lighthouse trails research" htmlUrl="https://www.lighthousetrailsresearch.com/blog" xmlUrl="https://www.lighthousetrailsresearch.com/blog/?feed=rss2" />
-      <outline type="rss" text="coldcasechristianity" htmlUrl="https://coldcasechristianity.com" xmlUrl="https://coldcasechristianity.com/?feed=rss2" />
+      <outline type="rss" text="coldcasechristianity" htmlUrl="https://coldcasechristianity.com" xmlUrl="https://coldcasechristianity.com/feed" />
       <outline type="rss" text="The Submerging Church | Discernment About the Emergent Church" htmlUrl="http://www.submergingchurch.com" xmlUrl="http://www.submergingchurch.com/feed/" />
-      <outline type="rss" text="Fan of Truth" htmlUrl="https://truelyfanatic.wordpress.com/" xmlUrl="https://truelyfanatic.wordpress.com/feed/" />
-      <outline type="rss" text="Pro Gospel" htmlUrl="http://www.pro-gospel.org/" xmlUrl="http://www.pro-gospel.org/site/blogview_rss.asp?sec_id=180014816&amp;forum_id=180003854" />
       <outline type="rss" text="Evidence Ministries" htmlUrl="http://www.evidenceministries.org" xmlUrl="http://www.evidenceministries.org/feed/" />
       <outline type="rss" text="Essays on Calvinism" htmlUrl="https://essaysoncalvinism.wordpress.com" xmlUrl="https://essaysoncalvinism.wordpress.com/feed/" />
       <outline type="rss" text="Do Right Christians" htmlUrl="https://dorightchristians.wordpress.com" xmlUrl="https://dorightchristians.wordpress.com/feed/" />
-      <outline type="rss" text="Christian Persecution" htmlUrl="http://www.christianpersecution.info" xmlUrl="http://www.christianpersecution.info/feeds/christian-persecution.xml" />
       <outline type="rss" text="Worthy Christian News » Christian Persecution" htmlUrl="http://www.worthynews.com" xmlUrl="http://www.worthynews.com/news/christian-persecution/feed" />
     </outline>
   </body>
