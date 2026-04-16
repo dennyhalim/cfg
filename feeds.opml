@@ -5,7 +5,7 @@
   </head>
   <body>
     <outline title="health" text="health">
-      <outline text="Children Health Defense" type="rss" xmlUrl="http://www.cstnews.com/bm/science-and-health-issues-common-sense-for-today/bm~feed.xml" htmlUrl="http://www.cstnews.com/bm/science-and-health-issues-common-sense-for-today/index.shtml" />
+      <outline text="cstnews.com" type="rss" xmlUrl="http://www.cstnews.com/bm/science-and-health-issues-common-sense-for-today/bm~feed.xml" htmlUrl="http://www.cstnews.com/bm/science-and-health-issues-common-sense-for-today/index.shtml" />
       <outline text="Children Health Defense" type="rss" xmlUrl="https://childrenshealthdefense.org/feed/" htmlUrl="https://childrenshealthdefense.org/defender/" />
       <outline text="America Out Loud News" title="America Out Loud News" type="rss" 
             xmlUrl="https://www.americaoutloud.news/category/subject-matter/healthcare/feed/" htmlUrl="https://www.americaoutloud.news/category/subject-matter/healthcare/"/>
