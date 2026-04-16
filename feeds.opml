@@ -6,11 +6,11 @@
   <body>
     <outline title="health" text="health">
       <outline text="cstnews.com" type="rss" xmlUrl="http://www.cstnews.com/bm/science-and-health-issues-common-sense-for-today/bm~feed.xml" htmlUrl="http://www.cstnews.com/bm/science-and-health-issues-common-sense-for-today/index.shtml" />
+      <outline text="Deep Roots at Home" title="Deep Roots at Home" type="rss" 
+            xmlUrl="https://deeprootsathome.com/feed/" htmlUrl="https://deeprootsathome.com/"/>
       <outline text="Children Health Defense" type="rss" xmlUrl="https://childrenshealthdefense.org/feed/" htmlUrl="https://childrenshealthdefense.org/defender/" />
       <outline text="America Out Loud News" title="America Out Loud News" type="rss" 
             xmlUrl="https://www.americaoutloud.news/category/subject-matter/healthcare/feed/" htmlUrl="https://www.americaoutloud.news/category/subject-matter/healthcare/"/>
-      <outline text="Deep Roots at Home" title="Deep Roots at Home" type="rss" 
-            xmlUrl="https://deeprootsathome.com/feed/" htmlUrl="https://deeprootsathome.com/"/>
       <outline text="Health | The Epoch Times" title="Health | The Epoch Times" type="rss" 
             xmlUrl="https://www.theepochtimes.com/health/feed" htmlUrl="https://www.theepochtimes.com/health/feed"/>
     </outline>
