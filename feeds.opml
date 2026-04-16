@@ -15,8 +15,6 @@
     <outline title="security" text="security">
       <outline text="darkreading" title="darkreading" type="rss" 
             xmlUrl="https://www.darkreading.com/rss.xml" htmlUrl="https://www.darkreading.com"/>
-      <outline text="cybersecurity-insiders" title="cybersecurity-insiders" type="rss" 
-            xmlUrl="https://www.cybersecurity-insiders.com/feed/" htmlUrl="https://www.cybersecurity-insiders.com/"/>
       <outline text="ASEAN | CSO Online" title="csoonline" type="rss" 
             xmlUrl="https://www.csoonline.com/asean/feed/" htmlUrl="https://www.csoonline.com"/>
       <outline text="msspalert" title="msspalert" type="rss" 
