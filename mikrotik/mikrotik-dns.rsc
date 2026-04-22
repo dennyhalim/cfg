@@ -16,6 +16,8 @@ add address=127.0.10.1 type=A regexp="ad(serv|vert|mob|zerk|nxs|system|tube)"
 add address=127.0.10.1 type=A regexp="(bing|mail-|search|image|video|samsung|tv)ads"
 add address=127.0.10.1 type=A regexp="(doubleclick|2mdn|pagead|quantserve|booru|byteoversea|heytapmobi)"
 add address=127.0.10.1 type=A regexp="(analyti|telemetry|beacon|tracking|trafficmanager|nexusrules|piwik)"
+add address=127.0.10.1 type=A regexp="(adult|lgbt|xxx|porn|sex|webcam|casino|poker)"
+add address=127.0.10.1 type=A regexp="\\.(top|cfd|icu|gq|tk|bet|bid)"
 
 add address=127.0.10.1 type=A regexp="ads(flame|keeper|ports|2live|tat|min|co)"
 add address=127.0.10.1 type=A regexp="ad-(instantpage|connect)"
@@ -36,7 +38,6 @@ add address=127.0.10.1 type=A regexp="[0-9]chan"
 #add address=127.0.10.1 type=A regexp=overture
 
 #adult,gambling,drugs
-add address=127.0.10.1 type=A regexp="(adult|lgbt|xxx|porn|sex|sexy|webcam|xcam)"
 add address=127.0.10.1 type=A regexp="(xnxx|sadis|playboy|dewasa|bokep|hentai|friendfinder)"
 add address=127.0.10.1 type=A regexp="(naked|nude|erect|escort|eroti)"
 add address=127.0.10.1 type=A regexp="\\.(bid|bet|casino|poker|bingo|slots|games|gambling)"
