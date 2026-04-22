@@ -61,7 +61,7 @@ add address=127.0.10.1 type=A regexp="(coin|koin|crypto|kripto)"
 #phishing 
 add address=127.0.10.1 type=A regexp="bca(-fash|flash)"
 add address=127.0.10.1 type=A regexp="(login|clone)*\\.(vercel|netlify|blogspot|webflow|webly)"
-add address=127.0.10.1 type=A regexp="(facebook|instagram|netflix|amazon)*\\.(vercel|netlify|blogspot|webflow|webly)"
+add address=127.0.10.1 type=A regexp="(facebook|instagram|flix|amazon)*\\.(vercel|netlify|blogspot|webflow|webly)"
 #games
 add address=127.0.10.1 disabled=yes type=A comment=allgame regexp="(gamer|games|gaming|arcad|arkad|steam)"
 
