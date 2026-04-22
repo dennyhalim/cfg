@@ -17,7 +17,7 @@ add address=127.0.10.1 type=A regexp="(bing|mail-|search|image|video|samsung|tv)
 add address=127.0.10.1 type=A regexp="(doubleclick|2mdn|pagead|quantserve|booru|byteoversea|heytapmobi)"
 add address=127.0.10.1 type=A regexp="(analyti|telemetry|beacon|tracking|trafficmanager|nexusrules|piwik)"
 add address=127.0.10.1 type=A regexp="(adult|lgbt|xxx|porn|sex|webcam|casino|poker)"
-add address=127.0.10.1 type=A regexp="\\.(top|cfd|icu|gq|tk|bet|bid)"
+add address=127.0.10.1 type=A regexp="\\.(top|cfd|icu|gq|tk|bet|bid)$"
 
 add address=127.0.10.1 type=A regexp="ads(flame|keeper|ports|2live|tat|min|co)"
 add address=127.0.10.1 type=A regexp="ad-(instantpage|connect)"
