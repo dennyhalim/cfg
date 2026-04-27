@@ -4,4 +4,4 @@ id,title,author,summary,cover_url,download_url,language,published,category,tags,
 3,Clean Code,Robert Martin,Programming,https://covers.com/clean.jpg,https://files.com/clean.pdf,en,2008-08-01,Programming,"software,craftsmanship",
 4,Darby,Darby,"bukunya darby",,"https://www.stempublishing.com/ebooks/J.%20N.%20Darby/JND%20-%20Apologetic%20%28169%29/JND%20-%20Apologetic%20-%20J.%20N.%20Darby.epub",en,,darby,buku,
 stempub,STEM Publishing Ebooks,STEM Publishing,Free Christian books from STEM Publishing,,,,,External,theology,https://www.stempublishing.com/ebooks/_catalog/index.xml
-gutenberg,Project Gutenberg,,-,Public domain books,,,,,External,classic,https://m.gutenberg.org/ebooks.opds/
+gutenberg,Project Gutenberg,,Public domain books,,,,,External,classic,https://m.gutenberg.org/ebooks.opds/
