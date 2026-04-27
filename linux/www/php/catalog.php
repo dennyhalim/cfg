@@ -4,7 +4,7 @@
 
 // === CONFIG ===
 define('SCRIPT_NAME', basename(__FILE__));
-define('CSV_URL', 'https://raw.githubusercontent.com/dennyhalim/cfg/refs/heads/master/books.csv');
+define('CSV_URL', 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTTcNN6fmETWj5DDNC-FGSkdmD-8jCspO1dbMTweH4OjUM8ofBCuUR0NA7VfyLJG8ho-hPp6aT_AJbb/pub?gid=0&single=true&output=csv');
 define('CSV_LOCAL', __DIR__. '/books.csv');
 define('CACHE_DIR', __DIR__. '/opds_cache/');
 define('CACHE_TTL', 3600);
