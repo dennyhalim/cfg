@@ -1,5 +1,5 @@
 <?php
-// catalog.php - OPDS v1.2 dengan external OPDS dari CSV - FIXED
+// catalog.php - OPDS v1.2 dengan external OPDS di bawah
 // CSV wajib ada kolom: id,title,author,summary,cover_url,download_url,language,published,category,tags,opds_url
 
 // === CONFIG ===
@@ -141,26 +141,8 @@ $xml->writeAttribute('rel', 'search');
 $xml->writeAttribute('type', 'application/atom+xml;profile=opds-catalog;kind=acquisition');
 $xml->endElement();
 
-// OPDS LINKS SELALU MUNCUL DI ATAS, MAU ROOT ATAU FILTER
-foreach ($opdsLinks as $link) {
-    $xml->startElement('entry');
-    $xml->writeElement('id', 'urn:external:'. md5($link['opds_url']));
-    $xml->writeElement('title', '📚 '. htmlspecialchars($link['title']));
-    $xml->writeElement('updated', $updated);
-    if(!empty($link['author'])) {
-        $xml->startElement('author'); $xml->writeElement('name', htmlspecialchars($link['author'])); $xml->endElement();
-    }
-    if(!empty($link['summary'])) $xml->writeElement('summary', htmlspecialchars($link['summary']));
-    $xml->startElement('link');
-    $xml->writeAttribute('href', htmlspecialchars($link['opds_url']));
-    $xml->writeAttribute('rel', 'subsection');
-    $xml->writeAttribute('type', 'application/atom+xml;profile=opds-catalog');
-    $xml->endElement();
-    $xml->endElement();
-}
-
 if (!$category &&!$tag &&!$query) {
-    // Kategori lokal
+    // 1. Kategori lokal
     foreach (array_keys($allCategories) as $cat) {
         $count = count(array_filter($books, fn($b)=>$b['category']===$cat));
         $xml->startElement('entry');
@@ -176,7 +158,7 @@ if (!$category &&!$tag &&!$query) {
         $xml->endElement();
     }
 
-    // Tags
+    // 2. Tags
     foreach (array_slice(array_keys($allTags), 0, 20) as $t) {
         $xml->startElement('link');
         $xml->writeAttribute('href', BASE_URL. '/'. SCRIPT_NAME. '?tag='. urlencode($t));
@@ -195,7 +177,7 @@ if (($query || $category || $tag) && empty($books) && empty($opdsLinks)) {
     $xml->endElement();
 }
 
-// BOOK ENTRIES
+// BOOK ENTRIES DULU
 foreach ($books as $book) {
     $id = htmlspecialchars($book['id']?? uniqid());
     $title = htmlspecialchars($book['title']?? 'Untitled');
@@ -238,6 +220,24 @@ foreach ($books as $book) {
         $xml->startElement('link'); $xml->writeAttribute('href', $download);
         $xml->writeAttribute('rel', 'http://opds-spec.org/acquisition'); $xml->writeAttribute('type', $type); $xml->endElement();
     }
+    $xml->endElement();
+}
+
+// OPDS LINKS PALING BAWAH
+foreach ($opdsLinks as $link) {
+    $xml->startElement('entry');
+    $xml->writeElement('id', 'urn:external:'. md5($link['opds_url']));
+    $xml->writeElement('title', '📚 '. htmlspecialchars($link['title']));
+    $xml->writeElement('updated', $updated);
+    if(!empty($link['author'])) {
+        $xml->startElement('author'); $xml->writeElement('name', htmlspecialchars($link['author'])); $xml->endElement();
+    }
+    if(!empty($link['summary'])) $xml->writeElement('summary', htmlspecialchars($link['summary']));
+    $xml->startElement('link');
+    $xml->writeAttribute('href', htmlspecialchars($link['opds_url']));
+    $xml->writeAttribute('rel', 'subsection');
+    $xml->writeAttribute('type', 'application/atom+xml;profile=opds-catalog');
+    $xml->endElement();
     $xml->endElement();
 }
 
