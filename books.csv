@@ -1,7 +1,7 @@
-id,title,author,summary,cover_url,download_url,language,published,category,tags
-1,The Hobbit,J.R.R. Tolkien,Bilbo Baggins adventure,https://covers.com/hobbit.jpg,https://files.com/hobbit.epub,en,1937-09-21,Fantasy,epic,dragons,hobbit
-2,1984,George Orwell,Dystopian novel,https://covers.com/1984.jpg,https://files.com/1984.epub,en,1949-06-08,Dystopia,political,classic
-3,Clean Code,Robert Martin,Programming,https://covers.com/clean.jpg,https://files.com/clean.pdf,en,2008-08-01,Programming,software,craftsmanship
-4,Darby,Darby,"bukunya darby",,"https://www.stempublishing.com/ebooks/J.%20N.%20Darby/JND%20-%20Apologetic%20%28169%29/JND%20-%20Apologetic%20-%20J.%20N.%20Darby.epub",en,,darby,buku
+id,title,author,summary,cover_url,download_url,language,published,category,tags,opds_url
+1,The Hobbit,J.R.R. Tolkien,Bilbo Baggins adventure,https://covers.com/hobbit.jpg,https://files.com/hobbit.epub,en,1937-09-21,Fantasy,"epic,dragons,hobbit",
+2,1984,George Orwell,Dystopian novel,https://covers.com/1984.jpg,https://files.com/1984.epub,en,1949-06-08,Dystopia,"political,classic",
+3,Clean Code,Robert Martin,Programming,https://covers.com/clean.jpg,https://files.com/clean.pdf,en,2008-08-01,Programming,"software,craftsmanship",
+4,Darby,Darby,"bukunya darby",,"https://www.stempublishing.com/ebooks/J.%20N.%20Darby/JND%20-%20Apologetic%20%28169%29/JND%20-%20Apologetic%20-%20J.%20N.%20Darby.epub",en,,darby,buku,
 stempub,STEM Publishing Ebooks,STEM Publishing,Free Christian books from STEM Publishing,,,,,External,theology,https://www.stempublishing.com/ebooks/_catalog/index.xml
-gutenberg,Project Gutenberg,,-,Public domain books,,,,External,classic,https://m.gutenberg.org/ebooks.opds/
+gutenberg,Project Gutenberg,,-,Public domain books,,,,,External,classic,https://m.gutenberg.org/ebooks.opds/
