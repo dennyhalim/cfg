@@ -1,0 +1,4 @@
+id,title,author,summary,cover_url,download_url,language,published,category,tags
+1,The Hobbit,J.R.R. Tolkien,Bilbo Baggins adventure,https://covers.com/hobbit.jpg,https://files.com/hobbit.epub,en,1937-09-21,Fantasy,epic,dragons,hobbit
+2,1984,George Orwell,Dystopian novel,https://covers.com/1984.jpg,https://files.com/1984.epub,en,1949-06-08,Dystopia,political,classic
+3,Clean Code,Robert Martin,Programming,https://covers.com/clean.jpg,https://files.com/clean.pdf,en,2008-08-01,Programming,software,craftsmanship
