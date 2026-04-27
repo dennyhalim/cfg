@@ -3,4 +3,4 @@ id,title,author,summary,cover_url,download_url,language,published,category,tags
 2,1984,George Orwell,Dystopian novel,https://covers.com/1984.jpg,https://files.com/1984.epub,en,1949-06-08,Dystopia,political,classic
 3,Clean Code,Robert Martin,Programming,https://covers.com/clean.jpg,https://files.com/clean.pdf,en,2008-08-01,Programming,software,craftsmanship
 4,Darby,Darby,"bukunya darby",,"https://www.stempublishing.com/ebooks/J.%20N.%20Darby/JND%20-%20Apologetic%20%28169%29/JND%20-%20Apologetic%20-%20J.%20N.%20Darby.epub",en,,darby,buku
-5.Stem Catalog,stempub,stem books,,,,,,,,https://www.stempublishing.com/ebooks/_catalog/index.xml
+5.Stem Catalog,stempub,stem books,,,,,,https://www.stempublishing.com/ebooks/_catalog/index.xml
