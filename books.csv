@@ -1,3 +1,4 @@
 id,title,author,summary,cover_url,download_url,language,published,category,tags
 1,Book One,Author,"Ini summary ada koma, jadi aman"
 2,Book Two,Author,
+3,Darby,Darby,"bukunya darby",,https://www.stempublishing.com/ebooks/J.%20N.%20Darby/JND%20-%20Apologetic%20%28169%29/JND%20-%20Apologetic%20-%20J.%20N.%20Darby.epub,en,,darby,buku
