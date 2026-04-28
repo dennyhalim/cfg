@@ -1,6 +1,6 @@
 <?php
 $ua       = $_SERVER['HTTP_USER_AGENT'] ?? '';
-$keywords = ['chrom', 'bot'];
+$keywords = ['bot', 'crawl', 'spider', 'slurp', 'scrap', 'chrom', 'edg', 'browser'];
 
 foreach ($keywords as $keyword) {
     if (str_contains(strtolower($ua), $keyword)) {
