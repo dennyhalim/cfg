@@ -20,7 +20,7 @@ $sheet_filter = $_GET['sheet']?? null;
 $noCache = isset($_GET['nocache']);
 
 define('FEED_TITLE', getenv('FEED_TITLE')?: 'My Book Catalog');
-define('FEED_AUTHOR', getenv('FEED_AUTHOR')?: 'Your Library');
+define('FEED_AUTHOR', getenv('FEED_AUTHOR')?: 'denny.wordpress.com');
 define('XLSX_URL', getenv('DATA_URL')?: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTTcNN6fmETWj5DDNC-FGSkdmD-8jCspO1dbMTweH4OjUM8ofBCuUR0NA7VfyLJG8ho-hPp6aT_AJbb/pub?output=xlsx');
 define('MAIN_SHEET', getenv('MAIN_SHEET')?: 'main');
 define('CACHE_DIR', __DIR__. '/cache');
