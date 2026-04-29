@@ -35,7 +35,7 @@ Windows Registry Editor Version 5.00
 "UrlKeyedAnonymizedDataCollectionEnabled"=dword:00000000
 "WebRtcEventLogCollectionAllowed"=dword:00000000
 "NetworkPredictionOptions"=dword:00000002
-"DeveloperToolsAvailability"=dword:00000002
+;"DeveloperToolsAvailability"=dword:00000002
 "BrowserGuestModeEnabled"=dword:00000000
 "ImportAutofillFormData"=dword:00000000
 "SafeBrowsingProtectionLevel"=dword:00000001
