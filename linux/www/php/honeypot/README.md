@@ -11,7 +11,7 @@ fake contact form.
 
 add (tiny/hidden) links to this php in all your webpages footer to fish for bots.
 
-    <a hidden href="/contactsus.php" style="display: none;">.</a>   
+    <a hidden href="/contactsus.php" style="display: none;height: 0px;width: 0px;overflow:hidden;">.</a>   
 
 nginx server, add this one line to your server config then reload
 
