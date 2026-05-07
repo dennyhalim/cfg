@@ -2,10 +2,10 @@ real contact form
 
     curl -o contact.php https://raw.githubusercontent.com/dennyhalim/cfg/refs/heads/master/linux/www/php/honeypot/real-contact-pot.php
 
-edit put your email address
+edit and replace with your email address
 
 
-fake contact form
+fake contact form. add (tiny/hidden) links to this php in all your webpages footer to fish for bots.
 
     curl -o contactsus.php https://raw.githubusercontent.com/dennyhalim/cfg/refs/heads/master/linux/www/php/honeypot/fake-contact.php
 
