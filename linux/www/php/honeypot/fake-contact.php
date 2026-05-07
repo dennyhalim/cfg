@@ -43,7 +43,6 @@ function writeLog(string $level, string $tag, string $ip, string $reason, array 
     );
 
     file_put_contents($log_file, $log, FILE_APPEND | LOCK_EX);
-    sleep(9);
 }
 
 // ── Block IP ───────────────────────────────────────────────────────────────
@@ -68,6 +67,7 @@ function blockIP(string $ip): void
 if (in_array($ip, $blockedIPs, true)) {
     writeLog('WARNING', 'honeypot', $ip, 'already banned access attempt');
     http_response_code(403);
+    sleep(9);
     header('Connection: close');
     exit('Access denied.');
 }
@@ -101,6 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         writeLog('WARNING', 'honeypot', $ip, $reason);
         blockIP($ip);
         http_response_code(403);
+        sleep(9);
         header('Connection: close');
         exit('Access denied.');
     }
