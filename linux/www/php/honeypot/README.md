@@ -5,10 +5,13 @@ real contact form
 edit and replace with your email address
 
 
-fake contact form. add (tiny/hidden) links to this php in all your webpages footer to fish for bots.
+fake contact form. 
 
     curl -o contactsus.php https://raw.githubusercontent.com/dennyhalim/cfg/refs/heads/master/linux/www/php/honeypot/fake-contact.php
 
+add (tiny/hidden) links to this php in all your webpages footer to fish for bots.
+
+    <a hidden href="/contactsus.php" style="display: none;">.</a>   
 
 nginx server, add this one line to your server config then reload
 
