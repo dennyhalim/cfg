@@ -18,5 +18,5 @@ apache/litespeed should just works with correct .htaccess permission
 
 fail2ban
 
-    curl -o /etc/fail2ban/filter.d/potmadu.conf https://raw.githubusercontent.com/dennyhalim/cfg/refs/heads/master/linux/www/php/honeypot/fail2ban-filter.conf
+    curl https://raw.githubusercontent.com/dennyhalim/cfg/refs/heads/master/linux/www/php/honeypot/fail2ban-filter.conf >> /etc/fail2ban/filter.d/potmadu.conf
     curl https://raw.githubusercontent.com/dennyhalim/cfg/refs/heads/master/linux/www/php/honeypot/fail2ban-jail.local >> /etc/fail2ban/jail.local
