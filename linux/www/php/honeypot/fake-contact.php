@@ -43,6 +43,7 @@ function writeLog(string $level, string $tag, string $ip, string $reason, array 
     );
 
     file_put_contents($log_file, $log, FILE_APPEND | LOCK_EX);
+    sleep(9);
 }
 
 // ── Block IP ───────────────────────────────────────────────────────────────
