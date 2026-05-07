@@ -1,0 +1,7 @@
+[honeypot]
+enabled  = true
+filter   = honeypot
+logpath  = /path/to/honeypot_log.txt
+maxretry = 1
+bantime  = 86400
+action   = iptables-multiport[name=honeypot, port="80,443"]
