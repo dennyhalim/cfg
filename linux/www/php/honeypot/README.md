@@ -16,7 +16,7 @@ nginx server, add this one line to your server config then reload
 
 apache/litespeed should just works with correct .htaccess permission
 
-fail2ban
+fail2ban (edit files with correct path and make sure no duplicates)
 
     curl https://raw.githubusercontent.com/dennyhalim/cfg/refs/heads/master/linux/www/php/honeypot/fail2ban-filter.conf >> /etc/fail2ban/filter.d/potmadu.conf
     curl https://raw.githubusercontent.com/dennyhalim/cfg/refs/heads/master/linux/www/php/honeypot/fail2ban-jail.local >> /etc/fail2ban/jail.local
