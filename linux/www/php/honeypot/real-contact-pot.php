@@ -3,8 +3,8 @@
 session_start();
 
 // ── Email config ───────────────────────────────────────────────────────────
-define('MAIL_TO',      'you@yourdomain.com');
-define('MAIL_FROM',    'noreply@yourdomain.com');
+define('MAIL_TO',      'you@dennyhalim.com');
+define('MAIL_FROM',    'noreply@dennyhalim.com');
 define('MAIL_SUBJECT', 'New contact form submission');
 
 $blocked_file  = 'blocked_ips.txt';
