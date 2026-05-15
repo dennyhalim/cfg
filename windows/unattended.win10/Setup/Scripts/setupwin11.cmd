@@ -191,7 +191,10 @@ Windows Registry Editor Version 5.00
 [-HKEY_CLASSES_ROOT\search-ms]
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WinRM\Client]
 "AllowDigest"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer]
+"NoAutoplayfornonVolume"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoAutorun"=dword:00000001
 "NoDriveTypeAutoRun"=dword:000000ff
-[HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\Windows\\CurrentVersion\\Internet Settings]
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings]
 "SecureProtocols"=dword:00000a00
