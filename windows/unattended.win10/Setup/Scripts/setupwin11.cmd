@@ -55,6 +55,9 @@ Windows Registry Editor Version 5.00
 "AllowRecallEnablement"=dword:00000000
 "DisableAIDataAnalysis"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceGuard]
+"LsaCfgFlags"=dword:00000001
+
 ;chrome
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Update]
 "RollbackToTargetVersion"=dword:00000001
@@ -116,7 +119,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "HideFileExt"=dword:00000000
 
-[HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
 ;"DisableExceptionChainValidation"=dword:00000000
 
 ;SAMBA
