@@ -97,9 +97,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings]
 "*"="{\"blocked_permissions\":[\"clipboardRead\",\"background\",\"sessions\",\"management\",\"vpnProvider\",\"proxy\",\"webAuthenticationProxy\",\"pageCapture\",\"tabCapture\",\"debugger\",\"experimental\"]}"
 ;[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist]
-;"901"="pdffhmdngciaglkoonimfcmckehcpafo"
-;"902"="jlpdpddffjddlfdbllimedpemaodbjgn"
-;"903"="jccfboncbdccgbgcbhickioeailgpkgb"
+"901"="jlpdpddffjddlfdbllimedpemaodbjgn"
+"902"="pdffhmdngciaglkoonimfcmckehcpafo"
+"903"="jccfboncbdccgbgcbhickioeailgpkgb"
 ;from chromestore "904"="hielpjjagjimpgppnopiibaefhfpbpfn;https://clients2.google.com/service/update2/crx"
 
 ;background
