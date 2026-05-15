@@ -116,6 +116,9 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "HideFileExt"=dword:00000000
 
+[HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
+;"DisableExceptionChainValidation"=dword:00000000
+
 ;SAMBA
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer]
 "Start"=dword:00000004
