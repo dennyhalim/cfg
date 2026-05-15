@@ -1,6 +1,7 @@
 Windows Registry Editor Version 5.00
 ;REAGENTC.EXE /enable
 ;REG.EXE import "%~f0"
+;net.exe accounts /minpwlen:14
 ;sc.exe config tapisrv start= demand
 ;sc.exe config winrm start= demand
 ;sc.exe config netbt start= disabled
