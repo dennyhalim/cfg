@@ -55,6 +55,9 @@ Windows Registry Editor Version 5.00
 "AllowRecallEnablement"=dword:00000000
 "DisableAIDataAnalysis"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services]
+"fAllowToGetHelp"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceGuard]
 ;"LsaCfgFlags"=dword:00000001
 
