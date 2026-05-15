@@ -10,7 +10,7 @@ Windows Registry Editor Version 5.00
 ;sc.exe config lanmanserver start= disabled
 ;sc.exe config DiagTrack start= disabled
 ;sc.exe config dmwappushservice start= disabled
-;sc.exe config WinHttpAutoProxySvc start= disabled
+;rem sc.exe config WinHttpAutoProxySvc start= disabled
 ;rem cis1
 ;sc.exe config upnphost start= disabled
 ;sc.exe config ssdpsrv start= disabled
