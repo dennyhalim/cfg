@@ -56,7 +56,7 @@ Windows Registry Editor Version 5.00
 "DisableAIDataAnalysis"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceGuard]
-"LsaCfgFlags"=dword:00000001
+;"LsaCfgFlags"=dword:00000001
 
 ;chrome
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Update]
