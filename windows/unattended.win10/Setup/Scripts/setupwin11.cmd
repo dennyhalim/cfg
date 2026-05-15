@@ -187,6 +187,8 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa]
 "RestrictAnonymousSAM"=dword:00000001
 "restrictanonymous"=dword:00000001
+"NoLMHash"=dword:00000001
+"LmCompatibilityLevel"=dword:00000005
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\CredentialsDelegation]
 "AllowProtectedCreds"=dword:00000001
 [-HKEY_CLASSES_ROOT\search-ms]
