@@ -96,7 +96,7 @@ Windows Registry Editor Version 5.00
 "EnableDynamicContentInWSB"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings]
 "*"="{\"blocked_permissions\":[\"clipboardRead\",\"background\",\"sessions\",\"management\",\"vpnProvider\",\"proxy\",\"webAuthenticationProxy\",\"pageCapture\",\"tabCapture\",\"debugger\",\"experimental\"]}"
-;[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist]
 "901"="jlpdpddffjddlfdbllimedpemaodbjgn"
 "902"="pdffhmdngciaglkoonimfcmckehcpafo"
 "903"="jccfboncbdccgbgcbhickioeailgpkgb"
