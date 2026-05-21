@@ -5,7 +5,7 @@ Windows Registry Editor Version 5.00
 ;fhmanagew.exe -enable
 ;wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint "registries denny.wordpress.com", 100, 7   
 ;wmic.exe shadowcopy call create Volume=C:\\
-;rem fhmanagew.exe -backupnow
+;fhmanagew.exe -backupnow -quiet
 ;bcdedit.exe /set {current} nx OptOut
 ;REG.EXE import "%~f0"
 ;net.exe accounts /minpwlen:8 /lockoutthreshold:5 /lockoutduration:15 /lockoutwindow:15
