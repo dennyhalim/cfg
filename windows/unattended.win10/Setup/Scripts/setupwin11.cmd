@@ -1,5 +1,6 @@
 Windows Registry Editor Version 5.00
 ;REAGENTC.EXE /enable
+;wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint "installer denny.wordpress.com", 100, 7   
 ;wmic.exe shadowcopy call create Volume=C:\\
 ;bcdedit.exe /set {current} nx OptOut
 ;REG.EXE import "%~f0"
