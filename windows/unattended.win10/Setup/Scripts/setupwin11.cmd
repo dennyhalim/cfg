@@ -1,5 +1,6 @@
 Windows Registry Editor Version 5.00
 ;REAGENTC.EXE /enable
+;wmic.exe shadowcopy call create Volume=C:\\
 ;bcdedit.exe /set {current} nx OptOut
 ;REG.EXE import "%~f0"
 ;net.exe accounts /minpwlen:8 /lockoutthreshold:5 /lockoutduration:15 /lockoutwindow:15
