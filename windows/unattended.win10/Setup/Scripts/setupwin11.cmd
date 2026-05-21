@@ -1,10 +1,10 @@
 Windows Registry Editor Version 5.00
 ;REAGENTC.EXE /enable
 ;sc.exe start fhsvc
-;wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint "registries denny.wordpress.com", 100, 7   
-;wmic.exe shadowcopy call create Volume=C:\\
 ;rem fhmanagew.exe -target d:
 ;fhmanagew.exe -enable
+;wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint "registries denny.wordpress.com", 100, 7   
+;wmic.exe shadowcopy call create Volume=C:\\
 ;fhmanagew.exe -backupnow
 ;bcdedit.exe /set {current} nx OptOut
 ;REG.EXE import "%~f0"
