@@ -6,12 +6,12 @@ header("Location: $redirto");
 <base target="_top">
 <!-- dennyhalim.com html redirects -->
 <!-- use meta refresh -->
-<meta http-equiv="refresh" content="1;url=<?php echo $redirto ?>">
+<meta http-equiv="refresh" content="1;url=<?php echo $redirto; ?>">
 <!-- use javascript -->
-<script type="text/javascript"> top.location="<?php echo $redirto ?>"; </script>
+<script type="text/javascript"> top.location="<?php echo $redirto; ?>"; </script>
 </head>
 <body>
 <!-- use iframe -->
-<iframe src="<?php echo $redirto ?>" style="width:100%; height:100%; border:0" scrolling="yes" ></iframe>
+<iframe src="<?php echo $redirto; ?>" style="width:100%; height:100%; border:0" scrolling="yes" ></iframe>
 </body>
 </html>
