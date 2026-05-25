@@ -1,6 +1,7 @@
-<?php 
+<?php
 $redirto = 'http://it.dennyhalim.com/?utm_source=old.dennyhalim.com';
-header("Location: $redirto"); ?>
+header("Location: $redirto");
+?>
 <html><head>
 <base target="_top">
 <!-- dennyhalim.com html redirects -->
