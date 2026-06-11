@@ -28,7 +28,7 @@ function isFirefox(string $ua): bool
     $uaLower = strtolower($ua);
 
     // must not contain these (case-insensitive)
-    foreach (['bot', 'crawl', 'scan', 'spider', 'slurp', 'scrap', 'chrom', 'edg', 'browser'] as $keyword) {
+    foreach (['bot', 'crawl', 'scan', 'spider', 'slurp', 'scrap', 'nikto', 'sqlmap', 'chrom', 'edg', 'browser'] as $keyword) {
         if (str_contains($uaLower, $keyword)) {
             return false;
         }
