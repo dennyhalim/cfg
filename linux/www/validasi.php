@@ -1,7 +1,7 @@
 <?php
 /**
 * browsers validations
-*
+* warning: this will BLOCK most chrome-based browsers
 */
 $proxyKeywords = ['HTTP_SEC_CH_UA', 'PROXY', 'CLIENT_IP', 'FORWARD'];
 
