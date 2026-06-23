@@ -1,5 +1,5 @@
 <?php
-$redirto = 'http://it.dennyhalim.com/?utm_source=denny.wordpress.com';
+$redirto = 'https://dennyhalim.blogspot.com/?utm_source=denny.wordpress.com';
 header("Location: $redirto");
 ?>
 <html><head>
@@ -10,7 +10,7 @@ header("Location: $redirto");
 <!-- use javascript -->
 <script type="text/javascript"> top.location="<?php echo $redirto; ?>"; </script>
 </head>
-<body>
+<body id="denny.wordpress.com">
 <!-- use iframe -->
 <iframe src="<?php echo $redirto; ?>" style="width:100%; height:100%; border:0" scrolling="yes" ></iframe>
 </body>
