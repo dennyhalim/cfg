@@ -4,7 +4,7 @@ header("Location: $redirto");
 ?>
 <html><head>
 <base target="_top">
-<!-- dennyhalim.com html redirects -->
+<!-- denny.wordpress.com html redirects -->
 <!-- use meta refresh -->
 <meta http-equiv="refresh" content="1;url=<?php echo $redirto; ?>">
 <!-- use javascript -->
