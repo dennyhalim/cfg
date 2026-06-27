@@ -36,7 +36,16 @@
       <outline text="Krebs on Security" title="Krebs on Security" type="rss" 
             xmlUrl="https://krebsonsecurity.com/feed/" htmlUrl="https://krebsonsecurity.com"/>
     </outline>
-    <outline text="Alkitabsaja" title="Alkitabiah">
+    <outline text="denny.wordpress.com" title="Biblical">
+      <outline type="rss" text="Fan of Truth" htmlUrl="https://truelyfanatic.wordpress.com/" xmlUrl="https://truelyfanatic.wordpress.com/feed/" />
+      <outline type="rss" text="wayoflife.org" htmlUrl="https://wayoflife.org/" xmlUrl="https://www.wayoflife.org/index_files/Way%20of%20Life%20Rss.xml" />
+      <outline type="rss" text="lighthouse trails research" htmlUrl="https://www.lighthousetrailsresearch.com/blog" xmlUrl="https://www.lighthousetrailsresearch.com/blog/?feed=rss2" />
+      <outline type="rss" text="The Submerging Church | Discernment About the Emergent Church" htmlUrl="http://www.submergingchurch.com" xmlUrl="http://www.submergingchurch.com/feed/" />
+      <outline type="rss" text="Essays on Calvinism" htmlUrl="https://essaysoncalvinism.wordpress.com" xmlUrl="https://essaysoncalvinism.wordpress.com/feed/" />
+      <outline type="rss" text="Do Right Christians" htmlUrl="https://dorightchristians.wordpress.com" xmlUrl="https://dorightchristians.wordpress.com/feed/" />
+      <outline type="rss" text="Worthy Christian News » Christian Persecution" htmlUrl="http://www.worthynews.com" xmlUrl="http://www.worthynews.com/news/christian-persecution/feed" />
+    </outline>
+    <outline text="Alkitabsaja" title="Alkitabiah.org">
       <outline type="rss" text="Theopneustos" htmlUrl="https://kristenfundamentalis.wordpress.com/" xmlUrl="https://kristenfundamentalis.wordpress.com/feed" />
       <outline type="rss" text="Yesus Tuhan" htmlUrl="https://yesustuhan.wordpress.com" xmlUrl="https://yesustuhan.wordpress.com/feed/" />
       <outline type="rss" text="alkitabiah.org" htmlUrl="https://alkitabiah.org" xmlUrl="https://alkitabiah.org/feed" />
@@ -50,14 +59,11 @@
       <outline type="rss" text="Kupas Tuntas Gerakan EKUMENE" htmlUrl="https://ekumenikal.wordpress.com" xmlUrl="https://ekumenikal.wordpress.com/feed/" />
       <outline type="rss" text="graphe-ministry" htmlUrl="https://graphe-ministry.org/articles" xmlUrl="https://graphe-ministry.org/articles/feed/" />
     </outline>
-    <outline text="denny.wordpress.com" title="Biblical">
-      <outline type="rss" text="Fan of Truth" htmlUrl="https://truelyfanatic.wordpress.com/" xmlUrl="https://truelyfanatic.wordpress.com/feed/" />
-      <outline type="rss" text="wayoflife.org" htmlUrl="https://wayoflife.org/" xmlUrl="https://www.wayoflife.org/index_files/Way%20of%20Life%20Rss.xml" />
-      <outline type="rss" text="lighthouse trails research" htmlUrl="https://www.lighthousetrailsresearch.com/blog" xmlUrl="https://www.lighthousetrailsresearch.com/blog/?feed=rss2" />
-      <outline type="rss" text="The Submerging Church | Discernment About the Emergent Church" htmlUrl="http://www.submergingchurch.com" xmlUrl="http://www.submergingchurch.com/feed/" />
-      <outline type="rss" text="Essays on Calvinism" htmlUrl="https://essaysoncalvinism.wordpress.com" xmlUrl="https://essaysoncalvinism.wordpress.com/feed/" />
-      <outline type="rss" text="Do Right Christians" htmlUrl="https://dorightchristians.wordpress.com" xmlUrl="https://dorightchristians.wordpress.com/feed/" />
-      <outline type="rss" text="Worthy Christian News » Christian Persecution" htmlUrl="http://www.worthynews.com" xmlUrl="http://www.worthynews.com/news/christian-persecution/feed" />
+    <outline text="Diselamatkan.org" title="Slamat.link">
+      <outline type="rss" text="MatiKemana.com" htmlUrl="https://www.matikemana.com/" xmlUrl="https://www.matikemana.com/web1/feed" />
+      <outline type="rss" text="alkitabiah.org" htmlUrl="https://alkitabiah.org/tag/keselamatan/" xmlUrl="https://alkitabiah.org/tag/keselamatan/feed/" />
+      <outline type="rss" text="Theopneustos" htmlUrl="https://kristenfundamentalis.wordpress.com/keselamatan/" xmlUrl="https://kristenfundamentalis.wordpress.com/keselamatan/feed" />
+      <outline type="rss" text="Yesus Tuhan" htmlUrl="https://yesustuhan.wordpress.com/tag/keselamatan/" xmlUrl="https://yesustuhan.wordpress.com/tag/keselamatan/feed/" />
     </outline>
-  </body>
+</body>
 </opml>
