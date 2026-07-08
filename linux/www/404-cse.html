@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Page Not Found</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+<style>
+:root {
+    color-scheme: light;
+}
+main {
+    max-width: 960px;
+    margin: 2rem auto;
+}
+#search-form {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+#query {
+    flex: 1;
+    width: auto;
+    margin: 0;
+}
+#search-form button {
+    flex: 0 0 auto;
+    width: auto;
+    margin: 0;
+}
+.gsc-control-cse,
+.gsc-control-searchresults-only {
+    border: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+.gsc-results-wrapper-visible {
+    margin-top: 1rem;
+}
+</style>
+<script>
+window.__gcse = {
+    parsetags: "onload",
+    callback: function () {
+        window.__gcseReady = true;
+        if (typeof window.__runInitialSearch === "function") {
+            window.__runInitialSearch();
+        }
+    }
+};
+</script>
+<script async src="https://cse.google.com/cse.js?cx=5685a8e38f5c34608"></script>
+</head>
+<body id="dennyhalim.github.io">
+<main class="container">
+<h1>Page not found</h1>
+<p>The page doesn't exist. Try searching instead.</p>
+<form id="search-form">
+    <input
+        id="query"
+        type="search"
+        placeholder="Search this site..."
+        autocomplete="off">
+    <button type="submit">Search</button>
+</form>
+<div class="gcse-searchresults-only" data-gname="searchresults"></div>
+</main>
+<script>
+(() => {
+const input = document.getElementById("query");
+const form = document.getElementById("search-form");
+const { hostname, pathname, search, hash } = location;
+let query = pathname
+    .replace(/\.[a-z0-9]+$/i, "")
+    .replace(/^\/+|\/+$/g, "")
+    .replace(/[-_/]+/g, " ");
+if (search) {
+    query += " " + decodeURIComponent(search.slice(1))
+        .replace(/[=&+]/g, " ");
+}
+if (hash) {
+    query += " " + decodeURIComponent(hash.slice(1))
+        .replace(/[-_/]+/g, " ");
+}
+query = query
+    .replace(/\s+/g, " ")
+    .trim();
+input.value = query;
+function searchSite(text) {
+//    const q = `site:${hostname} ${text}`.trim(); //site search
+    const q = `${text}`.trim();
+    const run = () => {
+        const element = google?.search?.cse?.element?.getElement("searchresults");
+        if (!element)
+            return false;
+        element.execute(q);
+        return true;
+    };
+    if (!run()) {
+        const timer = setInterval(() => {
+            if (run())
+                clearInterval(timer);
+        }, 100);
+    }
+}
+form.addEventListener("submit", e => {
+    e.preventDefault();
+    const q = input.value.trim();
+    if (q)
+        searchSite(q);
+});
+
+// Live search as you type, debounced so it doesn't fire on every keystroke
+let debounceTimer;
+input.addEventListener("input", () => {
+    clearTimeout(debounceTimer);
+    const q = input.value.trim();
+    if (!q) return;
+    debounceTimer = setTimeout(() => searchSite(q), 400);
+});
+
+// Run the initial search right away; searchSite() itself polls until
+// the CSE widget is ready, so this shows results on load with no click.
+window.__runInitialSearch = () => searchSite(query);
+searchSite(query);
+})();
+</script>
+</body>
+</html>
