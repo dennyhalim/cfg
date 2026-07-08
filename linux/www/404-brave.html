@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Page Not Found</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+<style>
+:root { color-scheme: light; }
+main { max-width: 960px; margin: 2rem auto; }
+#search-form {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+#query { flex: 1; width: auto; margin: 0; }
+#search-form button { flex: 0 0 auto; width: auto; margin: 0; }
+#popup-notice { display: none; }
+</style>
+</head>
+<body>
+<main class="container">
+<h1>Page not found</h1>
+<p>The page doesn't exist. Try searching instead.</p>
+<form id="search-form">
+    <input id="query" type="search" placeholder="Search this site..." autocomplete="off">
+    <button type="submit">Search</button>
+</form>
+<p id="popup-notice">
+    Your browser blocked the automatic popup.
+    <a id="manual-link" href="#" target="_blank" rel="noopener">Click here to search</a> instead.
+</p>
+</main>
+<script>
+(() => {
+const input = document.getElementById("query");
+const form = document.getElementById("search-form");
+const popupNotice = document.getElementById("popup-notice");
+const manualLink = document.getElementById("manual-link");
+const { hostname, pathname, search, hash } = location;
+
+let query = pathname
+    .replace(/\.[a-z0-9]+$/i, "")
+    .replace(/^\/+|\/+$/g, "")
+    .replace(/[-_/]+/g, " ");
+if (search) {
+    query += " " + decodeURIComponent(search.slice(1)).replace(/[=&+]/g, " ");
+}
+if (hash) {
+    query += " " + decodeURIComponent(hash.slice(1)).replace(/[-_/]+/g, " ");
+}
+query = query.replace(/\s+/g, " ").trim();
+input.value = query;
+
+function braveSearch(text) {
+    const q = `site:${hostname} ${text}`.trim();
+    const url = "https://search.brave.com/search?q=" + encodeURIComponent(q);
+    const win = window.open(url, "_blank", "noopener");
+    if (!win) {
+        // Popup was blocked (common for auto-opened tabs on page load)
+        manualLink.href = url;
+        popupNotice.style.display = "block";
+    }
+    return url;
+}
+
+form.addEventListener("submit", e => {
+    e.preventDefault();
+    const q = input.value.trim();
+    if (q) braveSearch(q);
+});
+
+// Attempt to open a new tab immediately on load.
+// Note: most browsers block popups that aren't triggered by a direct
+// user action (click/tap), so this auto-open may be blocked — the
+// fallback link below covers that case.
+if (query) braveSearch(query);
+})();
+</script>
+</body>
+</html>
