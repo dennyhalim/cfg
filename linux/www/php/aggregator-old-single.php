@@ -280,7 +280,7 @@ function output_html(array $items, array $feeds): void {
   @media (max-width: 640px) { .layout { flex-direction: column; } aside { width: 100%; } }
 </style>
 </head>
-<body>
+<body id="dennyhalim.github.io">
 <header>
   <h1>📰 <?= htmlspecialchars(FEED_TITLE) ?></h1>
   <a href="<?= $rss_url ?>">🔗 RSS Feed</a>
@@ -335,9 +335,11 @@ document.querySelectorAll('.card').forEach(card => {
 </script>
   </main>
 </div>
+<script>window.goatcounter={path:function(p){return location.host+p}}</script>
+<script data-goatcounter="https://mypolaris.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
-denny.wordpress.com
 <?php
 }
 
