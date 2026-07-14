@@ -9,6 +9,7 @@ if (!isset($params['utm_source'])) {
 }
 $redirto = $urlto . '?' . http_build_query($params);
 header("Location: $redirto");
+header("Refresh: 0;url=$redirto");
 ?>
 <html><head>
 <base target="_top">
