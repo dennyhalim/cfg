@@ -1,5 +1,9 @@
 <?php
-$redirto = 'https://dennyhalim.blogspot.com/?' . $_SERVER['QUERY_STRING'];
+$params = $_GET;
+if (!isset($params['utm_source'])) {
+    $params['utm_source'] = 'denny.wordpress.com';
+}
+$redirto = 'https://dennyhalim.blogspot.com/?' . http_build_query($params);
 header("Location: $redirto");
 ?>
 <html><head>
