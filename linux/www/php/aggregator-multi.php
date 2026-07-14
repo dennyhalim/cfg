@@ -399,7 +399,9 @@ document.querySelectorAll('.card').forEach(card => {
 </script>
   </main>
 </div>
-denny.wordpress.com
+<script>window.goatcounter={path:function(p){return location.host+p}}</script>
+<script data-goatcounter="https://mypolaris.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
 <?php
