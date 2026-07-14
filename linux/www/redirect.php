@@ -1,9 +1,13 @@
 <?php
+// just change this urlto to your new web, 
+// include a trailing slash if it's not ended with extension like php/html
+$urlto = 'https://dennyhalim.blogspot.com/';
+// just save and it will work, no need to change anything elses
 $params = $_GET;
 if (!isset($params['utm_source'])) {
     $params['utm_source'] = 'denny.wordpress.com';
 }
-$redirto = 'https://dennyhalim.blogspot.com/?' . http_build_query($params);
+$redirto = $urlto . '?' . http_build_query($params);
 header("Location: $redirto");
 ?>
 <html><head>
