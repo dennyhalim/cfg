@@ -1,5 +1,5 @@
 <?php
-$redirto = 'https://dennyhalim.blogspot.com/?utm_source=denny.wordpress.com';
+$redirto = 'https://dennyhalim.blogspot.com/?' . $_SERVER['QUERY_STRING'];
 header("Location: $redirto");
 ?>
 <html><head>
