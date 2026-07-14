@@ -20,5 +20,6 @@ header("Location: $redirto");
 <body id="denny.wordpress.com">
 <!-- use iframe -->
 <iframe src="<?php echo $redirto; ?>" style="width:100%; height:100%; border:0" scrolling="yes" ></iframe>
+<a href="https://mypolaris.com">Redirected by Polaris Network Tools</a>
 </body>
 </html>
