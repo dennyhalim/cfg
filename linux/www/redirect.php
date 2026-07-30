@@ -27,5 +27,8 @@ header("phpredirect-by: mypolaris.com");
 <!-- use iframe -->
 <iframe src="<?php echo $redirto; ?>" style="width:100%; height:100%; border:0" scrolling="yes" ></iframe>
 <a href="https://mypolaris.com">PHP Redirect by Polaris Network Tools</a>
+<script>window.goatcounter={path:function(p){return location.host+p}}</script>
+<script data-goatcounter="https://mypolaris.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<p><small><a href="https://mypolaris.com">Free Polaris Network Tools</a></small></p>
 </body>
 </html>
