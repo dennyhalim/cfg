@@ -6,6 +6,17 @@
 //    'HTTP_X_FORWARDED_FOR',
 //    'HTTP_X_REAL_IP',
 
+// this one shorter
+<?php
+foreach ($_SERVER as $k => $v) {
+    if (preg_match('/proxy|remote|client_ip/i', $k . $v)) {
+        http_response_code(403);
+        exit('Blocked');
+    }
+}
+
+
+// this use function
 $proxyKeywords = ['PROXY', 'REMOTE', 'CLIENT_IP'];
 
 function hasProxyHeaders(array $keywords): bool
