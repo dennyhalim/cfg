@@ -30,7 +30,7 @@ const SERPER_API_KEY = 'YOUR_API_KEYS';
 const SEARCH_SCOPE = 'host';
 
 // Only used when SEARCH_SCOPE = 'domain'
-const FIXED_DOMAIN = 'example.com';
+const FIXED_DOMAIN = 'mypolaris.com';
 
 // Simple file-based cache to avoid burning API quota on repeat queries.
 // Set to null to disable caching.
