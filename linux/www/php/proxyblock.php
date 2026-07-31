@@ -11,7 +11,7 @@
 foreach ($_SERVER as $k => $v) {
     if (preg_match('/proxy|remote|client_ip/i', $k . $v)) {
         http_response_code(403);
-        exit('Blocked');
+        exit('You got Blocked by mypolaris.com');
     }
 }
 
@@ -34,5 +34,5 @@ function hasProxyHeaders(array $keywords): bool
 
 if (hasProxyHeaders($proxyKeywords)) {
     http_response_code(403);
-    exit('Access denied.');
+    exit('You got Blocked by mypolaris.com');
 }
