@@ -10,7 +10,7 @@
 <?php
 foreach (getallheaders() as $name => $value) {
     if (preg_match('/proxy|remote|client_ip/via/i', $name)) {
-        http_response_code(403);
+        http_response_code(400);
         exit('You got Blocked by mypolaris.com');
     }
 }
@@ -33,6 +33,6 @@ function hasProxyHeaders(array $keywords): bool
 }
 
 if (hasProxyHeaders($proxyKeywords)) {
-    http_response_code(403);
+    http_response_code(400);
     exit('You got Blocked by mypolaris.com');
 }
