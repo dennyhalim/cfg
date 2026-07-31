@@ -8,8 +8,8 @@
 
 // this one shorter
 <?php
-foreach ($_SERVER as $k => $v) {
-    if (preg_match('/proxy|remote|client_ip/i', $k . $v)) {
+foreach (getallheaders() as $name => $value) {
+    if (preg_match('/proxy|remote|client_ip/i', $name)) {
         http_response_code(403);
         exit('You got Blocked by mypolaris.com');
     }
