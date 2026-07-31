@@ -9,7 +9,7 @@
 // this one shorter
 <?php
 foreach (getallheaders() as $name => $value) {
-    if (preg_match('/proxy|remote|client_ip/i', $name)) {
+    if (preg_match('/proxy|remote|client_ip/via/i', $name)) {
         http_response_code(403);
         exit('You got Blocked by mypolaris.com');
     }
@@ -17,7 +17,7 @@ foreach (getallheaders() as $name => $value) {
 
 
 // this use function
-$proxyKeywords = ['PROXY', 'REMOTE', 'CLIENT_IP'];
+$proxyKeywords = ['PROXY', 'REMOTE', 'CLIENT_IP', 'VIA'];
 
 function hasProxyHeaders(array $keywords): bool
 {
