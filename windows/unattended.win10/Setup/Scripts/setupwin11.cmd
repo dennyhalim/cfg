@@ -115,7 +115,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
 "GlobalUserDisabled"=dword:00000001
 [HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
-"GlobalUserDisabled"=dword:00000000
+"GlobalUserDisabled"=dword:00000001
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
 "GlobalUserDisabled"=dword:00000001
 [HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Search]
