@@ -48,13 +48,13 @@ Windows Registry Editor Version 5.00
 "TargetReleaseVersionInfo"="24H2"
 "TargetReleaseVersion"=dword:00000001
 "BranchReadinessLevel"=dword:00000020
-"DeferQualityUpdates"=dword:00000001
-"DeferQualityUpdatesPeriodInDays"=dword:0000000b
-"DeferUpgrade"=dword:00000001
-"DeferUpgradePeriod"=dword:00000008
-"DeferFeatureUpdates"=dword:00000001
-"DeferFeatureUpdatesPeriodInDays"=dword:000000b4
-"DeferUpdatePeriod"=dword:00000002
+;"DeferQualityUpdates"=dword:00000001
+;"DeferQualityUpdatesPeriodInDays"=dword:0000000b
+;"DeferUpgrade"=dword:00000001
+;"DeferUpgradePeriod"=dword:00000008
+;"DeferFeatureUpdates"=dword:00000001
+;"DeferFeatureUpdatesPeriodInDays"=dword:000000b4
+;"DeferUpdatePeriod"=dword:00000002
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
 "ScheduledInstallDay"=dword:00000001
 
