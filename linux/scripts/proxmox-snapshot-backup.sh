@@ -27,7 +27,7 @@ Examples:
   $0 --mode backup --storage backup-nfs 100 101
   $0 --mode backup --dumpdir /mnt/backup --stdout 100 101
 
-by denny.wordpess.com
+by denny.wordpress.com
 EOF
 }
 
