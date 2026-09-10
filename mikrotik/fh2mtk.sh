@@ -18,7 +18,7 @@ cat abuseipdb-s99-hallofshame-7d-75percent.ipv4 | awk --posix '/[0-9]{1,3}\.[0-9
 cat iblocklist-hijacked.netset | awk --posix '/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\// { print "do { /ip firewall address-list add address=" $1 " list=daftarblokir timeout=23:59:59 comment=hijack.bl.dennyhalim.com } on-error={}";}' > $saveTo/mikrotik/iblocklist-hijacked.rsc
 
 cd mikrotik
-cat dshield.rsc toxic.rsc etblock.rsc abuseipdb.rsc > combined1.rsc
+cat dshield.rsc toxic.rsc etblock.rsc abuseipdb.rsc iblocklist-hijacked.rsc > combined1.rsc
 cat dshield.rsc toxic.rsc fh1.rsc abuseipdb.rsc > combined2.rsc
 cat dshield.rsc toxic.rsc fh1.rsc iblocklist-hijacked.rsc etblock.rsc abuseipdb.rsc > combined-all.rsc
 wc -l *
