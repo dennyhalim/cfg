@@ -1,3 +1,5 @@
+# UPDATE: bl.dennyhalim.com
+
 /system script
 add name=firehol source="/tool fetch url=\"http://myserver/bl/firehol.rsc\" mode=http;\r\
     \n/import file-name=firehol.rsc;\r\
