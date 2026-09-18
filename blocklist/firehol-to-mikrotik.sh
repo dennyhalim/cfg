@@ -6,6 +6,11 @@
 # then add this line to 'sudo crontab -e' :
 # 0 5 * * * /bin/bash /opt/bin/firehol.sh
 
+echo UPDATE!
+echo ====================================================
+echo check out http://bl.dennyhalim.com for latest update
+echo ====================================================
+
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 
