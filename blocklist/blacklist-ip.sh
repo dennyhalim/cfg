@@ -1,4 +1,10 @@
 #!/bin/sh
+
+echo UPDATE!
+echo ====================================================
+echo check out http://bl.dennyhalim.com for latest update
+echo ====================================================
+
 saveTo=/var/www/html/bl/bl.rsc
 now=$(date);
 
