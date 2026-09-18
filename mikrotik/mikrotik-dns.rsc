@@ -1,4 +1,4 @@
-# dennyhalim.com
+# UPDATE: bl.dennyhalim.com
 # mikrotik dns blocking 
 # warning: test to see if it fits your need
 
