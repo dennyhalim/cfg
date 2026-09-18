@@ -1,4 +1,10 @@
 #new
+
+echo UPDATE!
+echo ====================================================
+echo check out http://bl.dennyhalim.com for latest update
+echo ====================================================
+
 saveTo=/var/www/my_webapp/www/blocklists
 cd $saveTo
 rm -f *.netset *.ipv4
