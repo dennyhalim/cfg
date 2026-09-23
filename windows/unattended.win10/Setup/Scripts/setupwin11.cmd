@@ -47,7 +47,7 @@ Windows Registry Editor Version 5.00
 ;windows update
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
 "ProductVersion"="Windows 11"
-"TargetReleaseVersionInfo"="24H2"
+"TargetReleaseVersionInfo"="23H2"
 "TargetReleaseVersion"=dword:00000001
 "BranchReadinessLevel"=dword:00000020
 ;"DeferQualityUpdates"=dword:00000001
