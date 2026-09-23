@@ -102,6 +102,8 @@ Windows Registry Editor Version 5.00
 "TargetChannel"="ExtendedStable"
 "RollbackToTargetVersion"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+"PasswordManagerEnabled"=dword:00000000
+"BackgroundModeEnabled"=dword:00000000
 "QuicAllowed"=dword:00000000
 "ClearCachedImagesAndFilesOnExit"=dword:00000001
 "HubsSidebarEnabled"=dword:00000000
