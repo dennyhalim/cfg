@@ -31,6 +31,7 @@ Windows Registry Editor Version 5.00
 ;netsh.exe advfirewall firewall set rule group="File and Printer Sharing" new enable=no
 ;netsh.exe advfirewall firewall set rule group="Windows Feature Experience Pack" new enable=no
 ;OneDriveSetup.exe /uninstall
+;winget.exe uninstall  Microsoft.OneDrive
 ;cd /d "C:\Program Files\Common Files\Microsoft Shared\ClickToRun" && OfficeC2RClient.exe /changesetting Channel=SemiAnnual
 ;exit
 ;
