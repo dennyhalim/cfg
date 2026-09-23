@@ -8,7 +8,7 @@ Windows Registry Editor Version 5.00
 ;fhmanagew.exe -backupnow -quiet
 ;bcdedit.exe /set {current} nx OptOut
 ;REG.EXE import "%~f0"
-;net.exe accounts /minpwlen:8 /lockoutthreshold:5 /lockoutduration:15 /lockoutwindow:15
+;rem net.exe accounts /minpwlen:8 /lockoutthreshold:5 /lockoutduration:15 /lockoutwindow:15
 ;sc.exe config tapisrv start= demand
 ;sc.exe config winrm start= demand
 ;sc.exe config netbt start= disabled
