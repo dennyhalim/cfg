@@ -102,6 +102,8 @@ Windows Registry Editor Version 5.00
 "TargetChannel"="ExtendedStable"
 "RollbackToTargetVersion"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+"DnsOverHttpsMode"="automatic"
+"DnsOverHttpsTemplates"="https://family.dns.mullvad.net/dns-query"
 "PasswordManagerEnabled"=dword:00000000
 "BackgroundModeEnabled"=dword:00000000
 "QuicAllowed"=dword:00000000
