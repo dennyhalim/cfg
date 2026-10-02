@@ -1,0 +1,13 @@
+# Envelope-sender domain score adjustments.
+# Positive = more suspicious / closer to defer or reject.
+# Negative = more trusted / closer to accept.
+#
+# Exact domain:
+gmail.com: +2
+yahoo.com: -2
+
+# Wildcard subdomains:
+*.bulk.example.com: +3
+
+# Be conservative with negative values. A forged MAIL FROM domain is not
+# authentication; this is only one reputation signal.

@@ -1,0 +1,9 @@
+# Every hostname and PUBLIC IP that identifies this logical gateway.
+# Include aliases that may appear in guarded-domain MX records.
+gateway1.example.net
+gateway2.example.net
+
+# Strongly recommended: list every public v4/v6 address used by those names.
+203.0.113.10
+203.0.113.11
+2001:db8::10

@@ -1,0 +1,7 @@
+# One URL per line. Plain IP/CIDR lists are ideal.
+#
+# FireHOL Level 1 example:
+https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level1.netset
+
+# Add more only when you trust their quality.
+# https://example.net/my-curated-list.txt
