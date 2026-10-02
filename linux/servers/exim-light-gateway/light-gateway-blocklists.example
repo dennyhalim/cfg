@@ -5,6 +5,3 @@
 # https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level4.netset
 
 https://blacklists.pages.dev/dist/plain/mailserver.txt
-
-# Add more only when you trust their quality.
-# https://example.net/my-curated-list.txt
