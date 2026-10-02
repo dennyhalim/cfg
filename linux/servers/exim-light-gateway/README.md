@@ -16,7 +16,7 @@ This layout is supported:
 40 gateway2.example.net   <- same gateway/self
 ```
 
-`mxroute.py` removes **all** configured gateway identities and returns:
+The embedded Perl MX router removes **all** configured gateway identities and returns:
 
 ```text
 mail1.example.com
@@ -46,11 +46,10 @@ No ClamAV, Rspamd, Redis, SQL, or filtering daemon is required.
 Debian/Ubuntu example:
 
 ```sh
-apt install exim4-daemon-light dnsutils
-install -d -m 0755 /usr/local/libexec/exim-light-gateway
+apt install exim4-daemon-light
 install -d -m 0755 /var/lib/exim4/light-gateway
 
-install -m 0755 mxroute.py /usr/local/libexec/exim-light-gateway/mxroute.py
+install -m 0644 light-gateway-mxroute.pl /etc/exim4/light-gateway-mxroute.pl
 install -m 0755 update-blocklists.py /usr/local/sbin/update-exim-light-blocklists
 
 install -m 0644 light-gateway-self.example /etc/exim4/light-gateway-self
@@ -112,29 +111,28 @@ exim4 -bt postmaster@example.com
 For a guarded domain, `-bt` should show one of the real backend MX hosts, never
 a gateway identity.
 
-Direct helper test:
+Embedded Perl is invoked by Exim itself. Test the function directly through
+Exim's expansion engine:
 
 ```sh
-/usr/local/libexec/exim-light-gateway/mxroute.py example.com
+exim4 -be '${perl{mxroute}{example.com}}'
 ```
 
 Expected shape:
 
 ```text
-ACCEPT TRANSPORT=gateway_smtp HOSTS=mail1.example.com:mail2.example.com DATA=light-gateway
+mail1.example.com:mail2.example.com byname
 ```
 
-If the domain does not use this gateway as an MX:
+Then test normal address routing:
 
-```text
-DECLINE gateway is not an MX for domain
+```sh
+exim4 -bt postmaster@example.com
 ```
 
-If every MX points back to the gateway:
-
-```text
-DEFER guarded domain has no non-gateway MX backend
-```
+If the domain does not use this gateway as an MX, the manualroute router
+declines. If every MX points back to the gateway, routing is deferred instead
+of looping.
 
 ## Reputation score defaults
 
@@ -282,6 +280,55 @@ For very large FireHOL-style aggregates, put the hard-block list in
 scanning a huge text file for every new SMTP connection.
 
 
+
+## Embedded Perl router
+
+The gateway no longer launches a Python routing helper.
+
+Exim loads:
+
+```text
+/etc/exim4/light-gateway-mxroute.pl
+```
+
+through:
+
+```text
+perl_startup = do '/etc/exim4/light-gateway-mxroute.pl'
+perl_taintmode = yes
+```
+
+and the router uses:
+
+```text
+route_data = ${perl{mxroute}{$domain}}
+```
+
+The Perl code uses Exim's own `dnsdb` resolver for public MX/A/AAAA lookups.
+Backend hosts are returned with `byname`, so their delivery addresses use the
+system resolver/NSS path and can therefore be overridden in `/etc/hosts`.
+
+The router maintains a 5-minute in-memory cache for domain routes and MX-host
+address checks. This cache is **per Exim process**, not a global daemon-wide
+cache. Exim/DNS resolver caching still applies separately.
+
+`same_domain_copy_routing = true` also prevents duplicate manual routing for
+multiple recipients at the same domain within one message.
+
+### Verify embedded Perl support
+
+Before installing this configuration:
+
+```sh
+exim4 -bV | grep -i perl
+```
+
+The Exim binary must have embedded Perl support. If it does not, use an Exim
+package/build that enables it.
+
+The routing path no longer requires `python3` or `dig`. Python is still used
+only by the optional downloaded-blocklist updater.
+
 ## Split DNS / `/etc/hosts` backend override
 
 You can keep public MX hostnames while making the gateway deliver to private
@@ -304,8 +351,8 @@ On the gateway:
 192.168.1.24 mail2.example.com
 ```
 
-The MX helper still queries real DNS with `dig`, so MX ordering and gateway
-self-detection are based on public DNS.
+The embedded Perl router queries public DNS through Exim `dnsdb`, so MX
+ordering and gateway self-detection are based on DNS rather than `/etc/hosts`.
 
 Backend delivery does **not** force Exim's `bydns` lookup mode. The returned
 backend hostnames are resolved through the system resolver/NSS path, allowing
