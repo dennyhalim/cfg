@@ -146,6 +146,12 @@ sender-domain RHSBL    +2
 missing PTR            +1
 bad HELO               +1
 rate signal            +2
+SPF pass              -1
+SPF softfail          +1
+SPF fail              +3
+SPF permerror         +1
+SPF none/neutral       0
+SPF temperror          0
 
 score 0-4   accept
 score 5-6   temporary defer
@@ -157,6 +163,70 @@ reject mail.
 
 Tune the `SCORE_*` macros near the top of `exim-gateway.conf`.
 
+
+
+## SPF scoring
+
+SPF is checked at SMTP `MAIL FROM` time. This uses the connecting IP, envelope
+sender and HELO identity only; it does not scan the message body and requires
+no daemon.
+
+Default scoring:
+
+```text
+pass        -1
+softfail    +1
+fail        +3
+permerror   +1
+none         0
+neutral      0
+temperror    0
+```
+
+`fail` deliberately does not reject by itself. It combines with the other
+gateway reputation signals.
+
+Example:
+
+```text
+manual domain score   +2
+SPF fail              +3
+medium DNSBL          +2
+-------------------------
+total                 +7 -> reject
+```
+
+A successful SPF result can offset a weak signal:
+
+```text
+manual domain score   -2
+SPF pass              -1
+missing PTR           +1
+-------------------------
+total                 -2 -> accept
+```
+
+The gateway also adds:
+
+```text
+X-Light-Gateway-SPF: pass
+```
+
+The backend may log/use this header, but should only trust it when mail arrived
+from the gateway itself.
+
+### Exim SPF support
+
+The `spf` ACL condition is only available when Exim was built with SPF support.
+Check before enabling/restarting:
+
+```sh
+exim4 -bV | grep -i spf
+```
+
+If your Exim package lacks SPF support, either install a build/package with SPF
+enabled or remove the SPF ACL block and `X-Light-Gateway-SPF` header. No
+external SPF daemon is required when Exim has native SPF support.
 
 ## Manual IP/domain scoring
 
