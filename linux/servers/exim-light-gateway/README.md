@@ -226,6 +226,65 @@ If your Exim package lacks SPF support, either install a build/package with SPF
 enabled or remove the SPF ACL block and `X-Light-Gateway-SPF` header. No
 external SPF daemon is required when Exim has native SPF support.
 
+
+## Authentication-Results for the backend
+
+The gateway adds a standard `Authentication-Results` header using Exim's native
+authentication-results formatter:
+
+```text
+Authentication-Results: gateway1.example.net;
+    spf=pass ...
+```
+
+The configuration uses:
+
+```text
+GATEWAY_AUTHSERV_ID = $primary_hostname
+```
+
+and, in the DATA ACL:
+
+```text
+add_header = :at_start:${authresults {GATEWAY_AUTHSERV_ID}}
+```
+
+This is preferable to constructing the header manually because Exim formats
+the available authentication results consistently.
+
+The existing lightweight header is also retained:
+
+```text
+X-Light-Gateway-SPF: pass
+```
+
+### Backend trust rule
+
+The backend must trust the gateway's `Authentication-Results` only when the
+SMTP connection itself came from one of the gateway IP addresses.
+
+Do **not** globally trust a header merely because its `authserv-id` says
+`gateway1.example.net`; arbitrary Internet senders can create headers with the
+same text before reaching the gateway.
+
+A practical backend policy is:
+
+```text
+SMTP peer = trusted gateway IP
+    -> trust gateway Authentication-Results/SPF
+
+SMTP peer != trusted gateway IP
+    -> ignore gateway Authentication-Results
+```
+
+The backend can continue doing DKIM and DMARC verification itself. The gateway
+does not alter normal signed message headers or the body, so adding
+`Authentication-Results`, `Received`, and `X-Light-Gateway-*` headers should
+not normally invalidate DKIM.
+
+For strongest separation, restrict backend port 25 so only gateway IPs can
+reach it.
+
 ## Manual IP/domain scoring
 
 Install the example score maps:
