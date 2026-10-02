@@ -4,4 +4,4 @@
 # https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level2.netset
 # https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level4.netset
 
-https://blacklists.pages.dev/dist/plain/compact4server.txt
+https://blacklists.pages.dev/dist/plain/combined.txt
