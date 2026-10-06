@@ -62,6 +62,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Policies\Microsoft\Windows\PowerShell\Transcription]
 "EnableTranscripting"=dword:00000001
+"EnableInvocationHeader"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsAI]
 "AllowRecallEnablement"=dword:00000000
 "DisableAIDataAnalysis"=dword:00000000
