@@ -42,6 +42,8 @@ Windows Registry Editor Version 5.00
 ;del setupwin11.cmd
 ;curl.exe -O https://dennyhalim.github.io/cfg//windows/unattended.win10/Setup/Scripts/setupwin11.cmd
 ;#edit to suite your need and run
+;setupwin11.cmd
+;or only import the registry
 ;reg.exe import setupwin11.cmd
 
 ;windows update
