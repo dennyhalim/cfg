@@ -61,8 +61,9 @@ Windows Registry Editor Version 5.00
 "ScheduledInstallDay"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Policies\Microsoft\Windows\PowerShell\Transcription]
-"EnableTranscripting"=dword:00000001
+;"EnableTranscripting"=dword:00000001
 "EnableInvocationHeader"=dword:00000001
+"OutputDirectory"=hex(2):25,00,74,00,65,00,6d,00,70,00,25,00,00,00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsAI]
 "AllowRecallEnablement"=dword:00000000
 "DisableAIDataAnalysis"=dword:00000000
