@@ -65,7 +65,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Policies\Microsoft\Windows\PowerShell\Transcription]
 "EnableTranscripting"=dword:00000001
 "EnableInvocationHeader"=dword:00000001
-"OutputDirectory"="C:\Windows\Temp"
+"OutputDirectory"=hex(2):43,00,3a,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,00,54,00,65,00,6d,00,70,00,5c,00,25,00,75,00,73,00,65,00,72,00,6e,00,61,00,6d,00,65,00,25,00,00,00
 ;"OutputDirectory"=hex(2):25,00,74,00,65,00,6d,00,70,00,25,00,00,00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsAI]
 "AllowRecallEnablement"=dword:00000000
