@@ -61,5 +61,9 @@
       <Command>usoclient.exe</Command>
       <Arguments>ScanInstallWait</Arguments>
     </Exec>
+    <Exec>
+      <Command>C:\Program Files\Common Files\microsoft shared\ClickToRun\OfficeC2RClient.exe</Command>
+      <Arguments>/update user displaylevel=false</Arguments>
+    </Exec>
   </Actions>
 </Task>
