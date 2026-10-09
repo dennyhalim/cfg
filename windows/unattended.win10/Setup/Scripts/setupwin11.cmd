@@ -47,6 +47,7 @@ Windows Registry Editor Version 5.00
 ;reg.exe import setupwin11.cmd
 
 ;windows update
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
 "ProductVersion"="Windows 11"
 "TargetReleaseVersionInfo"="23H2"
