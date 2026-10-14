@@ -20,8 +20,8 @@ add address=127.0.10.1 type=A regexp="(adult|lgbt|xxx|porn|sex|webcam|casino|pok
 add address=127.0.10.1 type=A regexp="\\.(top|cfd|icu|gq|tk|bet|bid)$"
 #phishing 
 add address=127.0.10.1 type=A regexp="bca(-fash|flash)"
-add address=127.0.10.1 type=A regexp="(login|clone)*\\.(vercel|netlify|blogspot|webflow|webly)"
-add address=127.0.10.1 type=A regexp="(facebook|instagram|flix|amazon)*\\.(vercel|netlify|blogspot|webflow|webly)"
+add address=127.0.10.1 type=A regexp="(login|clone)*\\.(vercel|netlify|blogspot|webflow|weebly)"
+add address=127.0.10.1 type=A regexp="(facebook|instagram|flix|amazon)*\\.(vercel|netlify|blogspot|webflow|weebly)"
 
 #that should be enough for most cases, but you can always continue with stricter rules
 add address=127.0.10.1 type=A regexp="ads(flame|keeper|ports|2live|tat|min|co)"
