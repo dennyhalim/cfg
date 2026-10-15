@@ -22,7 +22,7 @@
     </Principal>
   </Principals>
   <Settings>
-    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <MultipleInstancesPolicy>StopExisting</MultipleInstancesPolicy>
     <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
     <StopIfGoingOnBatteries>true</StopIfGoingOnBatteries>
     <AllowHardTerminate>true</AllowHardTerminate>
@@ -47,7 +47,7 @@
   <Actions Context="Author">
     <Exec>
       <Command>powershell.exe</Command>
-      <Arguments>-Command "Install-PackageProvider NuGet;Install-Module PSWindowsUpdate"</Arguments>
+      <Arguments>-Command "if (!(Get-Module -ListAvailable PSWindowsUpdate)) {Install-PackageProvider NuGet; Install-Module PSWindowsUpdate}"</Arguments>
     </Exec>
     <Exec>
       <Command>powershell.exe</Command>
