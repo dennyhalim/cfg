@@ -65,5 +65,10 @@
       <Command>C:\Program Files\Common Files\microsoft shared\ClickToRun\OfficeC2RClient.exe</Command>
       <Arguments>/update user displaylevel=false</Arguments>
     </Exec>
+    <Exec>
+      <Command>winget.exe</Command>
+      <Arguments>upgrade --all --silent --disable-interactivity --accept-source-agreements --accept-package-agreements</Arguments>
+      <WorkingDirectory>C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_1.29.380.0_x64__8wekyb3d8bbwe</WorkingDirectory>
+    </Exec>
   </Actions>
 </Task>
