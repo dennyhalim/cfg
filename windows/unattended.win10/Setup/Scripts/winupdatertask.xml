@@ -47,7 +47,7 @@
   <Actions Context="Author">
     <Exec>
       <Command>powershell.exe</Command>
-      <Arguments>-Command "if (!(Get-Module -ListAvailable PSWindowsUpdate)) {Install-PackageProvider NuGet; Install-Module PSWindowsUpdate}"</Arguments>
+      <Arguments>-Command "if (!(Get-Module -ListAvailable PSWindowsUpdate)) {Install-PackageProvider NuGet -Force; Install-Module PSWindowsUpdate -Force}"</Arguments>
     </Exec>
     <Exec>
       <Command>powershell.exe</Command>
