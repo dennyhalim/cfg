@@ -234,3 +234,7 @@ Windows Registry Editor Version 5.00
 "NoDriveTypeAutoRun"=dword:000000ff
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings]
 "SecureProtocols"=dword:00000a00
+[HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\Default%20Settings]
+"LogFileName"="logs\\tty&Y&M\\&D-&H.log"
+[HKEY_CURRENT_USER\Software\9bis.com\KiTTY\Sessions\Default%20Settings]
+"LogFileName"="logs\\tty&Y&M\\&D-&H.log"
