@@ -22,6 +22,6 @@ Windows Registry Editor Version 5.00
 "HideFileExt"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\Default%20Settings]
-"LogFileName"="logs\\tty&Y&M\\&D-&H.log"
+"LogFileName"="logs\\tty&Y&M\\&D-&H-&T.log"
 [HKEY_CURRENT_USER\Software\9bis.com\KiTTY\Sessions\Default%20Settings]
-"LogFileName"="logs\\tty&Y&M\\&D-&H.log"
+"LogFileName"="logs\\tty&Y&M\\&D-&H-&T.log"
