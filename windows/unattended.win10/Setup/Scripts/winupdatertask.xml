@@ -70,5 +70,9 @@
       <Arguments>upgrade --all --silent --disable-interactivity --accept-source-agreements --accept-package-agreements</Arguments>
       <WorkingDirectory>C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_1.29.380.0_x64__8wekyb3d8bbwe</WorkingDirectory>
     </Exec>
+    <Exec>
+      <Command>C:\ProgramData\chocolatey\bin\choco.exe</Command>
+      <Arguments>upgrade all -y</Arguments>
+    </Exec>
   </Actions>
 </Task>
