@@ -62,6 +62,8 @@ Windows Registry Editor Version 5.00
 ;"DeferUpdatePeriod"=dword:00000002
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
 "ScheduledInstallDay"=dword:00000002
+[HKEY_LOCAL_MACHINE\SYSTEM\Setup\UpgradeNotification]
+"UpgradeAvailable"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Policies\Microsoft\Windows\PowerShell\Transcription]
 "EnableTranscripting"=dword:00000001
