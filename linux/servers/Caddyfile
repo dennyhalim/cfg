@@ -1,4 +1,5 @@
 #detect useragents
+#if you want to block detected ua, import in a server then do abort
 (detect_ua) {
         @bots1 header_regexp User-Agent (?i)(nikto|sqlmap|nessus|openvas|w3af|acunetix|netsparker|zmeu|masscan|nmap)
         @bots2 header_regexp User-Agent (?i)(ai|agent|auto|content|copy|rag|search|check|mail|http|www|url|link|net|the)
