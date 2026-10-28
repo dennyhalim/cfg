@@ -34,3 +34,8 @@
         #abort @chrom_based
         #abort @bulk_bots
 }
+
+denny.wordpress.com {
+        import detect_ua
+        abort @chrom_based
+}
