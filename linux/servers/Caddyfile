@@ -1,0 +1,29 @@
+#detect useragents
+(detect_ua) {
+        @bots1 header_regexp User-Agent (?i)(nikto|sqlmap|nessus|openvas|w3af|acunetix|netsparker|zmeu|masscan|nmap)
+        @bots2 header_regexp User-Agent (?i)(ai|agent|auto|content|copy|rag|search|check|mail|http|www|url|link|net|the)
+        @bots3 header_regexp User-Agent (?i)(google|gemini|crios|yahoo|bing|msn|meta|facebook|amazon|opr|opios|byte|oo|cri)
+        @bulk_bots header_regexp User-Agent (?i)(oo|cri|chr)
+        @bad_bots {
+                header_regexp User-Agent (?i)(bot|crawl|spider|seo|scan|grab|suck|extract|slurp|scrap|hack|grab|fetch|browser)
+                not header User-Agent *Nextcloud*
+        }
+        @notAllowed {
+                not header User-Agent *FxiOS*
+                not header User-Agent *Firefox*
+                not header User-Agent *Nextcloud*
+        }
+
+        @notEdge not header User-Agent *Edg*
+        @notFox not header User-Agent *Firefox*
+        @notChr header !Sec-CH-UA
+        @chrom_based header Sec-CH-UA *
+
+        abort @bad_bots
+        abort @bots1
+        abort @bots2
+        #abort @bots3
+        #abort @notAllowed
+        #abort @chrom_based
+        #abort @bulk_bots
+}
