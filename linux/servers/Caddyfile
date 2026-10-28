@@ -21,8 +21,8 @@
             not header User-Agent *Chrom*
         }
 
-        @notEdge not header User-Agent *Edg*
-        @notFox not header User-Agent *Firefox*
+        @notEdge not header_regexp User-Agent `Edg(e|A|iOS)?/`
+        @notFox not header_regexp User-Agent '(Firefox|FxiOS)?/'
         @notChr header !Sec-CH-UA
         @chrom_based header Sec-CH-UA *
 
