@@ -14,6 +14,12 @@
                 not header User-Agent *Firefox*
                 not header User-Agent *Nextcloud*
         }
+        @safari_only {
+            header !Sec-CH-UA
+            header User-Agent *Safari*
+            header User-Agent *Version/*
+            not header User-Agent *Chrom*
+        }
 
         @notEdge not header User-Agent *Edg*
         @notFox not header User-Agent *Firefox*
