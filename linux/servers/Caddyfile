@@ -22,7 +22,7 @@
         }
 
         @notEdge not header_regexp User-Agent `Edg(e|A|iOS)?/`
-        @notFox not header_regexp User-Agent '(Firefox|FxiOS)?/'
+        @notFox not header_regexp User-Agent `(Firefox|FxiOS)?/`
         @notChr header !Sec-CH-UA
         @chrom_based header Sec-CH-UA *
 
