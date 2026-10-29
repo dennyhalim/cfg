@@ -10,8 +10,8 @@
                 not header User-Agent *Nextcloud*
         }
         @notAllowed {
-                not header User-Agent *FxiOS*
-                not header User-Agent *Firefox*
+                not header User-Agent *FxiOS/*
+                not header User-Agent *Firefox/*
                 not header User-Agent *Nextcloud*
         }
         @safari_only {
