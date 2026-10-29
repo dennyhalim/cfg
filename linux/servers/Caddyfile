@@ -33,6 +33,7 @@
         #abort @notAllowed
         #abort @chrom_based
         #abort @bulk_bots
+        redir @bots3 https://denny.wordpress.com permanent
 }
 
 denny.wordpress.com {
