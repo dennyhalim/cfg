@@ -544,6 +544,38 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0d141b;border:1px so
 
 <div class="grid">
 <section class="card">
+    <h2>Ping</h2>
+    <?php if ($probeTargetNote !== ''): ?><p class="small muted"><?= h($probeTargetNote) ?></p><?php endif; ?>
+    <?php if ($pingResult !== null): ?>
+        <?php if (!empty($pingResult['timed_out'])): ?><p class="no">Command timed out.</p><?php endif; ?>
+        <pre><?= h($pingResult['output']) ?></pre>
+    <?php else: ?><p><?= h($probeNote ?: 'Not run.') ?></p><?php endif; ?>
+</section>
+
+<section class="card">
+    <h2>Traceroute</h2>
+    <?php if ($traceResult !== null): ?>
+        <?php if (!empty($traceResult['timed_out'])): ?><p class="no">Command timed out.</p><?php endif; ?>
+        <pre><?= h($traceResult['output']) ?></pre>
+    <?php else: ?><p><?= h($probeNote ?: 'Not run.') ?></p><?php endif; ?>
+</section>
+
+<section class="card wide">
+    <h2>Request headers</h2>
+    <table>
+        <thead><tr><th style="width:28%">Header</th><th>Value</th></tr></thead>
+        <tbody>
+        <?php foreach ($headers as $name => $value):
+            $sensitive = in_array(strtolower((string) $name), ['authorization', 'proxy-authorization', 'cookie', 'set-cookie', 'x-api-key', 'api-key', 'x-auth-token', 'x-access-token', 'x-csrf-token', 'x-xsrf-token', 'x-amz-security-token'], true);
+        ?>
+            <tr><td><?= h($name) ?></td><td><?= $sensitive ? '<span class="muted">[redacted]</span>' : h($value) ?></td></tr>
+        <?php endforeach; ?>
+        <?php if (!$headers): ?><tr><td colspan="2">No request headers available.</td></tr><?php endif; ?>
+        </tbody>
+    </table>
+</section>
+
+<section class="card">
     <h2>Client connection</h2>
     <dl>
         <dt>Resolved client IP</dt><dd><strong><?= h($clientIp ?: 'Unavailable') ?></strong> <?= $publicIp ? '<span class="pill yes">Public</span>' : '<span class="pill no">Not public</span>' ?></dd>
@@ -605,21 +637,6 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0d141b;border:1px so
     <?php endif; ?>
 </section>
 
-<section class="card wide">
-    <h2>Request headers</h2>
-    <table>
-        <thead><tr><th style="width:28%">Header</th><th>Value</th></tr></thead>
-        <tbody>
-        <?php foreach ($headers as $name => $value):
-            $sensitive = in_array(strtolower((string) $name), ['authorization', 'proxy-authorization', 'cookie', 'set-cookie', 'x-api-key', 'api-key', 'x-auth-token', 'x-access-token', 'x-csrf-token', 'x-xsrf-token', 'x-amz-security-token'], true);
-        ?>
-            <tr><td><?= h($name) ?></td><td><?= $sensitive ? '<span class="muted">[redacted]</span>' : h($value) ?></td></tr>
-        <?php endforeach; ?>
-        <?php if (!$headers): ?><tr><td colspan="2">No request headers available.</td></tr><?php endif; ?>
-        </tbody>
-    </table>
-</section>
-
 <section class="card">
     <h2>System command capability</h2>
     <dl>
@@ -631,23 +648,6 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0d141b;border:1px so
         <dt>Can run system traceroute</dt><dd><?= $canRunTraceroute ? '<span class="yes">Yes</span>' : '<span class="no">No</span>' ?></dd>
     </dl>
     <p class="small muted">This script uses proc_open() with an argument array; exec() is not required.</p>
-</section>
-
-<section class="card">
-    <h2>Ping</h2>
-    <?php if ($probeTargetNote !== ''): ?><p class="small muted"><?= h($probeTargetNote) ?></p><?php endif; ?>
-    <?php if ($pingResult !== null): ?>
-        <?php if (!empty($pingResult['timed_out'])): ?><p class="no">Command timed out.</p><?php endif; ?>
-        <pre><?= h($pingResult['output']) ?></pre>
-    <?php else: ?><p><?= h($probeNote ?: 'Not run.') ?></p><?php endif; ?>
-</section>
-
-<section class="card">
-    <h2>Traceroute</h2>
-    <?php if ($traceResult !== null): ?>
-        <?php if (!empty($traceResult['timed_out'])): ?><p class="no">Command timed out.</p><?php endif; ?>
-        <pre><?= h($traceResult['output']) ?></pre>
-    <?php else: ?><p><?= h($probeNote ?: 'Not run.') ?></p><?php endif; ?>
 </section>
 
 <section class="card wide">
