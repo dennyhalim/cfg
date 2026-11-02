@@ -12,7 +12,7 @@ grep -qx "$IP" "$WL" 2>/dev/null && exit 0
 case "$IP" in 10.*|192.168.*|172.1[6-9].*|172.2*|172.3*|127.*|::1|::*) exit 0;; esac
 [[ "$IP" == *:* ]] && exit 0
 R=$(echo $IP | awk -F. '{if(NF==4) print $4"."$3"."$2"."$1; else print ""}'); [ -z "$R" ] && exit 0
-for zone in dnsbl.dronebl.org combined.abuse.ch bl.spamcop.net b.barracudacentral.org; do
+for zone in dnsbl.dronebl.org dnsbl-3.uceprotect.net combined.abuse.ch bl.spamcop.net b.barracudacentral.org; do
   if dig +short +time=2 $R.$zone 2>/dev/null | grep -q "^127\."; then
     echo "$(date) DENY $IP in $zone" >> $LOG
     exit 1
