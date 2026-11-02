@@ -1,7 +1,7 @@
 #!/bin/bash
 #denny.wordpress.com
 #add this on top of /etc/pam.d/sshd
-#auth [success=1 default=ok] pam_exec.so quiet /usr/local/sbin/chdnsbl
+#auth [success=1 default=ok] pam_exec.so quiet /usr/local/sbin/chdnsbl.sh
 #auth requisite pam_deny.so
 #
 IP=${1:-$PAM_RHOST}; IP=$(echo $IP | awk '{print $1}')
