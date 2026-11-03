@@ -29,7 +29,7 @@ LOG=/var/log/dnsbl.log
 
 # whitelist/private
 grep -qx "$IP" "$WL" 2>/dev/null && { [ "$MODE" = "pam" ] && exit $PAM_ALLOW || exit $TCPD_ALLOW; }
-#case "$IP" in 10.*|192.168.*|127.*) [ "$MODE" = "pam" ] && exit $PAM_ALLOW || exit $TCPD_ALLOW;; esac
+case "$IP" in 10.*|192.168.*|127.*|::*) [ "$MODE" = "pam" ] && exit $PAM_ALLOW || exit $TCPD_ALLOW;; esac
 
 R=$(echo $IP | awk -F. '{if(NF==4) print $4"."$3"."$2"."$1; else print ""}')
 [ -z "$R" ] && { [ "$MODE" = "pam" ] && exit $PAM_ALLOW || exit $TCPD_ALLOW; }
