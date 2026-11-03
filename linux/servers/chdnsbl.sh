@@ -3,10 +3,10 @@
 # denny.wordpress.com
 #
 # add this to /etc/hosts.allow
-# ALL: ALL: aclexec /usr/local/sbin/checkdnsbl %a : spawn /bin/echo "DENY %a %d"
+# ALL: ALL: aclexec /usr/local/sbin/chdnsbl.sh %a : spawn /bin/echo "DENY %a %d"
 # 
 # add this on top /etc/pam.d/sshd
-# auth [success=1 default=ok] pam_exec.so /usr/local/sbin/checkdnsbl
+# auth [success=1 default=ok] pam_exec.so /usr/local/sbin/chdnsbl.sh
 # auth requisite pam_deny.so
 
 
