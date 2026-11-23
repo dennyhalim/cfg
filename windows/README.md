@@ -9,7 +9,7 @@ curl.exe -O "https://dennyhalim.github.io/cfg/windows/unattended.win10/Setup/Scr
 ```
 curl.exe -O  "https://dennyhalim.github.io/cfg/windows/unattended.win10/Setup/Scripts/userupdatertask.xml"
 curl.exe -O  "https://dennyhalim.github.io/cfg/windows/unattended.win10/Setup/Scripts/winupdatertask.xml"
-schtasks.exe /Create /TN "task1" /XML ".\userupdatertask.xml" /F
-schtasks.exe /Create /TN "task1" /XML ".\winupdatertask.xml" /F
+schtasks.exe /Create /TN "update-user" /XML ".\userupdatertask.xml" /F
+schtasks.exe /Create /TN "update-system" /XML ".\winupdatertask.xml" /F
 ```
 
