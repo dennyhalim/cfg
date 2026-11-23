@@ -1,5 +1,10 @@
 # cfg
+remy is deprecated.
+boxstarter was designed on old windows.
 
+click on windows folder above for latest readme.
+
+# everything down here is not maintained anymore.
 
 ## boxstarter
 utilize boxstarter.org to keep windows updated
