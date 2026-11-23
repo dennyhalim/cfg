@@ -13,3 +13,9 @@ schtasks.exe /Create /TN "update-user" /XML ".\userupdatertask.xml" /F
 schtasks.exe /Create /TN "update-system" /XML ".\winupdatertask.xml" /F
 ```
 
+## google chrome lockdown
+
+```
+curl.exe -O  "https://dennyhalim.github.io/cfg/windows/unattended.win10/Setup/Scripts/chrome-policies.reg"
+reg.exe import chrome-policies.reg
+```
