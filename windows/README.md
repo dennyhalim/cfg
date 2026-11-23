@@ -1,4 +1,4 @@
-## windows auto updater
+## windows auto updater task scheduler
 
 ```
 curl.exe -O  "https://dennyhalim.github.io/cfg/windows/unattended.win10/Setup/Scripts/userupdatertask.xml"
