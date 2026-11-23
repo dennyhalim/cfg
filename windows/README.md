@@ -1,8 +1,14 @@
-# windows auto updater
+## windows auto updater
 
 ```
-iwr "https://dennyhalim.github.io/cfg/windows/unattended.win10/Setup/Scripts/userupdatertask.xml"  -OutFile userupdatertask.xml
-iwr "https://dennyhalim.github.io/cfg/windows/unattended.win10/Setup/Scripts/winupdatertask.xml"  -OutFile winupdatertask.xml
-Register-ScheduledTask -TaskName "updater-user" -Xml (Get-Content ".\userupdatertask.xml" -Raw) -Force
-Register-ScheduledTask -TaskName "updater-system" -Xml (Get-Content ".\winupdatertask.xml" -Raw) -Force
+curl.exe -O  "https://dennyhalim.github.io/cfg/windows/unattended.win10/Setup/Scripts/userupdatertask.xml"
+curl.exe -O  "https://dennyhalim.github.io/cfg/windows/unattended.win10/Setup/Scripts/winupdatertask.xml"
+schtasks.exe /Create /TN "task1" /XML ".\userupdatertask.xml" /F
+schtasks.exe /Create /TN "task1" /XML ".\winupdatertask.xml" /F
+```
+
+## windows registries & policies
+```
+curl.exe -O "https://dennyhalim.github.io/cfg/windows/unattended.win10/Setup/Scripts/setupwin11.cmd" 
+.\setupwin11.cmd
 ```
